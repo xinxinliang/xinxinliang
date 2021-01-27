@@ -6,7 +6,7 @@
   <link href="http://xinxinliang.github.io/atom.xml" rel="self"/>
   
   <link href="http://xinxinliang.github.io/"/>
-  <updated>2021-01-27T10:23:50.377Z</updated>
+  <updated>2021-01-27T10:29:39.032Z</updated>
   <id>http://xinxinliang.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>第一篇博客</title>
     <link href="http://xinxinliang.github.io/2021/01/27/di-yi-pian-bo-ke/"/>
     <id>http://xinxinliang.github.io/2021/01/27/di-yi-pian-bo-ke/</id>
-    <published>2021-01-27T10:23:50.377Z</published>
-    <updated>2021-01-27T10:23:50.377Z</updated>
+    <published>2021-01-27T10:29:39.032Z</published>
+    <updated>2021-01-27T10:29:39.032Z</updated>
     
     
       
@@ -33,8 +33,8 @@
       
     
     
-    <content src="http://qiniu.xinxinblog.top/bg8.jpg" type="image"/>
     
+    <category term="日记" scheme="http://xinxinliang.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
     <category term="总结" scheme="http://xinxinliang.github.io/tags/%E6%80%BB%E7%BB%93/"/>
