@@ -6,7 +6,7 @@
   <link href="http://xinxinliang.github.io/atom.xml" rel="self"/>
   
   <link href="http://xinxinliang.github.io/"/>
-  <updated>2021-02-01T09:42:17.144Z</updated>
+  <updated>2021-02-01T11:45:04.817Z</updated>
   <id>http://xinxinliang.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Typora常用快捷键</title>
+    <link href="http://xinxinliang.github.io/2021/02/01/typora-chang-yong-kuai-jie-jian/"/>
+    <id>http://xinxinliang.github.io/2021/02/01/typora-chang-yong-kuai-jie-jian/</id>
+    <published>2021-02-01T11:42:19.000Z</published>
+    <updated>2021-02-01T11:45:04.817Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;转载博客:&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://xinxinliang.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Typora" scheme="http://xinxinliang.github.io/tags/Typora/"/>
+    
+    <category term="快捷键" scheme="http://xinxinliang.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+    <category term="转载" scheme="http://xinxinliang.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>Wegame饥荒搭建专用服务器+多层世界跳转MOD</title>
