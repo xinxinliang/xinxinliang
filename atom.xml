@@ -6,7 +6,7 @@
   <link href="http://xinxinliang.github.io/atom.xml" rel="self"/>
   
   <link href="http://xinxinliang.github.io/"/>
-  <updated>2021-01-27T10:36:14.679Z</updated>
+  <updated>2021-02-01T09:33:03.565Z</updated>
   <id>http://xinxinliang.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Wegame饥荒搭建专用服务器+多层世界跳转MOD</title>
+    <link href="http://xinxinliang.github.io/2021/02/01/wegame-ji-huang-da-jian-zhuan-yong-fu-wu-qi-duo-ceng-shi-jie-tiao-zhuan-mod/"/>
+    <id>http://xinxinliang.github.io/2021/02/01/wegame-ji-huang-da-jian-zhuan-yong-fu-wu-qi-duo-ceng-shi-jie-tiao-zhuan-mod/</id>
+    <published>2021-02-01T09:32:53.149Z</published>
+    <updated>2021-02-01T09:33:03.565Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;最近一段时间准备学习饥荒mod，准备自己写一个玩法，然后放在服务器上运行，像我玩过的人数多的大服务器，但是不是自己想想的那么简单，看别人写的mod然后自己就可以学会，现在做个总结&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="游戏" scheme="http://xinxinliang.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="饥荒" scheme="http://xinxinliang.github.io/tags/%E9%A5%A5%E8%8D%92/"/>
+    
+  </entry>
   
   <entry>
     <title>第一篇博客</title>
