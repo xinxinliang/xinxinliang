@@ -6,7 +6,7 @@
   <link href="http://xinxinliang.github.io/atom.xml" rel="self"/>
   
   <link href="http://xinxinliang.github.io/"/>
-  <updated>2021-02-01T12:27:19.387Z</updated>
+  <updated>2021-02-02T02:28:05.300Z</updated>
   <id>http://xinxinliang.github.io/</id>
   
   <author>
@@ -15,6 +15,260 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker安装宝塔面板</title>
+    <link href="http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-bao-ta-mian-ban/"/>
+    <id>http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-bao-ta-mian-ban/</id>
+    <published>2021-02-02T02:26:44.000Z</published>
+    <updated>2021-02-02T02:28:05.300Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;docker安装宝塔面板&quot;&gt;&lt;a href=&quot;#docker安装宝塔面板&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="安装" scheme="http://xinxinliang.github.io/categories/%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="docker" scheme="http://xinxinliang.github.io/tags/docker/"/>
+    
+    <category term="宝塔面板" scheme="http://xinxinliang.github.io/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker命令总结</title>
+    <link href="http://xinxinliang.github.io/2021/02/02/docker-ming-ling-zong-jie/"/>
+    <id>http://xinxinliang.github.io/2021/02/02/docker-ming-ling-zong-jie/</id>
+    <published>2021-02-02T02:25:23.000Z</published>
+    <updated>2021-02-02T02:27:54.024Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Docker&quot;&gt;&lt;a href=&quot;#Docker&quot; class=&quot;headerlink&quot; title=&quot;Docker&quot;&gt;&lt;/a&gt;Docker&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;docker是为了便于部署和集群环境，解决了运维和开发之间的矛盾，文档地址：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="容器技术" scheme="http://xinxinliang.github.io/categories/%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="docker" scheme="http://xinxinliang.github.io/tags/docker/"/>
+    
+    <category term="常用命令" scheme="http://xinxinliang.github.io/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker安装jupyter并提交到hub</title>
+    <link href="http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-jupyter-bing-ti-jiao-dao-hub/"/>
+    <id>http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-jupyter-bing-ti-jiao-dao-hub/</id>
+    <published>2021-02-02T02:23:19.000Z</published>
+    <updated>2021-02-02T02:27:48.268Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;已经不使用jupyter notebook了，它的升级版jupyter Lab确实比它好用多了，而且这个镜像的python版本有些低。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="安装" scheme="http://xinxinliang.github.io/categories/%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="docker" scheme="http://xinxinliang.github.io/tags/docker/"/>
+    
+    <category term="jupyter notebook" scheme="http://xinxinliang.github.io/tags/jupyter-notebook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker安装mysql</title>
+    <link href="http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-mysql/"/>
+    <id>http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-mysql/</id>
+    <published>2021-02-02T02:22:15.000Z</published>
+    <updated>2021-02-02T02:24:22.096Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;docker安装mysql&quot;&gt;&lt;a href=&quot;#docker安装mysql&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="安装" scheme="http://xinxinliang.github.io/categories/%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="docker" scheme="http://xinxinliang.github.io/tags/docker/"/>
+    
+    <category term="mysql" scheme="http://xinxinliang.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker安装nps内网穿透</title>
+    <link href="http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-nps-nei-wang-chuan-tou/"/>
+    <id>http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-nps-nei-wang-chuan-tou/</id>
+    <published>2021-02-02T02:19:57.000Z</published>
+    <updated>2021-02-02T02:21:28.324Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;服务端安装&quot;&gt;&lt;a href=&quot;#服务端安装&quot; class=&quot;headerlink&quot; title=&quot;服务端安装&quot;&gt;&lt;/a&gt;服务端安装&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;拉取镜像&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="安装" scheme="http://xinxinliang.github.io/categories/%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="docker" scheme="http://xinxinliang.github.io/tags/docker/"/>
+    
+    <category term="nps" scheme="http://xinxinliang.github.io/tags/nps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker安装nextcloud</title>
+    <link href="http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-nextcloud/"/>
+    <id>http://xinxinliang.github.io/2021/02/02/docker-an-zhuang-nextcloud/</id>
+    <published>2021-02-02T02:17:46.000Z</published>
+    <updated>2021-02-02T02:18:55.743Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;前提已经安装了docker，使用docker安装nextcloud非常方便&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;获取docker&quot;&gt;&lt;a href=&quot;#获取docker&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="安装" scheme="http://xinxinliang.github.io/categories/%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="docker" scheme="http://xinxinliang.github.io/tags/docker/"/>
+    
+    <category term="nextcloud" scheme="http://xinxinliang.github.io/tags/nextcloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker的安装和卸载</title>
+    <link href="http://xinxinliang.github.io/2021/02/02/docker-de-an-zhuang-he-xie-zai/"/>
+    <id>http://xinxinliang.github.io/2021/02/02/docker-de-an-zhuang-he-xie-zai/</id>
+    <published>2021-02-02T02:16:07.000Z</published>
+    <updated>2021-02-02T02:17:12.959Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;这篇博客介绍在ubuntu和centos环境下docker的安装，我尝试过都成功了，直接一条条的复制命令，最后验证就可以了，写这篇博客也方便我以后的安装&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;ubuntu下安装docker&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="容器技术" scheme="http://xinxinliang.github.io/categories/%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="docker" scheme="http://xinxinliang.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nps内网穿透实现远程桌面</title>
+    <link href="http://xinxinliang.github.io/2021/02/02/nps-nei-wang-chuan-tou-shi-xian-yuan-cheng-zhuo-mian/"/>
+    <id>http://xinxinliang.github.io/2021/02/02/nps-nei-wang-chuan-tou-shi-xian-yuan-cheng-zhuo-mian/</id>
+    <published>2021-02-01T16:52:47.000Z</published>
+    <updated>2021-02-01T16:54:31.676Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;需求：平时需要用到电脑又不方便携带，想要用平板电脑远程桌面使用电脑。电脑再寝室里连接着校园网，校园网不可能给你开放端口。此时就可以内网穿透实现远程连接。&lt;/p&gt;
+&lt;p&gt;其他：可以端口转发，代理什么的，自己还没有探索。可以实现局域网内的服务，经过有公</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://xinxinliang.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="nps" scheme="http://xinxinliang.github.io/tags/nps/"/>
+    
+    <category term="远程桌面" scheme="http://xinxinliang.github.io/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git基本使用</title>
+    <link href="http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/"/>
+    <id>http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/</id>
+    <published>2021-02-01T14:56:05.000Z</published>
+    <updated>2021-02-01T14:57:08.757Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、下载并安装git&quot;&gt;&lt;a href=&quot;#一、下载并安装git&quot; class=&quot;headerlink&quot; title=&quot;一、下载并安装git&quot;&gt;&lt;/a&gt;一、下载并安装git&lt;/h2&gt;&lt;h2 id=&quot;二、开始操作&quot;&gt;&lt;a href=&quot;#二、开始操作&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://xinxinliang.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="git" scheme="http://xinxinliang.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>jupyter快捷键</title>
