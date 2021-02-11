@@ -6,7 +6,7 @@
   <link href="http://xinxinliang.github.io/atom.xml" rel="self"/>
   
   <link href="http://xinxinliang.github.io/"/>
-  <updated>2021-02-02T02:28:05.300Z</updated>
+  <updated>2021-02-11T18:08:22.624Z</updated>
   <id>http://xinxinliang.github.io/</id>
   
   <author>
@@ -15,6 +15,172 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django学习(一)：基本操作与命令</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-yi-ji-ben-cao-zuo-yu-ming-ling/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-yi-ji-ben-cao-zuo-yu-ming-ling/</id>
+    <published>2021-02-11T18:06:00.000Z</published>
+    <updated>2021-02-11T18:08:22.624Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装django&quot;&gt;&lt;a href=&quot;#安装django&quot; class=&quot;headerlink&quot; title=&quot;安装django&quot;&gt;&lt;/a&gt;安装django&lt;/h2&gt;&lt;h6 id=&quot;linux环境下&quot;&gt;&lt;a href=&quot;#linux环境下&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
+    
+    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习(二)：setting.py</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-er-setting.py/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-er-setting.py/</id>
+    <published>2021-02-11T16:00:00.000Z</published>
+    <updated>2021-02-11T18:15:40.960Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;调试与域名&quot;&gt;&lt;a href=&quot;#调试与域名&quot; class=&quot;headerlink&quot; title=&quot;调试与域名&quot;&gt;&lt;/a&gt;调试与域名&lt;/h4&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
+    
+    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习(五)：views和url</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/</id>
+    <published>2021-02-11T16:00:00.000Z</published>
+    <updated>2021-02-11T18:48:42.471Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;参考博客：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
+    
+    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习(四)：model和admin</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-si-model-he-admin/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-si-model-he-admin/</id>
+    <published>2021-02-11T16:00:00.000Z</published>
+    <updated>2021-02-11T18:46:26.079Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;修改models-py&quot;&gt;&lt;a href=&quot;#修改models-py&quot; class=&quot;headerlink&quot; title=&quot;修改models.py&quot;&gt;&lt;/a&gt;修改models.py&lt;/h4&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
+    
+    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django问题解决：项目部署后台管理页面样式失效</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-wen-ti-jie-jue-xiang-mu-bu-shu-hou-tai-guan-li-ye-mian-yang-shi-shi-xiao/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-wen-ti-jie-jue-xiang-mu-bu-shu-hou-tai-guan-li-ye-mian-yang-shi-shi-xiao/</id>
+    <published>2021-02-11T16:00:00.000Z</published>
+    <updated>2021-02-11T18:56:47.626Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、打开django项目中的settings-py文件&quot;&gt;&lt;a href=&quot;#一、打开django项目中的settings-py文件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
+    
+    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习(三)：模板系统</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/</id>
+    <published>2021-02-11T16:00:00.000Z</published>
+    <updated>2021-02-11T18:43:35.067Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;便于修改html中的内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;1-插入变量&quot;&gt;&lt;a href=&quot;#1-插入变量&quot; class=&quot;headerlink&quot; title=&quot;1. 插入变量&quot;&gt;&lt;/a&gt;1. 插入变量&lt;/h4&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
+    
+    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>docker安装宝塔面板</title>
@@ -250,7 +416,7 @@
     <link href="http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/"/>
     <id>http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/</id>
     <published>2021-02-01T14:56:05.000Z</published>
-    <updated>2021-02-01T14:57:08.757Z</updated>
+    <updated>2021-02-11T18:59:35.382Z</updated>
     
     
       
