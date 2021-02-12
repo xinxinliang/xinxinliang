@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git基本使用, blog">
+    <meta name="keywords" content="jupyter notebook作为云编辑器, blog">
     <meta name="description" content="这是我的个人网站，欢迎来访">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git基本使用 | 头号咸鱼</title>
+    <title>jupyter notebook作为云编辑器 | 头号咸鱼</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -316,12 +316,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/bg01/bg5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0132z9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git基本使用</h1>
+                    <h1 class="description center-align post-title">jupyter notebook作为云编辑器</h1>
                 </div>
             </div>
         </div>
@@ -437,8 +437,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/jupyter/">
+                                <span class="chip bg-color">jupyter</span>
                             </a>
                         
                     </div>
@@ -462,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-01
+                    2021-02-12
                 </div>
                 
 
@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    564
+                    654
                 </div>
                 
 
@@ -506,82 +506,90 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、下载并安装git"><a href="#一、下载并安装git" class="headerlink" title="一、下载并安装git"></a>一、下载并安装git</h2><h2 id="二、开始操作"><a href="#二、开始操作" class="headerlink" title="二、开始操作"></a>二、开始操作</h2><ul>
-<li>右键然后点击git bash进入命令框</li>
-<li>命令是仿照linux，可以使用ls，pwd，cd</li>
-<li>创建一个文件夹，在此路径下git init，创建了一个仓库，会有一个.git文件</li>
-<li>三、配置仓库</li>
-<li>git config –global user.name “用户名字”</li>
-<li>git config –global user.email “邮件地址”</li>
-</ul>
-<h2 id="四、基本操作"><a href="#四、基本操作" class="headerlink" title="四、基本操作"></a>四、基本操作</h2><h4 id="1-添加提交内容"><a href="#1-添加提交内容" class="headerlink" title="1. 添加提交内容"></a>1. 添加提交内容</h4><ul>
-<li>git add sunck.txt</li>
-<li>git commit -m “第一次添加”</li>
-</ul>
-<blockquote>
-<p>git add .</p>
+                <blockquote>
+<p>之前写的博客，现在安装和配置jupyter notebook很轻松了，而且使用升级版jupyterlab，作为云编辑器也不需要了，有web版的vscode。博客中<code>ps aux</code>和<code>kill -9 pid</code>还是很值的学习的。</p>
 </blockquote>
-<p>git commit . -m “全部提交”</p>
-<h4 id="2-查看状态"><a href="#2-查看状态" class="headerlink" title="2. 查看状态"></a>2. 查看状态</h4><ul>
-<li>git status<br>//告诉你哪个文件被改变了</li>
-<li>git diff<br>//查看修改的内容</li>
-<li>git log<br>//查看日志</li>
+<h4 id="1-安装jupyter"><a href="#1-安装jupyter" class="headerlink" title="1.安装jupyter"></a>1.安装jupyter</h4><blockquote>
+<p>我使用的是阿里云ubuntu 16.4，自带python，以安装好了pip</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">sudo pip install jupyter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2-配置jupyter"><a href="#2-配置jupyter" class="headerlink" title="2.配置jupyter"></a>2.配置jupyter</h4><pre class="line-numbers language-none"><code class="language-none">jupyter notebook --generate-config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><p>在到命令输出的位置找到jupyter_notebook_config.py</p>
+</li>
+<li><p>用vim编辑器添加</p>
+<pre class="line-numbers language-none"><code class="language-none">c.NotebookApp.ip = '0.0.0.0'
+c.NotebookApp.open_browser = True<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<blockquote>
+<p>因为代码太多，这两行被的注释代码不好找，直接添加</p>
+<p>我是添加的’0.0.0.0’用电脑浏览器输入公网ip和相应端口可以访问，若不行可以阅览我参考的博客</p>
+</blockquote>
+</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">$ git log
-commit f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master)
-Author: liangxinxin5102 &lt;1974733812@qq.com&gt;
-Date:   Sun Dec 29 01:04:33 2019 +0800
+<h4 id="3-启动时打开指定的目录"><a href="#3-启动时打开指定的目录" class="headerlink" title="3.启动时打开指定的目录"></a>3.启动时打开指定的目录</h4><pre class="line-numbers language-css" data-language="css"><code class="language-css">jupyter notebook  [文件夹路径]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="4-注意问题"><a href="#4-注意问题" class="headerlink" title="4.注意问题"></a>4.注意问题</h4><ul>
+<li><p>我在输入jupyter notebook的时候有点问题，根据提示输入</p>
+<pre class="line-numbers language-none"><code class="language-none">jupyter notebook --allow -root  /home<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>成功打开了指定目录</p>
+<p><img src="https://gitee.com/liangxinixn/demo13_drawing_bed/raw/master/blog01/20200702134218.png"></p>
+<p><img src="https://gitee.com/liangxinixn/demo13_drawing_bed/raw/master/blog01/20200702134533.png"></p>
+</li>
+<li><p>在电脑端输入公网IP和端口号的时候，还需要输入token登录，token信息就在服务器启动那个终端下面，也可以开启另一个终端输入</p>
+<pre class="line-numbers language-none"><code class="language-none">jupyter notebook list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看token</p>
+<h4 id="5-作为后台运行云编辑器"><a href="#5-作为后台运行云编辑器" class="headerlink" title="5.作为后台运行云编辑器"></a>5.作为后台运行云编辑器</h4><blockquote>
+<p>我试着在上面运行了一下代码，慢得我都不想等了，服务器是1Mb/s的带宽，白嫖的六个月的阿里云，作为编辑器还可以，运行代码不行，还是要在终端去运行效果好一些。</p>
+<p>看一下后期租着5Mb/s的试试，我知道了自家的公网ip，后期也想自己用旧电脑搞个网穿家庭服务器试试</p>
+</blockquote>
+<p>输入命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">nohup jupyter notebook / --allow-root &gt; jupyter.log 2&gt;&amp;1 &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-    一次添添加
-    
-会显示提交的编号，分支，用户，时间，注释
-$ git log --pretty=oneline
-f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-回归版本"><a href="#3-回归版本" class="headerlink" title="3. 回归版本"></a>3. 回归版本</h4><ul>
-<li>git reset –hard HEAD^        回到上一版本</li>
-<li>git reset –hard HEAD^^       回到上上一版本</li>
-<li>git reset –hard HEAD~100     回到上100版本</li>
-<li>git reset –hard HEAD         具体版本号 </li>
-<li>git refog    记录每一次提交的命令</li>
-</ul>
-<h4 id="4-工作区与缓存区"><a href="#4-工作区与缓存区" class="headerlink" title="4. 工作区与缓存区"></a>4. 工作区与缓存区</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34964399/article/details/79869512">传送门</a></p>
+<p>说明：</p>
 <ul>
-<li>checkout –filename //让文件回到add或者commit状态</li>
+<li><p>用<code>&amp;</code>让命令后台运行, 并把标准输出写入jupyter.log中</p>
+</li>
+<li><p><code>nohup</code>表示no hang up, 就是不挂起, 于是这个命令执行后即使终端退出, 也不会停止运行.</p>
+</li>
 </ul>
-<h4 id="5-连接GitHub服务器–密钥与公钥"><a href="#5-连接GitHub服务器–密钥与公钥" class="headerlink" title="5. 连接GitHub服务器–密钥与公钥"></a>5. 连接GitHub服务器–密钥与公钥</h4><ul>
-<li>ssh-keygen    -t      rsa         -C         “<a href="mailto:1974733812@qq.com">1974733812@qq.com</a>“</li>
-<li>ssh   -T   <a href="mailto:git@github.com">git@github.com</a>                           #测试是否连接成功</li>
-</ul>
+<p><img src="https://gitee.com/liangxinixn/demo13_drawing_bed/raw/master/blog01/20200702141209.png"><br>杀死进程（不成功）：</p>
+<ul>
+<li><p>执行命令后, 可以发现关闭终端重新打开后,  jupyter依然可以使用</p>
+</li>
+<li><p>用<code>ps -a</code>, 可以显示这个进程的pid</p>
+</li>
+<li><p><code>kill -1 pid</code> 终止进程</p>
 <blockquote>
-<p>注意记录位置，要将公钥复制粘贴到github账号的设置里</p>
+<p>我参考博客不成功，自己搜了一下杀死进程的命令成功了</p>
 </blockquote>
-<h4 id="6-创建远程仓库"><a href="#6-创建远程仓库" class="headerlink" title="6. 创建远程仓库"></a>6. 创建远程仓库</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/clipbofdard.png"></p>
-<ul>
-<li>关联远程仓库     git remote add origin <a target="_blank" rel="noopener" href="https://github.com/liangxinxin5102/git_test1.git">https://github.com/liangxinxin5102/git_test1.git</a></li>
-<li>删除关联    git  remote rm origin</li>
-<li>查看设置内容    git config –list</li>
+</li>
 </ul>
-<h4 id="7-远程仓库的推送与拉取"><a href="#7-远程仓库的推送与拉取" class="headerlink" title="7. 远程仓库的推送与拉取"></a>7. 远程仓库的推送与拉取</h4><p>（先要拉取，才能推送  git pull origin master –allow-unrelated-histories）</p>
-<ul>
-<li>推送      git push origin master</li>
-<li>拉取       git pull origin master</li>
+</li>
 </ul>
+<p>​      杀死进程（成功）：</p>
+<ul>
+<li>查看  ps  aux</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/demo13_drawing_bed/raw/master/blog01/20200702142417.png"></p>
+<ul>
+<li>可以找到相关进程</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/demo13_drawing_bed/raw/master/blog01/20200702143259.png"></p>
 <blockquote>
-<p>正常情况下我们没有本地库，开发一般是现有远程库再克隆本地库，这样远程就不会和本地冲突了 </p>
+<p>可以看到PID号是2071，根据自己的情况来定</p>
+</blockquote>
 <ul>
-<li>克隆 git clone  <a target="_blank" rel="noopener" href="https://github.com/liangxinxin5102/git_test1.git">https://github.com/liangxinxin5102/git_test1.git</a></li>
+<li>杀死   kill -9 2071</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/DarrenXf/article/details/81478911">参考博客1</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33266320/article/details/80949339">参考博客2</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42561002/article/details/85382922">参考博客3</a></p>
+<blockquote>
+<p>补充：nohup命令运行可能要exit退出shell，不然关机后重启会关闭</p>
+<ul>
+<li>推荐使用docker安装jupyter</li>
 </ul>
 </blockquote>
-<h4 id="8-不提交指定文件"><a href="#8-不提交指定文件" class="headerlink" title="8. 不提交指定文件"></a>8. 不提交指定文件</h4><ul>
-<li>创建文件     touch .gitignore</li>
-<li>在 .gitignore文件中填写不提交的文件名，此目录下的文件不会被提交， .gitignore文件会提交上去</li>
-</ul>
-<h2 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h2><ul>
-<li>创建分支      git branch 分支名</li>
-<li>切换分支       git checkout 分支名</li>
-<li>创建与切换同时进行   git checkout -b 分支名</li>
-</ul>
-<h2 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h2>
+
                 
             </div>
             <hr/>
@@ -607,7 +615,7 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/">http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/</a>
+                    <a href="http://xinxinliang.github.io/2021/02/12/jupyter-notebook-zuo-wei-yun-bian-ji-qi/">http://xinxinliang.github.io/2021/02/12/jupyter-notebook-zuo-wei-yun-bian-ji-qi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -645,8 +653,8 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/jupyter/">
+                                    <span class="chip bg-color">jupyter</span>
                                 </a>
                             
                         </div>
@@ -822,12 +830,12 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/02/nps-nei-wang-chuan-tou-shi-xian-yuan-cheng-zhuo-mian/">
+                <a href="/2021/02/12/zheng-ze-biao-da-shi-re/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/bg01/bg6.jpg" class="responsive-img" alt="nps内网穿透实现远程桌面">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-138ozv.png" class="responsive-img" alt="正则表达式re">
                         
-                        <span class="card-title">nps内网穿透实现远程桌面</span>
+                        <span class="card-title">正则表达式re</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -838,14 +846,14 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
+                            <a href="/categories/%E8%AF%AD%E6%B3%95/" class="post-category">
+                                    语法
                                 </a>
                             
                             
@@ -855,12 +863,12 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/nps/">
-                        <span class="chip bg-color">nps</span>
+                    <a href="/tags/py%E5%BA%93/">
+                        <span class="chip bg-color">py库</span>
                     </a>
                     
-                    <a href="/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/">
-                        <span class="chip bg-color">远程桌面</span>
+                    <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                        <span class="chip bg-color">正则表达式</span>
                     </a>
                     
                 </div>
@@ -874,12 +882,12 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/01/jupyter-kuai-jie-jian/">
+                <a href="/2021/02/12/django-xue-xi-yi-ji-ben-cao-zuo-yu-ming-ling/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/bg01/bg4.jpg" class="responsive-img" alt="jupyter快捷键">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-4d1mrj.jpg" class="responsive-img" alt="Django学习(一)：基本操作与命令">
                         
-                        <span class="card-title">jupyter快捷键</span>
+                        <span class="card-title">Django学习(一)：基本操作与命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -890,14 +898,14 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
                                 </a>
                             
                             
@@ -907,16 +915,12 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-                        <span class="chip bg-color">快捷键</span>
+                    <a href="/tags/django/">
+                        <span class="chip bg-color">django</span>
                     </a>
                     
-                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                        <span class="chip bg-color">转载</span>
-                    </a>
-                    
-                    <a href="/tags/jupyter/">
-                        <span class="chip bg-color">jupyter</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>

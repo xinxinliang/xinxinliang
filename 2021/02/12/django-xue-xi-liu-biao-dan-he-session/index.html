@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git基本使用, blog">
+    <meta name="keywords" content="Django学习(六)：表单和session, blog">
     <meta name="description" content="这是我的个人网站，欢迎来访">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git基本使用 | 头号咸鱼</title>
+    <title>Django学习(六)：表单和session | 头号咸鱼</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -316,12 +316,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/bg01/bg5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0p7pmm.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git基本使用</h1>
+                    <h1 class="description center-align post-title">Django学习(六)：表单和session</h1>
                 </div>
             </div>
         </div>
@@ -437,8 +437,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/django/">
+                                <span class="chip bg-color">django</span>
+                            </a>
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                     </div>
@@ -449,8 +453,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                工具
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                后端框架
                             </a>
                         
                     </div>
@@ -462,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-01
+                    2021-02-12
                 </div>
                 
 
@@ -476,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    564
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    7 分
                 </div>
                 
 
@@ -506,82 +510,393 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、下载并安装git"><a href="#一、下载并安装git" class="headerlink" title="一、下载并安装git"></a>一、下载并安装git</h2><h2 id="二、开始操作"><a href="#二、开始操作" class="headerlink" title="二、开始操作"></a>二、开始操作</h2><ul>
-<li>右键然后点击git bash进入命令框</li>
-<li>命令是仿照linux，可以使用ls，pwd，cd</li>
-<li>创建一个文件夹，在此路径下git init，创建了一个仓库，会有一个.git文件</li>
-<li>三、配置仓库</li>
-<li>git config –global user.name “用户名字”</li>
-<li>git config –global user.email “邮件地址”</li>
-</ul>
-<h2 id="四、基本操作"><a href="#四、基本操作" class="headerlink" title="四、基本操作"></a>四、基本操作</h2><h4 id="1-添加提交内容"><a href="#1-添加提交内容" class="headerlink" title="1. 添加提交内容"></a>1. 添加提交内容</h4><ul>
-<li>git add sunck.txt</li>
-<li>git commit -m “第一次添加”</li>
-</ul>
-<blockquote>
-<p>git add .</p>
+                <blockquote>
+<p>参考地址：<a target="_blank" rel="noopener" href="https://code.ziqiangxuetang.com/django/django-forms.html">https://code.ziqiangxuetang.com/django/django-forms.html</a></p>
 </blockquote>
-<p>git commit . -m “全部提交”</p>
-<h4 id="2-查看状态"><a href="#2-查看状态" class="headerlink" title="2. 查看状态"></a>2. 查看状态</h4><ul>
-<li>git status<br>//告诉你哪个文件被改变了</li>
-<li>git diff<br>//查看修改的内容</li>
-<li>git log<br>//查看日志</li>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><h4 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h4><ul>
+<li>index.html</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">$ git log
-commit f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master)
-Author: liangxinxin5102 &lt;1974733812@qq.com&gt;
-Date:   Sun Dec 29 01:04:33 2019 +0800
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;请输入两个数字&lt;/p&gt;
+ 
+ 
+&lt;form action="/add/" method="get"&gt;
+    a: &lt;input type="text" name="a"&gt; &lt;br&gt;
+    b: &lt;input type="text" name="b"&gt; &lt;br&gt;
+     
+    &lt;input type="submit" value="提交"&gt;
+&lt;/form&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>views.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
+from django.shortcuts import render
+ 
+def index(request):
+    return render(request, 'index.html')
+     
+def add(request):
+    a = request.GET['a']
+    b = request.GET['b']
+    a = int(a)
+    b = int(b)
+    return HttpResponse(str(a+b))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>request.GET 可以看成一个字典，用GET方法传递的值都会保存到其中，可以用 request.GET.get(‘key’, None)来取值，没有时不报错。</p>
+</blockquote>
+<ul>
+<li>提交表单后就直接跳转了</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">http://127.0.0.1:8000/add/?a=2&amp;b=3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="多选表单的数据获取"><a href="#多选表单的数据获取" class="headerlink" title="多选表单的数据获取"></a>多选表单的数据获取</h4><pre class="line-numbers language-none"><code class="language-none">&lt;input type="checkbox",name="fcolor",value="Green"&gt;Green
+&lt;input type="checkbox",name="fcolor",value="Red"&gt;Red<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>使用</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">urfcolor = request.GET.getlist('fcolor')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>for循环判断为空</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">颜色喜好
+{% for c in urfcolor %}
+{{ c }}
+{% empty %}
+没有任何颜色
+{% endfor %}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h4><ul>
+<li>app文件夹下创建forms.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">from django import forms
+ 
+class AddForm(forms.Form):
+    a = forms.IntegerField()
+    b = forms.IntegerField()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>views.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># coding:utf-8
+from django.shortcuts import render
+from django.http import HttpResponse
+ 
+# 引入我们创建的表单类
+from .forms import AddForm
+ 
+def index(request):
+    if request.method == 'POST':# 当提交表单时
+     
+        form = AddForm(request.POST) # form 包含提交的数据
+         
+        if form.is_valid():# 如果提交的数据合法
+            a = form.cleaned_data['a']
+            b = form.cleaned_data['b']
+            return HttpResponse(str(int(a) + int(b)))
+     
+    else:# 当正常访问时
+        form = AddForm()
+    return render(request, 'index.html', {'form': form})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>index.html</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;form method='post'&gt;
+{% csrf_token %}
+{{ form }}
+&lt;input type="submit" value="提交"&gt;
+&lt;/form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="forms的使用"><a href="#forms的使用" class="headerlink" title="forms的使用"></a>forms的使用</h4><blockquote>
+<p>使用forms.py就是方便再网页中的表单，要是再forms.py文件中定义好了要需要的内容，再html文件表单中只需要一行代码调用</p>
+</blockquote>
+<ul>
+<li>forms.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">class ContactForm(forms.Form):
+    CITY = [
+        ['TB','TaiBei'],
+        ['TW','TaiWan']
+    ]
 
-    一次添添加
-    
-会显示提交的编号，分支，用户，时间，注释
-$ git log --pretty=oneline
-f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-回归版本"><a href="#3-回归版本" class="headerlink" title="3. 回归版本"></a>3. 回归版本</h4><ul>
-<li>git reset –hard HEAD^        回到上一版本</li>
-<li>git reset –hard HEAD^^       回到上上一版本</li>
-<li>git reset –hard HEAD~100     回到上100版本</li>
-<li>git reset –hard HEAD         具体版本号 </li>
-<li>git refog    记录每一次提交的命令</li>
-</ul>
-<h4 id="4-工作区与缓存区"><a href="#4-工作区与缓存区" class="headerlink" title="4. 工作区与缓存区"></a>4. 工作区与缓存区</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34964399/article/details/79869512">传送门</a></p>
+    user_name = forms.CharField(label="您的姓名",max_length=50,initial='张三')
+    user_city = forms.ChoiceField(label="居住城市",choices=CITY)
+    user_email = forms.EmailField(label="电子邮件")
+    user_message = forms.CharField(label="您的意见",widget=forms.Textarea)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>checkout –filename //让文件回到add或者commit状态</li>
+<li>views.py</li>
 </ul>
-<h4 id="5-连接GitHub服务器–密钥与公钥"><a href="#5-连接GitHub服务器–密钥与公钥" class="headerlink" title="5. 连接GitHub服务器–密钥与公钥"></a>5. 连接GitHub服务器–密钥与公钥</h4><ul>
-<li>ssh-keygen    -t      rsa         -C         “<a href="mailto:1974733812@qq.com">1974733812@qq.com</a>“</li>
-<li>ssh   -T   <a href="mailto:git@github.com">git@github.com</a>                           #测试是否连接成功</li>
+<pre class="line-numbers language-none"><code class="language-none">from app01 import forms
+def contact(request):
+    form = forms.ContactForm()
+    template = get_template('index.html')
+    request_context = RequsetContext(request)
+    request_context.push(locals())
+    html = template.render(request_context)
+    return html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>index.htlm</li>
 </ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;form name="my form" action="#" method="POST"&gt;
+    {% csrf_token %}
+    {{ form.as_p }}
+&lt;/form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>注意记录位置，要将公钥复制粘贴到github账号的设置里</p>
-</blockquote>
-<h4 id="6-创建远程仓库"><a href="#6-创建远程仓库" class="headerlink" title="6. 创建远程仓库"></a>6. 创建远程仓库</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/clipbofdard.png"></p>
 <ul>
-<li>关联远程仓库     git remote add origin <a target="_blank" rel="noopener" href="https://github.com/liangxinxin5102/git_test1.git">https://github.com/liangxinxin5102/git_test1.git</a></li>
-<li>删除关联    git  remote rm origin</li>
-<li>查看设置内容    git config –list</li>
-</ul>
-<h4 id="7-远程仓库的推送与拉取"><a href="#7-远程仓库的推送与拉取" class="headerlink" title="7. 远程仓库的推送与拉取"></a>7. 远程仓库的推送与拉取</h4><p>（先要拉取，才能推送  git pull origin master –allow-unrelated-histories）</p>
-<ul>
-<li>推送      git push origin master</li>
-<li>拉取       git pull origin master</li>
-</ul>
-<blockquote>
-<p>正常情况下我们没有本地库，开发一般是现有远程库再克隆本地库，这样远程就不会和本地冲突了 </p>
-<ul>
-<li>克隆 git clone  <a target="_blank" rel="noopener" href="https://github.com/liangxinxin5102/git_test1.git">https://github.com/liangxinxin5102/git_test1.git</a></li>
+<li>action=”#”:表示数据提交到本页面</li>
+<li>form.as_p:以<p>段落方式生成表单内容，还有as_table</p></li>
 </ul>
 </blockquote>
-<h4 id="8-不提交指定文件"><a href="#8-不提交指定文件" class="headerlink" title="8. 不提交指定文件"></a>8. 不提交指定文件</h4><ul>
-<li>创建文件     touch .gitignore</li>
-<li>在 .gitignore文件中填写不提交的文件名，此目录下的文件不会被提交， .gitignore文件会提交上去</li>
+<ul>
+<li>提取数据</li>
 </ul>
-<h2 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h2><ul>
-<li>创建分支      git branch 分支名</li>
-<li>切换分支       git checkout 分支名</li>
-<li>创建与切换同时进行   git checkout -b 分支名</li>
+<pre class="line-numbers language-none"><code class="language-none">form = forms.ContactForm(request.POST)
+if form.is_valid():
+    message = "感谢你的来信"
+    user_name = forms.cleaned_data('user_name')
+    user_city = forms.cleaned_data('user_city')
+else:
+    message = "输入的数据有误"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="ModelForm的使用"><a href="#ModelForm的使用" class="headerlink" title="ModelForm的使用"></a>ModelForm的使用</h4><blockquote>
+<p>继承model中定义的类，还可以<strong>增加</strong>想要的字段，也可以过滤掉不使用的字段</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">class PostForm(forms.ModelForm):
+    class Meta:
+        model = models.PModel
+        fields = ['mood','nickname','message','del_pass']
+
+        def __init__(self):
+            super(PostForm,self).__init__(*args,**kwargs)
+            self.fields['mood'].label = "现在的心情"
+            self.fields['nickname'].label = "你的留言"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-none"><code class="language-none">post_form = forms.PostForm()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>post_form就可以再post.html中展示出来</li>
 </ul>
-<h2 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h2>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><blockquote>
+<p>参考地址：<a target="_blank" rel="noopener" href="https://code.ziqiangxuetang.com/django/django-session.html">https://code.ziqiangxuetang.com/django/django-session.html</a></p>
+</blockquote>
+<ul>
+<li>session 默认有效时间为两周，可以在 settings.py 中修改默认值</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># 创建或修改 session：
+request.session[key] = value
+# 获取 session：
+request.session.get(key,default=None)
+# 删除 session
+del request.session[key] # 不存在时报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>一个简化的登陆认证</strong></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">def login(request):
+    m = Member.objects.get(username=request.POST['username'])
+    if m.password == request.POST['password']:
+        request.session['member_id'] = m.id
+        return HttpResponse("You're logged in.")
+    else:
+        return HttpResponse("Your username and password didn't match.")
+         
+         
+def logout(request):
+    try:
+        del request.session['member_id']
+    except KeyError:
+        pass
+    return HttpResponse("You're logged out.")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>当登陆时验证用户名和密码，并保存用户id在 session 中，这样就可以在视图中用 request.session[‘member_id’]来检查用户是否登陆，当退出的时候，删除掉它。</p>
+</blockquote>
+<h6 id="设置测试cookie"><a href="#设置测试cookie" class="headerlink" title="设置测试cookie"></a>设置测试cookie</h6><blockquote>
+<p>你不能指望所有浏览器都接受cookie，Django可以测试浏览器是否接受cookie</p>
+</blockquote>
+<ul>
+<li>在视图views中调用request.session.set_test_cookie()，并且在<strong>后续视图</strong>中检查request.sessiom.test_cookie_worked()</li>
+<li>检查是否正常工作后还可以删除，delete_test_cookie</li>
+<li>例子</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">def login():
+		if request.POST == 'POST':
+				request.session.delete_test_cookie()
+				return HttpRespose("You1 Are Login In")
+		else:
+				return HttpResponse("Please enabel cookie and try again")
+
+#或者
+request.session.set_test_cookie()
+return render_to_response("foo/login_form.html")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="在视图外使用session"><a href="#在视图外使用session" class="headerlink" title="在视图外使用session"></a>在视图外使用session</h6><blockquote>
+<p>session 只是一个普通的django model，每个session都是由一个随机的32位哈希串来标识的，并且存储在cookie中。</p>
+</blockquote>
+<ul>
+<li>可以使用数据库API来读取session</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib.sessions.moedels import Session
+#创建session
+s = Session.objects.get(pk="awesd1354sdfdsrewdcx5532ds")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/image-20210209174200015.png"></p>
+<h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><blockquote>
+<p>http协议是无状态的，cookie存储在浏览器中，浏览器从某个服务器请求页面时，会向服务器会送之前收到的cookie</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210208104059.png"></p>
+<ul>
+<li>一般开发使用高层框架session或者user框架。</li>
+<li>cookies信息存储在本地，用户可以拒绝，也容易被嗅探到。通过http协议发送（明文）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<h4 id="用户与auth"><a href="#用户与auth" class="headerlink" title="用户与auth"></a>用户与auth</h4><blockquote>
+<p>django提供了相关工具来处理用户注册和认证功能。</p>
+</blockquote>
+<h6 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h6><ul>
+<li>确定安装session框架，用户使用cookie</li>
+<li>‘django.contrib.auth’放在INSTALLED_APPS中，运行<code> manage.py syncdb</code>创建对应的数据表</li>
+<li>MIDDLEWARE_CLASSES中包含django.contirb.auth.middkeware.AuthenticationMiddleware</li>
+</ul>
+<h6 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h6><ul>
+<li>在视图中存取user，主要用request.user，表示当前已经登录的用户</li>
+<li>is_authenticated()方法判断用户是否登录</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">if request.usr.is_authenticated():
+		pass
+else:
+		pass<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="user对象属性"><a href="#user对象属性" class="headerlink" title="user对象属性"></a>user对象属性</h6><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>username</td>
+<td>必须，少于30个字符。字母数字下划线</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>可选，少于30个字符</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>可选，少于30个字符</td>
+</tr>
+<tr>
+<td>email</td>
+<td>可选，邮件地址</td>
+</tr>
+<tr>
+<td>password</td>
+<td>必须，密码的哈希值</td>
+</tr>
+<tr>
+<td>is_staff</td>
+<td>布尔值，用户是否具有管理网站的权限</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>设置用户是否可以登录，False不是代表删除用户</td>
+</tr>
+<tr>
+<td>is_superuser</td>
+<td>用户是否拥所有权限</td>
+</tr>
+<tr>
+<td>last_login</td>
+<td>用户上次登录的时间日期</td>
+</tr>
+<tr>
+<td>data_joined</td>
+<td>账号创建的日期</td>
+</tr>
+</tbody></table>
+<h6 id="user对象方法"><a href="#user对象方法" class="headerlink" title="user对象方法"></a>user对象方法</h6><ul>
+<li>is_authenticated()</li>
+<li>is_anonymous()</li>
+<li>get_full_name()</li>
+<li>set_password(passwd)</li>
+<li>check_password(passwd)</li>
+<li>get_group_permission()</li>
+<li>get_all_permission()</li>
+<li>has_perm(perm)</li>
+<li>has_perm(list_perm)</li>
+<li>has_module_perms(app_label)</li>
+<li>get_and_delete_messages()</li>
+<li>email_user(subj,msg)</li>
+</ul>
+<h6 id="user对象可以获得它们相关的对象"><a href="#user对象可以获得它们相关的对象" class="headerlink" title="user对象可以获得它们相关的对象"></a>user对象可以获得它们相关的对象</h6><pre class="line-numbers language-none"><code class="language-none">myuser.groups = group_list
+myuser.groups.add(group1,group2)
+myuser.groups.remove(group1,group2)
+myuser.groups,clear()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="登录和退出"><a href="#登录和退出" class="headerlink" title="登录和退出"></a>登录和退出</h6><blockquote>
+<p>Django提供两个函数来执行django.contrib.auth中的动作: authenticate()和login()</p>
+</blockquote>
+<ul>
+<li>认证给出用户名和密码。authenticate()函数接受两个参数，不符合返回None</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib import auth
+user = auth.authentiate(username = "join",passwort="secret")
+if user is not Noen:
+		print("Correct")
+else:
+		print("Invalid password")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>login()函数接受一个HttpRequest对象和一个User对象作为参数并使用Django的会话框架把用户的ID保存在该会话中</li>
+</ul>
+<h6 id="一个视图中使用authenticate-和login"><a href="#一个视图中使用authenticate-和login" class="headerlink" title="一个视图中使用authenticate()和login()"></a>一个视图中使用authenticate()和login()</h6><pre class="line-numbers language-none"><code class="language-none">from django.contrib import auth
+
+def login_views(request):
+		username = request.POST.get('username','')
+		password = request.POST.get('password','')
+		user = auth.authenticate(username=username,password=password)
+		if user is not None and user_is_active:
+				auth.login(request,user)
+				return HttpResponseRedirect("/account/loginedin")
+		else:
+				return HttpResponseRedirect("/account/invalid")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="注销用户"><a href="#注销用户" class="headerlink" title="注销用户"></a>注销用户</h6><blockquote>
+<p>注销哟呵用户，在视图中只用djano.contrib.logout()，它接受一个HttpRequset对象并且没有返回值</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib import auth
+
+def logout_view(request):
+		auth.logout(request)
+		return HttpResponseRedirect("/account/loginedout")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>即使用户没有登录也不会报错</p>
+</blockquote>
+<h6 id="URL配置"><a href="#URL配置" class="headerlink" title="URL配置"></a>URL配置</h6><blockquote>
+<p>在实际中</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib.views import login,logout
+
+
+('accounts/login/$',login),
+('acccouts/logout/$',logout)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100715.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100737.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100755.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100808.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100824.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100847.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100902.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100913.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100926.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100940.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211100952.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211101004.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211101018.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210211101030.png"></p>
+<blockquote>
+<p>现在就到这里，有很多没写，这样写下去不是办法，还是保存电子书，等到需要做项目的时候边做边学边写笔记</p>
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -607,7 +922,7 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/">http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/</a>
+                    <a href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-liu-biao-dan-he-session/">http://xinxinliang.github.io/2021/02/12/django-xue-xi-liu-biao-dan-he-session/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -645,8 +960,12 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/django/">
+                                    <span class="chip bg-color">django</span>
+                                </a>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
                         </div>
@@ -822,12 +1141,12 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/02/nps-nei-wang-chuan-tou-shi-xian-yuan-cheng-zhuo-mian/">
+                <a href="/2021/02/12/django-wen-ti-jie-jue-xiang-mu-bu-shu-hou-tai-guan-li-ye-mian-yang-shi-shi-xiao/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/bg01/bg6.jpg" class="responsive-img" alt="nps内网穿透实现远程桌面">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-13l733.jpg" class="responsive-img" alt="Django问题解决：项目部署后台管理页面样式失效">
                         
-                        <span class="card-title">nps内网穿透实现远程桌面</span>
+                        <span class="card-title">Django问题解决：项目部署后台管理页面样式失效</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -838,14 +1157,14 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
                                 </a>
                             
                             
@@ -855,12 +1174,12 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/nps/">
-                        <span class="chip bg-color">nps</span>
+                    <a href="/tags/django/">
+                        <span class="chip bg-color">django</span>
                     </a>
                     
-                    <a href="/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/">
-                        <span class="chip bg-color">远程桌面</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -874,12 +1193,12 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/01/jupyter-kuai-jie-jian/">
+                <a href="/2021/02/12/django-xue-xi-er-setting.py/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/bg01/bg4.jpg" class="responsive-img" alt="jupyter快捷键">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-4v7784.jpg" class="responsive-img" alt="Django学习(二)：setting.py">
                         
-                        <span class="card-title">jupyter快捷键</span>
+                        <span class="card-title">Django学习(二)：setting.py</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -890,14 +1209,14 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
                                 </a>
                             
                             
@@ -907,16 +1226,12 @@ f08b4228397124c50d65583567e5c217801d9fe4 (HEAD -&gt; master) 一次添添加<spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-                        <span class="chip bg-color">快捷键</span>
+                    <a href="/tags/django/">
+                        <span class="chip bg-color">django</span>
                     </a>
                     
-                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                        <span class="chip bg-color">转载</span>
-                    </a>
-                    
-                    <a href="/tags/jupyter/">
-                        <span class="chip bg-color">jupyter</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>

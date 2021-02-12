@@ -6,7 +6,7 @@
   <link href="http://xinxinliang.github.io/atom.xml" rel="self"/>
   
   <link href="http://xinxinliang.github.io/"/>
-  <updated>2021-02-11T18:08:22.624Z</updated>
+  <updated>2021-02-12T14:25:01.815Z</updated>
   <id>http://xinxinliang.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式re</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/zheng-ze-biao-da-shi-re/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/zheng-ze-biao-da-shi-re/</id>
+    <published>2021-02-12T14:24:00.000Z</published>
+    <updated>2021-02-12T14:25:01.815Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;很多地方都会出现正则表达式，自己好几次想要总结一下，但是不知道怎么写才好，收集了一些，有些零散不知道怎么总结才最好而且全面。看到之前写的这篇博客，觉得很好还有例子，就是都是截图，本来像好好整理一下，自己打上去，还是算了吧！以后再说，这样也挺好的，就</summary>
+        
+      
+    
+    
+    
+    <category term="语法" scheme="http://xinxinliang.github.io/categories/%E8%AF%AD%E6%B3%95/"/>
+    
+    
+    <category term="py库" scheme="http://xinxinliang.github.io/tags/py%E5%BA%93/"/>
+    
+    <category term="正则表达式" scheme="http://xinxinliang.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jupyter notebook作为云编辑器</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/jupyter-notebook-zuo-wei-yun-bian-ji-qi/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/jupyter-notebook-zuo-wei-yun-bian-ji-qi/</id>
+    <published>2021-02-12T14:21:00.000Z</published>
+    <updated>2021-02-12T14:22:13.015Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;之前写的博客，现在安装和配置jupyter notebook很轻松了，而且使用升级版jupyterlab，作为云编辑器也不需要了，有web版的vscode。博客中&lt;code&gt;ps aux&lt;/code&gt;和&lt;code&gt;kill -9</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://xinxinliang.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="jupyter" scheme="http://xinxinliang.github.io/tags/jupyter/"/>
+    
+  </entry>
   
   <entry>
     <title>Django学习(一)：基本操作与命令</title>
@@ -29,33 +83,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;安装django&quot;&gt;&lt;a href=&quot;#安装django&quot; class=&quot;headerlink&quot; title=&quot;安装django&quot;&gt;&lt;/a&gt;安装django&lt;/h2&gt;&lt;h6 id=&quot;linux环境下&quot;&gt;&lt;a href=&quot;#linux环境下&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
-    
-    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django学习(二)：setting.py</title>
-    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-er-setting.py/"/>
-    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-er-setting.py/</id>
-    <published>2021-02-11T16:00:00.000Z</published>
-    <updated>2021-02-11T18:15:40.960Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;调试与域名&quot;&gt;&lt;a href=&quot;#调试与域名&quot; class=&quot;headerlink&quot; title=&quot;调试与域名&quot;&gt;&lt;/a&gt;调试与域名&lt;/h4&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
         
       
     
@@ -138,6 +165,61 @@
         
         
     <summary type="html">&lt;h2 id=&quot;一、打开django项目中的settings-py文件&quot;&gt;&lt;a href=&quot;#一、打开django项目中的settings-py文件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
+    
+    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习(六)：表单和session</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-liu-biao-dan-he-session/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-liu-biao-dan-he-session/</id>
+    <published>2021-02-11T16:00:00.000Z</published>
+    <updated>2021-02-12T14:40:53.116Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;参考地址：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
+    
+    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习(二)：setting.py</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-er-setting.py/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-er-setting.py/</id>
+    <published>2021-02-11T16:00:00.000Z</published>
+    <updated>2021-02-11T18:15:40.960Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;调试与域名&quot;&gt;&lt;a href=&quot;#调试与域名&quot; class=&quot;headerlink&quot; title=&quot;调试与域名&quot;&gt;&lt;/a&gt;调试与域名&lt;/h4&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
         
       
     
@@ -493,63 +575,6 @@
     <category term="快捷键" scheme="http://xinxinliang.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
     <category term="转载" scheme="http://xinxinliang.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Wegame饥荒搭建专用服务器+多层世界跳转MOD</title>
-    <link href="http://xinxinliang.github.io/2021/02/01/wegame-ji-huang-da-jian-zhuan-yong-fu-wu-qi-duo-ceng-shi-jie-tiao-zhuan-mod/"/>
-    <id>http://xinxinliang.github.io/2021/02/01/wegame-ji-huang-da-jian-zhuan-yong-fu-wu-qi-duo-ceng-shi-jie-tiao-zhuan-mod/</id>
-    <published>2021-02-01T09:32:53.149Z</published>
-    <updated>2021-02-01T09:42:17.144Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;最近一段时间准备学习饥荒mod，准备自己写一个玩法，然后放在服务器上运行，像我玩过的人数多的大服务器，但是不是自己想想的那么简单，看别人写的mod然后自己就可以学会，现在做个总结&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4</summary>
-        
-      
-    
-    
-    
-    <category term="游戏" scheme="http://xinxinliang.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-    <category term="饥荒" scheme="http://xinxinliang.github.io/tags/%E9%A5%A5%E8%8D%92/"/>
-    
-    <category term="总结" scheme="http://xinxinliang.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一篇博客</title>
-    <link href="http://xinxinliang.github.io/2021/01/27/di-yi-pian-bo-ke/"/>
-    <id>http://xinxinliang.github.io/2021/01/27/di-yi-pian-bo-ke/</id>
-    <published>2021-01-27T10:36:14.679Z</published>
-    <updated>2021-02-01T09:41:35.008Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-个人网站&quot;&gt;&lt;a href=&quot;#1-个人网站&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="日记" scheme="http://xinxinliang.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="总结" scheme="http://xinxinliang.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-    <category term="事记" scheme="http://xinxinliang.github.io/tags/%E4%BA%8B%E8%AE%B0/"/>
     
   </entry>
   
