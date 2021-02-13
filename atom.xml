@@ -6,7 +6,7 @@
   <link href="http://xinxinliang.github.io/atom.xml" rel="self"/>
   
   <link href="http://xinxinliang.github.io/"/>
-  <updated>2021-02-12T14:25:01.815Z</updated>
+  <updated>2021-02-13T03:16:30.823Z</updated>
   <id>http://xinxinliang.github.io/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux/ubuntu搭建Steam饥荒服务器教程</title>
+    <link href="http://xinxinliang.github.io/2021/02/13/linuxubuntu-da-jian-steam-ji-huang-fu-wu-qi-jiao-cheng/"/>
+    <id>http://xinxinliang.github.io/2021/02/13/linuxubuntu-da-jian-steam-ji-huang-fu-wu-qi-jiao-cheng/</id>
+    <published>2021-02-13T03:14:00.000Z</published>
+    <updated>2021-02-13T03:16:30.823Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;我是首先看别人的博客，自己环境和软件安装出了问题，然后又到官方教程那里看英语教程，还看安装错误的提示后，然后一步一步地搭建成功的，感觉很好用，但是自己现在不玩饥荒了，也不知道饥荒的生命力有多久。&lt;/p&gt;
+&lt;p&gt;我是从自己的学习日记上面整理的，只记录</summary>
+        
+      
+    
+    
+    
+    <category term="游戏" scheme="http://xinxinliang.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="饥荒" scheme="http://xinxinliang.github.io/tags/%E9%A5%A5%E8%8D%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>饥荒mod制作教程</title>
+    <link href="http://xinxinliang.github.io/2021/02/13/ji-huang-mod-zhi-zuo-jiao-cheng/"/>
+    <id>http://xinxinliang.github.io/2021/02/13/ji-huang-mod-zhi-zuo-jiao-cheng/</id>
+    <published>2021-02-13T03:12:00.000Z</published>
+    <updated>2021-02-13T03:16:30.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;自己之前想要做mod和修改一下搭建一个自己玩法的服务器，但是后来觉得不好搞就放弃了，这里记录一下自己的学习笔记，我看别人的mod没有看明白，也没有官方API啥的，就放弃了。所以自己还没有写成自己的mod，没有发布过。&lt;/p&gt;
+&lt;/blockquot</summary>
+        
+      
+    
+    
+    
+    <category term="游戏" scheme="http://xinxinliang.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="饥荒" scheme="http://xinxinliang.github.io/tags/%E9%A5%A5%E8%8D%92/"/>
+    
+    <category term="mod" scheme="http://xinxinliang.github.io/tags/mod/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习日记2021.1.25~2.12</title>
+    <link href="http://xinxinliang.github.io/2021/02/13/xue-xi-ri-ji-2021.1.25-2.12/"/>
+    <id>http://xinxinliang.github.io/2021/02/13/xue-xi-ri-ji-2021.1.25-2.12/</id>
+    <published>2021-02-13T03:10:00.000Z</published>
+    <updated>2021-02-13T03:16:30.623Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;2021-1-25&quot;&gt;&lt;a href=&quot;#2021-1-25&quot; class=&quot;headerlink&quot; title=&quot;2021.1.25&quot;&gt;&lt;/a&gt;2021.1.25&lt;/h2&gt;&lt;h4 id=&quot;hexo&quot;&gt;&lt;a href=&quot;#hexo&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日记" scheme="http://xinxinliang.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="学习日志" scheme="http://xinxinliang.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式re</title>
@@ -98,34 +179,6 @@
   </entry>
   
   <entry>
-    <title>Django学习(五)：views和url</title>
-    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/"/>
-    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/</id>
-    <published>2021-02-11T16:00:00.000Z</published>
-    <updated>2021-02-11T18:48:42.471Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;参考博客：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
-    
-    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Django学习(四)：model和admin</title>
     <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-si-model-he-admin/"/>
     <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-si-model-he-admin/</id>
@@ -180,11 +233,11 @@
   </entry>
   
   <entry>
-    <title>Django学习(六)：表单和session</title>
-    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-liu-biao-dan-he-session/"/>
-    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-liu-biao-dan-he-session/</id>
+    <title>Django学习(三)：模板系统</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/</id>
     <published>2021-02-11T16:00:00.000Z</published>
-    <updated>2021-02-12T14:40:53.116Z</updated>
+    <updated>2021-02-11T18:43:35.067Z</updated>
     
     
       
@@ -192,7 +245,9 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;参考地址：&lt;a</summary>
+&lt;p&gt;便于修改html中的内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;1-插入变量&quot;&gt;&lt;a href=&quot;#1-插入变量&quot; class=&quot;headerlink&quot; title=&quot;1. 插入变量&quot;&gt;&lt;/a&gt;1. 插入变量&lt;/h4&gt;&lt;pre</summary>
         
       
     
@@ -235,11 +290,11 @@
   </entry>
   
   <entry>
-    <title>Django学习(三)：模板系统</title>
-    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/"/>
-    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/</id>
+    <title>Django学习(五)：views和url</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/</id>
     <published>2021-02-11T16:00:00.000Z</published>
-    <updated>2021-02-11T18:43:35.067Z</updated>
+    <updated>2021-02-11T18:48:42.471Z</updated>
     
     
       
@@ -247,9 +302,35 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;便于修改html中的内容&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;1-插入变量&quot;&gt;&lt;a href=&quot;#1-插入变量&quot; class=&quot;headerlink&quot; title=&quot;1. 插入变量&quot;&gt;&lt;/a&gt;1. 插入变量&lt;/h4&gt;&lt;pre</summary>
+&lt;p&gt;参考博客：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="django" scheme="http://xinxinliang.github.io/tags/django/"/>
+    
+    <category term="python" scheme="http://xinxinliang.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习(六)：表单和session</title>
+    <link href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-liu-biao-dan-he-session/"/>
+    <id>http://xinxinliang.github.io/2021/02/12/django-xue-xi-liu-biao-dan-he-session/</id>
+    <published>2021-02-11T16:00:00.000Z</published>
+    <updated>2021-02-12T14:40:53.116Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;参考地址：&lt;a</summary>
         
       
     
@@ -490,91 +571,6 @@
     <category term="nps" scheme="http://xinxinliang.github.io/tags/nps/"/>
     
     <category term="远程桌面" scheme="http://xinxinliang.github.io/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git基本使用</title>
-    <link href="http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/"/>
-    <id>http://xinxinliang.github.io/2021/02/01/git-ji-ben-shi-yong/</id>
-    <published>2021-02-01T14:56:05.000Z</published>
-    <updated>2021-02-11T18:59:35.382Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;一、下载并安装git&quot;&gt;&lt;a href=&quot;#一、下载并安装git&quot; class=&quot;headerlink&quot; title=&quot;一、下载并安装git&quot;&gt;&lt;/a&gt;一、下载并安装git&lt;/h2&gt;&lt;h2 id=&quot;二、开始操作&quot;&gt;&lt;a href=&quot;#二、开始操作&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="工具" scheme="http://xinxinliang.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="git" scheme="http://xinxinliang.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jupyter快捷键</title>
-    <link href="http://xinxinliang.github.io/2021/02/01/jupyter-kuai-jie-jian/"/>
-    <id>http://xinxinliang.github.io/2021/02/01/jupyter-kuai-jie-jian/</id>
-    <published>2021-02-01T12:25:18.000Z</published>
-    <updated>2021-02-01T12:27:19.387Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Jupyter Notebook</summary>
-        
-      
-    
-    
-    
-    <category term="工具" scheme="http://xinxinliang.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="快捷键" scheme="http://xinxinliang.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    
-    <category term="转载" scheme="http://xinxinliang.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-    <category term="jupyter" scheme="http://xinxinliang.github.io/tags/jupyter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Typora常用快捷键</title>
-    <link href="http://xinxinliang.github.io/2021/02/01/typora-chang-yong-kuai-jie-jian/"/>
-    <id>http://xinxinliang.github.io/2021/02/01/typora-chang-yong-kuai-jie-jian/</id>
-    <published>2021-02-01T11:42:19.000Z</published>
-    <updated>2021-02-01T11:45:04.817Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;转载博客:&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="工具" scheme="http://xinxinliang.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Typora" scheme="http://xinxinliang.github.io/tags/Typora/"/>
-    
-    <category term="快捷键" scheme="http://xinxinliang.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    
-    <category term="转载" scheme="http://xinxinliang.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
     
   </entry>
   

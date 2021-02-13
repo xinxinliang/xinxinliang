@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Django学习(五)：views和url, blog">
+    <meta name="keywords" content="学习日记2021.1.25~2.12, blog">
     <meta name="description" content="这是我的个人网站，欢迎来访">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Django学习(五)：views和url | 头号咸鱼</title>
+    <title>学习日记2021.1.25~2.12 | 头号咸鱼</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -316,12 +316,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5wqq28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0qkw7d.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Django学习(五)：views和url</h1>
+                    <h1 class="description center-align post-title">学习日记2021.1.25~2.12</h1>
                 </div>
             </div>
         </div>
@@ -437,12 +437,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/django/">
-                                <span class="chip bg-color">django</span>
-                            </a>
-                        
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">
+                                <span class="chip bg-color">学习日志</span>
                             </a>
                         
                     </div>
@@ -453,8 +449,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                后端框架
+                            <a href="/categories/%E6%97%A5%E8%AE%B0/" class="post-category">
+                                日记
                             </a>
                         
                     </div>
@@ -466,28 +462,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-12
+                    2021-02-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-12
+                    2021-02-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    699
+                    3.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    14 分
                 </div>
                 
 
@@ -510,209 +506,398 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>参考博客：<a target="_blank" rel="noopener" href="https://code.ziqiangxuetang.com/django/django-url-name.html">https://code.ziqiangxuetang.com/django/django-url-name.html</a></p>
-</blockquote>
-<h4 id="1-定义视图函数"><a href="#1-定义视图函数" class="headerlink" title="1. 定义视图函数"></a>1. 定义视图函数</h4><h6 id="view-py"><a href="#view-py" class="headerlink" title="view.py"></a>view.py</h6><ul>
-<li>HttpResponse</li>
+                <h2 id="2021-1-25"><a href="#2021-1-25" class="headerlink" title="2021.1.25"></a>2021.1.25</h2><h4 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h4><ul>
+<li>瞎折腾了一下hexo主题，犹豫要使用什么样的导航。</li>
+<li>最后纠结中，还是选择直接使用别人的主题，配置一下该一下颜色和图片。</li>
+<li>然后再想想，还是放弃吧！不喜欢别人直接写好的，自己写又很菜，但还是决定自己写吧！</li>
+<li>现在时间一天天的在过，写主题只需要一台电脑就可以了，很方便，还是先搞搞别的吧。</li>
+<li>配置好自己的就电脑，安装服务器版的ubuntu</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
- 
- 
-def index(request):
-    return HttpResponse("Django")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
-from .models import Post
-
-def homepage(request):
-    post = Post.objects.all()
-    post_list = list()
-    for count,post in enumerate(post):
-        post_list.append("No.{}".format(str(count)+str(post)+'&lt;br&gt;'))
-    return HttpResponse(post_list)
-
-
-
-from app01.views import homepage
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',homepage),
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<blockquote>
-<p>相当于把HttpResponse中的对象返回到页面，可以识别对象中的html标签</p>
-</blockquote>
+<h4 id="安装服务器版ubuntu"><a href="#安装服务器版ubuntu" class="headerlink" title="安装服务器版ubuntu"></a>安装服务器版ubuntu</h4><ul>
+<li>记得自己之前安装成功了的，但是现在失败了，失败得不可思议</li>
+<li>制作u盘驱动，我使用的是固态硬盘盒，安装ubuntu18.04.5，结果显示无法获取大小什么的，很纳闷，之前直接安装成功了，现在觉得是版本问题，换了个16.04.7的，这个还可以选择语言和键盘布局，结果检测不到光盘驱动。</li>
+<li>不知道什么问题了，把上一个无法获取大小搜一下，结果说这是18.04.5的bug，我就按推荐下载18.04.1，结果可以选择语言，到选择键盘布局了就有问题了。</li>
+<li>我觉得是服务器版的系统的问题，然后我再安装win7系统，结果还是失败，真的没辙了。</li>
+<li>那就想想如何关闭桌面版的GUI界面吧，搜到一篇博客<a target="_blank" rel="noopener" href="https://www.cnblogs.com/schips/p/10577464.html">https://www.cnblogs.com/schips/p/10577464.html</a></li>
+<li>关闭用户界面,然后重启</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">sudo systemctl set-default multi-user.target<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
-<li>使用render函数渲染,建议直接作为返回值</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.template.loader import get_template
-from datetime import datetime
-
-def homepage3(request):
-    template = get_template('index.html')
-    posts = Post.objects.all()
-    now = datetime.now()
-    html = template.render(locals())
-    return HttpResponse(html)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
-from django.urls import path
-
-from app01.views import index
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',index)
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>urls.py中配置路由，触发views.py中函数</p>
-</blockquote>
-<h4 id="2-视图进阶"><a href="#2-视图进阶" class="headerlink" title="2. 视图进阶"></a>2. 视图进阶</h4><ul>
-<li>views.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
-
-def add(request):
-    a = request.GET['a']
-    b = request.GET['b']
-    c = int(a)+int(b)
-    return HttpResponse(str(c))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from app01.views import add
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',add)
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>访问：<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/?a=2&amp;b=3%E6%97%B6%EF%BC%8C%E9%A1%B5%E9%9D%A2%E8%BF%94%E5%9B%9E5">http://127.0.0.1:8000/?a=2&amp;b=3时，页面返回5</a></p>
-</blockquote>
-<h5 id="另一种方法"><a href="#另一种方法" class="headerlink" title="另一种方法"></a>另一种方法</h5><ul>
-<li>views.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">def add2(request, a, b):
-    c = int(a) + int(b)
-    return HttpResponse(str(c))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
-from django.urls import path
-from app01.views import add
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('&lt;int:a&gt;/&lt;int:b&gt;',add)
-]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-url中的name参数详解"><a href="#3-url中的name参数详解" class="headerlink" title="3. url中的name参数详解"></a>3. url中的name参数详解</h4><pre class="line-numbers language-none"><code class="language-none">urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('&lt;int:a&gt;/&lt;int:b&gt;',add,name='add2')
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>name相当于页面的名字，可以用于views中指定作用</li>
-</ul>
-<h4 id="4-url总使用正则表达式"><a href="#4-url总使用正则表达式" class="headerlink" title="4. url总使用正则表达式"></a>4. url总使用正则表达式</h4><pre class="line-numbers language-none"><code class="language-none"> 
-urlpatterns = [
-    path(r'^add/$', add, name='add2'),
-
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="5-页面跳转"><a href="#5-页面跳转" class="headerlink" title="5. 页面跳转"></a>5. 页面跳转</h4><ul>
-<li>views.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
- 
- 
-def index(request):
-    return render(request, 'home.html')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li><p><strong>render函数</strong>是渲染模板，将一个HTML文件渲染到网页中</p>
+<li><p>本来没有抱多大的希望，因为自己之前试过的，但是这次成功了。</p>
 </li>
-<li><p>home.html</p>
+<li><p>而且达到了自己的期望，合上笔记本电脑依然可以连接，<strong>在这里找到了输入命令行好卡的原因</strong></p>
+</li>
+<li><p>我连接wifi远程连接好卡，接上网线上不卡，这里需要澄清一下自己之前 <strong>错怪校园网了</strong></p>
 </li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;自强学堂&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
- 
-&lt;a href="/add/4/5/"&gt;计算 4+5&lt;/a&gt;
- 
-&lt;/body&gt;
-&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="服务器到期"><a href="#服务器到期" class="headerlink" title="服务器到期"></a>服务器到期</h4><ul>
+<li>旧电脑是给老爸用的，很显然他不会玩，密码是为他设计的，现在要改得复杂点</li>
+<li>阿里云还有三天到期了，准备长期使用这个服务器的，但是想想没什么必要了。</li>
+<li>因为我要试试，在自己电脑上安装nps，然后让旧电脑连接，目的是查看ip地址，路由器断电ip就会变，我在其他地方就无法登录了。</li>
+<li>电脑上安装npc连接旧电脑上nps，看看100MB带宽的速度，如果做成了就不需要续费阿里云了。</li>
+</ul>
+<h2 id="2021-1-27"><a href="#2021-1-27" class="headerlink" title="2021.1.27"></a>2021.1.27</h2><h4 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h4><p>个人博客主题选择为matery，有个很奇怪的问题，我在本地测试博客封面可以显示图片，部署后无法显示，我查看源码一切正常，两个浏览器都是这样的。好吧，写到这里的时候我用第三个浏览器，可以正常显示。我手机和平板可以正常显示，幸好发现快，不然就是坑</p>
+<h4 id="饥荒"><a href="#饥荒" class="headerlink" title="饥荒"></a>饥荒</h4><p>我接下来段时间准备写写饥荒mod，现在尝试部署到服务器。使用wegame的时候，注册证书无法生成文件，现在尝试steamCMD，有相关博客，但是感觉互相转载的，几乎写得差不多，我使用第一行命令安装依赖都不成功，坑得很，幸好有官方文档。</p>
+<p>不看提示，还真不好搞，现在记录一下</p>
 <ul>
-<li>urls.py</li>
+<li>ubuntu环境</li>
+<li>安装依赖</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">urlpatterns = [
-    path('',index, name='home')
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h5 id="防止写死的方法"><a href="#防止写死的方法" class="headerlink" title="防止写死的方法"></a>防止写死的方法</h5><ul>
-<li>reverse（）函数</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">reverse('add2', args=(4,5))<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponseRedirect
-from django.urls import reverse
- 
- 
-def old_add2_redirect(request, a, b):
-    return HttpResponseRedirect(
-        reverse('add2', args=(a, b))
-    )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">sudo dpkg --add-architecture i386
+sudo apt-get update
+# sudo apt-get install lib32gcc1 出现问题，定位不到包，提示 apt --fix-broken install
+apt --fix-broken install
+# 再执行
+sudo apt-get install lib32gcc1
+#选择y
+#做好笔记
+sudo apt-get install lib32stdc++6
+sudo apt-get install libgcc1
+#选择y
+sudo apt-get install libcurl4-gnutls-dev:i386
+#不知道什么用
+sudo useradd -m steam
+chmod a+rw `tty`
+
+sudo su - steam
+mkdir ~/steamcmd
+cd ~/steamcmd
+wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+tar -xvzf steamcmd_linux.tar.gz
+./steamcmd.sh
+#进入了steam
+login anonymous
+force_install_dir /home/steam/steamapps/DST
+#下载饥荒，可能需要一定时间
+app_update 343050 validate
+quit
+
+cd /home/steam/steamapps/DST/bin/
+apt install screen
+screen -S "DST Server" ./dontstarve_dedicated_server_nullrenderer
+#差不多可以运行  Your Server Will Not Start  提示没有开始<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个博客靠谱：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wujing1_1/article/details/108160588">https://blog.csdn.net/wujing1_1/article/details/108160588</a></p>
 <blockquote>
-<ul>
-<li>add2是urls.py中设置的name，args中的参数是要输入的</li>
-</ul>
+<p>添加mod教程再里面</p>
 </blockquote>
-<ul>
-<li>使用模板</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">&lt;a href="{% url 'add2' 4 5 %}"&gt;link&lt;/a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>使用正则表达式</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">url(r'^new_add/(\d+)/(\d+)/$', calc_views.add2, name='add2'),<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">cd /root/.klei/
+# 创建启动脚本
+vim start_dst.sh
+#脚本内容
+#!/bin/sh
+cd /home/steam/steamapps/DST/bin
+/usr/bin/screen -S "DST" /bin/sh -c './dontstarve_dedicated_server_nullrenderer -console'
 
 
-<h6 id="动态路由，并且跳转"><a href="#动态路由，并且跳转" class="headerlink" title="动态路由，并且跳转"></a>动态路由，并且跳转</h6><blockquote>
-<p>使用正则表达式不成功,可以禅师str类型传值</p>
+chmod 700 start_dst.sh
+./start_dst.sh
+CTRL+A then press D<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>非常nice，成功了</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210128002740.png"></p>
+<p>官网文档：<a target="_blank" rel="noopener" href="https://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers">https://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers</a></p>
+<pre class="line-numbers language-none"><code class="language-none">pds-g^KU_Qvt-jdNV^YYxp8wkvZ***************=<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2021-1-28"><a href="#2021-1-28" class="headerlink" title="2021.1.28"></a>2021.1.28</h2><h4 id="饥荒-1"><a href="#饥荒-1" class="headerlink" title="饥荒"></a>饥荒</h4><ul>
+<li>自己之前真是手贱，看steam工具中有好多，而且不认识不知道有什么用，然后就删除了。结果现在不知道再哪里找，搜也搜不到。感觉很郁闷，觉得是自己删除了，要重新购买才自动有了。但是不可能又取开着账号购买。</li>
+<li>我隐藏了一个游戏，然后搜索怎么找到隐藏的游戏，最终找到了饥荒工具</li>
+</ul>
+<h4 id="世界分层"><a href="#世界分层" class="headerlink" title="世界分层"></a>世界分层</h4><ul>
+<li>Master</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10999
+
+
+[SHARD]
+is_master = true
+
+
+[STEAM]
+master_server_port = 27018
+authentication_port = 8768<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10998
+
+
+[SHARD]
+is_master = false
+name = Master1
+id = 2
+
+
+
+[STEAM]
+master_server_port = 27017
+authentication_port = 8767<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10997
+
+
+[SHARD]
+is_master = false
+name = Master2
+id = 3
+
+
+
+[STEAM]
+master_server_port = 27016
+authentication_port = 8766<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>Caves</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10996
+
+
+[SHARD]
+is_master = false
+name = Caves
+id = 4
+
+
+
+[STEAM]
+master_server_port = 27015
+authentication_port = 8765
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10995
+
+
+[SHARD]
+is_master = false
+name = Caves
+id = 5
+
+
+
+[STEAM]
+master_server_port = 27014
+authentication_port = 8764
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10994
+
+
+[SHARD]
+is_master = false
+name = Caves
+id = 6
+
+
+
+[STEAM]
+master_server_port = 27013
+authentication_port = 8763
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>steam尝试世界分层mod好多次，失败，试试wegame上的</li>
+</ul>
+<p>wegame</p>
+<pre class="line-numbers language-none"><code class="language-none">pds-g^KU_BJgEY7pC^cUHm*************aBveS16N//mc9HKOwMXU0gF80TU=<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>看了一下官方教程的提示，看了下面的评论，注册证书文件生成再客户端目录下，要移到服务端目录下</li>
+<li><strong>我就记得以前实现成功开了多个服务器，</strong>看来这篇博客入坑了：<a target="_blank" rel="noopener" href="https://gl.ali213.net/html/2017-1/150665_3.html">https://gl.ali213.net/html/2017-1/150665_3.html</a></li>
+<li>需要创建多个服务，设置一个世界为master</li>
+<li>wegame上尝试多层世界选择器（UI）版失败，<strong>从主世界跳到其它世界后就不能跳转了</strong>，尝试一下其他的mod</li>
+</ul>
+<h4 id="多层世界自动分流Mod"><a href="#多层世界自动分流Mod" class="headerlink" title="多层世界自动分流Mod"></a>多层世界自动分流Mod</h4><ul>
+<li>这个模组成功实现了世界跳转，差一点就放弃了，因为我再本地创建不成功，以为mod有问题，我还是尝试一下吧配置文件替换自己准备上传的服务器。</li>
+<li>进入游戏没有效果，以看mod什么都没有，然后去服务器mod文件夹下添加，再尝试成功了</li>
+</ul>
+<h4 id="Steam尝试"><a href="#Steam尝试" class="headerlink" title="Steam尝试"></a>Steam尝试</h4><ul>
+<li>1</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10999
+
+
+[SHARD]
+is_master = true
+
+
+[ACCOUNT]
+encode_user_path = true
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>2</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10998
+
+
+[SHARD]
+is_master = false
+name = Master2
+id = 2
+
+
+[ACCOUNT]
+encode_user_path = true
+
+
+[STEAM]
+master_server_port = 27017
+authentication_port = 8767
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>初次尝试没有成功</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">#!/bin/bash
+  
+steamcmd_dir="/root/steamcmd"
+
+install_dir="/home/steam/steamapps/DST"
+
+cluster_name="Cluster_1"
+
+dontstarve_dir="/root/.klei/DoNotStarveTogether"
+
+function fail()
+
+{
+
+        echo Error: "$@" &gt;&amp;2
+
+        exit 1
+
+}
+
+function check_for_file()
+
+{
+
+        if [ ! -e "$1" ]; then
+
+                fail "Missing file: $1"
+
+        fi
+
+}
+
+cd "$steamcmd_dir" || fail "Missing $steamcmd_dir directory!" # TODO
+
+check_for_file "steamcmd.sh"
+
+check_for_file "$dontstarve_dir/$cluster_name/cluster.ini"
+
+check_for_file "$dontstarve_dir/$cluster_name/cluster_token.txt"
+
+check_for_file "$dontstarve_dir/$cluster_name/Master/server.ini"
+
+./steamcmd.sh +force_install_dir "$install_dir" +login anonymous +app_update 343050 +quit
+
+check_for_file "$install_dir/bin"
+
+cd "$install_dir/bin" || fail
+
+run_shared=(./dontstarve_dedicated_server_nullrenderer)
+
+run_shared+=(-console)
+
+run_shared+=(-cluster "$cluster_name")
+
+run_shared+=(-monitor_parent_process $$)
+
+run_shared+=(-shard)
+
+"${run_shared[@]}" Master | sed 's/^/Master: /'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>好吧，我参考博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44261440/article/details/105547763">https://blog.csdn.net/weixin_44261440/article/details/105547763</a></li>
+<li>成功的可以启动相应的世界，但洞口还是关闭状态，失败，还是再wegame上搞饥荒吧</li>
+</ul>
+<h4 id="成功了"><a href="#成功了" class="headerlink" title="成功了"></a>成功了</h4><ul>
+<li>网上还在想要不要弃坑不要搞饥荒了，世界还是不能跳转，我早上试了试，显示有两个世界，我看一下文件，以为是人数设置不匹配，该过来还是不对。</li>
+<li>再看一下配置文件</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[SHARD]
+shard_enabled = true
+bind_ip = 127.0.0.1
+master_ip = 127.0.0.1
+master_port = 10888
+cluster_key = defaultPass<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>之前这个是显示false，信号自己知道这个功能，记得是开启洞穴这个必须为true，自己之前也纳闷，端口是一样的呀，结果是没有启用，启用后就可以跳转了。</li>
+</ul>
+<h4 id="z-index“不犯二”准则"><a href="#z-index“不犯二”准则" class="headerlink" title="z-index“不犯二”准则"></a>z-index“不犯二”准则</h4><ul>
+<li>在看《css世界》这本书的时候，看见了这个准则，想起了自己在写网页时出现按钮由于这个属性失效的原因，即使设置很大，也可能点击不到</li>
+<li>准则内容：对于非浮层元素，避免设置z-index值。z-index值没有任何理由超过2</li>
+<li>防止出现“一山更比一山高的情况”</li>
+</ul>
+<h2 id="2021-1-30"><a href="#2021-1-30" class="headerlink" title="2021.1.30"></a>2021.1.30</h2><h4 id="连接失败"><a href="#连接失败" class="headerlink" title="连接失败"></a>连接失败</h4><ul>
+<li>我今天看一下自己的nextcloud，结果不成功，一直加载。然后我xshell连接，结果连接不上去，试了好几次，再看一下其他的站点，结果都不成功。这下子慌了。</li>
+<li>首先想到的时云帮手，因为我在这上面开始防火墙管理功能，没有开启成功。觉得是这个功能影响了防火墙，然后我去看旧电脑，结果登录上去，回车好长时间没反应。我这下子又慌乱，以为运行太长时间有些卡，于是我重启。再试试，结果还是一样反应慢，觉得是刚重启完，有点卡是正常的。我在重启，等着，输入登录命令，再打了把王者，结果看着还是没有反应。这下子我心凉透了，以为是电脑出口问题，后悔自己把服务迁移到这上面，现在又要删除了，而且进都进不去。又想着自己要不要把树莓派留在家里重新迁移一下，唉！</li>
+<li>然后，我发现，不是卡，是按键不灵了，我记得“ | ”这个符号是按不出来的，回车键要按几下才成功。这下子送了口气，然后再早原因，查看防火墙端口，uwf，22号端口是开放的，我直接关闭了。还是不成功，我再查看ssh服务的状态，显示是运行的。再就是删除探测，然后客户端云帮手删除服务器，结果还是不成功。</li>
+<li>哦，我发现是按键不灵敏，我就进入了图形界面。网路可以使用，本机访问nextcloud可以访问，松了口气，服务是好的，电脑性能也是好的。</li>
+<li>到这里真的找不出什么原因了，我登录路由器查看端口，是不是要登录了这些端口规则才生效，还是不成功，然后看其他设置，上网方式，结果发现ip变了。我想到过ip可能变了，我再云帮手看了的，还对比阿里云域名解析的，发现是一直。</li>
+<li>我现在知道了原因，使用路由器上的ip访问，结果成功了，我真的是，安装云帮手就是为了查看ip，结果却在这里出了错，真的是要找有何用。</li>
+<li>之前还想如果是电脑硬件问题，自己就租台esc服务器，树莓派就在家里nps转发提升带宽。</li>
+<li>收获：庆幸自己发现问题早，要是再要走的几天才迁移，那就发现不了。也发现docker两个开机没有自己启动。自己开启图像化界面内存多了百分之十几。开启了就先别关，连接到电视上给妹妹看电视剧，这几天她再电视上每个看两集，因为后面是收费的。</li>
+</ul>
+<h2 id="2021-1-31"><a href="#2021-1-31" class="headerlink" title="2021.1.31"></a>2021.1.31</h2><h4 id="饥荒mod制作"><a href="#饥荒mod制作" class="headerlink" title="饥荒mod制作"></a>饥荒mod制作</h4><ul>
+<li>ktool的使用方法参考地址：<a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/4945525942">https://tieba.baidu.com/p/4945525942</a></li>
+<li>入门：“乱斗江湖”群文件，b站，贴吧</li>
+<li>打包工具：autocompiler.exe</li>
+</ul>
+<h4 id="ubutu查看外网ip"><a href="#ubutu查看外网ip" class="headerlink" title="ubutu查看外网ip"></a>ubutu查看外网ip</h4><ul>
+<li>参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_28263253/article/details/83690925">https://blog.csdn.net/qq_28263253/article/details/83690925</a></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get install curl
+curl ifconfig.me<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="2021-2-1"><a href="#2021-2-1" class="headerlink" title="2021.2.1"></a>2021.2.1</h2><ul>
+<li>写了篇关于picgo的博客，可以使用CDN加速，把hexo网站的图片地址换一下</li>
+<li>我再这个上面的vscode中，hexo s本地预览，只要修改了文件就会生效，感觉很棒，之前就是这个原因我把hexo搞到webstorm上了。</li>
+<li>里面的加速也配置了,目前不知道有什么用</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">jsDelivr:
+  url: https://cdn.jsdelivr.net/gh/xinxinliang/xinxinliang.github.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>哦，这个就是给工程里面的资源文件加速，加速了会显示加速地址+本地地址，我还是注释掉了。</li>
+</ul>
+<h4 id="vscode内置git"><a href="#vscode内置git" class="headerlink" title="vscode内置git"></a>vscode内置git</h4><ul>
+<li>感觉这个内置的git真好用，可以再这个窗口实现add和commit命令，然后提交就可以了，添加在.gitignore的文件显示灰色，这才是git真正的用处吧！</li>
+</ul>
+<h2 id="2021-2-2"><a href="#2021-2-2" class="headerlink" title="2021.2.2"></a>2021.2.2</h2><h4 id="整理"><a href="#整理" class="headerlink" title="整理"></a>整理</h4><ul>
+<li>把几篇关于docker的博客整理了</li>
+</ul>
+<h4 id="随手笔记"><a href="#随手笔记" class="headerlink" title="随手笔记"></a>随手笔记</h4><ul>
+<li>https默认端口是443</li>
+<li>http默认端口是80</li>
+</ul>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>center标签使文字水平居中</p>
+<p>blockquote标签设置文字的缩进</p>
+<p>字符串输入的字节从第四个字节开始存储</p>
+<p>dw时 si要加2</p>
+<p>输入字符串 10号功能</p>
+<p>KEYBUF DB 11，？ 10 DUP（？）</p>
+<p>输出yes 换行</p>
+<blockquote>
+<p>这是自己学微机时写的随时笔记</p>
 </blockquote>
-<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import redirect
-
-def showpost(request,slug):
-    template = get_template('post.html')
-    try:
-        post = Post.objects.get(slug=slug)
-        if post != None:
-            html = template.render(locals())
-            return HttpResponse(html)
-    except:
-        return redirect('/')
-
-
-
-path('post/&lt;int:slug&gt;',showpost),<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="6-使用正则表达式传递参数失败"><a href="#6-使用正则表达式传递参数失败" class="headerlink" title="6.使用正则表达式传递参数失败"></a>6.使用正则表达式传递参数失败</h4><pre class="line-numbers language-none"><code class="language-none">from  django.http import Http404
-import datetime
-
-def hours_ahead(request,offset):
-    try:
-        offset = int(offset)
-    except ValueError:
-        raise Http404
-    dt = datetime.datetime.now()+datetime.timedelta(hours=offset)
-    html = "&lt;html&gt;&lt;body&gt;In %s hour(s),it will be %s.&lt;/body&gt;&lt;/html&gt;"%(offset,dt)
-    return HttpResponse(html)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">path('time/plus/(\d{1,2})/$',hours_ahead)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="整理-1"><a href="#整理-1" class="headerlink" title="整理"></a>整理</h4><ul>
+<li>现在在整理python语法知识</li>
+</ul>
+<h2 id="2021-2-4"><a href="#2021-2-4" class="headerlink" title="2021.2.4"></a>2021.2.4</h2><h4 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h4><ul>
+<li>使用Setting Sync插件：上传插件和下载插件功能。git已经配置了token，生成的key没用上</li>
+<li>django调试文件配置失败，还是直接输入命令吧</li>
+</ul>
+<h2 id="2021-2-6"><a href="#2021-2-6" class="headerlink" title="2021.2.6"></a>2021.2.6</h2><ul>
+<li>django学习，准备大干一场却不想干了，学着就是那些，书我往前看了，觉得我学得可以了可以做项目了。</li>
+<li>刷了寄到leetcode上的题目，不会做，想得感觉自己很对，却还是错的，搜的题目一下子就提交了，感觉自己搞不来算法。</li>
+<li>这几天还学列《啊哈·！算法》这本书，使用vscode写c语言真难受，写django也真难受，如果要写很多还是再电脑本地使用pycharm和clion要好一些</li>
+<li>然后自己再用云短信注册oneDrive来扩容，邀请注册每个用户增加0.5GB,最多扩容10GB</li>
+<li>然后get到oneNote的用法，win+shift+n快速打开，还可以使用侧边功能，太好用了，准备在这上面写日志，正好自己准备扩容。</li>
+<li>也准备吧自己有用的东西存到云端，然后下载的软件记录下来，就算电脑死机重装系统也没什么损失，之前准备做的，现在完善一下。</li>
+<li>这oneNote就是win原生软件的优点吗？真的时爱了爱了。</li>
+<li>用另一个邮箱注册了kuli，可以使用两天vip，选择香港-微软基地线路后，感觉访问微软速度好快</li>
+</ul>
+<h2 id="2021-2-12"><a href="#2021-2-12" class="headerlink" title="2021.2.12"></a>2021.2.12</h2><ul>
+<li>这几天再搞“狗屎”的django,断断续续的，做项目不想搞，最近又想到写一个 <strong>论坛网站</strong>，再想想又不想搞了，然后总结django知识，觉得自己写博客好慢，但还是坚持写。最后截屏，截屏了几下觉得不好，然后又写，感觉太多了，觉得有好多重要的值得记录下来的，最后还是选择把书保留起来，以后看。而现在，自己在看一些其他的书，现在继续整理自己写的博客。</li>
+<li>在知乎上看到了关于 <strong>应届生</strong> 的话题，<strong>要利用好应届生的身份</strong>，看看如何写简历。应届生的身份很重要，自己要好好利用。知道了简历写那些不好，有些是废话，hr不想看到的。之前再哪里看到说，一些公司看不上大学生简历上写的项目，自己也不用太过纠结与项目，但项目还是要有的，我现在整理博客到自己的个人网站上。</li>
+</ul>
 
                 
             </div>
@@ -739,7 +924,7 @@ def hours_ahead(request,offset):
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/">http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/</a>
+                    <a href="http://xinxinliang.github.io/2021/02/13/xue-xi-ri-ji-2021.1.25-2.12/">http://xinxinliang.github.io/2021/02/13/xue-xi-ri-ji-2021.1.25-2.12/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -777,12 +962,8 @@ def hours_ahead(request,offset):
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/django/">
-                                    <span class="chip bg-color">django</span>
-                                </a>
-                            
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">
+                                    <span class="chip bg-color">学习日志</span>
                                 </a>
                             
                         </div>
@@ -958,12 +1139,12 @@ def hours_ahead(request,offset):
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/12/django-xue-xi-er-setting.py/">
+                <a href="/2021/02/13/ji-huang-mod-zhi-zuo-jiao-cheng/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-4v7784.jpg" class="responsive-img" alt="Django学习(二)：setting.py">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-1jj1z3.jpg" class="responsive-img" alt="饥荒mod制作教程">
                         
-                        <span class="card-title">Django学习(二)：setting.py</span>
+                        <span class="card-title">饥荒mod制作教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -974,14 +1155,14 @@ def hours_ahead(request,offset):
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-13
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
+                            <a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-category">
+                                    游戏
                                 </a>
                             
                             
@@ -991,12 +1172,12 @@ def hours_ahead(request,offset):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
+                    <a href="/tags/%E9%A5%A5%E8%8D%92/">
+                        <span class="chip bg-color">饥荒</span>
                     </a>
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/mod/">
+                        <span class="chip bg-color">mod</span>
                     </a>
                     
                 </div>
@@ -1010,12 +1191,12 @@ def hours_ahead(request,offset):
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/12/django-xue-xi-liu-biao-dan-he-session/">
+                <a href="/2021/02/12/zheng-ze-biao-da-shi-re/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0p7pmm.jpg" class="responsive-img" alt="Django学习(六)：表单和session">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-138ozv.png" class="responsive-img" alt="正则表达式re">
                         
-                        <span class="card-title">Django学习(六)：表单和session</span>
+                        <span class="card-title">正则表达式re</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1032,8 +1213,8 @@ def hours_ahead(request,offset):
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
+                            <a href="/categories/%E8%AF%AD%E6%B3%95/" class="post-category">
+                                    语法
                                 </a>
                             
                             
@@ -1043,12 +1224,12 @@ def hours_ahead(request,offset):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
+                    <a href="/tags/py%E5%BA%93/">
+                        <span class="chip bg-color">py库</span>
                     </a>
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                        <span class="chip bg-color">正则表达式</span>
                     </a>
                     
                 </div>

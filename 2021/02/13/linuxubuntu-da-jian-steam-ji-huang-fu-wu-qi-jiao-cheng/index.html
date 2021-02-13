@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Django学习(五)：views和url, blog">
+    <meta name="keywords" content="Linux/ubuntu搭建Steam饥荒服务器教程, blog">
     <meta name="description" content="这是我的个人网站，欢迎来访">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Django学习(五)：views和url | 头号咸鱼</title>
+    <title>Linux/ubuntu搭建Steam饥荒服务器教程 | 头号咸鱼</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -316,12 +316,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5wqq28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dg8j1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Django学习(五)：views和url</h1>
+                    <h1 class="description center-align post-title">Linux/ubuntu搭建Steam饥荒服务器教程</h1>
                 </div>
             </div>
         </div>
@@ -437,12 +437,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/django/">
-                                <span class="chip bg-color">django</span>
-                            </a>
-                        
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/%E9%A5%A5%E8%8D%92/">
+                                <span class="chip bg-color">饥荒</span>
                             </a>
                         
                     </div>
@@ -453,8 +449,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                后端框架
+                            <a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-category">
+                                游戏
                             </a>
                         
                     </div>
@@ -466,28 +462,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-12
+                    2021-02-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-12
+                    2021-02-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    699
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -511,208 +507,364 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>参考博客：<a target="_blank" rel="noopener" href="https://code.ziqiangxuetang.com/django/django-url-name.html">https://code.ziqiangxuetang.com/django/django-url-name.html</a></p>
+<p>我是首先看别人的博客，自己环境和软件安装出了问题，然后又到官方教程那里看英语教程，还看安装错误的提示后，然后一步一步地搭建成功的，感觉很好用，但是自己现在不玩饥荒了，也不知道饥荒的生命力有多久。</p>
+<p>我是从自己的学习日记上面整理的，只记录了一些关键的步骤，看一下参考地址的博客应该没问题</p>
 </blockquote>
-<h4 id="1-定义视图函数"><a href="#1-定义视图函数" class="headerlink" title="1. 定义视图函数"></a>1. 定义视图函数</h4><h6 id="view-py"><a href="#view-py" class="headerlink" title="view.py"></a>view.py</h6><ul>
-<li>HttpResponse</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
- 
- 
-def index(request):
-    return HttpResponse("Django")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
-from .models import Post
-
-def homepage(request):
-    post = Post.objects.all()
-    post_list = list()
-    for count,post in enumerate(post):
-        post_list.append("No.{}".format(str(count)+str(post)+'&lt;br&gt;'))
-    return HttpResponse(post_list)
-
-
-
-from app01.views import homepage
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',homepage),
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<blockquote>
-<p>相当于把HttpResponse中的对象返回到页面，可以识别对象中的html标签</p>
+<h4 id="一、环境和软件安装"><a href="#一、环境和软件安装" class="headerlink" title="一、环境和软件安装"></a>一、环境和软件安装</h4><blockquote>
+<p>环境：ubuntu18.04</p>
 </blockquote>
 <ul>
-<li>使用render函数渲染,建议直接作为返回值</li>
+<li>先来看看官方教程</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.template.loader import get_template
-from datetime import datetime
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210213090826.png"></p>
+<ol>
+<li>安装环境</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">sudo dpkg --add-architecture i386
+sudo apt-get update
+# sudo apt-get install lib32gcc1 出现问题，定位不到包，提示 apt --fix-broken install
+apt --fix-broken install
+# 再执行
+sudo apt-get install lib32gcc1
+#选择y
+#做好笔记
+sudo apt-get install lib32stdc++6
+sudo apt-get install libgcc1
+#选择y
+sudo apt-get install libcurl4-gnutls-dev:i386<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>不知道什么用,第二条命令是授权，必须要做</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">sudo useradd -m steam
+chmod a+rw `tty`<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>安装steamCMD和安装饥荒服务器</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">sudo su - steam
+mkdir ~/steamcmd
+cd ~/steamcmd
+wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+tar -xvzf steamcmd_linux.tar.gz
+./steamcmd.sh
+#进入了steam
+login anonymous
+force_install_dir /home/steam/steamapps/DST
+#下载饥荒，可能需要一定时间
+app_update 343050 validate
+quit
 
-def homepage3(request):
-    template = get_template('index.html')
-    posts = Post.objects.all()
-    now = datetime.now()
-    html = template.render(locals())
-    return HttpResponse(html)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
-from django.urls import path
-
-from app01.views import index
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',index)
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>urls.py中配置路由，触发views.py中函数</p>
+cd /home/steam/steamapps/DST/bin/
+apt install screen
+screen -S "DST Server" ./dontstarve_dedicated_server_nullrenderer
+#差不多可以运行  Your Server Will Not Start  提示没有开始<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="二、创建本地文件"><a href="#二、创建本地文件" class="headerlink" title="二、创建本地文件"></a>二、创建本地文件</h4><blockquote>
+<p>我直接使用多层世界分流模组，实现多世界跳转。</p>
 </blockquote>
-<h4 id="2-视图进阶"><a href="#2-视图进阶" class="headerlink" title="2. 视图进阶"></a>2. 视图进阶</h4><ul>
-<li>views.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
-
-def add(request):
-    a = request.GET['a']
-    b = request.GET['b']
-    c = int(a)+int(b)
-    return HttpResponse(str(c))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from app01.views import add
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',add)
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>访问：<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/?a=2&amp;b=3%E6%97%B6%EF%BC%8C%E9%A1%B5%E9%9D%A2%E8%BF%94%E5%9B%9E5">http://127.0.0.1:8000/?a=2&amp;b=3时，页面返回5</a></p>
-</blockquote>
-<h5 id="另一种方法"><a href="#另一种方法" class="headerlink" title="另一种方法"></a>另一种方法</h5><ul>
-<li>views.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">def add2(request, a, b):
-    c = int(a) + int(b)
-    return HttpResponse(str(c))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
-from django.urls import path
-from app01.views import add
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('&lt;int:a&gt;/&lt;int:b&gt;',add)
-]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-url中的name参数详解"><a href="#3-url中的name参数详解" class="headerlink" title="3. url中的name参数详解"></a>3. url中的name参数详解</h4><pre class="line-numbers language-none"><code class="language-none">urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('&lt;int:a&gt;/&lt;int:b&gt;',add,name='add2')
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>name相当于页面的名字，可以用于views中指定作用</li>
-</ul>
-<h4 id="4-url总使用正则表达式"><a href="#4-url总使用正则表达式" class="headerlink" title="4. url总使用正则表达式"></a>4. url总使用正则表达式</h4><pre class="line-numbers language-none"><code class="language-none"> 
-urlpatterns = [
-    path(r'^add/$', add, name='add2'),
-
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="5-页面跳转"><a href="#5-页面跳转" class="headerlink" title="5. 页面跳转"></a>5. 页面跳转</h4><ul>
-<li>views.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
- 
- 
-def index(request):
-    return render(request, 'home.html')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li><p><strong>render函数</strong>是渲染模板，将一个HTML文件渲染到网页中</p>
+<ol>
+<li><p>创建好本地存档，启动洞穴</p>
 </li>
-<li><p>home.html</p>
+<li><p>存档位置在这个数据里找</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210213092220.png"></p>
+<ol start="3">
+<li>啊，这博客是过了好多天才写的，不想写那么详细了。长话短说吧。</li>
+<li>进入Cluster_1,删除掉洞穴。然后修改端口，吧Cluser_1复制粘贴5次，这是准备创建5个地面世界</li>
+</ol>
+<ul>
+<li>五个文件夹中server.ini文件配置，端口号要不一样，id也要是1，2，3等</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10999
+
+
+[SHARD]
+is_master = true
+
+
+[ACCOUNT]
+encode_user_path = true
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10998
+
+
+[SHARD]
+is_master = false
+name = Master2
+id = 2
+
+
+[ACCOUNT]
+encode_user_path = true
+
+
+[STEAM]
+master_server_port = 27017
+authentication_port = 8767
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10997
+
+
+[SHARD]
+is_master = false
+name = Master3
+id = 3
+
+
+[ACCOUNT]
+encode_user_path = true
+
+
+[STEAM]
+master_server_port = 27016
+authentication_port = 8766
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10996
+
+
+[SHARD]
+is_master = false
+name = Master4
+id = 4
+
+
+[ACCOUNT]
+encode_user_path = true
+
+
+[STEAM]
+master_server_port = 27015
+authentication_port = 8765
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">[NETWORK]
+server_port = 10995
+
+
+[SHARD]
+is_master = false
+name = Master5
+id = 5
+
+
+[ACCOUNT]
+encode_user_path = true
+
+
+[STEAM]
+master_server_port = 27014
+authentication_port = 8764
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>每个master文件的modoverrides.lua文件是一样的,配置模组的</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">return {
+  ["workshop-1253181122"]={ configuration_options={  }, enabled=true },
+  ["workshop-2063960381"]={ configuration_options={ hat_make=0, spear_make=1 }, enabled=true },
+  ["workshop-933727694"]={
+    configuration_options={
+      Dong_Kou=true,
+      Fen_Liu=true,
+      RenShu={ ["1"]=20, ["2"]=20, ["3"]=20, ["4"]=20, ["5"]=20 },
+      tebie={  } 
+    },
+    enabled=true 
+  } 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>将cluster_token.txt中改为你的token</li>
+</ol>
+<h4 id="三、服务器mod配置和启动"><a href="#三、服务器mod配置和启动" class="headerlink" title="三、服务器mod配置和启动"></a>三、服务器mod配置和启动</h4><ol>
+<li>创建启动脚本</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd /root/.klei/
+# 创建启动脚本
+vim start_dst.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>脚本内容</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">#!/bin/sh
+cd /home/steam/steamapps/DST/bin
+/usr/bin/screen -S "DST" /bin/sh -c './dontstarve_dedicated_server_nullrenderer -console'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>授权和运行</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">chmod 700 start_dst.sh
+./start_dst.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>CTRL+A then press D，使脚本后台运行</li>
+</ul>
+<ol start="3">
+<li>上传文件位置</li>
+</ol>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210213093921.png"></p>
+<ul>
+<li>上传之前制作好的本地文件</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210213094032.png"></p>
+<blockquote>
+<p>上传后再运行之前的脚本，这样后启动的就是世界Cluster_1,如果里面有洞穴也会被启动，这样进去后其他世界的洞口是封闭的状态。</p>
+</blockquote>
+<ol start="4">
+<li>配置模组</li>
+</ol>
+<ul>
+<li>模组的位置在这里,可以直接上传到这个位置</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210213095642.png"></p>
+<ul>
+<li>或者是修改dedicated_server_mods_setup.lua文件，添加</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">ServerModSetup("1207269058")
+ServerModSetup("1392778117")
+ServerModSetup("1530801499")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>这个数字就是模组的id号，写了这些后启动服务器的时候就会自动下载或者更新模组</p>
+</blockquote>
+<ol start="4">
+<li>多世界启动文件</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">#!/bin/bash
+  
+steamcmd_dir="/root/steamcmd"
+
+install_dir="/home/steam/steamapps/DST"
+
+cluster_name="Cluster_1"
+
+dontstarve_dir="/root/.klei/DoNotStarveTogether"
+
+function fail()
+
+{
+
+        echo Error: "$@" &gt;&amp;2
+
+        exit 1
+
+}
+
+function check_for_file()
+
+{
+
+        if [ ! -e "$1" ]; then
+
+                fail "Missing file: $1"
+
+        fi
+
+}
+
+cd "$steamcmd_dir" || fail "Missing $steamcmd_dir directory!" # TODO
+
+check_for_file "steamcmd.sh"
+
+check_for_file "$dontstarve_dir/$cluster_name/cluster.ini"
+
+check_for_file "$dontstarve_dir/$cluster_name/cluster_token.txt"
+
+check_for_file "$dontstarve_dir/$cluster_name/Master/server.ini"
+
+./steamcmd.sh +force_install_dir "$install_dir" +login anonymous +app_update 343050 +quit
+
+check_for_file "$install_dir/bin"
+
+cd "$install_dir/bin" || fail
+
+run_shared=(./dontstarve_dedicated_server_nullrenderer)
+
+run_shared+=(-console)
+
+run_shared+=(-cluster "$cluster_name")
+
+run_shared+=(-monitor_parent_process $$)
+
+run_shared+=(-shard)
+
+"${run_shared[@]}" Master | sed 's/^/Master: /'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这是start_1.sh的内容，运行这个就启动了Cluster_1服务器（没有启动洞穴，我删除了）。创建start_2.sh,吧上面的Cluser_1改为Cluster_2就可以了，（还需要按照上卖弄方法授权）然后启动，后台运行，一次类推就可以了。</p>
+</li>
+<li><p>这是我参考的配置文件，我修改了路径，删除了洞穴，需要启动洞穴相应位置加上去</p>
 </li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;自强学堂&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
- 
-&lt;a href="/add/4/5/"&gt;计算 4+5&lt;/a&gt;
- 
-&lt;/body&gt;
-&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">urlpatterns = [
-    path('',index, name='home')
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h5 id="防止写死的方法"><a href="#防止写死的方法" class="headerlink" title="防止写死的方法"></a>防止写死的方法</h5><ul>
-<li>reverse（）函数</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">reverse('add2', args=(4,5))<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponseRedirect
-from django.urls import reverse
- 
- 
-def old_add2_redirect(request, a, b):
-    return HttpResponseRedirect(
-        reverse('add2', args=(a, b))
-    )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">#!/bin/bash
+
+steamcmd_dir="$HOME/steamcmd"
+
+install_dir="$HOME/dontstarvetogether_dedicated_server"
+
+cluster_name="MyDediServer"
+
+dontstarve_dir="$HOME/.klei/DoNotStarveTogether"
+
+function fail()
+
+{
+
+echo Error: "$@" &gt;&amp;2
+
+exit 1
+
+}
+
+function check_for_file()
+
+{
+
+if [ ! -e "$1" ]; then
+
+fail "Missing file: $1"
+
+fi
+
+}
+
+cd "$steamcmd_dir" || fail "Missing $steamcmd_dir directory!" # TODO
+
+check_for_file "steamcmd.sh"
+
+check_for_file "$dontstarve_dir/$cluster_name/cluster.ini"
+
+check_for_file "$dontstarve_dir/$cluster_name/cluster_token.txt"
+
+check_for_file "$dontstarve_dir/$cluster_name/Master/server.ini"
+
+check_for_file "$dontstarve_dir/$cluster_name/Caves/server.ini"
+
+./steamcmd.sh +force_install_dir "$install_dir" +login anonymous +app_update 343050 +quit
+
+check_for_file "$install_dir/bin"
+
+cd "$install_dir/bin" || fail
+
+run_shared=(./dontstarve_dedicated_server_nullrenderer)
+
+run_shared+=(-console)
+
+run_shared+=(-cluster "$cluster_name")
+
+run_shared+=(-monitor_parent_process $$)
+
+run_shared+=(-shard)
+
+"${run_shared[@]}" Caves  | sed 's/^/Caves:  /' &amp;
+
+"${run_shared[@]}" Master | sed 's/^/Master: /'
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<ul>
-<li>add2是urls.py中设置的name，args中的参数是要输入的</li>
-</ul>
+<p>参考地址：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44261440/article/details/105547763">https://blog.csdn.net/weixin_44261440/article/details/105547763</a></p>
 </blockquote>
-<ul>
-<li>使用模板</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">&lt;a href="{% url 'add2' 4 5 %}"&gt;link&lt;/a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>使用正则表达式</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">url(r'^new_add/(\d+)/(\d+)/$', calc_views.add2, name='add2'),<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-<h6 id="动态路由，并且跳转"><a href="#动态路由，并且跳转" class="headerlink" title="动态路由，并且跳转"></a>动态路由，并且跳转</h6><blockquote>
-<p>使用正则表达式不成功,可以禅师str类型传值</p>
+<blockquote>
+<p>参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wujing1_1/article/details/108160588">https://blog.csdn.net/wujing1_1/article/details/108160588</a></p>
+<p>官方教程：<a target="_blank" rel="noopener" href="https://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers">https://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers</a></p>
 </blockquote>
-<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import redirect
-
-def showpost(request,slug):
-    template = get_template('post.html')
-    try:
-        post = Post.objects.get(slug=slug)
-        if post != None:
-            html = template.render(locals())
-            return HttpResponse(html)
-    except:
-        return redirect('/')
-
-
-
-path('post/&lt;int:slug&gt;',showpost),<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="6-使用正则表达式传递参数失败"><a href="#6-使用正则表达式传递参数失败" class="headerlink" title="6.使用正则表达式传递参数失败"></a>6.使用正则表达式传递参数失败</h4><pre class="line-numbers language-none"><code class="language-none">from  django.http import Http404
-import datetime
-
-def hours_ahead(request,offset):
-    try:
-        offset = int(offset)
-    except ValueError:
-        raise Http404
-    dt = datetime.datetime.now()+datetime.timedelta(hours=offset)
-    html = "&lt;html&gt;&lt;body&gt;In %s hour(s),it will be %s.&lt;/body&gt;&lt;/html&gt;"%(offset,dt)
-    return HttpResponse(html)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">path('time/plus/(\d{1,2})/$',hours_ahead)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -739,7 +891,7 @@ def hours_ahead(request,offset):
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/">http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/</a>
+                    <a href="http://xinxinliang.github.io/2021/02/13/linuxubuntu-da-jian-steam-ji-huang-fu-wu-qi-jiao-cheng/">http://xinxinliang.github.io/2021/02/13/linuxubuntu-da-jian-steam-ji-huang-fu-wu-qi-jiao-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -777,12 +929,8 @@ def hours_ahead(request,offset):
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/django/">
-                                    <span class="chip bg-color">django</span>
-                                </a>
-                            
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/%E9%A5%A5%E8%8D%92/">
+                                    <span class="chip bg-color">饥荒</span>
                                 </a>
                             
                         </div>
@@ -954,16 +1102,17 @@ def hours_ahead(request,offset):
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/12/django-xue-xi-er-setting.py/">
+                <a href="/2021/02/13/linuxubuntu-da-jian-steam-ji-huang-fu-wu-qi-jiao-cheng/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-4v7784.jpg" class="responsive-img" alt="Django学习(二)：setting.py">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dg8j1.jpg" class="responsive-img" alt="Linux/ubuntu搭建Steam饥荒服务器教程">
                         
-                        <span class="card-title">Django学习(二)：setting.py</span>
+                        <span class="card-title">Linux/ubuntu搭建Steam饥荒服务器教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -973,30 +1122,27 @@ def hours_ahead(request,offset):
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
+                            <a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-category">
+                                    游戏
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
-                    </a>
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E9%A5%A5%E8%8D%92/">
+                        <span class="chip bg-color">饥荒</span>
                     </a>
                     
                 </div>
@@ -1010,12 +1156,12 @@ def hours_ahead(request,offset):
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/12/django-xue-xi-liu-biao-dan-he-session/">
+                <a href="/2021/02/13/ji-huang-mod-zhi-zuo-jiao-cheng/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0p7pmm.jpg" class="responsive-img" alt="Django学习(六)：表单和session">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-1jj1z3.jpg" class="responsive-img" alt="饥荒mod制作教程">
                         
-                        <span class="card-title">Django学习(六)：表单和session</span>
+                        <span class="card-title">饥荒mod制作教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1026,14 +1172,14 @@ def hours_ahead(request,offset):
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
+                            <a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-category">
+                                    游戏
                                 </a>
                             
                             
@@ -1043,12 +1189,12 @@ def hours_ahead(request,offset):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
+                    <a href="/tags/%E9%A5%A5%E8%8D%92/">
+                        <span class="chip bg-color">饥荒</span>
                     </a>
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/mod/">
+                        <span class="chip bg-color">mod</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Django学习(五)：views和url, blog">
+    <meta name="keywords" content="饥荒mod制作教程, blog">
     <meta name="description" content="这是我的个人网站，欢迎来访">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Django学习(五)：views和url | 头号咸鱼</title>
+    <title>饥荒mod制作教程 | 头号咸鱼</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -316,12 +316,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5wqq28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-1jj1z3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Django学习(五)：views和url</h1>
+                    <h1 class="description center-align post-title">饥荒mod制作教程</h1>
                 </div>
             </div>
         </div>
@@ -437,12 +437,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/django/">
-                                <span class="chip bg-color">django</span>
+                            <a href="/tags/%E9%A5%A5%E8%8D%92/">
+                                <span class="chip bg-color">饥荒</span>
                             </a>
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/mod/">
+                                <span class="chip bg-color">mod</span>
                             </a>
                         
                     </div>
@@ -453,8 +453,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                后端框架
+                            <a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-category">
+                                游戏
                             </a>
                         
                     </div>
@@ -466,28 +466,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-12
+                    2021-02-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-12
+                    2021-02-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    699
+                    612
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -511,208 +511,84 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>参考博客：<a target="_blank" rel="noopener" href="https://code.ziqiangxuetang.com/django/django-url-name.html">https://code.ziqiangxuetang.com/django/django-url-name.html</a></p>
+<p>自己之前想要做mod和修改一下搭建一个自己玩法的服务器，但是后来觉得不好搞就放弃了，这里记录一下自己的学习笔记，我看别人的mod没有看明白，也没有官方API啥的，就放弃了。所以自己还没有写成自己的mod，没有发布过。</p>
 </blockquote>
-<h4 id="1-定义视图函数"><a href="#1-定义视图函数" class="headerlink" title="1. 定义视图函数"></a>1. 定义视图函数</h4><h6 id="view-py"><a href="#view-py" class="headerlink" title="view.py"></a>view.py</h6><ul>
-<li>HttpResponse</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
- 
- 
-def index(request):
-    return HttpResponse("Django")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
-from .models import Post
-
-def homepage(request):
-    post = Post.objects.all()
-    post_list = list()
-    for count,post in enumerate(post):
-        post_list.append("No.{}".format(str(count)+str(post)+'&lt;br&gt;'))
-    return HttpResponse(post_list)
-
-
-
-from app01.views import homepage
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',homepage),
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<blockquote>
-<p>相当于把HttpResponse中的对象返回到页面，可以识别对象中的html标签</p>
+<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
+<li>anim：文件夹，用来储存动画文件</li>
+<li>images：文件夹，用来储存图片文件</li>
+<li>scripts：文件夹，用来储存代码</li>
+<li>sound：文件夹，用来储存声音</li>
+<li>modicon.tex：文件， mod的图标</li>
+<li>modicon.xml：文件，配置modicon.tex文件</li>
+<li>modinfo.lua：记载mod的名字，作者，基本介绍</li>
+<li>modmain.lua：文件，第一个运行的文件，用来配置要执行的脚本和指定目录<blockquote>
+<p>wegame饥荒联机版区别与手机版和单机版还有steam版，本教程主要介绍wegame联机版，mod不能通用，但可以用来参考和获取资源</p>
 </blockquote>
-<ul>
-<li>使用render函数渲染,建议直接作为返回值</li>
+<h6 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h6></li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.template.loader import get_template
-from datetime import datetime
-
-def homepage3(request):
-    template = get_template('index.html')
-    posts = Post.objects.all()
-    now = datetime.now()
-    html = template.render(locals())
-    return HttpResponse(html)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
-from django.urls import path
-
-from app01.views import index
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',index)
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>urls.py中配置路由，触发views.py中函数</p>
+<ol>
+<li>modinfo.lua和modmain.lua这两个文件必须有</li>
+<li>modicon.tex和modicon.xml这两种文件两者必须同时有才能使用<h4 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h4><blockquote>
+<p>工具压缩包再tools文件夹下</p>
 </blockquote>
-<h4 id="2-视图进阶"><a href="#2-视图进阶" class="headerlink" title="2. 视图进阶"></a>2. 视图进阶</h4><ul>
-<li>views.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponse
-
-def add(request):
-    a = request.GET['a']
-    b = request.GET['b']
-    c = int(a)+int(b)
-    return HttpResponse(str(c))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from app01.views import add
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',add)
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>访问：<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/?a=2&amp;b=3%E6%97%B6%EF%BC%8C%E9%A1%B5%E9%9D%A2%E8%BF%94%E5%9B%9E5">http://127.0.0.1:8000/?a=2&amp;b=3时，页面返回5</a></p>
-</blockquote>
-<h5 id="另一种方法"><a href="#另一种方法" class="headerlink" title="另一种方法"></a>另一种方法</h5><ul>
-<li>views.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">def add2(request, a, b):
-    c = int(a) + int(b)
-    return HttpResponse(str(c))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>urls.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
-from django.urls import path
-from app01.views import add
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('&lt;int:a&gt;/&lt;int:b&gt;',add)
-]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-url中的name参数详解"><a href="#3-url中的name参数详解" class="headerlink" title="3. url中的name参数详解"></a>3. url中的name参数详解</h4><pre class="line-numbers language-none"><code class="language-none">urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('&lt;int:a&gt;/&lt;int:b&gt;',add,name='add2')
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>name相当于页面的名字，可以用于views中指定作用</li>
-</ul>
-<h4 id="4-url总使用正则表达式"><a href="#4-url总使用正则表达式" class="headerlink" title="4. url总使用正则表达式"></a>4. url总使用正则表达式</h4><pre class="line-numbers language-none"><code class="language-none"> 
-urlpatterns = [
-    path(r'^add/$', add, name='add2'),
-
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="5-页面跳转"><a href="#5-页面跳转" class="headerlink" title="5. 页面跳转"></a>5. 页面跳转</h4><ul>
-<li>views.py</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
- 
- 
-def index(request):
-    return render(request, 'home.html')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li><p><strong>render函数</strong>是渲染模板，将一个HTML文件渲染到网页中</p>
 </li>
-<li><p>home.html</p>
+</ol>
+<ul>
+<li><p>ktools：用来打包制作的动画</p>
+</li>
+<li><p>TEXTool：用来查看tex图像，还可以吧png格式图片转换未tex格式</p>
+</li>
+<li><p>Spriter：用来制作动画</p>
+</li>
+<li><p>PS：用来修改和制作图片</p>
+</li>
+<li><p>VsCode：用来编写lua脚本</p>
+<blockquote>
+<p>编写脚本也可以用记事本，推荐vscode，可以下载相应的插件提高效率</p>
+</blockquote>
+<h4 id="安装mod"><a href="#安装mod" class="headerlink" title="安装mod"></a>安装mod</h4></li>
+<li><p>将制作好的mod放在一个文件夹里，就是上面那些文件夹及文件放在同一个文件夹里</p>
+<blockquote>
+<p>不能再套多层文件夹</p>
+</blockquote>
+</li>
+<li><p>然后复制到饥荒安装目录下mods文件夹内</p>
 </li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;自强学堂&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
- 
-&lt;a href="/add/4/5/"&gt;计算 4+5&lt;/a&gt;
- 
-&lt;/body&gt;
-&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>urls.py</li>
+<h4 id="modinfo"><a href="#modinfo" class="headerlink" title="modinfo"></a>modinfo</h4><pre class="line-numbers language-none"><code class="language-none">
+​```
+name = "武器"      --mod的名字
+description = "描述"      --mod的描述说明       
+author = "作者"     --作者的名字
+version = "1.0"     --版本
+
+forumthread = ""        --填写一个网址，可不填内容
+
+dst_compatible = true       --兼容联机，都用true
+dont_starve_compatible = false      --都用fals
+reign_of_giants_compatible = false --不兼容巨人
+all_clients_require_mod=true        --所有人都有此mod
+
+api_version = 10  --让玩家知到这个mod是否过时
+
+icon_atlas = "modicon.xml"      --指定图标
+icon = "modicon.tex"
+
+server_filter_tags = {
+    "character",
+    "item"
+}                               --服务器标签可以不写
+
+​```
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="饥荒mod制作-2021-1-31"><a href="#饥荒mod制作-2021-1-31" class="headerlink" title="饥荒mod制作(2021.1.31)"></a>饥荒mod制作(2021.1.31)</h4><ul>
+<li>ktool的使用方法参考地址：<a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/4945525942">https://tieba.baidu.com/p/4945525942</a></li>
+<li>入门：“乱斗江湖”群文件，b站，贴吧</li>
+<li>打包工具：autocompiler.exe</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">urlpatterns = [
-    path('',index, name='home')
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h5 id="防止写死的方法"><a href="#防止写死的方法" class="headerlink" title="防止写死的方法"></a>防止写死的方法</h5><ul>
-<li>reverse（）函数</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">reverse('add2', args=(4,5))<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">from django.http import HttpResponseRedirect
-from django.urls import reverse
- 
- 
-def old_add2_redirect(request, a, b):
-    return HttpResponseRedirect(
-        reverse('add2', args=(a, b))
-    )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<ul>
-<li>add2是urls.py中设置的name，args中的参数是要输入的</li>
-</ul>
+<p>这里面要注意的是解包别人的动画压缩包</p>
 </blockquote>
-<ul>
-<li>使用模板</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">&lt;a href="{% url 'add2' 4 5 %}"&gt;link&lt;/a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>使用正则表达式</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">url(r'^new_add/(\d+)/(\d+)/$', calc_views.add2, name='add2'),<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-<h6 id="动态路由，并且跳转"><a href="#动态路由，并且跳转" class="headerlink" title="动态路由，并且跳转"></a>动态路由，并且跳转</h6><blockquote>
-<p>使用正则表达式不成功,可以禅师str类型传值</p>
-</blockquote>
-<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import redirect
-
-def showpost(request,slug):
-    template = get_template('post.html')
-    try:
-        post = Post.objects.get(slug=slug)
-        if post != None:
-            html = template.render(locals())
-            return HttpResponse(html)
-    except:
-        return redirect('/')
-
-
-
-path('post/&lt;int:slug&gt;',showpost),<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="6-使用正则表达式传递参数失败"><a href="#6-使用正则表达式传递参数失败" class="headerlink" title="6.使用正则表达式传递参数失败"></a>6.使用正则表达式传递参数失败</h4><pre class="line-numbers language-none"><code class="language-none">from  django.http import Http404
-import datetime
-
-def hours_ahead(request,offset):
-    try:
-        offset = int(offset)
-    except ValueError:
-        raise Http404
-    dt = datetime.datetime.now()+datetime.timedelta(hours=offset)
-    html = "&lt;html&gt;&lt;body&gt;In %s hour(s),it will be %s.&lt;/body&gt;&lt;/html&gt;"%(offset,dt)
-    return HttpResponse(html)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">path('time/plus/(\d{1,2})/$',hours_ahead)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -739,7 +615,7 @@ def hours_ahead(request,offset):
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/">http://xinxinliang.github.io/2021/02/12/django-xue-xi-wu-views-he-url/</a>
+                    <a href="http://xinxinliang.github.io/2021/02/13/ji-huang-mod-zhi-zuo-jiao-cheng/">http://xinxinliang.github.io/2021/02/13/ji-huang-mod-zhi-zuo-jiao-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -777,12 +653,12 @@ def hours_ahead(request,offset):
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/django/">
-                                    <span class="chip bg-color">django</span>
+                                <a href="/tags/%E9%A5%A5%E8%8D%92/">
+                                    <span class="chip bg-color">饥荒</span>
                                 </a>
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/mod/">
+                                    <span class="chip bg-color">mod</span>
                                 </a>
                             
                         </div>
@@ -958,12 +834,12 @@ def hours_ahead(request,offset):
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/12/django-xue-xi-er-setting.py/">
+                <a href="/2021/02/13/linuxubuntu-da-jian-steam-ji-huang-fu-wu-qi-jiao-cheng/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-4v7784.jpg" class="responsive-img" alt="Django学习(二)：setting.py">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dg8j1.jpg" class="responsive-img" alt="Linux/ubuntu搭建Steam饥荒服务器教程">
                         
-                        <span class="card-title">Django学习(二)：setting.py</span>
+                        <span class="card-title">Linux/ubuntu搭建Steam饥荒服务器教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -974,14 +850,14 @@ def hours_ahead(request,offset):
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-13
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
+                            <a href="/categories/%E6%B8%B8%E6%88%8F/" class="post-category">
+                                    游戏
                                 </a>
                             
                             
@@ -991,12 +867,8 @@ def hours_ahead(request,offset):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
-                    </a>
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E9%A5%A5%E8%8D%92/">
+                        <span class="chip bg-color">饥荒</span>
                     </a>
                     
                 </div>
@@ -1010,12 +882,12 @@ def hours_ahead(request,offset):
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/12/django-xue-xi-liu-biao-dan-he-session/">
+                <a href="/2021/02/13/xue-xi-ri-ji-2021.1.25-2.12/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0p7pmm.jpg" class="responsive-img" alt="Django学习(六)：表单和session">
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0qkw7d.jpg" class="responsive-img" alt="学习日记2021.1.25~2.12">
                         
-                        <span class="card-title">Django学习(六)：表单和session</span>
+                        <span class="card-title">学习日记2021.1.25~2.12</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1026,14 +898,14 @@ def hours_ahead(request,offset):
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
+                            <a href="/categories/%E6%97%A5%E8%AE%B0/" class="post-category">
+                                    日记
                                 </a>
                             
                             
@@ -1043,12 +915,8 @@ def hours_ahead(request,offset):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/django/">
-                        <span class="chip bg-color">django</span>
-                    </a>
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">
+                        <span class="chip bg-color">学习日志</span>
                     </a>
                     
                 </div>
