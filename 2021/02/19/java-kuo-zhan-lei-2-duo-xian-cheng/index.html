@@ -1,0 +1,2030 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java扩展类2：多线程, blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java扩展类2：多线程 | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-e7z5vk.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java扩展类2：多线程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">编程语言</span>
+                            </a>
+                        
+                            <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                                <span class="chip bg-color">Java扩展类</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="1-线程简介"><a href="#1-线程简介" class="headerlink" title="1.线程简介"></a>1.线程简介</h4><ul>
+<li>世间万物会同时完成很多工作，例如人体同时进行呼吸、血液循环、思考问题等活动，用户既可以使用计算机听歌，也可以使用它打印文件，而这些活动完全可以同时进行，这种思想放在Java中被称为并发，而将并发完成的每一件事情称为线程。</li>
+<li>在人们的生活中，并发机制非常重要，但是并不是所有的程序语言都支持线程。在以往的程序中，多以一个任务完成后再进行下一个项目的模式进行开发，这样下一个任务的开始必须等待前一个任务的结束。Java语言提供并发机制，程序员可以在程序中执行多个线程，每一个线程完成一个功能，并与其他线程并发执行，这种机制被称为多线程。</li>
+</ul>
+<h4 id="2-实现线程的两种方式"><a href="#2-实现线程的两种方式" class="headerlink" title="2.实现线程的两种方式"></a>2.实现线程的两种方式</h4><h6 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h6><ul>
+<li>Thread类是java.lang包中的一个类，从这个类中实例化的对象代表线程，程序员启动一个新线程需要建立Thread实例。Thread类中常用的两个构造方法如下：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public Thread(String threadName);
+public Thread();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>其中第一个构造方法是创建一个名称为threadName的线程对象。<br>继承Thread类创建一个新的线程的语法如下：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class ThreadTest extends Thread{
+	//...
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>完成线程正正功能的代码放在run()中，继承Thread类后，就可以覆盖类中的run()方法，将实现线程功能的代码写入run()中，同时调用Thread类中的start()方法启动线程。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public void run(){
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args){
+		new ThreadTest().start();
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>例子</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class ThreadTest extends Thread { // 指定类继承Thread类
+	private int count = 10;
+	
+	public void run() { // 重写run()方法
+		while (true) {
+			System.out.print(count+" "); // 打印count变量
+			if (--count == 0) { // 使count变量自减，当自减为0时，退出循环
+				return;
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		new ThreadTest().start();
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h6><blockquote>
+<p>到目前为止，线程都是通过扩展Thread类来创建的，如果程序员需要继承其他类（非Thread类）并使该程序可以使用线程，就需要使用Runnable接口。例如，一个扩展JFrame类的GUI程序不可能再继承Thread类，因为Java语言中不支持多继承，这时该类就需要实现Runnable接口使其具有使用线程的功能。</p>
+</blockquote>
+<ul>
+<li>实现Runnable接口的语法如下：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Thread extends Object implements Runnable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>实现Runnable接口的程序会创建一个Thread对象，并关联起来</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.awt.*;
+import java.net.*;
+
+import javax.swing.*;
+
+public class SwingAndThread extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JLabel jl = new JLabel(); // 声明JLabel对象
+	private static Thread t; // 声明线程对象
+	private int count = 0; // 声明计数变量
+	private Container container = getContentPane(); // 声明容器
+	
+	public SwingAndThread() {
+		setBounds(300, 200, 250, 100); // 绝对定位窗体大小与位置
+		container.setLayout(null); // 使窗体不使用任何布局管理器
+		URL url = SwingAndThread.class.getResource("/1.gif"); // 获取图片的URL
+		Icon icon = new ImageIcon(url); // 实例化一个Icon
+		jl.setIcon(icon); // 将图标放置在标签中
+		 // 设置图片在标签的最左方
+		jl.setHorizontalAlignment(SwingConstants.LEFT);
+		jl.setBounds(10, 10, 200, 50); // 设置标签的位置与大小
+		jl.setOpaque(true);
+		t = new Thread(new Runnable() { // 定义匿名内部类，该类实现Runnable接口
+					public void run() { // 重写run()方法
+						while (count &lt;= 200) { // 设置循环条件
+							 // 将标签的横坐标用变量表示
+							jl.setBounds(count, 10, 200, 50);
+							try {
+								Thread.sleep(1000); // 使线程休眠1000毫秒
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							count += 4; // 使横坐标每次增加4
+							if (count == 200) {
+								// 当图标到达标签的最右边，使其回到标签最左边
+								count = 10;
+							}
+						}
+					}
+				});
+		t.start(); // 启动线程
+		container.add(jl); // 将标签添加到容器中
+		setVisible(true); // 使窗体可视
+		// 设置窗体的关闭方式
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+	}
+	
+	public static void main(String[] args) {
+		new SwingAndThread(); // 实例化一个SwingAndThread对象
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-线程的生命周期"><a href="#3-线程的生命周期" class="headerlink" title="3.线程的生命周期"></a>3.线程的生命周期</h4><blockquote>
+<p>线程具有生命周期，其中包含7种状态，分别为出生状态、就绪状态、运行状态、等待状态、休眠状态、阻塞状态和死亡状态。出生状态就是用户在创建线程时处于的状态，在用户使用该线程实例调用start()方法之前线程都处于出生状态；当用户调用start()方法后，线程处于就绪状态（又被称为可执行状态）；当线程得到系统资源后就进入运行状态。</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210217102113.png"></p>
+<ul>
+<li>多线程看起来好像在同时执行，但事实上同一时间点上只有一个线程被执行，知识切换得比较快。</li>
+<li>总结使线程处于就绪状态的方法</li>
+</ul>
+<ol>
+<li>调用sleep()方法</li>
+<li>调用wait()方法</li>
+<li>等待输入/输出完成</li>
+</ol>
+<ul>
+<li>当线程处于就绪状态，下面方法使线程再次进入运行状态</li>
+</ul>
+<ol>
+<li>线程调用notify()</li>
+<li>线程调用notifyAll()</li>
+<li>线程调用interrupt()</li>
+<li>线程的休眠时间结束</li>
+<li>输出/输出结束</li>
+</ol>
+<h4 id="4-操作线程的方法"><a href="#4-操作线程的方法" class="headerlink" title="4.操作线程的方法"></a>4.操作线程的方法</h4><h6 id="线程的休眠"><a href="#线程的休眠" class="headerlink" title="线程的休眠"></a>线程的休眠</h6><blockquote>
+<p>一种能控制线程行为的方法是调用sleep()方法，sleep()方法需要一个参数用于指定该线程休眠的时间，该时间使用毫秒为单位。在前面的实例中已经演示过sleep()方法，它通常是在run()方法内的循环中被使用。</p>
+</blockquote>
+<p>sleep()方法的语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">try{
+  Thread.sleep(2000);
+}catch(InterruptedException e){
+	e.printStackTrace();
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>休眠2秒</p>
+</blockquote>
+<ul>
+<li>窗体中自动画线段</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+import java.awt.*;
+import java.util.*;
+
+import javax.swing.*;
+public class SleepMethodTest extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Thread t;
+	// 定义颜色数组
+	private static Color[] color = { Color.BLACK, Color.BLUE, Color.CYAN,
+			Color.GREEN, Color.ORANGE, Color.YELLOW, Color.RED,
+			Color.PINK, Color.LIGHT_GRAY };
+	private static final Random rand = new Random();// 创建随机对象
+	
+	private static Color getC() {// 获取随机颜色值的方法
+		return color[rand.nextInt(color.length)];
+	}
+	
+	public SleepMethodTest() {
+		t = new Thread(new Runnable() {// 创建匿名线程对象
+			int x = 30;// 定义初始坐标
+			int y = 50;
+			
+			public void run() {// 覆盖线程接口方法
+				while (true) {// 无限循环
+					try {
+						Thread.sleep(100);// 线程休眠0.1秒
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					// 获取组件绘图上下文对象
+					Graphics graphics = getGraphics();
+					graphics.setColor(getC());// 设置绘图颜色
+					// 绘制直线并递增垂直坐标
+					graphics.drawLine(x, y, 100, y++);
+					if (y &gt;= 80) {
+						y = 50;
+					}
+				}
+			}
+		});
+		t.start();// 启动线程
+	}
+	
+	public static void main(String[] args) {
+		init(new SleepMethodTest(), 100, 100);
+	}
+	// 初始化程序界面的方法
+	public static void init(JFrame frame, int width, int height) {
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(width, height);
+		frame.setVisible(true);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="线程的加入"><a href="#线程的加入" class="headerlink" title="线程的加入"></a>线程的加入</h6><ul>
+<li>如果当前某程序为多线程程序，假如存在一个线程A，现在需要插入线程B，并要求线程B先执行完毕，然后再继续执行线程A，此时可以使用Thread类中的join()方法来完成。这就好比此时读者正在看电视，却突然有人上门收水费，读者必须付完水费后才能继续看电视。</li>
+<li>当某个线程使用join()方法加入到另外一个线程时，另一个线程会等待该线程执行完毕再继续执行。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.awt.*;
+
+import javax.swing.*;
+
+public class JoinTest extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Thread threadA; // 定义两个线程
+	private Thread threadB;
+	final JProgressBar progressBar = new JProgressBar(); // 定义两个进度条组件
+	final JProgressBar progressBar2 = new JProgressBar();
+	int count = 0;
+	
+	public static void main(String[] args) {
+		init(new JoinTest(), 100, 100);
+	}
+	
+	public JoinTest() {
+		super();
+		// 将进度条设置在窗体最北面
+		getContentPane().add(progressBar, BorderLayout.NORTH);
+		// 将进度条设置在窗体最南面
+		getContentPane().add(progressBar2, BorderLayout.SOUTH);
+		progressBar.setStringPainted(true); // 设置进度条显示数字字符
+		progressBar2.setStringPainted(true);
+		// 使用匿名内部类形式初始化Thread实例子
+		threadA = new Thread(new Runnable() {
+			int count = 0;
+			
+			public void run() { // 重写run()方法
+				while (true) {
+					progressBar.setValue(++count); // 设置进度条的当前值
+					try {
+						Thread.sleep(100); // 使线程A休眠100毫秒
+						threadB.join(); // 使线程B调用join()方法
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		threadA.start(); // 启动线程A
+		threadB = new Thread(new Runnable() {
+			int count = 0;
+			
+			public void run() {
+				while (true) {
+					progressBar2.setValue(++count); // 设置进度条的当前值
+					try {
+						Thread.sleep(100); // 使线程B休眠100毫秒
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					if (count == 100) // 当count变量增长为100时
+						break; // 跳出循环
+				}
+			}
+		});
+		threadB.start(); // 启动线程B
+	}
+	
+	// 设置窗体各种属性方法
+	public static void init(JFrame frame, int width, int height) {
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(width, height);
+		frame.setVisible(true);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="线程的中断"><a href="#线程的中断" class="headerlink" title="线程的中断"></a>线程的中断</h6><p>在以往时候会使用stop()方法停止线程，但当前版本的JDK早已废除了stop()方法，同时也不建议使用stop()方法来停止一个线程的运行。现在提倡在run()方法中使用无限循环的形式，然后使用一个布尔型标记控制循环的停止。</p>
+<ul>
+<li>实现Runnable接口，设置正确的停止方式</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class InterruptedTest implements Runnable{
+		private boolean  isContinue = false;        //设置一个标记变量，默认值为false
+		
+		public void run(){
+				while(true){
+				//……
+						if(isContinue)
+								break;
+				}
+		}
+		
+		public void setContinue(){
+				this.isContinue = true;
+		}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<ul>
+<li>进度条的线程使用interrupted()方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+public class InterruptedSwing extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	Thread thread;
+	
+	public static void main(String[] args) {
+		init(new InterruptedSwing(), 100, 100);
+	}
+	
+	public InterruptedSwing() {
+		super();
+		final JProgressBar progressBar = new JProgressBar(); // 创建进度条
+		// 将进度条放置在窗体合适位置
+		getContentPane().add(progressBar, BorderLayout.NORTH);
+		progressBar.setStringPainted(true); // 设置进度条上显示数字
+		thread = new Thread(new Runnable() {
+			int count = 0;
+			
+			public void run() {
+				while (true) {
+					progressBar.setValue(++count); // 设置进度条的当前值
+					try {
+						Thread.sleep(1000); // 使线程休眠1000豪秒
+						// 捕捉InterruptedException异常
+					} catch (InterruptedException e) {
+						System.out.println("当前线程序被中断");
+						break;
+					}
+				}
+			}
+		});
+		thread.start(); // 启动线程
+		thread.interrupt(); // 中断线程
+	}
+	
+	public static void init(JFrame frame, int width, int height) {
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(width, height);
+		frame.setVisible(true);
+	}
+	
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="线程的礼让"><a href="#线程的礼让" class="headerlink" title="线程的礼让"></a>线程的礼让</h6><ul>
+<li>Thread类中提供了一种礼让方法，使用yield()方法表示，它只是给当前正处于运行状态下的线程一个提醒，告知它可以将资源礼让给其他线程，但这仅仅是一种暗示，没有任何一种机制保证当前线程会将资源礼让。</li>
+<li>yield()方法使具有同样优先级的线程有进入可执行状态的机会，当当前线程放弃执行权时会再度回到就绪状态。对于支持多任务的操作系统来说，不需要调用yeild()方法，因为操作系统会为线程自动分配CPU时间片来执行。</li>
+</ul>
+<h4 id="5-线程的优先级"><a href="#5-线程的优先级" class="headerlink" title="5.线程的优先级"></a>5.线程的优先级</h4><ul>
+<li>每个线程都具有各自的优先级，线程的优先级可以在程序中表明该线程的重要性，如果有很多线程处于就绪状态，系统会根据优先级来决定首先使哪个线程进入运行状态。但这并不意味着低优先级的线程得不到运行，而只是它运行的几率比较小，比如垃圾回收线程的优先级就较低。</li>
+<li>Thread类中包含的成员变量代表了线程的某些优先级，比如Thread.MIN_PRIORITY（常数1）、Thread.MAX_PRIORITY（常数2）、Thread.NORM_PRIORITY（常数5）。其中每个线程的优先级都在Thread.MIN_PRIORITY~Thread.MAX_PRIORITY之间，在默认情况下其优先级都是Thread.NORM_ PRIORITY。每个新产生的线程都继承了父线程的优先级。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+public class PriorityTest extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Thread threadA;
+	private Thread threadB;
+	private Thread threadC;
+	private Thread threadD;
+	
+	public PriorityTest() {
+		getContentPane().setLayout(new GridLayout(4, 1));
+		// 分别实例化4个线程
+		final JProgressBar progressBar = new JProgressBar();
+		final JProgressBar progressBar2 = new JProgressBar();
+		final JProgressBar progressBar3 = new JProgressBar();
+		final JProgressBar progressBar4 = new JProgressBar();
+		getContentPane().add(progressBar);
+		getContentPane().add(progressBar2);
+		getContentPane().add(progressBar3);
+		getContentPane().add(progressBar4);
+		progressBar.setStringPainted(true);
+		progressBar2.setStringPainted(true);
+		progressBar3.setStringPainted(true);
+		progressBar4.setStringPainted(true);
+		threadA = new Thread(new MyThread(progressBar));
+		threadB = new Thread(new MyThread(progressBar2));
+		threadC = new Thread(new MyThread(progressBar3));
+		threadD = new Thread(new MyThread(progressBar4));
+		setPriority("threadA", 5, threadA);
+		setPriority("threadB", 5, threadB);
+		setPriority("threadC", 4, threadC);
+		setPriority("threadD", 3, threadD);
+	}
+	
+	// 定义设置线程的名称、优先级的方法
+	public static void setPriority(String threadName, int priority,
+			Thread t) {
+		t.setPriority(priority); // 设置线程的优先级
+		t.setName(threadName); // 设置线程的名称
+		t.start(); // 启动线程
+	}
+	
+	public static void main(String[] args) {
+		init(new PriorityTest(), 100, 100);
+	}
+	
+	public static void init(JFrame frame, int width, int height) {
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(width, height);
+		frame.setVisible(true);
+	}
+	
+	private final class MyThread implements Runnable { // 定义一个实现Runnable接口的类
+		private final JProgressBar bar;
+		int count = 0;
+		
+		private MyThread(JProgressBar bar) {
+			this.bar = bar;
+		}
+		
+		public void run() { // 重写run()方法
+			while (true) {
+				bar.setValue(count += 10); // 设置滚动条的值每次自增10
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					System.out.println("当前线程序被中断");
+				}
+			}
+		}
+	}
+	
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-线程同步"><a href="#6-线程同步" class="headerlink" title="6.线程同步"></a>6.线程同步</h4><h6 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h6><p>实际开发中，使用多线程程序的情况很多，如银行排号系统、火车站售票系统等。这种多线程的程序通常会发生问题，以火车站售票系统为例，在代码中判断当前票数是否大于0，如果大于0则执行将该票出售给乘客功能，但当两个线程同时访问这段代码时（假如这时只剩下一张票），第一个线程将票售出，与此同时第二个线程也已经执行完成判断是否有票的操作，并得出结论票数大于0，于是它也执行售出操作，这样就会产生负数。所以在编写多线程程序时，应该考虑到线程安全问题。实质上线程安全问题来源于两个线程同时存取单一对象的数据。</p>
+<pre class="line-numbers language-none"><code class="language-none">public class ThreadSafeTest implements Runnable {
+	int num = 10; // 设置当前总票数
+	
+	public void run() {
+		while (true) {
+			if (num &gt; 0) {
+				try {
+					Thread.sleep(100);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				System.out.println("tickets" + num--);
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		ThreadSafeTest t = new ThreadSafeTest(); // 实例化类对象
+		Thread tA = new Thread(t); // 以该类对象分别实例化4个线程
+		Thread tB = new Thread(t);
+		Thread tC = new Thread(t);
+		Thread tD = new Thread(t);
+		tA.start(); // 分别启动线程
+		tB.start();
+		tC.start();
+		tD.start();
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="线程同步机制"><a href="#线程同步机制" class="headerlink" title="线程同步机制"></a>线程同步机制</h6><blockquote>
+<p>如何解决资源共享的问题？基本上所有解决多线程资源冲突问题都会采用给定时间只允许一个线程访问共享资源，这时就需要给共享资源上一道锁。这就好比一个人上洗手间，这个人进入洗手间后将门锁上，当他出来时再将锁打开，然后其他人才可以进入。</p>
+</blockquote>
+<h6 id="同步块"><a href="#同步块" class="headerlink" title="同步块"></a>同步块</h6><blockquote>
+<p>也称为临界区。使用synchronized关键字建立</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">synchronized(Object){
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>共享资源的操作放在synchronized定义的区域内，当其他线程获得这个锁，必须等到锁被释放时才能进入该区域。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class ThreadSafeTest implements Runnable {
+	int num = 10;
+	
+	public void run() {
+		while (true) {
+			synchronized ("") {
+				if (num &gt; 0) {
+					try {
+						Thread.sleep(1000);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					System.out.println("tickets" + --num);
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		ThreadSafeTest t = new ThreadSafeTest();
+		Thread tA = new Thread(t);
+		Thread tB = new Thread(t);
+		Thread tC = new Thread(t);
+		Thread tD = new Thread(t);
+		tA.start();
+		tB.start();
+		tC.start();
+		tD.start();
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h6><pre class="line-numbers language-none"><code class="language-none">synchronized void f(){}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>当某个对象调用同步方法时，该对象上的其他同步方法必须等待该同步方法执行完毕后才能被执行。必须将每个能访问共享资源的方法修饰为synchronized，否则会出错。</li>
+<li>定义同步方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public synchronized void doit(){                            //定义同步方法
+    if(num&gt;0){
+        try{
+            Thread.sleep(10);
+        }catch(Exception e){
+            e.printStackTrance();
+        }
+        System.out.println("tickets"+--num);
+    }
+}
+
+public void run(){
+    while(true){
+        doit();                                     //在run方法中调用该同步方法
+        }
+        }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h6><ul>
+<li>在run()方法中每隔100毫秒打印一句话</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+public class Usecase3 extends Thread {
+	int index=0;
+	String[] str={"Hello","Java","world","study","我要学习Java语言","Java编程词典能伴我学习、工作以及独立研发"};
+	public void run() {
+		while (true) {
+			System.out.println(str[index++%6]);
+			try {
+				Thread.sleep(100);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		new Usecase3().start();
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>开始，停止</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.wsy;
+
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class TestThread extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel jPanel1 = new JPanel();
+	JButton startButton = new JButton();
+	JButton stopButton = new JButton();
+	MyThread thread = null;
+	private boolean isContinue;
+	public TestThread() {
+		try {
+			jbInit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void jbInit() throws Exception {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		startButton.setText("start");
+		startButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				startButton_actionPerformed(e);
+			}
+		});
+		stopButton.setText("stop");
+		stopButton.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				stopButton_actionPerformed(e);
+			}
+		});
+		this.getContentPane().add(jPanel1, BorderLayout.CENTER);
+		jPanel1.add(startButton);
+		startButton.setBounds(36, 105, 82, 30);
+		jPanel1.add(stopButton);
+		stopButton.setBounds(160, 108, 100, 31);
+	}
+	
+	void startButton_actionPerformed(ActionEvent e) {
+		if (thread != null)
+			isContinue=false;
+		thread = new MyThread();
+		thread.start();
+	}
+	
+	void stopButton_actionPerformed(ActionEvent e) {
+		if (thread != null)
+			isContinue=false;
+		thread = null;
+	}
+	
+	public static void main(String[] args) {
+		TestThread test = new TestThread();
+		test.setBounds(300,300,300, 80);
+		test.setVisible(true);
+	}
+	
+	private class MyThread extends Thread {
+		public MyThread() {
+			isContinue=true;
+		}
+		
+		public void run() {
+			System.out.println("\n\n");
+			while (true &amp;&amp; isContinue) {
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				System.out.println("Java 编程词典\thttp://www.mrbccd.com");
+			}
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>进度条递增滚动</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+public class UseCase1 extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	final JProgressBar progressBar = new JProgressBar();
+	
+	public UseCase1() {
+		
+		getContentPane().add(progressBar, BorderLayout.NORTH);
+		progressBar.setStringPainted(true);
+		
+		Thread threadA = new Thread(new Runnable() {
+			int count = 0;
+			
+			public void run() {
+				while (true) {
+					progressBar.setValue(++count);
+					try {
+						Thread.sleep(100);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		threadA.start();
+	}
+	
+	public static void main(String[] args) {
+		init(new UseCase1(), 100, 100);
+		
+	}
+	
+	public static void init(JFrame frame, int width, int height) {
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(width, height);
+		frame.setVisible(true);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/02/19/java-kuo-zhan-lei-2-duo-xian-cheng/">http://xinxinliang.github.io/2021/02/19/java-kuo-zhan-lei-2-duo-xian-cheng/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">编程语言</span>
+                                </a>
+                            
+                                <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                                    <span class="chip bg-color">Java扩展类</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/02/19/java-kuo-zhan-lei-3-wang-luo-tong-xin/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-ey96rl.png" class="responsive-img" alt="Java扩展类3：网络通信">
+                        
+                        <span class="card-title">Java扩展类3：网络通信</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                        <span class="chip bg-color">Java扩展类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/19/java-kuo-zhan-lei-1-swing-cheng-xu-she-ji-he-gao-ji-shi-jian/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-dg37eo.png" class="responsive-img" alt="Java扩展类1：Swing程序设计和高级事件">
+                        
+                        <span class="card-title">Java扩展类1：Swing程序设计和高级事件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                        <span class="chip bg-color">Java扩展类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">119.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

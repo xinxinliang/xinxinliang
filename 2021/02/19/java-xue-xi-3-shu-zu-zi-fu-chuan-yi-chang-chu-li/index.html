@@ -1,0 +1,2320 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java学习3：数组、字符串、异常处理, blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java学习3：数组、字符串、异常处理 | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-9693ek.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java学习3：数组、字符串、异常处理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">编程语言</span>
+                            </a>
+                        
+                            <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                                <span class="chip bg-color">Java语法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    27 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、数组"><a href="#一、数组" class="headerlink" title="一、数组"></a>一、数组</h2><blockquote>
+<p><strong>相同类型</strong>的、用一个标识符封装到一起的基本数据类型数据序列或对象序列。</p>
+</blockquote>
+<h4 id="1-一维数组"><a href="#1-一维数组" class="headerlink" title="1.一维数组"></a>1.一维数组</h4><h6 id="创建一维数组"><a href="#创建一维数组" class="headerlink" title="创建一维数组"></a>创建一维数组</h6><ul>
+<li>先声明，再用new运算符分配空间</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">int arr[];						//声明整型数组，数组中每个元素是int整数型
+String []str;					//声明String数组
+
+//为数组分配内存
+arr = new int[5];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>声明的同时分配空间</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">int month[]= new int[12];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="初始化一维数组"><a href="#初始化一维数组" class="headerlink" title="初始化一维数组"></a>初始化一维数组</h6><pre class="line-numbers language-none"><code class="language-none">int arr[] = new int[]{1,2,3,5,25};
+int arr2[] = {1,2,3,5,25};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>使用一维数组</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class GetDay { // 创建类
+	public static void main(String[] args) { // 主方法
+		// 创建并初始化一维数组
+		int day[]=new int[]{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		for (int i = 0; i &lt; 12; i++) { // 利用循环将信息输出
+			System.out.println((i + 1) + "月有" + day[i] + "天"); // 输出的信息
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-多维数组"><a href="#2-多维数组" class="headerlink" title="2.多维数组"></a>2.多维数组</h4><h6 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h6><ul>
+<li>创建</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">int arr[][];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>声明空间</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">a = new int[2][4];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>分别为每一维分配内存</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">a = new int[2][];
+a[0] = new int[2];
+a[1] = new int[3];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>初始化</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">int myarr[][] = {{12,0},{45,10}};<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>赋值</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">a[1][1]=20;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>使用二维数组</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Matrix { // 创建类
+	public static void main(String[] args) { // 主方法
+		int a[][] = new int[3][4]; // 定义二维数组
+		for (int i = 0; i &lt; a.length; i++) {
+			for (int j = 0; j &lt; a[i].length; j++) { // 循环遍历数组中的每个元素
+				System.out.print(a[i][j]); // 将数组中的元素输出
+			}
+			System.out.println(); // 输出空格
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="三维数组"><a href="#三维数组" class="headerlink" title="三维数组"></a>三维数组</h6><ul>
+<li>输出三维数组</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Ransack {
+    public static void main(String[] args) {
+        int arr[][][] = new int[][][]{
+                {{1,2,3},{4,5,6}},
+                {{7,8,9},{10,11,12}},
+                {{13,14,15},{16,17,18}}
+        };
+
+        for (int i=0;i&lt;arr.length;i++){
+            System.out.println("三维数组的第"+(i+1)+"个元素是一个"+arr[0].length
+                        +"维数组，内容如下:");
+            for (int j=0;j&lt;arr[0].length;j++){
+                for(int k=0;k&lt;arr[0][0].length;k++){
+                    System.out.println(arr[i][j][k]+"\t");
+                }
+                System.out.println();
+            }
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-数组的基本操作"><a href="#3-数组的基本操作" class="headerlink" title="3.数组的基本操作"></a>3.数组的基本操作</h4><h6 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h6><ul>
+<li>遍历一维数组</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Trap { // 创建类
+	public static void main(String[] args) { // 主方法
+		int b[][] = new int[][]{{ 1 },{ 2, 3},{ 4, 5, 6 } };// 定义二维数组
+		for (int k = 0; k &lt; b.length; k++) {
+			for (int c=0;c&lt;b[k].length; c++){// 循环遍历二维数组中的每个元素
+				System.out.print(b[k][c]); // 将数组中的元素输出
+			}
+			System.out.println(); // 输出空格
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>遍历二维数组</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Tautog { // 创建类
+	public static void main(String[] args) { // 主方法
+		int arr2[][] = { { 4, 3 }, { 1, 2 } }; // 定义二维数组
+		System.out.println("数组中的元素是："); // 提示信息
+		int i = 0;// 外层循环计数器变量
+		for (int x[] : arr2) { // 外层循环变量为一维数组
+			i++;// 外层计数器递增
+			int j = 0;// 内层循环计数器
+			for (int e : x) { // 循环遍历每一个数组元素
+				j++;// 内层计数器递增
+				if (i == arr2.length &amp;&amp; j == x.length) { // 判断变量是二维数组中的最后一个元素
+					System.out.print(e); // 输出二维数组的最后一个元素
+				} else
+					// 如果不是二维数组中的最后一个元素
+					System.out.print(e + "、"); // 输出信息
+			}
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="填充替换数组元素"><a href="#填充替换数组元素" class="headerlink" title="填充替换数组元素"></a>填充替换数组元素</h6><ul>
+<li>Arrays.fill(int a[], int value);</li>
+</ul>
+<blockquote>
+<p>数组填充数字</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Swap { // 创建类
+	public static void main(String[] args) { // 主方法
+		int arr[] = new int[5]; // 创建int型数组
+		Arrays.fill(arr, 8); // 使用同一个值对数组进行填充
+		for (int i = 0; i &lt; arr.length; i++) { // 循环遍历数组中的元素
+			// 将数组中的元素依次输出
+			System.out.println("第" + i + "个元素是：" + arr[i]);
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>填充数字指定起始位置</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Displace { // 创建类
+	public static void main(String[] args) { // 主方法
+		int arr[] = new int[] { 45, 12, 2, 10 }; // 定义并初始化int型数组arr
+		Arrays.fill(arr, 1, 2, 8); // 使用fill方法对数组进行初始化
+		for (int i = 0; i &lt; arr.length; i++) { // 循环遍历数组中元素
+			// 将数组中的每个元素输出
+			System.out.println("第" + i + "个元素是：" + arr[i]);
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="对数组进行排序"><a href="#对数组进行排序" class="headerlink" title="对数组进行排序"></a>对数组进行排序</h6><ul>
+<li>Arrays.sort(object);</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Taxis { // 创建类
+	public static void main(String[] args) { // 主方法
+		int arr[] = new int[] { 23, 42, 12, 8 }; // 声明数组
+		Arrays.sort(arr); // 将数组进行排序
+		for (int i = 0; i &lt; arr.length; i++) { // 循环遍历排序后的数组
+			System.out.println(arr[i]); // 将排序后数组中的各个元素输出
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="复制数组"><a href="#复制数组" class="headerlink" title="复制数组"></a>复制数组</h6><ul>
+<li>copyOf(arr,int nwelength)</li>
+</ul>
+<blockquote>
+<p>返回值为复制后的数组</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Cope { // 创建类
+	public static void main(String[] args) { // 主方法
+		int arr[] = new int[] { 23, 42, 12, }; // 定义数组
+		int newarr[] = Arrays.copyOf(arr, 5); // 复制数组arr
+		for (int i = 0; i &lt; newarr.length; i++) { // 循环变量复制后的新数组
+			System.out.println(newarr[i]); // 将新数组输出
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>copyOfRange(arr,int formIndex,int toIndex)</li>
+</ul>
+<blockquote>
+<p>指定起始位置</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Repeat { // 创建类
+	public static void main(String[] args) { // 主方法
+		int arr[] = new int[] { 23, 42, 12, 84, 10 }; // 定义数组
+		int newarr[] = Arrays.copyOfRange(arr, 0, 3); // 复制数组
+		for (int i = 0; i &lt; newarr.length; i++) { // 循环遍历复制后的新数组
+			System.out.println(newarr[i]); // 将新数组中的每个元素输出
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h6 id="数组查询"><a href="#数组查询" class="headerlink" title="数组查询"></a>数组查询</h6><ul>
+<li>binarySearch(Object[] a,Object key)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Example { // 创建类
+	public static void main(String[] args) { // 主方法
+		int ia[] = new int[] { 1, 8, 9, 4, 5 }; // 定义int型数组ia
+		Arrays.sort(ia); // 将数组进行排序
+		int index = Arrays.binarySearch(ia, 4); // 查找数组ia中元素4的索引位置
+		System.out.println("4的索引位置是：" + index); // 将索引输出
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>binarySearch(Object[] a,int formIndex,int toIndex,intObject key)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Rakel { // 创建类
+	public static void main(String[] args) { // 主方法
+		// 定义String型数组str
+		String str[] = new String[] { "ab", "cd", "ef", "yz" };
+		Arrays.sort(str); // 将数组进行排序
+		// 在指定的范围内搜索元素"cd"的索引位置
+		int index = Arrays.binarySearch(str, 0, 2, "cd");
+		System.out.println("cd的索引位置是：" + index); // 将索引输出
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h4 id="4-数组排序算法"><a href="#4-数组排序算法" class="headerlink" title="4. 数组排序算法"></a>4. 数组排序算法</h4><h6 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h6><pre class="line-numbers language-none"><code class="language-none">public class BubbleSort {
+	public static void main(String[] args) {
+		// 创建一个数组，这个数组元素是乱序的
+		int[] array = { 63, 4, 24, 1, 3, 15 };
+		// 创建冒泡排序类的对象
+		BubbleSort sorter = new BubbleSort();
+		// 调用排序方法将数组排序
+		sorter.sort(array);
+	}
+	
+	/**
+	 *冒泡排序
+	 * 
+	 * @param array
+	 *            要排序的数组
+	 */
+	public void sort(int[] array) {
+		for (int i = 1; i &lt; array.length; i++) {
+			// 比较相邻两个元素，较大的数往后冒泡
+			for (int j = 0; j &lt; array.length - i; j++) {
+				if (array[j] &gt; array[j + 1]) {
+					int temp = array[j];// 把第一个元素值保持到临时变量中
+					array[j] = array[j + 1];// 把第二个元素值保存到第一个元素单元中
+					array[j + 1] = temp;// 把临时变量也就是第一个元素原值保持到第二个元素中
+				}
+			}
+		}
+		showArray(array);// 输出冒泡排序后的数组元素
+	}
+	
+	/**
+	 * 显示数组所有元素
+	 * 
+	 * @param array
+	 *            要显示的数组
+	 */
+	public void showArray(int[] array) {
+		for (int i : array) {// foreach格式遍历数组
+			System.out.print(" &gt;" + i);// 输出每个数组元素值
+		}
+		System.out.println();
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="直接排序"><a href="#直接排序" class="headerlink" title="直接排序"></a>直接排序</h6><blockquote>
+<p>从左边待排序列中选出最大或者最小的数放在右边，在选放入右边已排序列</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">/**
+ * 直接选择排序算法实例
+ * 
+ * @author Li Zhong Wei
+ */
+public class SelectSort {
+	public static void main(String[] args) {
+		// 创建一个数组，这个数组元素是乱序的
+		int[] array = { 63, 4, 24, 1, 3, 15 };
+		// 创建直接排序类的对象
+		SelectSort sorter = new SelectSort();
+		// 调用排序对象的方法将数组排序
+		sorter.sort(array);
+	}
+	
+	/**
+	 *直接选择排序法
+	 * 
+	 * @param array
+	 *            要排序的数组
+	 */
+	public void sort(int[] array) {
+		int index;
+		for (int i = 1; i &lt; array.length; i++) {
+			index = 0;
+			for (int j = 1; j &lt;= array.length - i; j++) {
+				if (array[j] &gt; array[index]) {
+					index = j;
+				}
+			}
+			// 交换在位置array.length-i和index(最大值)两个数
+			int temp = array[array.length - i];// 把第一个元素值保持到临时变量中
+			array[array.length - i] = array[index];// 把第二个元素值保存到第一个元素单元中
+			array[index] = temp;// 把临时变量也就是第一个元素原值保持到第二个元素中
+		}
+		showArray(array);// 输出直接选择排序后的数组值
+	}
+	
+	/**
+	 * 显示数组所有元素
+	 * 
+	 * @param array
+	 *            要显示的数组
+	 */
+	public void showArray(int[] array) {
+		for (int i : array) {// foreach格式遍历数组
+			System.out.print(" &gt;" + i);// 输出每个数组元素值
+		}
+		System.out.println();
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="反转排序"><a href="#反转排序" class="headerlink" title="反转排序"></a>反转排序</h6><pre class="line-numbers language-none"><code class="language-none">/**
+ * 反转排序算法实例
+ * 
+ * @author Li Zhong Wei
+ */
+public class ReverseSort {
+	public static void main(String[] args) {
+		// 创建一个数组
+		int[] array = { 10, 20, 30, 40, 50, 60 };
+		// 创建反转排序类的对象
+		ReverseSort sorter = new ReverseSort();
+		// 调用排序对象的方法将数组反转
+		sorter.sort(array);
+	}
+	
+	/**
+	 *直接选择排序法
+	 * 
+	 * @param array
+	 *            要排序的数组
+	 */
+	public void sort(int[] array) {
+		System.out.println("数组原有内容：");
+		showArray(array);// 输出排序前的数组值
+		int temp;
+		int len = array.length;
+		for (int i = 0; i &lt; len / 2; i++) {
+			temp = array[i];
+			array[i] = array[len - 1 - i];
+			array[len - 1 - i] = temp;
+		}
+		System.out.println("数组反转后内容：");
+		showArray(array);// 输出排序后的数组值
+	}
+	
+	/**
+	 * 显示数组所有元素
+	 * 
+	 * @param array
+	 *            要显示的数组
+	 */
+	public void showArray(int[] array) {
+		for (int i : array) {// foreach格式遍历数组
+			System.out.print("\t" + i);// 输出每个数组元素值
+		}
+		System.out.println();
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、字符串"><a href="#二、字符串" class="headerlink" title="二、字符串"></a>二、字符串</h2><h4 id="1-String类"><a href="#1-String类" class="headerlink" title="1.String类"></a>1.String类</h4><h6 id="声明字符串"><a href="#声明字符串" class="headerlink" title="声明字符串"></a>声明字符串</h6><blockquote>
+<p>字符串必须包含在<strong>一对双引号内</strong>,如“2.32”、“ADFR”</p>
+</blockquote>
+<ul>
+<li>String str;</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">String a;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>String()</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">String s = new String()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="创建字符串"><a href="#创建字符串" class="headerlink" title="创建字符串"></a>创建字符串</h6><ul>
+<li>String(char a[])</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">char a[] = {'g','o','o','d'};
+String s = new String(a);
+//等价于
+String s = new String("good");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>String(char a[],int offset,int length)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">char a[] = {'s','t','u','d','e','n','t'};
+String s = new String(a,2,4);
+//等价于
+String a = new String("uden");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>引用字符串常量来定义字符串变量</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">String str1,str2;
+str1 = "good";
+str2 = "student";<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-连接字符串"><a href="#2-连接字符串" class="headerlink" title="2.连接字符串"></a>2.连接字符串</h4><h6 id="连接多个字符串"><a href="#连接多个字符串" class="headerlink" title="连接多个字符串"></a>连接多个字符串</h6><blockquote>
+<p>使用<code>+</code>连接</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">public class Join { // 创建类
+	public static void main(String args[]) { // 主方法
+		String s1 = new String("hello"); // 声明String对象s1
+		String s2 = new String("word"); // 声明String对象s2
+		String s = s1 + " " + s2; // 将对象s1和s2连接后的结果赋值给s
+		System.out.println(s); // 将s输出
+
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="连接其他数据类型"><a href="#连接其他数据类型" class="headerlink" title="连接其他数据类型"></a>连接其他数据类型</h6><blockquote>
+<p>字符串与整型、浮点型变量相连输出</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">public class Link { // 创建类
+	public static void main(String args[]) { // 主方法
+		int booktime = 4; // 声明的int型变量booktime
+		float practice = 2.5f; // 声明的float型变量practice
+		// 将字符串与整型、浮点型变量相连，并将结果输出
+		System.out.println("我每天花费" + booktime + "小时看书；"
+				+ practice + "小时上机练习");
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-获取字符串信息"><a href="#3-获取字符串信息" class="headerlink" title="3.获取字符串信息"></a>3.获取字符串信息</h4><h6 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h6><ul>
+<li>str.length()<h6 id="字符串查找"><a href="#字符串查找" class="headerlink" title="字符串查找"></a>字符串查找</h6></li>
+<li>str.indexOf(“a”)</li>
+<li>str.lastindexod(“a”)<blockquote>
+<p>从起始位置搜索，返回a最后出现的位置</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Text { 							//创建类
+	public static void main(String args[]) { 		//主方法
+		String str = "We are students"; 			//定义字符串str
+		//将空格在str中的索引位置赋值给变量size
+		int size = str.lastIndexOf(" ");
+		//将变量size输出
+		System.out.println("空格在字符串str中的索引位置是：" + size);
+		//将字符串str的长度输出
+		System.out.println("字符串str的长度是：" + str.length());
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h6 id="获取指定索引位置的字符"><a href="#获取指定索引位置的字符" class="headerlink" title="获取指定索引位置的字符"></a>获取指定索引位置的字符</h6><ul>
+<li>str.chartAt(int beginIndex)</li>
+<li>str.chartAt()<pre class="line-numbers language-none"><code class="language-none">public class Ref { // 创建类
+	public static void main(String args[]) { // 主方法
+		String str = "hello word"; // 定义字符串str
+		char mychar = str.charAt(6); // 将字符串str中索引位置是6的字符返回
+		System.out.println("字符串str中索引位置是6的字符为：" + mychar); // 输出信息
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+</ul>
+<h4 id="4-字符串操作"><a href="#4-字符串操作" class="headerlink" title="4.字符串操作"></a>4.字符串操作</h4><h6 id="获取子字符串"><a href="#获取子字符串" class="headerlink" title="获取子字符串"></a>获取子字符串</h6><ul>
+<li>str.substring(int beginIndex,int endIndex)<blockquote>
+<p>和python对比</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Subs { // 创建类
+	public static void main(String args[]) { // 主方法
+		String str = "hello word"; // 定义的字符串
+		String substr = str.substring(0, 3); // 对字符串进行截取
+		System.out.println(substr); // 输出截取后的字符串
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="去除空格"><a href="#去除空格" class="headerlink" title="去除空格"></a>去除空格</h6><ul>
+<li>str.trim()<pre class="line-numbers language-none"><code class="language-none">public class Blak { // 创建类
+	public static void main(String args[]) { // 主方法
+		String str = "  Java  class   "; // 定义字符串str
+		System.out.println("字符串原来的长度：" + str.length()); // 将str原来的长度输出
+		System.out.println("去掉空格后的长度：" + str.trim().length());
+		// 将str去掉前导和尾部的空格后的结果输出
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h6></li>
+<li>str.replace(“a”,”A”)<blockquote>
+<p>返回值：去掉前导与尾部空格后的字符串</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class NewStr { // 创建类
+	public static void main(String args[]) { // 主方法
+		String str = "address"; // 定义字符串str
+		 // 字符串str中的字符"a"替换成"A"后返回的新字符串newstr
+		String newstr = str.replace("a", "A");
+		System.out.println(newstr); // 将字符串newstr输出
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>str.replaceAll(String regex,String repalcement)</li>
+</ul>
+<blockquote>
+<p>去掉所有空格</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">s = s.replaceAll(" ","")<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>str.replaceFirst(String regex,String repalcement)</li>
+</ul>
+<blockquote>
+<p>用于去掉第一个出现的字符串</p>
+</blockquote>
+<h6 id="判断字符串开头与结尾"><a href="#判断字符串开头与结尾" class="headerlink" title="判断字符串开头与结尾"></a>判断字符串开头与结尾</h6><ul>
+<li>str.startsWith(String prefix)</li>
+<li>str.endsWith(String suffix)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class StartOrEnd { // 创建类
+	public static void main(String args[]) { // 主方法
+		String num1 = "22045612"; // 定义字符串num1
+		String num2 = "21304578"; // 定义字符串num2
+		boolean b = num1.startsWith("22"); // 判断字符串num1是否以'22'开头
+		boolean b2 = num1.endsWith("78"); // 判断字符串num1是否以'78'结束
+		boolean b3 = num2.startsWith("22"); // 判断字符串num2是否以'22'开头
+		boolean b4 = num2.endsWith("78"); // 判断字符串num2是否以'78'结束
+		System.out.println("字符串num1是以'22'开始的吗？" + b);
+		System.out.println("字符串num1是以'78'结束的吗？" + b2); // 输出信息
+		System.out.println("字符串num2是以'22'开始的吗？" + b3);
+		System.out.println("字符串num2是以'78'结束的吗？" + b4);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="判断字符串是否相等"><a href="#判断字符串是否相等" class="headerlink" title="判断字符串是否相等"></a>判断字符串是否相等</h6><ul>
+<li><p>str1==str2</p>
+<blockquote>
+<p>内容相同，地址不同（变量名），也会返回false。没什么意义</p>
+</blockquote>
+</li>
+<li><p>str1.equals(str2)</p>
+<blockquote>
+<p>区分大小写，长度要相同</p>
+</blockquote>
+</li>
+<li><p>str1.equalsignoreCase(str2)</p>
+<blockquote>
+<p>忽略大小写，长度要相同</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Opinion { // 创建类
+	public static void main(String args[]) { // 主方法
+		String s1 = new String("abc"); // 创建字符串对象s1
+		String s2 = new String("ABC"); // 创建字符串对象s2
+		String s3 = new String("abc"); // 创建字符串对象s3
+		boolean b = s1.equals(s2); // 使用equals()方法比较s1与s2
+		// 使用equalsIgnoreCase()方法比较s1与s2
+		boolean b2 = s1.equalsIgnoreCase(s2); 
+		System.out.println(s1 + " equals " + s2 + " :" + b); // 输出信息
+		System.out.println(s1 + " equalsIgnoreCase " + s2 + " :" + b2);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="按字典顺序比较两个字符串"><a href="#按字典顺序比较两个字符串" class="headerlink" title="按字典顺序比较两个字符串"></a>按字典顺序比较两个字符串</h6><ul>
+<li>str1.compareTo(str2)<blockquote>
+<p>比较基于各个字符串中字符的Unicode值</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Wordbook { // 创建类
+	public static void main(String args[]) { // 主方法
+		String str = new String("b");
+		String str2 = new String("a"); // 用于比较的3个字符串
+		String str3 = new String("c");
+		System.out.println(str + " compareTo " + str2 + ":"
+				+ str.compareTo(str2)); // 将str与str2比较的结果输出
+		System.out.println(str + " compareTo " + str3 + ":"
+				+ str.compareTo(str3)); // 将str与str3比较的结果输出
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="字母大小写转换"><a href="#字母大小写转换" class="headerlink" title="字母大小写转换"></a>字母大小写转换</h6><ul>
+<li>str.toLowerCase() //转换为小写</li>
+<li>str.toUpperCase() //转换为大写<pre class="line-numbers language-none"><code class="language-none">public class UpAndLower { // 创建类
+	public static void main(String args[]) { // 主方法
+		String str = new String("abc DEF"); // 创建的字符串str
+		String newstr = str.toLowerCase(); //使用toLowerCase()方法实行小写转换
+		String newstr2 = str.toUpperCase();//使用toUpperCase()方法实行大写转换
+		System.out.println(newstr);// 将转换后的结果输出
+		System.out.println(newstr2);
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+</ul>
+<h6 id="字符串分割"><a href="#字符串分割" class="headerlink" title="字符串分割"></a>字符串分割</h6><ul>
+<li>str.split(String sign)<blockquote>
+<p>sign是分割字符串的分割符，可以使用正则表达式。</p>
+<p>如果定义多个分割符号，可以使用<code>|</code>,例如<code>“,|=”</code>,表示分隔符为，和=</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Division{
+	public static void main(String[] args) {
+		// 创建字符串
+		String str = "192.168.0.1";
+		// 按照"."进行分割
+		String[] firstArray = str.split("\\.");
+		// 按照"."进行两次分割
+		String[] secondArray = str.split("\\.", 2);
+		// 输出str原值
+		System.out.println("str的原值为：[" + str + "]");
+		// 输出全部分割的结果
+		System.out.print("全部分割的结果：");
+		for (String a : firstArray) {
+			System.out.print("[" + a + "]");
+		}
+		System.out.println();// 换行
+		// 输出分割两次的结果
+		System.out.print("分割两次的结果：");
+		for (String a : secondArray) {
+			System.out.print("[" + a + "]");
+		}
+		System.out.println();
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-格式化字符串"><a href="#5-格式化字符串" class="headerlink" title="5.格式化字符串"></a>5.格式化字符串</h4><h6 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h6><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210215100804.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Eval { // 新建类
+	public static void main(String[] args) { // 主方法
+		Date date = new Date(); // 创建Date对象date
+		String year = String.format("%tY", date); // 将date进行格式化
+		String month = String.format("%tB", date);
+		String day = String.format("%td", date);
+		System.out.println("今年是：" + year + "年"); // 输出信息
+		System.out.println("现在是：" + month);
+		System.out.println("今天是：" + day + "号");
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h6><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210215100819.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class GetDate { // 新建类
+	public static void main(String[] args) { // 主方法
+		Date date = new Date(); // 创建Date对象date
+		String hour = String.format("%tH", date); // 将date进行格式化
+		String minute = String.format("%tM", date);
+		String second = String.format("%tS", date);
+		 // 输出的信息
+		System.out.println("现在是：" + hour + "时" + minute + "分"
+				+ second + "秒");
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="格式化常见的日期和时间组合"><a href="#格式化常见的日期和时间组合" class="headerlink" title="格式化常见的日期和时间组合"></a>格式化常见的日期和时间组合</h6><pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class DateAndTime { // 创建类
+	public static void main(String[] args) { // 主方法
+		Date date = new Date(); // 创建Date对象date
+		String time = String.format("%tc", date); // 将date格式化
+		String form = String.format("%tF", date);
+		 // 将格式化后的日期时间输出
+		System.out.println("全部的时间信息是：" + time);
+		System.out.println("年-月-日格式：" + form);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="常规类型格式化"><a href="#常规类型格式化" class="headerlink" title="常规类型格式化"></a>常规类型格式化</h6><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210215100833.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">public class General { // 新建类
+	public static void main(String[] args) { // 主方法
+		String str = String.format("%d", 400 / 2); // 将结果以十进制显示
+		String str2 = String.format("%b", 3 &gt; 5); // 将结果以布尔形式显示
+		String str3 = String.format("%x", 200); // 将结果以十进制格式显示
+		System.out.println("400的一半是：" + str); // 输出格式化字符串
+		System.out.println("3&gt;5正确吗：" + str2);
+		System.out.println("200的十六进制数是：" + str3);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-正则表达式"><a href="#6-正则表达式" class="headerlink" title="6.正则表达式"></a>6.正则表达式</h4><h6 id="判断是否符合正则表达式的方法"><a href="#判断是否符合正则表达式的方法" class="headerlink" title="判断是否符合正则表达式的方法"></a>判断是否符合正则表达式的方法</h6><pre class="line-numbers language-none"><code class="language-none">boolean matches(String regex)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210215101124.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210215101143.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">public class Judge {
+	public static void main(String[] args) {
+		 // 定义要匹配E_mail地址的正则表达式
+		String regex = "\\w+@\\w+(\\.\\w{2,3})*\\.\\w{2,3}";
+		String str1 = "aaa@"; // 定义要进行验证的字符串
+		String str2 = "aaaaa";
+		String str3 = "1111@111ffyu.dfg.com";
+		if (str1.matches(regex)) { // 判断字符串变量是否与正则表达式匹配
+			System.out.println(str1 + "是一个合法的E-mail地址格式");
+		}
+		if (str2.matches(regex)) {
+			System.out.println(str2 + "是一个合法的E-mail地址格式");
+		}
+		if (str3.matches(regex)) {
+			System.out.println(str3 + "是一个合法的E-mail地址格式");
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210215101338.png"></p>
+<h4 id="4-字符串生成器"><a href="#4-字符串生成器" class="headerlink" title="4.字符串生成器"></a>4.字符串生成器</h4><h6 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h6><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210215102132.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">public class Jerque { // 新建类
+	public static void main(String[] args) { // 主方法
+		String str = ""; // 创建空字符串
+		// 定义对字符串执行操作的起始时间
+		long starTime = System.currentTimeMillis();
+		for (int i = 0; i &lt; 10000; i++) { // 利用for循环执行10000次操作
+			str = str + i; // 循环追加字符串
+		}
+		long endTime = System.currentTimeMillis(); // 定义对字符串操作后的时间
+		long time = endTime - starTime; // 计算对字符串执行操作的时间
+		System.out.println("Sting消耗时间：" + time); // 将执行的时间输出
+		StringBuilder builder = new StringBuilder(""); // 创建字符串生成器
+		starTime = System.currentTimeMillis(); // 定义操作执行前的时间
+		for (int j = 0; j &lt; 10000; j++) { // 利用for循环进行操作
+			builder.append(j); // 循环追加字符
+		}
+		endTime = System.currentTimeMillis(); // 定义操作后的时间
+		time = endTime - starTime; // 追加操作执行的时间
+		System.out.println("StringBuilder消耗时间：" + time); // 将操作时间输出
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>执行时间差距很大，程序中如频繁的附加字符串，建议使用StringBuilder</p>
+</blockquote>
+<h6 id="StringBuilder类的常用方法"><a href="#StringBuilder类的常用方法" class="headerlink" title="StringBuilder类的常用方法"></a>StringBuilder类的常用方法</h6><ul>
+<li><code>builder.append(String str)</code></li>
+</ul>
+<blockquote>
+<p>将指定字符串追加到字符串生成器中。appned（）方法可以实现任何数据类型的追加，包括其他字符串生成器。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">String s = "good";
+StringBuilder builder = new StringBuilder();
+builder.append(s);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>builder.append(StringBuiffer sb)</p>
+<p>将字符串缓存中的值添加到字符串生成器中。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">StringBuffer buffer = new StringBuffer("Sunday");
+StringBuilder builder = new StringBuilder();
+builder.append(buffer);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>builder.insert(int offset,String str)</code></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">String s1 = "int";
+String s2 = "ser";
+StringBuilder builder = nwe StringBuilder(s1);
+builder.insert(2,s2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>builder.delete(int start,String end)</code></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">StringBuilder builder = new StringBuilder("StringBuilderd");
+StringBuilder s1 = builder.delete(5,5);    //删除单个字符
+StringBuilder s1 = builder.delete(5,10);    //删除多个字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、异常处理"><a href="#三、异常处理" class="headerlink" title="三、异常处理"></a>三、异常处理</h2><h4 id="1-异常概述"><a href="#1-异常概述" class="headerlink" title="1.异常概述"></a>1.异常概述</h4><blockquote>
+<p>在程序中，错误可能产生于程序员没有预料到的各种情况，或者是因为超出了程序员控制之外的环境因素，如用户的坏数据、试图打开一个根本不存在的文件等。在Java中这种在程序运行时可能出现的一些错误称为异常。异常是一个在程序执行期间发生的事件，它中断了正在执行的程序的正常指令流。</p>
+</blockquote>
+<h6 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h6><ul>
+<li>异常产生后，如果不做任何处理，程序就会被终止。例如，将一个字符串转换为整型，可以通过Integer类的parseInt()方法来实现。但如果该字符串不是数字形式，parseInt()方法就会抛出异常，程序将停留在出现异常的位置，不再执行下面的语句。</li>
+</ul>
+<h6 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h6><ul>
+<li>Java语言的异常捕获结构由try、catch和finally 3部分组成。其中，try语句块存放的是可能发生异常的Java语句；catch程序块在try语句块之后，用来激发被捕获的异常；finally语句块是异常处理结构的最后执行部分，无论try块中的代码如何退出，都将执行finally块。</li>
+</ul>
+<h4 id="2-常见异常"><a href="#2-常见异常" class="headerlink" title="2.常见异常"></a>2.常见异常</h4><blockquote>
+<p>可控异常和运行时异常</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216100623.png"></p>
+<h4 id="3-自定义异常类"><a href="#3-自定义异常类" class="headerlink" title="3.自定义异常类"></a>3.自定义异常类</h4><ul>
+<li>在程序中使用自定义异常类，大体可分为以下几个步骤：<br>（1）创建自定义异常类。<br>（2）在方法中通过throw关键字抛出异常对象。<br>（3）如果在当前抛出异常的方法中处理异常，可以使用try-catch语句捕获并处理，否则在方法的声明处通过throws关键字指明要抛出给方法调用者的异常，继续进行下一步操作。<br>（4）在出现异常方法的调用者中捕获并处理异常。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Tran { // 创建类
+	 // 定义方法，抛出异常
+	static int avg(int number1, int number2) throws MyException {
+		if (number1 &lt; 0 || number2 &lt; 0) { // 判断方法中参数是否满足指定条件
+			throw new MyException("不可以使用负数"); // 错误信息
+		}
+		if (number1 &gt; 100 || number2 &gt; 100) { // 判断方法中参数是否满足指定条件
+			throw new MyException("数值太大了"); // 错误信息
+		}
+		return (number1 + number2) / 2; // 将参数的平均值返回
+	}
+	
+	public static void main(String[] args) { // 主方法
+		try { // try代码块处理可能出现异常的代码
+			int result = avg(102, 150); // 调用avg()方法
+			System.out.println(result); // 将avg()方法的返回值输出
+		} catch (MyException e) {
+			System.out.println(e); // 输出异常信息
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">public class MyException extends Exception {//创建自定义异常，继承Exception类
+	public MyException(String ErrorMessagr) { // 构造方法
+		super(ErrorMessagr); // 父类构造方法
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>抛出异常</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Shoot { // 创建类
+	static void pop() throws NegativeArraySizeException {
+		// 定义方法并抛出NegativeArraySizeException异常
+		int[] arr = new int[-3]; // 创建数组
+	}
+	public static void main(String[] args) { // 主方法
+		try { // try语句处理异常信息
+			pop(); // 调用pop()方法
+		} catch (NegativeArraySizeException e) {
+			System.out.println("pop()方法抛出的异常");// 输出异常信息
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>继承异常</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class MyException extends Exception { // 创建自定义异常类
+	String message; // 定义String类型变量
+	
+	public MyException(String ErrorMessagr) { // 父类方法
+		message = ErrorMessagr;
+	}
+	
+	public String getMessage() { // 覆盖getMessage()方法
+		return message;
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-处理异常"><a href="#4-处理异常" class="headerlink" title="4.处理异常"></a>4.处理异常</h4><h6 id="try……catch"><a href="#try……catch" class="headerlink" title="try……catch"></a>try……catch</h6><pre class="line-numbers language-none"><code class="language-none">public class Captor { // 创建类
+	static int quotient(int x, int y) throws MyException { // 定义方法抛出异常
+		if (y &lt; 0) { // 判断参数是否小于0
+			throw new MyException("除数不能是负数"); // 异常信息
+		}
+		return x / y; // 返回值
+	}
+	
+	public static void main(String args[]) { // 主方法
+		try { // try语句包含可能发生异常的语句
+			int result = quotient(3, -1); // 调用方法quotient()
+		} catch (MyException e) { // 处理自定义异常
+			System.out.println(e.getMessage()); // 输出异常信息
+		} catch (ArithmeticException e) { // 处理ArithmeticException异常
+			System.out.println("除数不能为0"); // 输出提示信息
+		} catch (Exception e) { // 处理其他异常
+			System.out.println("程序发生了其他的异常"); // 输出提示信息
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">public class MyException extends Exception { // 创建自定义异常类
+	String message; // 定义String类型变量
+	
+	public MyException(String ErrorMessagr) { // 父类方法
+		message = ErrorMessagr;
+	}
+	
+	public String getMessage() { // 覆盖getMessage()方法
+		return message;
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="打印出具体的错误信息"><a href="#打印出具体的错误信息" class="headerlink" title="打印出具体的错误信息"></a>打印出具体的错误信息</h6><pre class="line-numbers language-none"><code class="language-none">public class Brunt {
+  public static int count(int m,int n){
+	  return m * n;
+  }
+  public static void main(String args[]) throws Exception{
+	 try{
+		 int result = count(12315,57876876);
+		 System.out.println(result);
+	 }
+	 catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">public class Computer {
+    public static int getMaxComm(int m , int n) throws MyException{
+    	if( m &lt;= 0 ||n&lt;=0){
+    		throw new MyException("传递的参数不是正整数");
+    	}
+    	if(m &lt; n){
+    		int temp = 0;
+    		temp = m;
+    		m = n;
+    		n = temp;
+    	}
+    	int r = m % n;
+    	while(r!=0){
+    		m = n;
+    		n = r;
+    		r = m % n;
+    	}
+    	return n;
+    }
+	public static void main(String[] args) {
+		try {
+			int m = 122 , n= 0;
+			int reslut = getMaxComm(m,n);
+			System.out.println(m+" 和 "+n+"的最大共约数是："+reslut);
+		} catch (MyException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<h6 id="try……catch……finally"><a href="#try……catch……finally" class="headerlink" title="try……catch……finally"></a>try……catch……finally</h6><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216101949.png"></p>
+<h6 id="try……finally"><a href="#try……finally" class="headerlink" title="try……finally"></a>try……finally</h6><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216101916.png"></p>
+<h4 id="5-抛出异常"><a href="#5-抛出异常" class="headerlink" title="5.抛出异常"></a>5.抛出异常</h4><h6 id="使用throws声明抛出异常"><a href="#使用throws声明抛出异常" class="headerlink" title="使用throws声明抛出异常"></a>使用throws声明抛出异常</h6><pre class="line-numbers language-none"><code class="language-none">数据类型 方法名（形参列表） throws 异常1，异常2{
+		方法体
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>例子</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Student {
+   public void speak(int m) throws MyException{
+	   if(m &gt; 1000){
+		   throw new MyException("参数太大了");
+	   }
+   }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="使用throw语句抛出异常"><a href="#使用throw语句抛出异常" class="headerlink" title="使用throw语句抛出异常"></a>使用throw语句抛出异常</h6><pre class="line-numbers language-none"><code class="language-none">throw new Exception("对异常的说明");<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216102534.png"></p>
+<ul>
+<li>方法中抛出异常</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class ThrowException{
+    public static void throException(){
+        throw new UnsupportedOperationException("方法尚未实现");
+    }
+    public static void main(String args[]){
+        ThrowException.throException();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>方法上抛出异常</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class ThrowException{
+    public static void throwException() throws ClassNotFoundException{
+        Class.forName("com.mysql.jdbc.Driver");
+    }
+    
+    public static void main(String args[]){
+        try{
+            ThrowException.throwException();        //调用抛出异常的方法
+        }catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216104220.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216104155.png"></p>
+<h6 id="使用原则"><a href="#使用原则" class="headerlink" title="使用原则"></a>使用原则</h6><ul>
+<li>不要过多的使用异常，这样会增加系统的负担。</li>
+<li>在方法中使用try-catch捕获异常时，要对异常作出处理。</li>
+<li>try-catch语句块的范围不要太大，这样不利于对异常的分析。</li>
+<li>一个方法被覆盖时，覆盖它的方法必须抛出相同的异常或子异常。</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/02/19/java-xue-xi-3-shu-zu-zi-fu-chuan-yi-chang-chu-li/">http://xinxinliang.github.io/2021/02/19/java-xue-xi-3-shu-zu-zi-fu-chuan-yi-chang-chu-li/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">编程语言</span>
+                                </a>
+                            
+                                <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                                    <span class="chip bg-color">Java语法</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/02/19/java-xue-xi-4-lei-he-dui-xiang-bao-zhuang-lei/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-d5gz63.jpg" class="responsive-img" alt="Java学习4：类和对象、包装类">
+                        
+                        <span class="card-title">Java学习4：类和对象、包装类</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">Java语法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/19/java-xue-xi-2-ji-chu-yu-fa/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-9677j8.png" class="responsive-img" alt="Java学习2：基础语法">
+                        
+                        <span class="card-title">Java学习2：基础语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">Java语法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">119.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

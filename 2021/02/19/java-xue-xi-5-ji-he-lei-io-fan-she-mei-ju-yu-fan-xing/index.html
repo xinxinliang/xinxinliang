@@ -1,0 +1,3447 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java学习5：集合类、IO、反射、枚举与泛型, blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java学习5：集合类、IO、反射、枚举与泛型 | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-dg1eko.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java学习5：集合类、IO、反射、枚举与泛型</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">编程语言</span>
+                            </a>
+                        
+                            <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                                <span class="chip bg-color">Java语法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    11.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    54 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、集合类"><a href="#一、集合类" class="headerlink" title="一、集合类"></a>一、集合类</h2><h4 id="1-集合类概述"><a href="#1-集合类概述" class="headerlink" title="1.集合类概述"></a>1.集合类概述</h4><blockquote>
+<p>Java语言的java.util包中提供了一些集合类，这些集合类又被称为容器。提到容器不难会想到数组，集合类与数组不同之处是，数组的长度是固定的，集合的长度是可变的；数组用来存放基本类型的数据，集合用来存放对象的引用。常用的集合有List集合、Set集合、Map集合，其中List与Set实现了Collection接口。各接口还提供了不同的实现类。</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216165920.png"></p>
+<h4 id="2-Collection接口"><a href="#2-Collection接口" class="headerlink" title="2.Collection接口"></a>2.Collection接口</h4><blockquote>
+<p>Collection接口是层次结构中的根接口。构成Collection的单位，被称之为元素。Collection接口通常不能直接使用，但该接口提供了添加元素、删除元素、管理数据的方法。由于List接口与Set接口都继承了Collection接口，因此这些方法对List集合与Set集合是通用的。</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216170009.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+import java.util.*;
+
+public class Muster { // 创建类Muster
+	public static void main(String args[]) {
+		Collection&lt;String&gt; list = new ArrayList&lt;&gt;(); // 实例化集合类对象
+		list.add("a"); // 向集合添加数据
+		list.add("b");
+		list.add("c");
+		Iterator&lt;String&gt; it = list.iterator(); // 创建迭代器
+		while (it.hasNext()) { // 判断是否有下一个元素
+			String str = (String) it.next(); // 获取集合中元素
+			System.out.println(str);
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-List接口"><a href="#3-List接口" class="headerlink" title="3.List接口"></a>3.List接口</h4><p>List接口继承了Collection接口，因此包含Collection中的所有方法，此外，List接口还定义了以下两个非常重要的方法。</p>
+<ul>
+<li>get(int index)：获得指定索引位置的元素。</li>
+<li>set(int index , Object obj)：将集合中指定索引位置的对象修改为指定的对象。</li>
+</ul>
+<p>List接口的常用实现类有ArrayList与LinkedList。</p>
+<ul>
+<li>ArrayList类实现了可变的数组，允许所有元素，包括null，并可以根据索引位置对集合进行快速的随机访问。缺点是向指定的索引位置插入对象或删除对象的速度较慢。</li>
+<li>LinkedList类采用链表结构保存对象。这种结构的优点是便于向集合中插入和删除对象，需要向集合中插入、删除对象时，使用LinkedList类实现的List集合的效率较好；但对于随机访问集合中的对象，使用LinkedList类实现List集合的效率较慢。</li>
+<li>使用List集合时通常声明为List类型，可通过不同的实现类来实例化集合。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Gather { // 创建类Gather
+	public static void main(String[] args) { // 主方法
+		List&lt;String&gt; list = new ArrayList&lt;&gt;(); // 创建集合对象
+		list.add("a"); // 向集合添加元素
+		list.add("b");
+		list.add("c");
+		int i = (int) (Math.random() * (list.size() - 1)); // 获得0~1之间的随机数
+		System.out.println("随机获取数组中的元素：" + list.get(i));
+		list.remove(2); // 将指定索引位置的元素从集合中移除
+		System.out.println("将索引是'2'的元素从数组移除后，数组中的元素是：");
+		for (int j = 0; j &lt; list.size(); j++) { // 循环遍历集合
+			System.out.println(list.get(j));
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-Set集合"><a href="#4-Set集合" class="headerlink" title="4.Set集合"></a>4.Set集合</h4><blockquote>
+<p>Set集合中的对象不按特定的方式排序，只是简单地把对象加入集合中，但Set集合中不能包含重复对象。Set集合由Set接口和Set接口的实现类组成。Set接口继承了Collection接口，因此包含Collection接口的所有方法。</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216170230.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+public class UpdateStu implements Comparable&lt;Object&gt; {
+	String name;
+	long id;
+	public UpdateStu(String name, long id) {
+		this.id = id;
+		this.name = name;
+	}
+	public int compareTo(Object o) {
+		UpdateStu upstu = (UpdateStu) o;
+		int result = id &gt; upstu.id ? 1 : (id == upstu.id ? 0 : -1);
+		return result;
+	}
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public static void main(String[] args) {
+		UpdateStu stu1 = new UpdateStu("李同学", 01011);
+		UpdateStu stu2 = new UpdateStu("陈同学", 01021);
+		UpdateStu stu3 = new UpdateStu("王同学", 01051);
+		UpdateStu stu4 = new UpdateStu("马同学", 01012);
+		TreeSet&lt;UpdateStu&gt; tree = new TreeSet&lt;&gt;();
+		tree.add(stu1);
+		tree.add(stu2);
+		tree.add(stu3);
+		tree.add(stu4);
+		Iterator&lt;UpdateStu&gt; it = tree.iterator();
+		System.out.println("Set集合中的所有元素：");
+		while (it.hasNext()) {
+			UpdateStu stu = (UpdateStu) it.next();
+			System.out.println(stu.getId() + " " + stu.getName());
+		}
+		it = tree.headSet(stu2).iterator();
+		System.out.println("截取前面部分的集合：");
+		while (it.hasNext()) {
+			UpdateStu stu = (UpdateStu) it.next();
+			System.out.println(stu.getId() + " " + stu.getName());
+		}
+		it = tree.subSet(stu2, stu3).iterator();
+		System.out.println("截取中间部分的集合");
+		while (it.hasNext()) {
+			UpdateStu stu = (UpdateStu) it.next();
+			System.out.println(stu.getId() + " " + stu.getName());
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-Map集合"><a href="#5-Map集合" class="headerlink" title="5. Map集合"></a>5. Map集合</h4><h6 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h6><blockquote>
+<p>Map接口提供了将key映射到值的对象。一个映射不能包含重复的key，每个key最多只能映射到一个值。Map接口中同样提供了集合的常用方法，除此之外还包括如下表所示的常用方法。</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216170306.png"></p>
+<h6 id="Map接口的实现类"><a href="#Map接口的实现类" class="headerlink" title="Map接口的实现类"></a>Map接口的实现类</h6><blockquote>
+<p>Map接口常用的实现类有HashMap和TreeMap。建议使用HashMap类实现Map集合，因为由HashMap类实现的Map集合对于添加和删除映射关系效率更高。HashMap是基于哈希表的Map接口的实现，HashMap通过哈希码对其内部的映射关系进行快速查找；而TreeMap中的映射关系存在一定的顺序，如果希望Map集合中的对象也存在一定的顺序，应该使用TreeMap类实现Map集合。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class UpdateStu {
+	public static void main(String[] args) {
+		Map&lt;String,String&gt; map = new HashMap&lt;&gt;(); // 创建Map实例
+		map.put("01", "李同学"); // 向集合中添加对象
+		map.put("02", "魏同学");
+		Set&lt;String&gt; set = map.keySet(); // 构建Map集合中所有key对象的集合
+		Iterator&lt;String&gt; it = set.iterator(); // 创建集合迭代器
+		System.out.println("key集合中的元素：");
+		while (it.hasNext()) { // 遍历集合
+			System.out.println(it.next());
+		}
+		Collection&lt;String&gt; coll = map.values(); // 构建Map集合中所有values值集合
+		it = coll.iterator();
+		System.out.println("values集合中的元素：");
+		while (it.hasNext()) { // 遍历集合
+			System.out.println(it.next());
+		}
+	}
+}
+
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class MapText { // 创建类MapText
+	public static void main(String[] args) { // 主方法
+		Map&lt;String, String&gt; map = new HashMap&lt;&gt;(); // 由HashMap实现的Map对象
+		Emp emp = new Emp("351", "张三"); // 创建Emp对象
+		Emp emp2 = new Emp("512", "李四");
+		Emp emp3 = new Emp("853", "王一");
+		Emp emp4 = new Emp("125", "赵六");
+		Emp emp5 = new Emp("341", "黄七");
+
+		map.put(emp4.getE_id(), emp4.getE_name()); // 将对象添加到集合中
+		map.put(emp5.getE_id(), emp5.getE_name());
+		map.put(emp.getE_id(), emp.getE_name());
+		map.put(emp2.getE_id(), emp2.getE_name());
+		map.put(emp3.getE_id(), emp3.getE_name());
+
+		Set&lt;String&gt; set = map.keySet(); // 获取Map集合中的key对象集合
+		Iterator&lt;String&gt; it = set.iterator();
+		System.out.println("HashMap类实现的Map集合，无序：");
+		while (it.hasNext()) { // 遍历Map集合
+			String str = (String) it.next();
+			String name = (String) map.get(str);
+			System.out.println(str + " " + name);
+		}
+		TreeMap&lt;String, String&gt; treemap = new TreeMap&lt;&gt;(); // 创建TreeMap集合对象
+		treemap.putAll(map); // 向集合添加对象
+		Iterator&lt;String&gt; iter = treemap.keySet().iterator();
+		System.out.println("TreeMap类实现的Map集合，键对象升序：");
+		while (iter.hasNext()) { // 遍历TreeMap集合对象
+			String str = (String) iter.next(); // 获取集合中的所有key对象
+			String name = (String) treemap.get(str); // 获取集合中的所有values值
+			System.out.println(str + " " + name);
+		}
+	}
+}
+
+
+public class Emp {
+	private String e_id;
+	private String e_name;
+	public Emp( String e_id,String e_name) {
+		this.e_id = e_id;
+		this.e_name = e_name;
+	}
+	public String getE_id() {
+		return e_id;
+	}
+	public void setE_id(String e_id) {
+		this.e_id = e_id;
+	}
+	public String getE_name() {
+		return e_name;
+	}
+	public void setE_name(String e_name) {
+		this.e_name = e_name;
+	}
+	
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h5><pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+public class Text {
+	public static void main(String[] args) {
+		List&lt;Integer&gt; list = new LinkedList&lt;&gt;();
+		for(int i = 1 ;i&lt;=100;i++){
+			list.add(new Integer(i));
+		}
+		list.remove(list.get(10));
+		System.out.println("ok");
+	}
+}
+
+
+import java.util.*;
+public class Text {
+	public static void main(String[] args) {
+        Set&lt;String&gt; set = new HashSet&lt;&gt;();  //HashSet是Set的子接口
+        set.add("a");
+        set.add("c");
+        set.add("A");
+        set.add("a"); 
+        set.add("C");
+        List&lt;String&gt; list = new ArrayList&lt;&gt;();
+        list.add("a");
+        list.add("c");
+        list.add("A");
+        list.add("a"); 
+        list.add("C");
+        System.out.println(set);
+       System.out.println(list);
+	}
+}
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class Text {
+	public static void main(String[] args) {
+		Map&lt;String, String&gt; map = new TreeMap&lt;&gt;();
+		Emp emp = new Emp("001", "张三");
+		Emp emp2 = new Emp("005", "李四");
+		Emp emp3 = new Emp("004", "王一");
+		Emp emp4 = new Emp("010", "王一");
+		Emp emp5 = new Emp("015", "王一");
+		map.put(emp.getE_id(), emp.getE_name());
+		map.put(emp2.getE_id(), emp2.getE_name());
+		map.put(emp3.getE_id(), emp3.getE_name());
+		map.put(emp4.getE_id(), emp4.getE_name());
+		map.put(emp5.getE_id(), emp5.getE_name());
+		map.remove("015");
+		for (String string : map.keySet()) {
+			System.out.println(map.get(string));
+		}
+	}
+}
+
+
+public class Emp {
+	private String e_id;
+	private String e_name;
+	public Emp( String e_id,String e_name) {
+		this.e_id = e_id;
+		this.e_name = e_name;
+	}
+	public String getE_id() {
+		return e_id;
+	}
+	public void setE_id(String e_id) {
+		this.e_id = e_id;
+	}
+	public String getE_name() {
+		return e_name;
+	}
+	public void setE_name(String e_name) {
+		this.e_name = e_name;
+	}
+	
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、输入输出"><a href="#二、输入输出" class="headerlink" title="二、输入输出"></a>二、输入输出</h2><h4 id="1-流概述"><a href="#1-流概述" class="headerlink" title="1.流概述"></a>1.流概述</h4><blockquote>
+<p>流是一组有序的数据序列，根据操作的类型，可分为输入流和输出流两种。I/O（Input/Output）流提供了一条通道程序，可以使用这条通道把源中的字节序列送到目的地。虽然I/O流经常与磁盘文件存取有关，但是程序的源和目的地也可以是键盘、鼠标、内存或显示器窗口等。</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216170753.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216170801.png"></p>
+<h4 id="2-输入输出流"><a href="#2-输入输出流" class="headerlink" title="2.输入输出流"></a>2.输入输出流</h4><h6 id="输入流"><a href="#输入流" class="headerlink" title="输入流"></a>输入流</h6><ul>
+<li>InputStream类是字节输入流的抽象类，是所有字节输入流的父类。InputStream类的具体层次结构如图所示：</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216170903.png"></p>
+<ul>
+<li>该类中所有方法遇到错误时都会引发IOException异常。下面是对该类中的一些方法的简要说明如下表所示</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216170921.png"></p>
+<ul>
+<li>Java中的字符是Unicode编码，是双字节的。InputStream是用来处理字节的，在处理字符文本时不是很方便。Java为字符文本的输入提供了专门一套单独的类Reader，但Reader类并不是InputStream类的替换者，只是在处理字符串时简化了编程。Reader类是字符输入流的抽象类，所有字符输入流的实现都是它的子类，Reader类的具体层次结构如下图所示：</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216170935.png"></p>
+<h6 id="输出流"><a href="#输出流" class="headerlink" title="输出流"></a>输出流</h6><ul>
+<li>OutputStream类是字节输入流的抽象类，此抽象类是表示输出字节流的所有类的超类。OutputStream类的具体层次如图所示：</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216170955.png"></p>
+<ul>
+<li>OutputStream类中的所有方法均返回void，在遇到错误时会引发IOException异常。下面对OutputStream类中的方法作一简单的介绍，如下表所示： </li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216171027.png"></p>
+<ul>
+<li>Writer类是字符输出流的抽象类，所有字符输出类的实现都是它的子类，Writer类的层次结构如下图所示：</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216171039.png"></p>
+<h4 id="3-File类"><a href="#3-File类" class="headerlink" title="3.File类"></a>3.File类</h4><h6 id="文件的创建与删除"><a href="#文件的创建与删除" class="headerlink" title="文件的创建与删除"></a>文件的创建与删除</h6><p>可以使用File类创建一个文件对象，通常使用以下3种构造方法来创建文件对象。</p>
+<ul>
+<li>File(String pathname)</li>
+<li>File(String parent , String child)</li>
+<li>File(File f , String child)</li>
+</ul>
+<h6 id="获取文件信息"><a href="#获取文件信息" class="headerlink" title="获取文件信息"></a>获取文件信息</h6><ul>
+<li>File类提供了很多方法用于获取文件本身的一些信息，File类的常用方法如下表所示。</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216171312.png"></p>
+<ul>
+<li>创建和删除文件</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+
+public class FileTest { // 创建类FileTest
+	public static void main(String[] args) { // 主方法
+		File file = new File("word.txt"); // 创建文件对象
+		if (file.exists()) { // 如果该文件存在
+			file.delete(); // 将文件删除
+			System.out.println("文件已删除"); // 输出的提示信息
+		} else { // 如果文件不存在
+			try { // try语句块捕捉可能出现的异常
+				file.createNewFile(); // 创建该文件
+				System.out.println("文件已创建"); // 输出的提示信息
+			} catch (Exception e) { // catch处理该异常
+				e.printStackTrace(); // 输出异常信息
+			}
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>获取文件信息</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+
+public class FileTest { // 创建类
+	public static void main(String[] args) {
+		File file = new File("word.txt"); // 创建文件对象
+		if (file.exists()) { // 如果文件存在
+			String name = file.getName(); // 获取文件名称
+			long length = file.length(); // 获取文件长度
+			boolean hidden = file.isHidden(); // 判断文件是否是隐藏文件
+			System.out.println("文件名称：" + name); // 输出信息
+			System.out.println("文件长度是：" + length);
+			System.out.println("该文件是隐藏文件吗？" + hidden);
+		} else { // 如果文件不存在
+			System.out.println("该文件不存在"); // 输出信息
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h4 id="4-文件输入输出流"><a href="#4-文件输入输出流" class="headerlink" title="4.文件输入输出流"></a>4.文件输入输出流</h4><h6 id="FileInputStream与FileOutputStream类"><a href="#FileInputStream与FileOutputStream类" class="headerlink" title="FileInputStream与FileOutputStream类"></a>FileInputStream与FileOutputStream类</h6><ul>
+<li><p>FileInputStream类与FileOutputStream类都是用来操作磁盘文件。如果用户的文件读取需求比较简单，则可以使用FileInputStream类。该类继承自InputStream类。FileOutputStream类与FileInputStream类对应，提供了基本的文件写入能力。FileOutputStream类是OutoputStream类的子类。</p>
+</li>
+<li><p>写入文件并且读取到控制台</p>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+
+public class FileTest { // 创建类
+	public static void main(String[] args) { // 主方法
+		File file = new File("word.txt"); // 创建文件对象
+		try { // 捕捉异常
+			// 创建FileOutputStream对象
+			FileOutputStream out = new FileOutputStream(file);
+			// 创建byte型数组
+			byte buy[] = "我有一只小毛驴，我从来也不骑。".getBytes();
+			out.write(buy); // 将数组中信息写入到文件中
+			out.close(); // 将流关闭
+		} catch (Exception e) { // catch语句处理异常信息
+			e.printStackTrace(); // 输出异常信息
+		}
+		try {
+			// 创建FileInputStream类对象
+			FileInputStream in = new FileInputStream(file);
+			byte byt[] = new byte[1024]; // 创建byte数组
+			int len = in.read(byt); // 从文件中读取信息
+			// 将文件中信息输出
+			System.out.println("文件中的信息是：" + new String(byt, 0, len));
+			in.close(); // 关闭流
+		} catch (Exception e) {
+			e.printStackTrace(); // 输出异常信息
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h6 id="FileReader类和FileWriter类"><a href="#FileReader类和FileWriter类" class="headerlink" title="FileReader类和FileWriter类"></a>FileReader类和FileWriter类</h6><ul>
+<li><p>使用FileOutputStream类向文件中写入数据与使用FileInputStream类从文件中将内容读出来，存在一点不足，即这两个类都只提供了对字节或字节数组的读取方法。由于汉字在文件中占用两个字节，如果使用字节流，读取不好可能会出现乱码现象。此时采用字符流Reader或Writer类即可避免这种现象。</p>
+</li>
+<li><p>FileReader、FileWriter字符流对应了FileInputStream、FileOutputStream类。FileReader流顺序地读取文件，只要不关闭流，每次调用read()方法就顺序地读取源中其余的内容，直到源的末尾或流被关闭。</p>
+</li>
+<li><p>Swing窗体读取信息</p>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+
+import javax.swing.*;
+
+public class Ftest extends JFrame { // 创建类，继承Jframe类
+	private JScrollPane scrollPane;
+	private static final long serialVersionUID = 1L;
+	private JPanel jContentPane = null; // 创建面板对象
+	private JTextArea jTextArea = null; // 创建文本域对象
+	private JPanel controlPanel = null; // 创建面板对象
+	private JButton openButton = null; // 创建按钮对象
+	private JButton closeButton = null; // 创建按钮对象
+	
+	private JTextArea getJTextArea() {
+		if (jTextArea == null) {
+			jTextArea = new JTextArea();
+		}
+		return jTextArea;
+	}
+	
+	private JPanel getControlPanel() {
+		if (controlPanel == null) {
+			FlowLayout flowLayout = new FlowLayout();
+			flowLayout.setVgap(1);
+			controlPanel = new JPanel();
+			controlPanel.setLayout(flowLayout);
+			controlPanel.add(getOpenButton(), null);
+			controlPanel.add(getCloseButton(), null);
+		}
+		return controlPanel;
+	}
+	
+	private JButton getOpenButton() {
+		if (openButton == null) {
+			openButton = new JButton();
+			openButton.setText("写入文件"); // 修改按钮的提示信息
+			openButton
+					.addActionListener(new java.awt.event.ActionListener() {
+						// 按钮的单击事件
+						public void actionPerformed(ActionEvent e) {
+							// 创建文件对象
+							File file = new File("word.txt");
+							try {
+								// 创建FileWriter对象
+								FileWriter out = new FileWriter(file);
+								// 获取文本域中文本
+								String s = jTextArea.getText();
+								out.write(s); // 将信息写入磁盘文件
+								out.close(); // 将流关闭
+							} catch (Exception e1) {
+								e1.printStackTrace();
+							}
+						}
+					});
+		}
+		return openButton;
+	}
+	
+	private JButton getCloseButton() {
+		if (closeButton == null) {
+			closeButton = new JButton();
+			closeButton.setText("读取文件"); // 修改按钮的提示信息
+			closeButton
+					.addActionListener(new java.awt.event.ActionListener() {
+						// 按钮的单击事件
+						public void actionPerformed(ActionEvent e) {
+							File file = new File("word.txt"); // 创建文件对象
+							try {
+								// 创建FileReader对象
+								FileReader in = new FileReader(file);
+								char byt[] = new char[1024]; // 创建char型数组
+								int len = in.read(byt); // 将字节读入数组
+								// 设置文本域的显示信息
+								jTextArea.setText(new String(byt, 0, len));
+								in.close(); // 关闭流
+							} catch (Exception e1) {
+								e1.printStackTrace();
+							}
+						}
+					});
+		}
+		return closeButton;
+	}
+	
+	public Ftest() {
+		super();
+		initialize();
+	}
+	
+	private void initialize() {
+		this.setSize(300, 200);
+		this.setContentPane(getJContentPane());
+		this.setTitle("JFrame");
+	}
+	
+	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jContentPane = new JPanel();
+			jContentPane.setLayout(new BorderLayout());
+			jContentPane.add(getScrollPane(), BorderLayout.CENTER);
+			jContentPane.add(getControlPanel(), BorderLayout.SOUTH);
+		}
+		return jContentPane;
+	}
+	
+	public static void main(String[] args) { // 主方法
+		Ftest thisClass = new Ftest(); // 创建本类对象
+		thisClass.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		thisClass.setVisible(true); // 设置该窗体为显示状态
+	}
+	/**
+	 * @return
+	 */
+	protected JScrollPane getScrollPane() {
+		if (scrollPane == null) {
+			scrollPane = new JScrollPane();
+			scrollPane.setViewportView(getJTextArea());
+		}
+		return scrollPane;
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h4 id="5-带缓存的输入输出流"><a href="#5-带缓存的输入输出流" class="headerlink" title="5.带缓存的输入输出流"></a>5.带缓存的输入输出流</h4><h6 id="BufferedInputStream类与BufferedOutputStream类"><a href="#BufferedInputStream类与BufferedOutputStream类" class="headerlink" title="BufferedInputStream类与BufferedOutputStream类"></a>BufferedInputStream类与BufferedOutputStream类</h6><ul>
+<li><p>BufferedInputStream类可以对任何的InputStream类进行带缓存区的包装以达到性能的优化。</p>
+</li>
+<li><p>使用BufferedOutputStream输出信息和往OutputStream输出信息完全一样，只不过BufferedOutputStream有一个flush()方法用来将缓存区的数据强制输出完。</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216171415.png"></p>
+<h6 id="BufferedReader与BufferedWriter类"><a href="#BufferedReader与BufferedWriter类" class="headerlink" title="BufferedReader与BufferedWriter类"></a>BufferedReader与BufferedWriter类</h6><ul>
+<li>BufferedReader类与BufferedWriter类分别继承Reader类与Writer类。这两个类同样具有内部缓存机制，并可以以行为单位进行输入输出。</li>
+<li>在使用BufferedWriter类的Write()方法时，数据并没有立刻被写入至输出流中，而是首先进入缓存区中。如果想立刻将缓存区中的数据写入输出流中，一定要调用flush()方法。</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216171434.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+
+public class Student { // 创建类
+	public static void main(String args[]) { // 主方法
+		// 定义字符串数组
+		String content[] = { "好久不见", "最近好吗", "常联系" };
+		File file = new File("word.txt"); // 创建文件对象
+		try {
+			FileWriter fw = new FileWriter(file); // 创建FileWriter类对象
+			// 创建BufferedWriter类对象
+			BufferedWriter bufw = new BufferedWriter(fw); 
+			for (int k = 0; k &lt; content.length; k++) { // 循环遍历数组
+				bufw.write(content[k]); // 将字符串数组中元素写入到磁盘文件中
+				bufw.newLine(); // 将数组中的单个元素以单行的形式写入文件
+			}
+			bufw.close(); // 将BufferedWriter流关闭
+			fw.close(); // 将FileWriter流关闭
+		} catch (Exception e) { // 处理异常
+			e.printStackTrace();
+		}
+		try {
+			FileReader fr = new FileReader(file); // 创建FileReader类对象
+			// 创建BufferedReader类对象
+			BufferedReader bufr = new BufferedReader(fr);
+			String s = null; // 创建字符串对象
+			int i = 0; // 声明int型变量
+			// 如果文件的文本行数不为null,则进入循环
+			while ((s = bufr.readLine()) != null) { 
+				i++; // 将变量做自增运算
+				System.out.println("第" + i + "行:" + s); // 输出文件数据
+			}
+			bufr.close(); // 将FileReader流关闭
+			fr.close(); // 将FileReader流关闭
+		} catch (Exception e) { // 处理异常
+			e.printStackTrace();
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<h4 id="6-数据输入输出流"><a href="#6-数据输入输出流" class="headerlink" title="6.数据输入输出流"></a>6.数据输入输出流</h4><h6 id="数据输入输出流"><a href="#数据输入输出流" class="headerlink" title="数据输入输出流"></a>数据输入输出流</h6><ul>
+<li>数据输入输出流（DataInputStream类与DataOutputStream类）允许应用程序以与机器无关的方式从底层输入流中读取基本Java数据类型。也就是说，当读取一个数据时，不必再关心这个数值应当是什么字节。</li>
+<li>DataInputStream类只提供了一个readUTF()方法返回字符串。这是因为要在一个连续的字节流读取一个字符串，如果没有特殊的标记作为一个字符串的结尾，并且事先也不知道这个字符串的长度，也就无法知道读取到什么位置才是这个字符串的结束。DataOutputStream类中只有writeUTF()方法向目标设备中写入字符串的长度，所以我们也只能准确地读回写入字符串。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+
+public class Example_01 { // 创建类
+	public static void main(String[] args) { // 主方法
+		try {
+			// 创建FileOutputStream对象
+			FileOutputStream fs = new FileOutputStream("word.txt");
+			// 创建DataOutputStream对象
+			DataOutputStream ds = new DataOutputStream(fs);
+			ds.writeUTF("使用writeUFT()方法写入数据;"); // 写入磁盘文件数据
+			ds.writeChars("使用writeChars()方法写入数据;");
+			ds.writeBytes("使用writeBytes()方法写入数据.");
+			ds.close(); // 将流关闭
+			// 创建FileInputStream对象
+			FileInputStream fis = new FileInputStream("word.txt");
+			// 创建DataInputStream对象
+			DataInputStream dis = new DataInputStream(fis);
+			System.out.print(dis.readUTF()); // 将文件数据输出
+		} catch (Exception e) {
+			e.printStackTrace(); // 输出异常信息
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h4 id="7-ZIP压缩输入输出流"><a href="#7-ZIP压缩输入输出流" class="headerlink" title="7.ZIP压缩输入输出流"></a>7.ZIP压缩输入输出流</h4><h6 id="压缩文件"><a href="#压缩文件" class="headerlink" title="压缩文件"></a>压缩文件</h6><p>利用ZipOutputStream类对象，可将文件压缩为“.zip”文件。ZipOutputStream类的构造函数如下所示：</p>
+<ul>
+<li>ZipOutputStream(OutputStream out);</li>
+<li>ZipOutputStream类的常用方法如下表所示：</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216171551.png"></p>
+<h6 id="解压缩ZIP文件"><a href="#解压缩ZIP文件" class="headerlink" title="解压缩ZIP文件"></a>解压缩ZIP文件</h6><ul>
+<li>ZipInputStream类可读取ZIP压缩格式的文件，包括对已压缩和未压缩条目的支持（entry）。</li>
+<li>ZipInputStream类的构造函数如下所示：</li>
+<li>ZipInputStream(InputStream in)</li>
+<li>ZipInputStream类的常用方法如下表所示：</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216171623.png"></p>
+<ul>
+<li>压缩</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+import java.util.zip.*;
+
+public class MyZip { // 创建类
+	private void zip(String zipFileName, File inputFile) throws Exception {
+		ZipOutputStream out = new ZipOutputStream(new FileOutputStream(
+				zipFileName)); // 创建ZipOutputStream类对象
+		zip(out, inputFile, ""); // 调用方法
+		System.out.println("压缩中…"); // 输出信息
+		out.close(); // 将流关闭
+	}
+	
+	private void zip(ZipOutputStream out, File f, String base)
+			throws Exception { // 方法重载
+		if (f.isDirectory()) { // 测试此抽象路径名表示的文件是否是一个目录
+			File[] fl = f.listFiles(); // 获取路径数组
+			out.putNextEntry(new ZipEntry(base + "/")); // 写入此目录的entry
+			base = base.length() == 0 ? "" : base + "/"; // 判断参数是否为空
+			for (int i = 0; i &lt; fl.length; i++) { // 循环遍历数组中文件
+				zip(out, fl[i], base + fl[i]);
+			}
+		} else {
+			out.putNextEntry(new ZipEntry(base)); // 创建新的进入点
+			// 创建FileInputStream对象
+			FileInputStream in = new FileInputStream(f);
+			int b; // 定义int型变量
+			System.out.println(base);
+			while ((b = in.read()) != -1) { // 如果没有到达流的尾部
+				out.write(b); // 将字节写入当前ZIP条目
+			}
+			in.close(); // 关闭流
+		}
+	}
+	
+	public static void main(String[] temp) { // 主方法
+		MyZip book = new MyZip(); // 创建本例对象
+		try {
+			// 调用方法，参数为压缩后文件与要压缩文件
+			book.zip("hello.zip", new File("src"));
+			System.out.println("压缩完成"); // 输出信息
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>解压</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+import java.util.zip.*;
+
+public class Decompressing { // 创建文件
+	public static void main(String[] temp) {
+		ZipInputStream zin; // 创建ZipInputStream对象
+		try { // try语句捕获可能发生的异常
+			zin = new ZipInputStream(new FileInputStream("hello.zip"));
+			// 实例化对象，指明要进行解压的文件
+			ZipEntry entry = zin.getNextEntry(); // 获取下一个ZipEntry
+			while (((entry = zin.getNextEntry()) != null)
+					&amp;&amp; !entry.isDirectory()) {
+				// 如果entry不为空，并不在同一目录下
+				File file = new File("d:\\" + entry.getName()); // 获取文件目录
+				System.out.println(file);
+				if (!file.exists()) { // 如果该文件不存在
+					file.mkdirs();// 创建文件所在文件夹
+					file.createNewFile(); // 创建文件
+				}
+				zin.closeEntry(); // 关闭当前entry
+				System.out.println(entry.getName() + "解压成功");
+			}
+			zin.close(); // 关闭流
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h6><pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+
+import javax.swing.*;
+
+public class Student {
+	public static void main(String[] temp) {
+		byte b[] = new byte[2];
+		try{
+			FileInputStream fis = new FileInputStream("word.txt");
+			ProgressMonitorInputStream in = 
+				new ProgressMonitorInputStream(null,"读取文件",fis);
+		   while(in.read(b)!=-1){
+			   String s = new String(b);
+			   System.out.print(s);
+			   Thread.sleep(100);
+		   }
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+
+public class Example {
+	public static void main(String[] args) {
+		char a[] = "今天10点出发".toCharArray();
+		int n = 0;
+		try {
+			File out = new File("word.txt");
+			for (int i = 0; i &lt; a.length; i++) {
+				a[i] = (char) (a[i] ^ 'R');
+			}
+			FileWriter fw = new FileWriter(out);
+			fw.write(a, 0, a.length);
+			fw.close();
+			FileReader fr = new FileReader(out);
+			char tom[] = new char[10];
+			System.out.println("加密后：");
+			while ((n = fr.read(tom, 0, 10)) != -1) {
+				String s = new String(tom, 0, n);
+				System.out.println(s);
+			}
+			fr.close();
+			fr = new FileReader(out);
+			System.out.println("明文：");
+			while ((n = fr.read(tom, 0, 10)) != -1) {
+				for (int j = 0; j &lt; n; j++) {
+					tom[j] = (char) (tom[j] ^ 'R');
+				}
+				String str = new String(tom, 0, n);
+				System.out.println(str);
+			}
+			
+			fr.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-none"><code class="language-none">import java.io.*;
+
+public class Example {
+	static final int lineLength = 81;
+	
+	public static void main(String[] args) {
+		FileOutputStream fos;
+		
+		byte[] phone = new byte[lineLength];
+		byte[] name = new byte[lineLength];
+		try {
+			fos = new FileOutputStream("word.txt");
+			while (true) {
+				System.err.println("请输入一个名字：");
+				if ("done".equalsIgnoreCase(new String(name, 0, 0, 4))) {
+					System.out.println("录入完毕");
+					break;
+				}
+				System.err.println("请输入电话号：");
+				readLine(phone);
+				for (int i = 0; phone[i] != 0; i++) {
+					fos.write(phone[i]);
+				}
+				fos.write(',');
+				for (int j = 0; name[j] != 0; j++) {
+					fos.write(name[j]);
+				}
+				fos.write('\n');
+				System.out.println("信息已经写入文件");
+			}
+			fos.close();
+		} catch (Exception e) {
+			// TODO 自动生成 catch 块
+			e.printStackTrace();
+		}
+	}
+	
+	private static void readLine(byte[] name) throws IOException {
+		int b = 0, i = 0;
+		while ((i &lt; (lineLength - 1)) &amp;&amp; (b = System.in.read()) != '\n') {
+			name[i++] = (byte) b;
+		}
+		name[i] = (byte) 0;
+	}
+	
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、反射"><a href="#三、反射" class="headerlink" title="三、反射"></a>三、反射</h2><h4 id="1-Class类与Java反射"><a href="#1-Class类与Java反射" class="headerlink" title="1.Class类与Java反射"></a>1.Class类与Java反射</h4><blockquote>
+<p>反射机制可以查看信息</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">Class tetFieldC = textField.getClass(); <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216172908.png"></p>
+<h6 id="访问构造方法"><a href="#访问构造方法" class="headerlink" title="访问构造方法"></a>访问构造方法</h6><ul>
+<li>在通过下列一组方法访问构造方法时，将返回Constructor类型的对象或数组。每个Constructor对象代表一个构造方法，利用Constructor对象可以操纵相应的构造方法。<br>    getConstructors()<br>    getConstructor(Class<!--?-->... parameterTypes)
+    getDeclaredConstructors()
+    getDeclaredConstructor(Class<!--?-->… parameterTypes)<br>如果是访问指定的构造方法，需要根据该构造方法的入口参数的类型来访问。</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216173059.png"></p>
+<ul>
+<li>访问构造方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Example_01 {
+	String s;
+	int i, i2, i3;
+	private Example_01() {
+	}
+	protected Example_01(String s, int i) {
+		this.s = s;
+		this.i = i;
+	}
+	public Example_01(String... strings) throws NumberFormatException {
+		if (0 &lt; strings.length)
+			i = Integer.valueOf(strings[0]);
+		if (1 &lt; strings.length)
+			i2 = Integer.valueOf(strings[1]);
+		if (2 &lt; strings.length)
+			i3 = Integer.valueOf(strings[2]);
+	}
+	public void print() {
+		System.out.println("s=" + s);
+		System.out.println("i=" + i);
+		System.out.println("i2=" + i2);
+		System.out.println("i3=" + i3);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>编写测试类</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.lang.reflect.*;
+
+public class Main_01 {
+
+	public static void main(String[] args) {
+
+		Example_01 example = new Example_01("10", "20", "30");
+		Class&lt;? extends Example_01&gt; exampleC = example.getClass();
+
+		Constructor[] declaredConstructors = exampleC.getDeclaredConstructors();
+		for (int i = 0; i &lt; declaredConstructors.length; i++) {
+			Constructor&lt;?&gt; constructor = declaredConstructors[i];
+			System.out.println("查看是否允许带有可变数量的参数：" + constructor.isVarArgs());
+			System.out.println("该构造方法的入口参数类型依次为：");
+			Class[] parameterTypes = constructor.getParameterTypes();
+			for (int j = 0; j &lt; parameterTypes.length; j++) {
+				System.out.println(" " + parameterTypes[j]);
+			}
+			System.out.println("该构造方法可能抛出的异常类型为：");
+			Class[] exceptionTypes = constructor.getExceptionTypes();
+			for (int j = 0; j &lt; exceptionTypes.length; j++) {
+				System.out.println(" " + exceptionTypes[j]);
+			}
+			Example_01 example2 = null;
+			while (example2 == null) {
+				try {
+					if (i == 2)
+						example2 = (Example_01) constructor.newInstance();
+					else if (i == 1)
+						example2 = (Example_01) constructor.newInstance("7", 5);
+					else {
+						Object[] parameters = new Object[] { new String[] {
+								"100", "200", "300" } };
+						example2 = (Example_01) constructor
+								.newInstance(parameters);
+					}
+				} catch (Exception e) {
+					System.out.println("在创建对象时抛出异常，下面执行setAccessible()方法");
+					constructor.setAccessible(true);
+				}
+			}
+			if(example2!=null){
+			example2.print();
+			System.out.println();
+			}
+		}
+
+	}
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="访问成员变量"><a href="#访问成员变量" class="headerlink" title="访问成员变量"></a>访问成员变量</h6><p>在通过下列一组方法访问成员变量时，将返回Field类型的对象或数组。每个Field对象代表一个成员变量，利用Field对象可以操纵相应的成员变量。<br>    getFields()<br>    getField(String name)<br>    getDeclaredFields()<br>    getDeclaredField(String name)</p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216173406.png"></p>
+<ul>
+<li>创建一个类，声明成员变量</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Example_02 {
+	int i;
+	public float f;
+	protected boolean b;
+	private String s;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>通过反射访问</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.lang.reflect.*;
+public class Main_02 {
+	public static void main(String[] args) {
+		Example_02 example = new Example_02();
+		Class exampleC = example.getClass();
+		// 获得所有成员变量
+		Field[] declaredFields = exampleC.getDeclaredFields();
+		for (int i = 0; i &lt; declaredFields.length; i++) {
+			Field field = declaredFields[i]; // 遍历成员变量
+			// 获得成员变量名称
+			System.out.println("名称为：" + field.getName());
+			Class fieldType = field.getType(); // 获得成员变量类型
+			System.out.println("类型为：" + fieldType);
+			boolean isTurn = true;
+			while (isTurn) {
+				// 如果该成员变量的访问权限为private，则抛出异常，即不允许访问
+				try {
+					isTurn = false;
+					// 获得成员变量值
+					System.out.println("修改前的值为：" + field.get(example));
+					// 判断成员变量的类型是否为int型
+					if (fieldType.equals(int.class)) {
+						System.out.println("利用方法setInt()修改成员变量的值");
+						field.setInt(example, 168); // 为int型成员变量赋值
+						// 判断成员变量的类型是否为float型
+					} else if (fieldType.equals(float.class)) {
+						System.out.println("利用方法setFloat()修改成员变量的值");
+						// 为float型成员变量赋值
+						field.setFloat(example, 99.9F);
+						// 判断成员变量的类型是否为boolean型
+					} else if (fieldType.equals(boolean.class)) {
+						System.out.println("利用方法setBoolean()修改成员变量的值");
+						// 为boolean型成员变量赋值
+						field.setBoolean(example, true);
+					} else {
+						System.out.println("利用方法set()修改成员变量的值");
+						// 可以为各种类型的成员变量赋值
+						field.set(example, "MWQ");
+					}
+					// 获得成员变量值
+					System.out.println("修改后的值为：" + field.get(example));
+				} catch (Exception e) {
+					System.out.println("在设置成员变量值时抛出异常，"
+							+ "下面执行setAccessible()方法！");
+					field.setAccessible(true); // 设置为允许访问
+					isTurn = true;
+				}
+			}
+			System.out.println();
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="访问方法"><a href="#访问方法" class="headerlink" title="访问方法"></a>访问方法</h6><ul>
+<li>在通过下列一组方法访问方法时，将返回Method类型的对象或数组。每个Method对象代表一个方法，利用Method对象可以操纵相应的方法。<br>    getMethods()<br>    getMethod(String name, Class<!--?-->... parameterTypes)
+    getDeclaredMethods()
+    getDeclaredMethod(String name, Class<!--?-->… parameterTypes)<br>如果是访问指定的方法，需要根据该方法的名称和入口参数的类型来访问。</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210216173633.png"></p>
+<ul>
+<li>创建类</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Example_03 {
+	static void staticMethod() {
+		System.out.println("执行staticMethod()方法");
+	}
+	
+	public int publicMethod(int i) {
+		System.out.println("执行publicMethod()方法");
+		return i * 100;
+	}
+	
+	protected int protectedMethod(String s, int i)
+			throws NumberFormatException {
+		System.out.println("执行protectedMethod()方法");
+		return Integer.valueOf(s) + i;
+	}
+	
+	private String privateMethod(String... strings) {
+		System.out.println("执行privateMethod()方法");
+		StringBuffer stringBuffer = new StringBuffer();
+		for (int i = 0; i &lt; strings.length; i++) {
+			stringBuffer.append(strings[i]);
+		}
+		return stringBuffer.toString();
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>反射访问</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.lang.reflect.*;
+
+public class Main_03 {
+	public static void main(String[] args) {
+		Example_03 example = new Example_03();
+		Class exampleC = example.getClass();
+		
+		// 获得所有方法
+		Method[] declaredMethods = exampleC.getDeclaredMethods();
+		for (int i = 0; i &lt; declaredMethods.length; i++) {
+			Method method = declaredMethods[i]; // 遍历方法
+			System.out.println("名称为：" + method.getName()); // 获得方法名称
+			System.out.println("是否允许带有可变数量的参数：" + method.isVarArgs());
+			System.out.println("入口参数类型依次为：");
+			// 获得所有参数类型
+			Class[] parameterTypes = method.getParameterTypes();
+			for (int j = 0; j &lt; parameterTypes.length; j++) {
+				System.out.println(" " + parameterTypes[j]);
+			}
+			// 获得方法返回值类型
+			System.out.println("返回值类型为：" + method.getReturnType());
+			System.out.println("可能抛出的异常类型有：");
+			// 获得方法可能抛出的所有异常类型
+			Class[] exceptionTypes = method.getExceptionTypes();
+			for (int j = 0; j &lt; exceptionTypes.length; j++) {
+				System.out.println(" " + exceptionTypes[j]);
+			}
+			boolean isTurn = true;
+			while (isTurn) {
+				// 如果该方法的访问权限为private，则抛出异常，即不允许访问
+				try {
+					isTurn = false;
+					if("staticMethod".equals(method.getName()))
+						method.invoke(example); // 执行没有入口参数的方法
+					else if("publicMethod".equals(method.getName()))
+						System.out.println("返回值为："
+								+ method.invoke(example, 168)); // 执行方法
+					else if("protectedMethod".equals(method.getName()))
+						System.out.println("返回值为："
+								+ method.invoke(example, "7", 5)); // 执行方法
+					else if("privateMethod".equals(method.getName())) {
+						Object[] parameters = new Object[] { new String[] {
+								"M", "W", "Q" } }; // 定义二维数组
+						System.out.println("返回值为："
+								+ method.invoke(example, parameters));
+					}
+				} catch (Exception e) {
+					System.out.println("在执行方法时抛出异常，"
+							+ "下面执行setAccessible()方法！");
+					method.setAccessible(true); // 设置为允许访问
+					isTurn = true;
+				}
+			}
+			System.out.println();
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-使用Annotation功能"><a href="#2-使用Annotation功能" class="headerlink" title="2.使用Annotation功能"></a>2.使用Annotation功能</h4><blockquote>
+<p>该功能可以用于类、构造方法、成员变量、参数等的声明中。该功能不会对程序产生影响，但是会对编译器警告等辅助工具有影响。</p>
+</blockquote>
+<h6 id="定义Annotation类型"><a href="#定义Annotation类型" class="headerlink" title="定义Annotation类型"></a>定义Annotation类型</h6><ul>
+<li>定义时需要使用interface关键字，前面加<code>@</code>。隐含意思就是继承了java.lang.annotation.Annotation</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public @interface NoMemberAnnotation{
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h6 id="定义并使用Annotation类型"><a href="#定义并使用Annotation类型" class="headerlink" title="定义并使用Annotation类型"></a>定义并使用Annotation类型</h6><ul>
+<li>定义一个用来注释的构造方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.lang.annotation.*;
+
+@Target(ElementType.CONSTRUCTOR)
+// 用于构造方法
+@Retention(RetentionPolicy.RUNTIME)
+// 在运行时加载Annotation到JVM中
+public @interface Constructor_Annotation {
+	String value() default "默认构造方法"; // 定义一个具有默认值的String型成员
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>定义一个用来注释的字段、方法、参数</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.lang.annotation.*;
+
+// 用于字段、方法和参数
+@Target( { ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER })
+@Retention(RetentionPolicy.RUNTIME)
+// 在运行时加载Annotation到JVM中
+public @interface Field_Method_Parameter_Annotation {
+	String describe(); // 定义一个没有默认值的String型成员
+	
+	Class type() default void.class; // 定义一个具有默认值的Class型成员
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>运用</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Record {
+	@Field_Method_Parameter_Annotation(describe = "编号", type = int.class)
+	// 注释字段
+	int id;
+	@Field_Method_Parameter_Annotation(describe = "姓名", type = String.class)
+	String name;
+	
+	@Constructor_Annotation()
+	// 采用默认值注释构造方法
+	public Record() {
+	}
+	
+	@Constructor_Annotation("立即初始化构造方法")
+	// 注释构造方法
+	public Record(
+		@Field_Method_Parameter_Annotation(describe = "编号",
+				type = int.class) int id,
+		@Field_Method_Parameter_Annotation(describe = "姓名",
+				type = String.class) String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
+	@Field_Method_Parameter_Annotation(describe = "获得编号", type = int.class)
+	// 注释方法
+	public int getId() {
+		return id;
+	}
+	
+	@Field_Method_Parameter_Annotation(describe = "设置编号")
+	// 成员type采用默认值注释方法
+	public void setId(
+	// 注释方法的参数
+			@Field_Method_Parameter_Annotation(describe = "编号",
+					type = int.class) int id) {
+		this.id = id;
+	}
+	
+	@Field_Method_Parameter_Annotation(describe = "获得姓名",
+			type = String.class)
+	public String getName() {
+		return name;
+	}
+	
+	@Field_Method_Parameter_Annotation(describe = "设置姓名")
+	public void setName(
+			@Field_Method_Parameter_Annotation(describe = "姓名",
+					type = String.class) String name) {
+		this.name = name;
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="访问Annotation信息"><a href="#访问Annotation信息" class="headerlink" title="访问Annotation信息"></a>访问Annotation信息</h6><ul>
+<li>如果在定义Annotation类型时将@Retention设置为RetentionPolicy.RUNTIME，那么在运行程序时通过反射就可以获取到相关的Annotation信息，如获取构造方法、字段和方法的Annotation信息。</li>
+<li>类Constructor、Field和Method均继承了AccessibleObject类，在AccessibleObject中定义了3个关于Annotation的方法，其中方法isAnnotationPresent(Class&lt;? extends Annotation&gt; annotationClass)用来查看是否添加了指定类型的Annotation，如果是则返回true，否则返回false；方法getAnnotation(Class<t> annotationClass)用来获得指定类型的Annotation，如果存在则返回相应的对象，否则返回null；方法getAnnotations()用来获得所有的Annotation，该方法将返回一个Annotation数组。</t></li>
+</ul>
+<hr>
+<ul>
+<li><p>例子：进行扩展编写，通过反射访问类中的Annotation信息</p>
+</li>
+<li><p>编写访问构造函数</p>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.lang.annotation.*;
+
+@Target(ElementType.CONSTRUCTOR)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Constructor_Annotation {
+
+	String value() default "默认构造方法";
+
+}
+
+
+
+import java.lang.annotation.*;
+
+@Target( { ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER })
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Field_Method_Parameter_Annotation {
+
+	String describe();
+
+	Class type() default void.class;
+
+}
+
+
+
+import java.lang.annotation.*;
+import java.lang.reflect.*;
+
+public class Main_05 {
+	
+	public static void main(String[] args) {
+		
+		Class recordC = null;
+		try {
+			recordC = Class.forName("Record");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("------ 构造方法的描述如下 ------");
+		Constructor[] declaredConstructors = recordC
+				.getDeclaredConstructors(); // 获得所有构造方法
+		for (int i = 0; i &lt; declaredConstructors.length; i++) {
+			Constructor constructor = declaredConstructors[i]; // 遍历构造方法
+			// 查看是否具有指定类型的注释
+			if (constructor
+					.isAnnotationPresent(Constructor_Annotation.class)) {
+				// 获得指定类型的注释
+				Constructor_Annotation ca = (Constructor_Annotation) constructor
+						.getAnnotation(Constructor_Annotation.class);
+				System.out.println(ca.value()); // 获得注释信息
+			}
+			Annotation[][] parameterAnnotations = constructor
+					.getParameterAnnotations(); // 获得参数的注释
+			for (int j = 0; j &lt; parameterAnnotations.length; j++) {
+				// 获得指定参数注释的长度
+				int length = parameterAnnotations[j].length;
+				if (length == 0) // 如果长度为0则表示没有为该参数添加注释
+					System.out.println("    未添加Annotation的参数");
+				else
+					for (int k = 0; k &lt; length; k++) {
+						// 获得参数的注释
+						Field_Method_Parameter_Annotation pa = (Field_Method_Parameter_Annotation) parameterAnnotations[j][k];
+						System.out.print("    " + pa.describe()); // 获得参数描述
+						System.out.println("    " + pa.type()); // 获得参数类型
+					}
+			}
+			System.out.println();
+		}
+		
+		System.out.println();
+		
+		System.out.println("-------- 字段的描述如下 --------");
+		Field[] declaredFields = recordC.getDeclaredFields(); // 获得所有字段
+		for (int i = 0; i &lt; declaredFields.length; i++) {
+			Field field = declaredFields[i]; // 遍历字段
+			// 查看是否具有指定类型的注释
+			if (field
+					.isAnnotationPresent(Field_Method_Parameter_Annotation.class)) {
+				// 获得指定类型的注释
+				Field_Method_Parameter_Annotation fa = field
+						.getAnnotation(Field_Method_Parameter_Annotation.class);
+				System.out.print("    " + fa.describe()); // 获得字段的描述
+				System.out.println("    " + fa.type()); // 获得字段的类型
+			}
+		}
+		
+		System.out.println();
+		
+		System.out.println("-------- 方法的描述如下 --------");
+		Method[] methods = recordC.getDeclaredMethods(); // 获得所有方法
+		for (int i = 0; i &lt; methods.length; i++) {
+			Method method = methods[i]; // 遍历方法
+			// 查看是否具有指定类型的注释
+			if (method
+					.isAnnotationPresent(Field_Method_Parameter_Annotation.class)) {
+				// 获得指定类型的注释
+				Field_Method_Parameter_Annotation ma = method
+						.getAnnotation(Field_Method_Parameter_Annotation.class);
+				System.out.println(ma.describe()); // 获得方法的描述
+				System.out.println(ma.type()); // 获得方法的返回值类型
+			}
+			Annotation[][] parameterAnnotations = method
+					.getParameterAnnotations(); // 获得参数的注释
+			for (int j = 0; j &lt; parameterAnnotations.length; j++) {
+				int length = parameterAnnotations[j].length; // 获得指定参数注释的长度
+				if (length == 0) // 如果长度为0表示没有为该参数添加注释
+					System.out.println("    未添加Annotation的参数");
+				else
+					for (int k = 0; k &lt; length; k++) {
+						// 获得指定类型的注释
+						Field_Method_Parameter_Annotation pa = (Field_Method_Parameter_Annotation) parameterAnnotations[j][k];
+						System.out.print("    " + pa.describe()); // 获得参数的描述
+						System.out.println("    " + pa.type()); // 获得参数的类型
+					}
+			}
+			System.out.println();
+		}
+		
+	}
+}
+
+
+
+public class Record {
+
+	@Field_Method_Parameter_Annotation(describe = "编号", type = int.class)
+	int id;
+
+	@Field_Method_Parameter_Annotation(describe = "姓名", type = String.class)
+	String name;
+
+	@Constructor_Annotation()
+	public Record() {
+	}
+
+	@Constructor_Annotation("立即初始化构造方法")
+	public Record(
+			@Field_Method_Parameter_Annotation(describe = "编号", type = int.class)
+			int id,
+			@Field_Method_Parameter_Annotation(describe = "姓名", type = String.class)
+			String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+	@Field_Method_Parameter_Annotation(describe = "获得编号", type = int.class)
+	public int getId() {
+		return id;
+	}
+
+	@Field_Method_Parameter_Annotation(describe = "设置编号")
+	public void setId(
+			@Field_Method_Parameter_Annotation(describe = "编号", type = int.class)
+			int id) {
+		this.id = id;
+	}
+
+	@Field_Method_Parameter_Annotation(describe = "获得姓名", type = String.class)
+	public String getName() {
+		return name;
+	}
+
+	@Field_Method_Parameter_Annotation(describe = "设置姓名")
+	public void setName(
+			@Field_Method_Parameter_Annotation(describe = "姓名", type = String.class)
+			String name) {
+		this.name = name;
+	}
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="作业-2"><a href="#作业-2" class="headerlink" title="作业"></a>作业</h6><ul>
+<li>利用反射实现通过扩展数组长度的方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.lang.reflect.*;
+
+public class Answer_1606 {
+
+	public static void main(String[] args) {
+
+		Test test = new Test();
+
+		test.print();
+
+		test.is = (int[]) addArrayLength(test.is, 10);
+		test.ss = (String[]) addArrayLength(test.ss, 10);
+
+		test.print();
+
+	}
+
+	public static Object addArrayLength(Object array, int newLength) {
+		Object newArray = null;
+		Class componentType = array.getClass().getComponentType();
+		newArray = Array.newInstance(componentType, newLength);
+		System.arraycopy(array, 0, newArray, 0, Array.getLength(array));
+		return newArray;
+	}
+}
+
+class Test {
+
+	public int[] is = { 1, 2, 3 };
+
+	public String[] ss = { "A", "B", "C" };
+
+	public void print() {
+
+		for (int index = 0; index &lt; is.length; index++) {
+			System.out.println("is[" + index + "]=" + is[index]);
+		}
+
+		System.out.println();
+
+		for (int index = 0; index &lt; ss.length; index++) {
+			System.out.println("ss[" + index + "]=" + ss[index]);
+		}
+
+		System.out.println();
+
+	}
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>利用反射初步验证用户输入信息</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.awt.*;
+import java.awt.event.*;
+import java.lang.reflect.*;
+
+import javax.swing.*;
+
+public class Answer_1607 extends JFrame {
+	
+	private JTextField textField_2;
+	
+	private JTextField textField_1;
+	
+	private JTextField textField;
+	
+	/**
+	 * Launch the application
+	 * 
+	 * @param args
+	 */
+	public static void main(String args[]) {
+		try {
+			Answer_1607 frame = new Answer_1607();
+			frame.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Create the frame
+	 */
+	public Answer_1607() {
+		super();
+		setBounds(100, 100, 500, 375);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		final JPanel panel = new JPanel();
+		panel.setLayout(new GridBagLayout());
+		getContentPane().add(panel, BorderLayout.CENTER);
+		
+		final JLabel label = new JLabel();
+		label.setText("姓名：");
+		final GridBagConstraints gridBagConstraints = new GridBagConstraints();
+		gridBagConstraints.gridy = 0;
+		gridBagConstraints.gridx = 0;
+		panel.add(label, gridBagConstraints);
+		
+		textField = new JTextField();
+		textField.setName("姓名");
+		textField.setColumns(20);
+		final GridBagConstraints gridBagConstraints_5 = new GridBagConstraints();
+		gridBagConstraints_5.gridy = 0;
+		gridBagConstraints_5.gridx = 1;
+		panel.add(textField, gridBagConstraints_5);
+		
+		final JLabel label_1 = new JLabel();
+		label_1.setText("性别：");
+		final GridBagConstraints gridBagConstraints_1 = new GridBagConstraints();
+		gridBagConstraints_1.gridy = 1;
+		gridBagConstraints_1.gridx = 0;
+		panel.add(label_1, gridBagConstraints_1);
+		
+		final JPanel panel_1 = new JPanel();
+		final GridBagConstraints gridBagConstraints_4 = new GridBagConstraints();
+		gridBagConstraints_4.gridy = 1;
+		gridBagConstraints_4.gridx = 1;
+		panel.add(panel_1, gridBagConstraints_4);
+		
+		final JRadioButton radioButton = new JRadioButton();
+		radioButton.setText("男");
+		panel_1.add(radioButton);
+		
+		final JRadioButton radioButton_1 = new JRadioButton();
+		radioButton_1.setText("女");
+		panel_1.add(radioButton_1);
+		
+		final JLabel label_2 = new JLabel();
+		label_2.setText("出生日期：");
+		final GridBagConstraints gridBagConstraints_2 = new GridBagConstraints();
+		gridBagConstraints_2.gridy = 2;
+		gridBagConstraints_2.gridx = 0;
+		panel.add(label_2, gridBagConstraints_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setName("出生日期");
+		textField_1.setColumns(20);
+		final GridBagConstraints gridBagConstraints_6 = new GridBagConstraints();
+		gridBagConstraints_6.gridy = 2;
+		gridBagConstraints_6.gridx = 1;
+		panel.add(textField_1, gridBagConstraints_6);
+		
+		final JLabel label_3 = new JLabel();
+		label_3.setText("身份证号：");
+		final GridBagConstraints gridBagConstraints_3 = new GridBagConstraints();
+		gridBagConstraints_3.gridy = 3;
+		gridBagConstraints_3.gridx = 0;
+		panel.add(label_3, gridBagConstraints_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setName("身份证号");
+		textField_2.setColumns(20);
+		final GridBagConstraints gridBagConstraints_7 = new GridBagConstraints();
+		gridBagConstraints_7.gridy = 3;
+		gridBagConstraints_7.gridx = 1;
+		panel.add(textField_2, gridBagConstraints_7);
+		
+		final JButton button = new JButton();
+		button.setText("确定");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Field[] fields = Answer_1607.class.getDeclaredFields(); // 通过Java反射机制获得类中的所有属性
+				for (int i = 0; i &lt; fields.length; i++) { // 遍历属性数组
+					Field field = fields[i]; // 获得属性
+					if (field.getType().equals(JTextField.class)) { // 只验证JTextField类型的属性
+						field.setAccessible(true); // 默认情况下不允许访问私有属性，如果设为true则允许访问
+						JTextField textField = null;
+						try {
+							textField = (JTextField) field
+									.get(Answer_1607.this); // 获得本类中的对应属性
+						} catch (Exception ex) {
+							ex.printStackTrace();
+						}
+						if (textField.getText().trim().length() == 0) { // 查看该属性是否为空
+							String info = "请填写“" + textField.getName()
+									+ "”！";
+							JOptionPane.showMessageDialog(null, info,
+									"友情提示",
+									JOptionPane.INFORMATION_MESSAGE);
+							textField.requestFocus(); // 令为空的文本框获得焦点
+							return;
+						}
+					}
+				}
+				
+			}
+		});
+		final GridBagConstraints gridBagConstraints_8 = new GridBagConstraints();
+		gridBagConstraints_8.gridy = 4;
+		gridBagConstraints_8.gridx = 1;
+		panel.add(button, gridBagConstraints_8);
+		//
+	}
+	
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="四、枚举类型与泛型"><a href="#四、枚举类型与泛型" class="headerlink" title="四、枚举类型与泛型"></a>四、枚举类型与泛型</h2><h4 id="1-枚举类型"><a href="#1-枚举类型" class="headerlink" title="1.枚举类型"></a>1.枚举类型</h4><h6 id="使用枚举类型设置常量"><a href="#使用枚举类型设置常量" class="headerlink" title="使用枚举类型设置常量"></a>使用枚举类型设置常量</h6><ul>
+<li><p>使用枚举类型定义常量的语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">public enum Constants{
+  	Constants_A,
+  	Constants_B,
+  	Constants_C
+  }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>其中，enum是定义枚举类型关键字。当需要在程序中使用该常量时，可以使用Constants.Constants_A来表示。</p>
+</blockquote>
+</li>
+<li><p>分别使用final+static和枚举类型定义常量</p>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">interface Constants { // 将常量放置在接口中
+	public static final int Constants_A = 1;
+	public static final int Constants_B = 12;
+}
+
+public class ConstantsTest {
+	enum Constants2 { // 将常量放置在枚举类型中
+		Constants_A, Constants_B
+	}
+	
+	// 使用接口定义常量
+	public static void doit(int c) { // 定义一个方法，这里的参数为int型
+		switch (c) { // 根据常量的值做不同操作
+			case Constants.Constants_A:
+				System.out.println("doit() Constants_A");
+				break;
+			case Constants.Constants_B:
+				System.out.println("doit() Constants_B");
+				break;
+		}
+	}
+	// 定义一个方法，这里的参数为枚举类型对象
+	public static void doit2(Constants2 c) { 
+		switch (c) { // 根据枚举类型对象做不同操作
+			case Constants_A:
+				System.out.println("doit2() Constants_A");
+				break;
+			case Constants_B:
+				System.out.println("doit2() Constants_B");
+				break;
+		}
+	}
+	
+	public static void main(String[] args) {
+		ConstantsTest.doit(Constants.Constants_A); // 使用接口中定义的常量
+		ConstantsTest.doit2(Constants2.Constants_A); // 使用枚举类型中的常量
+		ConstantsTest.doit2(Constants2.Constants_B); // 使用枚举类型中的常量
+		ConstantsTest.doit(3);
+		// ConstantsTest.doit2(3);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="深入了解枚举类型"><a href="#深入了解枚举类型" class="headerlink" title="深入了解枚举类型"></a>深入了解枚举类型</h6><ul>
+<li><p>枚举类型较传统定义常量的方式，除了具有参数类型检测的优势之外，还具有其他方面的优势。</p>
+</li>
+<li><p>用户可以将一个枚举类型看作是一个类，它继承于java.lang.Enum类，当定义一个枚举类型时，每一个枚举类型成员都可以看作是枚举类型的一个实例，这些枚举类型成员默认都被final、public、static所修饰，所以当使用枚举类型成员时直接使用枚举类型名称调用枚举类型成员即可。</p>
+</li>
+<li><p>枚举类型的常用方法</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>values（）</td>
+<td>将枚举类型成员以数组的形式返回</td>
+<td>枚举类型名称.values()</td>
+</tr>
+<tr>
+<td>valueOf()</td>
+<td>将普通字符串转换为枚举实例</td>
+<td>Contants2.valueOf(“abv”)</td>
+</tr>
+<tr>
+<td>compareTo()</td>
+<td>比较两个枚举对象在定义时的顺序</td>
+<td></td>
+</tr>
+<tr>
+<td>ordinal（）</td>
+<td>得到枚举成员的位置索引</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>使用values方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import static java.lang.System.*;
+
+public class ShowEnum {
+	enum Constants2 { // 将常量放置在枚举类型中
+		Constants_A, Constants_B
+	}
+	 // 循环由values()方法返回的数组
+	public static void main(String[] args) {
+		for (int i = 0; i &lt; Constants2.values().length; i++) {
+			// 将枚举成员变量打印
+			out.println("枚举类型成员变量：" + Constants2.values()[i]);
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>使用valueOf()和compareTo()</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import static java.lang.System.*;
+
+public class EnumMethodTest {
+	enum Constants2 { // 将常量放置在枚举类型中
+		Constants_A, Constants_B
+	}
+	
+	// 定义比较枚举类型方法，参数类型为枚举类型
+	public static void compare(Constants2 c) {
+		// 根据values()方法返回的数组做循环操作
+		for (int i = 0; i &lt; Constants2.values().length; i++) {
+			// 将比较结果返回
+			out.println(c + "与" + Constants2.values()[i] + "的比较结果为："
+					+ c.compareTo(Constants2.values()[i]));
+		}
+	}
+	
+	// 在主方法中调用compare()方法
+	public static void main(String[] args) {
+		compare(Constants2.valueOf("Constants_B"));
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>ordinal</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import static java.lang.System.*;
+
+public class EnumIndexTest {
+	enum Constants2 { // 将常量放置在枚举类型中
+		Constants_A, Constants_B, Constants_C
+	}
+	
+	public static void main(String[] args) {
+		for (int i = 0; i &lt; Constants2.values().length; i++) {
+			// 在循环中获取枚举类型成员的索引位置
+			out.println(Constants2.values()[i] + "在枚举类型中位置索引值"
+					+ Constants2.values()[i].ordinal());
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="枚举类型中的构造方法"><a href="#枚举类型中的构造方法" class="headerlink" title="枚举类型中的构造方法"></a>枚举类型中的构造方法</h6><ul>
+<li>定义枚举类型的构造方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import static java.lang.System.*;
+
+public class EnumIndexTest {
+	enum Constants2 { // 将常量放置在枚举类型中
+		Constants_A("我是枚举成员A"), // 定义带参数的枚举类型成员
+		Constants_B("我是枚举成员B"), Constants_C("我是枚举成员C"), Constants_D(3);
+		private String description;
+		private int i = 4;
+		
+		private Constants2() {
+		}
+		 // 定义参数为String型的构造方法
+		private Constants2(String description) {
+			this.description = description;
+		}
+		
+		private Constants2(int i) { // 定义参数为整型的构造方法
+			this.i = this.i + i;
+		}
+		
+		public String getDescription() { // 获取description的值
+			return description;
+		}
+		
+		public int getI() { // 获取i的值
+			return i;
+		}
+	}
+	
+	public static void main(String[] args) {
+		for (int i = 0; i &lt; Constants2.values().length; i++) {
+			out.println(Constants2.values()[i] + "调用getDescription()方法为："
+					+ Constants2.values()[i].getDescription());
+		}
+		out.println(Constants2.valueOf("Constants_D") + "调用getI()方法为："
+				+ Constants2.valueOf("Constants_D").getI());
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>枚举类型中实现带接口的方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+import static java.lang.System.*;
+interface d {
+	public String getDescription();
+	
+	public int getI();
+}
+
+public enum AnyEnum implements d {
+	Constants_A { // 可以在枚举类型成员内部设置方法
+		public String getDescription() {
+			return ("我是枚举成员A");
+		}
+		
+		public int getI() {
+			return i;
+		}
+	},
+	Constants_B {
+		public String getDescription() {
+			return ("我是枚举成员B");
+		}
+		
+		public int getI() {
+			return i;
+		}
+	},
+	Constants_C {
+		public String getDescription() {
+			return ("我是枚举成员C");
+		}
+		
+		public int getI() {
+			return i;
+		}
+	},
+	Constants_D {
+		public String getDescription() {
+			return ("我是枚举成员D");
+		}
+		
+		public int getI() {
+			return i;
+		}
+	};
+	private static int i = 5;
+	
+	public static void main(String[] args) {
+		for (int i = 0; i &lt; AnyEnum.values().length; i++) {
+			out.println(AnyEnum.values()[i] + "调用getDescription()方法为："
+					+ AnyEnum.values()[i].getDescription());
+			out.println(AnyEnum.values()[i] + "调用getI()方法为："
+					+ AnyEnum.values()[i].getI());
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="使用枚举类型的优势"><a href="#使用枚举类型的优势" class="headerlink" title="使用枚举类型的优势"></a>使用枚举类型的优势</h6><p>枚举类型声明提供了一种用户友好的变量定义方法，枚举了某种数据类型所有可能出现的值。总结枚举类型，它具有以下特点：</p>
+<ul>
+<li>类型安全。</li>
+<li>紧凑有效的数据定义。</li>
+<li>可以和程序其他部分完美交互。</li>
+<li>运行效率高。</li>
+</ul>
+<h4 id="2-泛型"><a href="#2-泛型" class="headerlink" title="2.泛型"></a>2.泛型</h4><blockquote>
+<p>泛型就是使程序员定义安全的类型。之前“任意化”操作是对Object引用进行下转型和向上转型操作，但某些强制类型转换的错误也许不会被编译器捕捉，而在运行后出现异常。强制类型转换存在安全隐患，所以提供泛型机制。</p>
+</blockquote>
+<h6 id="回顾向上转型与向下转型"><a href="#回顾向上转型与向下转型" class="headerlink" title="回顾向上转型与向下转型"></a>回顾向上转型与向下转型</h6><ul>
+<li>向上转型为Object类</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Test {
+	private Object b; // 定义Object类型成员变量
+	
+	public Object getB() { // 设置相应getXXX()方法
+		return b;
+	}
+	
+	public void setB(Object b) { // 设置相应setXXX()方法
+		this.b = b;
+	}
+	
+	public static void main(String[] args) {
+		Test t = new Test();
+		t.setB(new Boolean(true)); // 向上转型操作
+		System.out.println(t.getB());
+		t.setB(new Float(12.3));
+		Float f = (Float) (t.getB()); // 向下转型操作
+		System.out.println(f);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="定义泛型类"><a href="#定义泛型类" class="headerlink" title="定义泛型类"></a>定义泛型类</h6><p>Object类为最上层的父类，很多程序员为了使程序更为通用，设计程序时通常使传入的值与返回的值都以Object类型为主。当需要使用这些实例时，必须正确地将该实例转换为原来的类型，否则在运行时将会发生ClassCastException异常。</p>
+<ul>
+<li><p>在JDK 1.5版本以后，提出了泛型机制。其语法如下：<br><code>类名&lt;T&gt;</code><br>其中，T代表一个类型的名称。</p>
+</li>
+<li><p>定义泛型</p>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class OverClass&lt;T&gt;{      //定义泛型类
+    private T over;             //定义泛型成员变量
+    public T getOver(){
+        return over;
+    }
+    public void setOver(T over){
+        this.over = over;
+    }
+
+    public static void main(String[] args) {
+        OverClass&lt;Boolean&gt; over1 = new OverClass&lt;Boolean&gt;();
+        OverClass&lt;Float&gt; over2 = new OverClass&lt;Float&gt;();
+        over1.setOver(true);				//不需要进行类型转换
+        over2.setOver(12.3f);
+        Boolean b = over1.getOver();		//不需要进行类型转换
+        Float f = over2.getOver();
+        System.out.println(b);
+        System.out.println(f);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="泛型的常规用法"><a href="#泛型的常规用法" class="headerlink" title="泛型的常规用法"></a>泛型的常规用法</h6><ol>
+<li>定义泛型类时声明多个类型</li>
+</ol>
+<ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">MutiOverClass&lt;T1,T2&gt;
+MutiOverClass:泛型类名称<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>例子</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">MutiOverClass&lt;Boolean,Float&gt; = new MutiOverClass&lt;Boolean,Float&gt;();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="2">
+<li>定义泛型类时声明数组类型</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">public class ArrayClass&lt;T&gt; {
+	private T[] array; // 定义泛型数组
+	
+	public void SetT(T[] array) { // 设置SetXXX()方法为成员数组赋值
+		this.array = array;
+	}
+	
+	public T[] getT() { // 获取成员数组
+		return array;
+	}
+	
+	public static void main(String[] args) {
+		ArrayClass&lt;String&gt; a = new ArrayClass&lt;String&gt;();
+		String[] array = { "成员1", "成员2", "成员3", "成员4", "成员5" };
+		a.SetT(array); // 调用SetT()方法
+		for (int i = 0; i &lt; a.getT().length; i++) {
+			System.out.println(a.getT()[i]); // 调用getT()方法返回数组中的值
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>可以在声明泛型机制时声明一个数组，不可以使用泛型来建立数组的实例。错误示例：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">pubic class ArrayClass&lt;T&gt;(
+		//private T[] array = new T[10]; //不能使用泛型来建立数组实例
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>集合类声明容器的元素</li>
+</ol>
+<blockquote>
+<p>可以使用K和V两个字符代表容器中的键值和与键值项对应具体的值。</p>
+</blockquote>
+<ul>
+<li>使用集合类声明容器的元素</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class MutiOverClass&lt;K, V&gt; {
+	public Map&lt;K, V&gt; m = new HashMap&lt;K, V&gt;(); // 定义一个集合HashMap实例
+	 // 设置put()方法，将对应的键值与键名存入集合对象中
+	public void put(K k, V v) {
+		m.put(k, v);
+	}
+	
+	public V get(K k) { // 根据键名获取键值
+		return m.get(k);
+	}
+	
+	public static void main(String[] args) {
+		// 实例化泛型类对象
+		MutiOverClass&lt;Integer, String&gt; mu
+		= new MutiOverClass&lt;Integer, String&gt;();
+		for (int i = 0; i &lt; 5; i++) {
+			// 根据集合的长度循环将键名与具体值放入集合中
+			mu.put(i, "我是集合成员" + i);
+		}
+		for (int i = 0; i &lt; mu.m.size(); i++) {
+			// 调用get()方法获取集合中的值
+			System.out.println(mu.get(i));
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>定义的泛型类MutiOverClass类是多余的，因为一些集合框架已经被泛型化了，可以在主方法中直接使用<code>public Map&lt;K,V&gt; m = new HashMap&lt;K,V&gt;();</code>语句创建实例。然后调用Map接口中的put()和get()方法填充。</li>
+<li>常用的被泛型化的集合类</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>集合类</th>
+<th>泛型定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ArrayList</td>
+<td>ArrayList<e></e></td>
+</tr>
+<tr>
+<td>HashMap</td>
+<td>HashMap&lt;K,V&gt;</td>
+</tr>
+<tr>
+<td>HasjSet</td>
+<td>HasjSet<e></e></td>
+</tr>
+<tr>
+<td>Vector</td>
+<td>Vector<e></e></td>
+</tr>
+</tbody></table>
+<ul>
+<li>使用泛型化常用集合类</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.*;
+
+public class AnyClass {
+	public static void main(String[] args) {
+		// 定义ArrayList容器，设置容器内的值类型为Integer
+		ArrayList&lt;Integer&gt; a = new ArrayList&lt;Integer&gt;();
+		a.add(1); // 为容器添加新值
+		for (int i = 0; i &lt; a.size(); i++) {
+			// 根据容器的长度循环显示容器内的值
+			System.out.println("获取ArrayList容器的值：" + a.get(i));
+		}
+		// 定义HashMap容器，设置容器的键名与键值类型分别为Integer与String型
+		Map&lt;Integer, String&gt; m = new HashMap&lt;Integer, String&gt;();
+		for (int i = 0; i &lt; 5; i++) {
+			m.put(i, "成员" + i); // 为容器填充键名与键值
+		}
+		for (int i = 0; i &lt; m.size(); i++) {
+			 // 根据键名获取键值
+			System.out.println("获取Map容器的值" + m.get(i));
+		}
+		// 定义Vector容器，使容器中的内容为String型
+		Vector&lt;String&gt; v = new Vector&lt;String&gt;();
+		for (int i = 0; i &lt; 5; i++) {
+			v.addElement("成员" + i); // 为Vector容器添加内容
+		}
+		for (int i = 0; i &lt; v.size(); i++) {
+			// 显示容器中的内容
+			System.out.println("获取Vector容器的值" + v.get(i));
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="泛型的高级用法"><a href="#泛型的高级用法" class="headerlink" title="泛型的高级用法"></a>泛型的高级用法</h6><ol>
+<li>限制泛型可用类型</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">class 类名称&lt;T entends anyClass&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="2">
+<li>使用类型通配符</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">泛型类名称&lt;? extends List&gt; a=null;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>继承泛型类与实现泛型接口</li>
+</ol>
+<ul>
+<li>继承泛型类</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class ExtendClass&lt;T1&gt;{
+
+}
+class SubClass&lt;T1,T2,T3&gt; extends ExtendClass&lt;T1&gt;{
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>实现泛型接口</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">interface i&lt;T1&gt;{
+
+}
+class SubClass2&lt;T1,T2,T3&gt; implements i&lt;T1&gt;{
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="泛型总结"><a href="#泛型总结" class="headerlink" title="泛型总结"></a>泛型总结</h6><p>下面总结一下泛型的使用方法:</p>
+<ul>
+<li>泛型的类型参数只能是类类型，不可以是简单类型，如A<int>这种泛型定义就是错误的。</int></li>
+<li>泛型的类型个数可以是多个。</li>
+<li>可以使用extends关键字限制泛型的类型。</li>
+<li>可以使用通配符限制泛型的类型。</li>
+</ul>
+<h6 id="作业-3"><a href="#作业-3" class="headerlink" title="作业"></a>作业</h6><ul>
+<li>定义枚举类型类，使用switch语句获取枚举类型的值</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+public class UseCase1 {
+	enum Constants2 { // 将常量放置在枚举类型中
+		Constants_A, Constants_B
+	}
+	 // 定义一个方法，这里的参数为枚举类型对象
+	public static void doit2(Constants2 c) {
+		switch (c) { // 根据枚举类型对象做不同操作
+			case Constants_A:
+				System.out.println("doit2() Constants_A");
+				break;
+			case Constants_B:
+				System.out.println("doit2() Constants_B");
+				break;
+		}
+	}
+	
+	public static void main(String[] args) {
+		UseCase1.doit2(Constants2.Constants_A);
+		UseCase1.doit2(Constants2.Constants_B);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>extend限制泛型类的接口为List接口</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+import java.util.*;
+
+public class UseCase2&lt;T extends List&gt; {
+	
+	public static void main(String[] args) {
+		UseCase2&lt;ArrayList&gt; l1 = new UseCase2&lt;ArrayList&gt;();
+		UseCase2&lt;LinkedList&gt; l2 = new UseCase2&lt;LinkedList&gt;();
+		// LimitClass&lt;HashMap&gt; l3=new LimitClass&lt;HashMap&gt;();
+	}
+	
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>使用通配符</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+import java.util.*;
+
+public class UseCase3&lt;T&gt; {
+	public void doSomething(UseCase3&lt;? extends List&lt;Object&gt;&gt; a) {
+		System.out.println(a.getClass().getName());
+	}
+	
+	public static void main(String[] args) {
+		// TODO 自动生成方法存根
+		UseCase3&lt;? extends List&lt;Object&gt;&gt; a = new UseCase3&lt;ArrayList&lt;Object&gt;&gt;();
+		a.doSomething(new UseCase3&lt;ArrayList&lt;Object&gt;&gt;());
+		a.doSomething(new UseCase3&lt;LinkedList&lt;Object&gt;&gt;());
+		UseCase3&lt;? super List&lt;Object&gt;&gt; a2 = null;
+		a2 = new UseCase3&lt;Object&gt;();
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/02/19/java-xue-xi-5-ji-he-lei-io-fan-she-mei-ju-yu-fan-xing/">http://xinxinliang.github.io/2021/02/19/java-xue-xi-5-ji-he-lei-io-fan-she-mei-ju-yu-fan-xing/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">编程语言</span>
+                                </a>
+                            
+                                <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                                    <span class="chip bg-color">Java语法</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/02/19/java-kuo-zhan-lei-1-swing-cheng-xu-she-ji-he-gao-ji-shi-jian/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-dg37eo.png" class="responsive-img" alt="Java扩展类1：Swing程序设计和高级事件">
+                        
+                        <span class="card-title">Java扩展类1：Swing程序设计和高级事件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                        <span class="chip bg-color">Java扩展类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/19/java-xue-xi-4-lei-he-dui-xiang-bao-zhuang-lei/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-d5gz63.jpg" class="responsive-img" alt="Java学习4：类和对象、包装类">
+                        
+                        <span class="card-title">Java学习4：类和对象、包装类</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">Java语法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">119.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

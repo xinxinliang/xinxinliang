@@ -1,0 +1,2086 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java学习2：基础语法, blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java学习2：基础语法 | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-9677j8.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java学习2：基础语法</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">编程语言</span>
+                            </a>
+                        
+                            <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                                <span class="chip bg-color">Java语法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、Java语言基础"><a href="#一、Java语言基础" class="headerlink" title="一、Java语言基础"></a>一、Java语言基础</h2><h4 id="1-程序基本结构"><a href="#1-程序基本结构" class="headerlink" title="1. 程序基本结构"></a>1. 程序基本结构</h4><blockquote>
+<p>基本结构大体可以分为：包、类、main()主方法、标识符、关键字、语句和注释等</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package myJava;//声明类所在的包,所在文件夹的名字
+
+public class test_1 {//定义的类名必须与文件名相同
+    static String s1 = "你好";//全局变量
+    public static void main(String[] args){//每个程序必须含有一个主类包含main（）方法
+        String s2 = "Java";//局部变量
+        System.out.println(s1);
+        System.out.println(s2);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>main()方法是类体中的主方法，该方法从“{”号开始，至“}”号结束</li>
+<li>public、static和void分别是main()方法的权限修饰符、静态修饰符和返回值修饰符，Java程序中的main()方法必须声明为 <strong>public static void</strong>。</li>
+<li>String[] args是一个字符串类型的数组，它是main()方法的参数</li>
+<li>main()方法是程序开始执行的位置。</li>
+<li>每一条语句需要使用 <code>;</code> 结尾</li>
+<li><strong>定义的类名必须与文件名相同</strong>，包的名字就是在src文件夹下.java文件所在的位置。</li>
+</ul>
+<h4 id="2-标识符与关键字"><a href="#2-标识符与关键字" class="headerlink" title="2.标识符与关键字"></a>2.标识符与关键字</h4><h6 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h6><ul>
+<li><strong>定义</strong>：一个名字，用来标识类名、变量名、方法名、数组名、对象名等</li>
+<li><strong>规则</strong>：由字母、数字、下划线和美元符号组成，第一个字符不能为数字。区分大小写。使用Unicode标准字符集，可以识别65535个字符。</li>
+</ul>
+<h6 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h6><table>
+<thead>
+<tr>
+<th>int</th>
+<th>public</th>
+<th>this</th>
+<th>finally</th>
+<th>boolean</th>
+<th>abstract</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>continue</td>
+<td>float</td>
+<td>long</td>
+<td>short</td>
+<td>throw</td>
+<td>throws</td>
+</tr>
+<tr>
+<td>return</td>
+<td>break</td>
+<td>for</td>
+<td>static</td>
+<td>new</td>
+<td>interface</td>
+</tr>
+<tr>
+<td>if</td>
+<td>double</td>
+<td>default</td>
+<td>byte</td>
+<td>do</td>
+<td>case</td>
+</tr>
+<tr>
+<td>stricpft</td>
+<td>package</td>
+<td>super</td>
+<td>void</td>
+<td>try</td>
+<td>switch</td>
+</tr>
+<tr>
+<td>else</td>
+<td>catch</td>
+<td>implements</td>
+<td>private</td>
+<td>final</td>
+<td>class</td>
+</tr>
+<tr>
+<td>extends</td>
+<td>volatile</td>
+<td>while</td>
+<td>synchronized</td>
+<td>instanceof</td>
+<td>char</td>
+</tr>
+<tr>
+<td>protecte</td>
+<td>importd</td>
+<td>transient</td>
+<td>implements</td>
+<td>defaule</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="3-基本数据类型"><a href="#3-基本数据类型" class="headerlink" title="3.基本数据类型"></a>3.基本数据类型</h4><h6 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h6><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>内存空间（8位一个字节）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>8位</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16位</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32位</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64位</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Number { // 创建类
+	public static void main(String[] args) { // 主方法
+		byte mybyte = 124; // 声明byte型变量并赋值
+		short myshort = 32564; // 声明short型变量并赋值
+		int myint = 45784612; // 声明int型变量并赋值
+		long mylong = 46789451; // 声明long型变量并赋值
+		long result = mybyte + myshort + myint + mylong;// 获得各数相加后的结果
+		System.out.println("结果为：" + result); // 将以上变量相加的结果输出
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h6><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>内存空间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>32位</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64位</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class SumNumber {
+    public static void main(String args[]){
+        float f1 = 13.24f;
+        double d1 = 4526.125d;
+        double d2 = 876921.77812;
+        double result = f1+d1+d2;
+        System.out.println(result);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h6><blockquote>
+<p>使用char关键字声明，分配<strong>两个字节</strong>空间，用<strong>单引号括起来</strong>，单引号中只能由<strong>一个字符</strong>。</p>
+<p>多了就不是字符类型了，而是字符串类型，需要用双引号进行声明。</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Gess { // 定义类
+	public static void main(String[] args) { // 主方法
+		char word = 'd', word2 = '@'; // 定义char型变量
+		int p = 23045, p2 = 45213; // 定义int型变量
+		System.out.println("d在unicode表中的顺序位置是：" + (int) word);
+		System.out.println("@在unicode表中的顺序位置是：" + (int) word2);
+		System.out.println("unicode表中的第23045位是：" + (char) p);
+		System.out.println("unicode表中的第45213位是：" + (char) p2);
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>可以和unicode码之间转换</p>
+</blockquote>
+<ul>
+<li>转义字符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\ddd</td>
+<td>1~3位八进制数据所表示的字符</td>
+</tr>
+<tr>
+<td>\dxxxx</td>
+<td>4位16精致所表示的字符</td>
+</tr>
+<tr>
+<td>\`</td>
+<td>单引号字符</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>垂直制表符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class SumNumber {
+    public static void main(String args[]){
+        char char1 = '\\';
+        char char2 = '\u2605';
+        System.out.println("输出反斜杠: "+char1);
+        System.out.println("输出五角星: "+char2);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h6><pre class="line-numbers language-none"><code class="language-none">boolean b1 = true,b2=fasle,b3;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="4-变量与常量"><a href="#4-变量与常量" class="headerlink" title="4.变量与常量"></a>4.变量与常量</h4><h6 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h6><blockquote>
+<p>定义一个变量，需要告诉编译器这个变量属于那种<strong>类型</strong>。</p>
+<p>变量名必须是合法的标识符。</p>
+</blockquote>
+<ul>
+<li>可以在声明变量时赋值</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">int age;
+char char1 = 'r';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>java中变量命名规则<ul>
+<li>变量名必须是有效的标识符</li>
+<li>变量名不能重复</li>
+<li>选择有意义的单词作为变量名</li>
+</ul>
+</li>
+</ul>
+<h6 id="声明常量"><a href="#声明常量" class="headerlink" title="声明常量"></a>声明常量</h6><blockquote>
+<p>使用关键字<strong>final</strong>修饰。整个程序中只能<strong>赋值一次</strong></p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Part { // 新建类Part
+	// 声明常量PI，此时如不对PI进行赋值，则会出现错误提示
+	static final double PI = 3.14;
+	static int age = 23; // 声明int型变量age并进行赋值
+	
+	public static void main(String[] args) { // 主方法
+		final int number; // 声明int型常量number
+		number = 1235; // 对常量进行赋值
+		age = 22; // 再次对变量进行赋值
+		// number = 1236;
+		// //错误的代码，因为number为常量，只能进行一次赋值
+		System.out.println("常量PI的值为：" + PI); // 将PI的值输出
+		System.out.println("赋值后number的值为:" +number);//将number的值输出
+		System.out.println("int型变量age的值为：" + age); // 将age的值输出
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="变量的有效范围"><a href="#变量的有效范围" class="headerlink" title="变量的有效范围"></a>变量的有效范围</h6><blockquote>
+<p>程序代码能够访问变量的区域。分为<strong>成员变量和局部变量</strong></p>
+</blockquote>
+<ul>
+<li><strong>成员变量</strong></li>
+</ul>
+<blockquote>
+<p>在类中定义的变量。在整个类中有效。分为<strong>静态变量和实例变量</strong></p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">class var{
+		int x = 45;							//实例变量
+		static int y =90;				//静态变量
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>静态变量</strong></li>
+</ul>
+<blockquote>
+<p>使用关键字<strong>static</strong>修饰，<strong>有效范围可以跨类</strong>，甚至整个程序。</p>
+<p>还可以<strong>“类名.静态变量”</strong>的方式在<strong>其他类中使用</strong>。</p>
+</blockquote>
+<ul>
+<li>局部变量</li>
+</ul>
+<blockquote>
+<p>只能在定义的大括号内有效</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">public class Val { // 新建类
+	static int times = 3; // 定义成员变量times
+	
+	public static void main(String[] args) { // 主方法
+		int times = 4; // 定义局部变量times
+		System.out.println("times的值为：" + times); // 将times的值输出
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h4><h6 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h6><blockquote>
+<p>**=**，二元运算符,其功能是将右方操作数所含的值赋值给左方的操作数。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">public class Eval { // 创建类
+	public static void main(String[] args) { // 主方法
+		int a, b, c; // 声明int行变量a,b,c
+		a = 15; // 将15赋值给变量a
+		c = b = a + 4; // 将a与4的和赋值给变量b，然后再赋值给变量c
+		System.out.println("c值为：" + c); // 将变量c的值输出
+		System.out.println("b值为：" + b); // 将变量b的值输出
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h6><blockquote>
+<p>Java中的算术运算符主要有+（加号）、-（减号）、*（乘号）、/（除号）和%（求余），它们都是二元运算符。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">public class Arith { // 创建类
+	public static void main(String[] args) { // 主方法
+		float number1 = 45.56f; // 声明float型变量并赋值
+		int number2 = 152; // 声明int型变量并赋值
+		System.out.println("和为：" + number1 + number2); // 将变量相加之和输出
+		System.out.println("差为：" + (number2-number1));//将变量相减之差输出
+		System.out.println("积为：" + number1 * number2); // 将变量相乘的积输出
+		System.out.println("商为：" + number1 / number2); // 将变量相除的商输出
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="自增和自减运算符"><a href="#自增和自减运算符" class="headerlink" title="自增和自减运算符"></a>自增和自减运算符</h6><blockquote>
+<p>自增、自减运算符是单目运算符，可以放在操作元之前，也可以放在操作元之后。操作元必须是一个整型或浮点型变量。放在操作元前面的自增、自减运算符，会先将变量的值加1（减1），然后再使该变量参与表达式的运算；放在操作元后面的自增、自减运算符，会先使变量参与表达式的运算，然后再将该变量加1（减1）</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">++a(--a)  //在使用变量a之前，先使a的值加（减）1
+a++(a--)  //在使用变量a之后，使a的值加（减）1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>具体例子</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">a=4；
+b=++a						//a=5，b=5
+b=a++						//a=5，b=4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h6 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h6><blockquote>
+<p><code>&gt;、&lt;、==、 &gt;= 、&lt;= 、!=</code></p>
+</blockquote>
+<blockquote>
+<p>比较运算符属于二元运算符，用于程序中的变量和变量之间、变量和常量之间以及其他类型的信息之间的比较。比较运算符的运算结果是boolean型，当运算符对应的关系成立时，运算结果是true，否则结果是false。比较运算符通常用在条件语句中来作为判断的依据。</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Compare { // 创建类
+	public static void main(String[] args) {
+		int number1 = 4; // 声明int型变量number1
+		int number2 = 5; // 声明int型变量number2
+		System.out.println("number1&gt;number的返回值为：" +(number1 &gt; number2));
+		/* 依次将变量number1与变量number2的比较结果输出 */
+		System.out.println("number1&lt;number2的返回值为："+(number1 &lt; number2));
+		System.out.println("number1==number2返回值为："+(number1== number2));
+		System.out.println("number1!=number2返回值为："+(number1 != number2));
+		System.out.println("number1&gt;= number2返回值为："+(number1 &gt;= number2));
+		System.out.println("number1&lt;=number2返回值为："+(number1 &lt;= number2));
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h6><blockquote>
+<p><code>&amp;&amp;</code>（<code>&amp;</code>）（逻辑与）、<code>||</code>（<code>|</code>）（逻辑或）、<code>!</code>（逻辑非）</p>
+<p>返回值为布尔类型的表达式，操作元也必须是boolean型数据</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Calculation { // 创建类
+	public static void main(String[] args) {
+		int a = 2; // 声明int型变量a
+		int b = 5; // 声明int型变量b
+		// 声明布尔型变量，用于保存应用逻辑运算符“&amp;&amp;”后的返回值
+		boolean result = ((a &gt; b) &amp;&amp; (a != b));
+		// 声明布尔型变量，用于保存应用逻辑运算符“||”后的返回值
+		boolean result2 = ((a &gt; b) || (a != b));
+		System.out.println(result); // 将变量result输出
+		System.out.println(result2); // 将变量result2输出
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>区别：使用<code>&amp;</code>时会判断左右两边式子，使用<code>&amp;&amp;</code>如果一边位false，就不判断右边了，节省计算机判断的次数。</p>
+</blockquote>
+<h6 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h6><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>~</td>
+<td>按位取反</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>按位与</td>
+</tr>
+<tr>
+<td>|</td>
+<td>按位或</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>无符号右移</td>
+</tr>
+</tbody></table>
+<h6 id="指定运算"><a href="#指定运算" class="headerlink" title="指定运算"></a>指定运算</h6><p><code>+=、-=、*=、/=、%=、&amp;=、|=、^=、&lt;&lt;=、&gt;&gt;=</code></p>
+<h6 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h6><blockquote>
+<p> <code>条件？值1：值2；</code></p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">boolean b = 20&lt;45?true:false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>等价于</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class Calculation {
+	public static void main(String[] args) {
+		boolean a;
+		if (20 &lt; 45)
+			a = true;
+		else
+			a = false;
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>instanceof运算符</li>
+</ul>
+<blockquote>
+<p>二目运算符，左边是对象，右边是类，返回ture或false</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">int a;
+if( a isinstanceof int)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h6 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h6><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/clipbadsdsoard.png"></p>
+<p>范例1：<strong>不适用其他变量实现两变量互换</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
+
+public class VariableExchange {
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("请输入变量A的值");
+        long A = scan.nextLong();
+        System.out.println("请输入变量B的值");
+        long B = scan.nextLong();
+        System.out.println("A="+A+"\tB="+B);
+        System.out.println("执行变量互换……");
+        A = A^B;
+        B = B^A;
+        A = A^B;
+        System.out.println("A="+A+"\tB="+B);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>范例2：<strong>判断数字的奇偶性</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
+public class ParityCheck {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("请输入一个整数：");
+        long number = scan.nextLong();
+        String check = (number % 2 == 0)?"这个数字是：偶数":"这个数字是：奇数";
+        System.out.println(check);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-类型转换"><a href="#6-类型转换" class="headerlink" title="6.类型转换"></a>6.类型转换</h4><h6 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h6><blockquote>
+<p>当不同类型变量一起运算时，最终结果自动转换位精度高的类型。</p>
+<p>（<code>byte、short、char</code>）-&gt; int -&gt;long -&gt; float -&gt;double</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">//隐式类型转换
+int x=1；
+float y=x；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h6 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h6><pre class="line-numbers language-none"><code class="language-none">public class Practice { // 创建类
+	public static void main(String[] args) {
+		long mylong = 45789;
+		byte mybyte = 123;
+		short myshort = 32564;
+		int myint1 = (int) mylong;
+		int myint2 = (int) myshort;
+		int myint3 = (int) mybyte;
+		System.out.println(myint1);
+		System.out.println(myint2);
+		System.out.println(myint3);
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>unicode编码转换</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package test1;
+
+public class zifuchuan {
+    public static void main (String[] args){
+        char chinaWord = '好';
+        int position = 20320;
+        System.out.println("汉字"+chinaWord+"的位置:"+(int)chinaWord);//汉字好的位置:22909
+        System.out.println(position+"位置上的字符串是"+(char)position);//20320位置上的字符串是你
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-代码注释与编码规范"><a href="#7-代码注释与编码规范" class="headerlink" title="7.代码注释与编码规范"></a>7.代码注释与编码规范</h4><h6 id="代码注释"><a href="#代码注释" class="headerlink" title="代码注释"></a>代码注释</h6><ul>
+<li>单行注释</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">//注释内容<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>多行注释</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">/*
+		注释1
+		注释2
+*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>文档注释</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">/**
+		*程序名称: Hello word
+		*作者:lxx
+*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h6><ol>
+<li>每条语句单独占一行</li>
+<li>每条命令以分号结尾</li>
+<li>声明变量时分行声明</li>
+<li>多个空格看成一个（在指定变量类型时）</li>
+</ol>
+<p>范例1：<strong>判断某一年是否是闰年</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
+
+public class LeapYear {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("请输入一个年份：");
+        long year = scan.nextLong();
+        if(year % 4 ==0&amp;&amp;100!=0||year%400==0){
+            System.out.println(year+"年是闰年");
+        }else {
+            System.out.println(year+"年不是闰年");
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、流程控制"><a href="#二、流程控制" class="headerlink" title="二、流程控制"></a>二、流程控制</h2><h4 id="1-复合语句"><a href="#1-复合语句" class="headerlink" title="1.复合语句"></a>1.复合语句</h4><blockquote>
+<p>复合语句由开括号 <code>{</code> 开始，闭括号<code>}</code>结束，以整个块区位单位。可以在复合语句中签到复合语句。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">public class Compound {
+	public static void main(String args[]) {
+		int x = 20;
+		{										//++++++++++++++复合语句++++++		
+			int y = 40;
+			System.out.println(y);
+			int z = 245;
+			boolean b;
+			{														//----- 复合语句---------
+				b = y &gt; z;								
+				System.out.println(b);   
+			}														//----- 复合语句---------
+		}										//++++++++++++++ 复合语句+++++++
+		String word = "hello java";
+		System.out.println(word);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-条件与语句"><a href="#2-条件与语句" class="headerlink" title="2.条件与语句"></a>2.条件与语句</h4><h6 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h6><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Getif { // 创建类
+	public static void main(String args[]) { // 主方法
+		int x = 45; // 声明int型变量x，并赋给初值
+		int y = 12; // 声明int型变量y，并赋给初值
+		if (x &gt; y) { // 判断x是否大于y
+			System.out.println("变量x大于变量y"); // 如果条件成立，输出的信息
+		}
+		if (x &lt; y) { // 判断x是否小于y
+			System.out.println("变量x小于变量y"); // 如果条件成立，输出的信息
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="if···else语句"><a href="#if···else语句" class="headerlink" title="if···else语句"></a>if···else语句</h6><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Getifelse {
+	public static void main(String args[]) { // 主方法
+		int math = 95; // 声明int型局部变量，并赋给初值95
+		int english = 56; // 声明int型局部变量，并赋给初值56
+		if (math &gt; 60) { // 使用if语句判断math是否大于60
+			System.out.println("数学及格了"); // 条件成立时输出信息
+		} else {
+			System.out.println("数学没有及格"); // 条件不成立输出的信息
+		}
+		if (english &gt; 60) { // 判断英语成绩是否大于60
+			System.out.println("英语及格了"); // 条件成立输出的信息
+		} else {
+			System.out.println("英语没有及格"); // 条件不成立输出的信息
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="if多分支语句"><a href="#if多分支语句" class="headerlink" title="if多分支语句"></a>if多分支语句</h6><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class GetTerm { // 创建主类
+	public static void main(String args[]) { // 主方法
+		int x = 20; // 声明int型局部变量
+		if (x &gt; 30) { // 判断变量x是否大于30
+			System.out.println("a的值大于30"); // 条件成立的输出信息
+		} else if (x &gt; 10) { // 判断变量x是否大于10
+			System.out.println("a的值大于10，但小于30"); // 条件成立的输出信息
+		} else if (x &gt; 0) { // 判断变量x是否大于0
+			System.out.println("a的值大于0，但小于10"); // 条件成立的输出信息
+		} else { // 当以上条件都不成立时，执行的语句块
+			System.out.println("a的值小于0"); // 输出信息
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="switch多分支语句"><a href="#switch多分支语句" class="headerlink" title="switch多分支语句"></a>switch多分支语句</h6><blockquote>
+<p>多个case没有需要处理的语句，可以<strong>省略break</strong></p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class GetSwitch { // 创建类
+	public static void main(String args[]) { // 主方法
+		int week = 2; // 定义int型变量week
+		switch (week) { // 指定switch语句的表达式为变量week
+			case 1: // 定义case语句中的常量为1
+				System.out.println("Monday"); // 输出信息
+				break;
+			case 2: // 定义case语句中的常量为2
+				System.out.println("Tuesday");
+				break;
+			case 3: // 定义case语句中的常量为3
+				System.out.println("Wednesday");
+				break;
+			default: // default语句
+				System.out.println("Sorry,I don't Know");
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-循环语句"><a href="#3-循环语句" class="headerlink" title="3.循环语句"></a>3.循环语句</h4><h6 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h6><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class GetSum { // 创建类
+	public static void main(String args[]) { // 主方法
+		int x = 1; // 定义int型变量x，并赋给初值
+		int sum = 0; // 定义变量用于保存相加后的结果
+		while (x &lt;= 10) {
+			sum = sum + x; // while循环语句当变量满足条件表达式时执行循环体语句
+			x++;
+		}
+		System.out.println("sum = " + sum); // 将变量sum输出
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="do……while循环语句"><a href="#do……while循环语句" class="headerlink" title="do……while循环语句"></a>do……while循环语句</h6><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Cycle {
+	public static void main(String args[]) {
+		int a = 100; // 声明int型变量a并赋初值100
+		while (a == 60) // 指定进入循环体条件
+		{
+			System.out.println("ok1"); // while语句循环体
+			a--;
+		}
+		int b = 100; // 声明int型变量b并赋初值100
+		do {
+			System.out.println("ok2"); // do…while语句循环体
+			b--;
+		} while (b == 60); // 指定循环结束条件
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h6><pre class="line-numbers language-none"><code class="language-none">public class Circulate { // 创建类Circulate
+	public static void main(String args[]) { // 主方法
+		int sum = 0; // 声明变量，用于保存各数相加后的结果
+		for (int i = 2; i &lt;= 100; i += 2) {
+			sum = sum + i; // 指定循环条件及循环体
+		}
+		// 将相加后的结果输出
+		System.out.println("2到100之间的所有偶数之和为：" + sum); 
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="foreach语句"><a href="#foreach语句" class="headerlink" title="foreach语句"></a>foreach语句</h6><pre class="line-numbers language-none"><code class="language-none">public class Repetition { // 创建类Repetition
+	public static void main(String args[]) { // 主方法
+		int arr[] = { 7, 10, 1 }; // 声明一维数组
+		System.out.println("一维数组中的元素分别为："); // 输出信息
+		for (int x : arr) {
+		//foreach语句，int x引用的变量，arr指定要循环遍历的数组，最后将x输出
+			System.out.println(x);
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>范例3：<strong>使用while循环遍历数组</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">public class ErgodicArray {
+    public static void main(String[] args) {
+        String[] aves = new String[] {"aa","bb","dd","tt","rr"};
+        int index = 0;
+        System.out.println("输出数组内容：");
+        while(index&lt;aves.length){
+            System.out.println(aves[index++]+"  ");
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>范例4：<strong>使用for循环输出九九乘法表</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">public class MultiplicationTable {
+    public static void main(String[] args) {
+        for(int i=1;i&lt;=9;i++){
+            for (int j=1;j&lt;=i;j++){
+                System.out.print(j+"*"+i+"="+i*j+"\t"); //输出结果不换行
+            }
+            System.out.println();   //换行
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-跳转语句"><a href="#4-跳转语句" class="headerlink" title="4.跳转语句"></a>4.跳转语句</h4><h6 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h6><blockquote>
+<p>跳出循环</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">public class BreakTest {
+	public static void main(String[] args) {
+		for (int i = 0; i &lt;= 100; i++) {
+			System.out.println(i);
+			if (i == 6) {//如果i等于6则跳出循环
+				break;
+			}
+		}
+		System.out.println("---end---");//显示程序结束
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">public class BreakInsideNested {
+	public static void main(String[] args) {
+		for (int i = 0; i &lt; 3; i++) {
+			for (int j = 0; j &lt; 6; j++) {
+				if (j == 4) {// 如果j等于4的时候就结束内部循环
+					break;
+				}
+				System.out.println("i=" + i + " j=" + j);
+			}
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>可以使用标签</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public class BreakOutsideNested {
+	public static void main(String[] args) {
+		Loop: for (int i = 0; i &lt; 3; i++) {// 在for循环前用标签标记
+			for (int j = 0; j &lt; 6; j++) {
+				if (j == 4) {// 如果j等于4的时候就结束外层循环
+					break Loop;// 跳出Loop标签标记的循环体
+				}
+				System.out.println("i=" + i + " j=" + j);
+			}
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h6><blockquote>
+<p>跳过后面的语句，进入下一次循环</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">public class ContinueTest {
+	public static void main(String[] args) {
+		for (int i = 1; i &lt; 20; i++) {
+			if (i % 2 == 0) {// 如果i是偶数
+				continue;// 跳到下一循环
+			}
+			System.out.println(i);// 输出i的值
+		}
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="return语句"><a href="#return语句" class="headerlink" title="return语句"></a>return语句</h6><blockquote>
+<p>从一个方法中返回</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/02/19/java-xue-xi-2-ji-chu-yu-fa/">http://xinxinliang.github.io/2021/02/19/java-xue-xi-2-ji-chu-yu-fa/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">编程语言</span>
+                                </a>
+                            
+                                <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                                    <span class="chip bg-color">Java语法</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/02/19/java-xue-xi-3-shu-zu-zi-fu-chuan-yi-chang-chu-li/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-9693ek.jpg" class="responsive-img" alt="Java学习3：数组、字符串、异常处理">
+                        
+                        <span class="card-title">Java学习3：数组、字符串、异常处理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">Java语法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/19/java-xue-xi-1-an-zhuang-yu-jian-jie/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-452qw7.jpg" class="responsive-img" alt="Java学习1：安装与简介">
+                        
+                        <span class="card-title">Java学习1：安装与简介</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">Java语法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">119.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

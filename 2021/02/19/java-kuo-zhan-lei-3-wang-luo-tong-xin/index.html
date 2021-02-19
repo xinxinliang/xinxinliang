@@ -1,0 +1,2162 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java扩展类3：网络通信, blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Java扩展类3：网络通信 | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-ey96rl.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Java扩展类3：网络通信</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">编程语言</span>
+                            </a>
+                        
+                            <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                                <span class="chip bg-color">Java扩展类</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-02-19
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    21 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="1-网络程序设计基础"><a href="#1-网络程序设计基础" class="headerlink" title="1.网络程序设计基础"></a>1.网络程序设计基础</h4><h6 id="局域网与因特网"><a href="#局域网与因特网" class="headerlink" title="局域网与因特网"></a>局域网与因特网</h6><p>服务器是指提供信息的计算机或程序，客户机是指请求信息的计算机或程序，而网络用于连接服务器与客户机，实现两者相互通信。但有时在某个网络中很难将服务器与客户机区分开。我们通常所说的“局域网”（Local Area Network，LAN），就是一群通过一定形式连接起来的计算机。它可以由两台计算机组成，也可以由同一区域内的上千台计算机组成。由LAN延伸到更大的范围，这样的网络称为“广域网”（Wide Area Network，WAN）。我们熟悉的因特网（Internet），则是由无数的LAN和WAN组成。</p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210217153720.png"></p>
+<h6 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h6><p>网络协议规定了计算机之间连接的物理、机械（网线与网卡的连接规定）、电气（有效的电平范围）等特征以及计算机之间的相互寻址规则、数据发送冲突的解决、长的数据如何分段传送与接收等。就像不同的国家有不同的法律一样，目前网络协议也有多种，下面简单地介绍几个常用的网络协议。</p>
+<ul>
+<li>IP协议：Internet依靠TCP/IP协议，在全球范围内实现不同硬件结构，不同操作系统，不同网络系统互联。这个地址就是IP地址，32位二进制数表示。为了方便，每个字节用十进制数表示。由于IPV4有限，出现了16个字节的IPV6。TCP/IP模式是一种层次结构，分为应用层、传输层、互联网层、网络层。</li>
+<li>TCP与UDP协议：在TCP/IP协议栈中，有两个高级协议是网络应用程序编写者应该了解的。传输控制协议（TCP）和用户数据报协议（UDP）。TCP协议是一种以固接连线的协议，提供两台计算机之间可靠的数据传送；数据精确送达，适合可靠性要求比较高的场合，像HTTP、FTP和Telnet。</li>
+<li>UDP是无连接通信协议，不保证可靠的数据传输，可以向多个目标发送数据和接受多个源的数据。适合准确性要求不高的地方，如网络聊天室和在线影片库，还有游戏。</li>
+</ul>
+<h6 id="端口与套接字——端口"><a href="#端口与套接字——端口" class="headerlink" title="端口与套接字——端口"></a>端口与套接字——端口</h6><p>一般而言，一台计算机只有单一的连到网络的“物理连接”（Physical Connection），所有的数据都通过此连接对内、对外送达特定的计算机。这就是端口。网络程序设计中的端口（port）并非真实的物理存在，而是一个假想的连接装置。端口被规定为一个在0~65535之间的整数。HTTP服务一般使用80端口，FTP服务使用21端口。假如一台计算机提供了HTTP、FTP等多种服务，那么客户机通过不同的端口来确定连接到服务器的哪项服务上，如下图所示。</p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210217170337.png"></p>
+<p>网络程序中套接字（Socket）用于将应用程序与端口连接起来。套接字是一个假想的连接装置，就像插插头的设备“插座”，用于连接电器与电线，如下图所示。Java将套接字抽象化为类，程序设计者只需创建Socket类对象，即可使用套接字。</p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210217170409.png"></p>
+<h4 id="2-TCP程序设计基础"><a href="#2-TCP程序设计基础" class="headerlink" title="2.TCP程序设计基础"></a>2.TCP程序设计基础</h4><h6 id="InetAddress类"><a href="#InetAddress类" class="headerlink" title="InetAddress类"></a>InetAddress类</h6><p>java.net包中InetAddress类是与IP地址相关的类，利用该类可以获取IP地址、主机地址等信息。InetAddress类的常用方法如下表所示。</p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210217171544.png"></p>
+<ul>
+<li>获取本地主机名和IP地址</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.net.*;
+
+public class Address { // 创建类
+	public static void main(String[] args) {
+		InetAddress ip; // 创建InetAddress对象
+		try { // try语句块捕捉可能出现的异常
+			ip = InetAddress.getLocalHost(); // 实例化对象
+			String localname = ip.getHostName(); // 获取本机名
+			String localip = ip.getHostAddress(); // 获取本IP地址
+			System.out.println("本机名：" + localname);// 将本机名输出
+			System.out.println("本机IP地址：" + localip); // 将本机IP输出
+		} catch (UnknownHostException e) {
+			e.printStackTrace(); // 输出异常信息
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="ServerSocket类"><a href="#ServerSocket类" class="headerlink" title="ServerSocket类"></a>ServerSocket类</h6><blockquote>
+<p>java.net包中ServerSocket类用于表示服务器套接字，其主要功能是等待来自网络上的“请求”，它可通过指定的端口来等待连接的套接字。服务器套接字一次可以与一个套接字连接。如果多台客户机同时提出连接请求，服务器套接字会将请求连接的客户机存入列队中，然后从中取出一个套接字，与服务器新建的套接字连接起来。若请求连接数大于最大容纳数，则多出的连接请求被拒绝。队列的默认大小是50。</p>
+</blockquote>
+<p>ServerSocket类的构造方法都抛出IOException异常，分别有以下几种形式。</p>
+<ul>
+<li>ServerSocket()：创建非绑定服务器套接字。</li>
+<li>ServerSocket(int port)：创建绑定到特定端口的服务器套接字。</li>
+<li>ServerSocket(int port, int backlog)：利用指定的backlog创建服务器套接字并将其绑定到指定的本地端口号。</li>
+<li>ServerSocket(int port, int backlog, InetAddress bindAddress)：使用指定的端口、侦听backlog和要绑定到的本地IP地址创建服务器。这种情况适用于计算机上有多块网卡和多个IP的情况，我们可以明确规定ServerSocket在哪块网卡或IP地址上等待客户的连接请求。</li>
+</ul>
+<h6 id="TCP网络程序"><a href="#TCP网络程序" class="headerlink" title="TCP网络程序"></a>TCP网络程序</h6><blockquote>
+<p>知道了TCP程序的工作过程，就可以编写TCP服务器程序了。在网络编程中如果只要求客户机向服务器发送消息，不用服务器向客户机发送消息，称为单向通信。客户机套接字和服务器套接字连接成功后，客户机通过输出流发送数据，而服务器会使用输入流接收数据。下面是简单的单向通信的实例。</p>
+</blockquote>
+<ul>
+<li>服务端程序</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+import java.io.*;
+import java.net.*;
+
+public class MyTcp { // 创建类MyTcp
+	private BufferedReader reader; // 创建BufferedReader对象
+	private ServerSocket server; // 创建ServerSocket对象
+	private Socket socket; // 创建Socket对象socket
+	
+	void getserver() {
+		try {
+			server = new ServerSocket(8998); // 实例化Socket对象
+			System.out.println("服务器套接字已经创建成功"); // 输出信息
+			while (true) { // 如果套接字是连接状态
+				System.out.println("等待客户机的连接"); // 输出信息
+				socket = server.accept(); // 实例化Socket对象
+				reader = new BufferedReader(new InputStreamReader(socket
+						.getInputStream())); // 实例化BufferedReader对象
+				getClientMessage(); // 调用getClientMessage()方法
+			}
+		} catch (Exception e) {
+			e.printStackTrace(); // 输出异常信息
+		}
+	}
+	
+	private void getClientMessage() {
+		try {
+			while (true) { // 如果套接字是连接状态
+				if (reader.ready()) {
+					// 获得客户端信息
+					System.out.println("客户机:" + reader.readLine());
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace(); // 输出异常信息
+		}
+		try {
+			if (reader != null) {
+				reader.close(); // 关闭流
+			}
+			if (socket != null) {
+				socket.close(); // 关闭套接字
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) { // 主方法
+		MyTcp tcp = new MyTcp(); // 创建本类对象
+		tcp.getserver(); // 调用方法
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>客户端程序</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.*;
+
+import javax.swing.*;
+import javax.swing.border.*;
+
+public class MyClien extends JFrame { // 创建类继承JFrame类
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private PrintWriter writer; // 声明PrintWriter类对象
+	Socket socket; // 声明Socket对象
+	private JTextArea ta = new JTextArea(); // 创建JtextArea对象
+	private JTextField tf = new JTextField(); // 创建JtextField对象
+	Container cc; // 声明Container对象
+	
+	public MyClien(String title) { // 构造方法
+		super(title); // 调用父类的构造方法
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		cc = this.getContentPane(); // 实例化对象
+
+		final JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBorder(new BevelBorder(BevelBorder.RAISED));
+		getContentPane().add(scrollPane, BorderLayout.CENTER);
+		scrollPane.setViewportView(ta);
+		cc.add(tf, "South"); // 将文本框放在窗体的下部
+		tf.addActionListener(new ActionListener() {
+			// 绑定事件
+			public void actionPerformed(ActionEvent e) {
+				// 将文本框中信息写入流
+				writer.println(tf.getText());
+				// 将文本框中信息显示在文本域中
+				ta.append(tf.getText() + '\n');
+				ta.setSelectionEnd(ta.getText().length());
+				tf.setText(""); // 将文本框清空
+			}
+		});
+	}
+	
+	private void connect() { // 连接套接字方法
+		ta.append("尝试连接\n"); // 文本域中提示信息
+		try { // 捕捉异常
+			socket = new Socket("127.0.0.1", 8998); // 实例化Socket对象
+			writer = new PrintWriter(socket.getOutputStream(), true);
+			ta.append("完成连接\n"); // 文本域中提示信息
+		} catch (Exception e) {
+			e.printStackTrace(); // 输出异常信息
+		}
+	}
+	
+	public static void main(String[] args) { // 主方法
+		MyClien clien = new MyClien("向服务器送数据"); // 创建本例对象
+		clien.setSize(200, 200); // 设置窗体大小
+		clien.setVisible(true); // 将窗体显示
+		clien.connect(); // 调用连接方法
+	}
+}
+ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-UDP程序设计基础"><a href="#3-UDP程序设计基础" class="headerlink" title="3.UDP程序设计基础"></a>3.UDP程序设计基础</h4><p>基于UDO通信的基本模式：</p>
+<ul>
+<li>将数据打包，发往目的地</li>
+<li>接受别人发来的数据包，然后查看数据包</li>
+</ul>
+<p>发送步骤：</p>
+<ul>
+<li>DatagramSocket()创建一个数据包嵌套字</li>
+<li>DatagramPacket创建要发送的数据包</li>
+<li>DatagramSocket的send（）方法发送数据包</li>
+</ul>
+<p>接受步骤：</p>
+<ul>
+<li>DatagramSocket()创建数据包嵌套字，绑定到指定端口</li>
+<li>DatagramPacket创建字节数组来接受数据包</li>
+<li>DatagramSocket的receive()方法接受UDP包</li>
+</ul>
+<h6 id="DatagramPacket类"><a href="#DatagramPacket类" class="headerlink" title="DatagramPacket类"></a>DatagramPacket类</h6><p>java.net包的DatagramPacket类用来表示数据包。Datagram Packet类的构造函数有：</p>
+<ul>
+<li>DatagramPacket(byte[] buf , int length)</li>
+<li>DatagramPacket(byte[] buf , int length , InetAddress address , int port)</li>
+</ul>
+<blockquote>
+<p>第一种构造函数创建DatagramPacket对象，指定了数据包的内存空间和大小。第二种构造函数不仅指定了数据包的内存空间和大小，而且指定了数据包的目标地址和端口。在发送数据时，必须指定接收方的Socket地址和端口号，因此使用第二种构造函数可创建发送数据的DatagramPacket对象。</p>
+</blockquote>
+<h6 id="DatagramSocket类"><a href="#DatagramSocket类" class="headerlink" title="DatagramSocket类"></a>DatagramSocket类</h6><p>java.net包中的DatagramSocket类用于表示发送和接收数据包的套接字。该类的构造函数有：</p>
+<ul>
+<li>DatagramSocket()</li>
+<li>DatagramSocket(int port )</li>
+<li>DatagramSocket(int port , InetAddress addr)</li>
+</ul>
+<blockquote>
+<p>第一种构造函数创建DatagramSocket对象，构造数据报套接字并将其绑定到本地主机上任何可用的端口。使用第二种构造函数创建DatagramSocket对象，创建数据报套接字并将其绑定到本地主机上的指定端口。第三种构造函数创建DatagramSocket对象，创建数据报套接字，将其绑定到指定的本地地址。第三种构造函数适用于有多块网卡和多个IP的情况。</p>
+</blockquote>
+<h6 id="UDP网络程序"><a href="#UDP网络程序" class="headerlink" title="UDP网络程序"></a>UDP网络程序</h6><ul>
+<li>广播主机程序不断向外播出信息</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.net.*;
+
+public class Weather extends Thread { // 创建类。该类为多线程执行程序
+	String weather = "节目预报：八点有大型晚会，请收听";
+	int port = 9898; // 定义端口
+	InetAddress iaddress = null; // 创建InetAddress对象
+	MulticastSocket socket = null; // 声明多点广播套接字
+	
+	Weather() { // 构造方法
+		try {
+			// 实例化InetAddress，指定地址
+			iaddress = InetAddress.getByName("224.255.10.0");
+			socket = new MulticastSocket(port); // 实例化多点广播套接字
+			socket.setTimeToLive(1); // 指定发送范围是本地网络
+			socket.joinGroup(iaddress); // 加入广播组
+		} catch (Exception e) {
+			e.printStackTrace(); // 输出异常信息
+		}
+	}
+	
+	public void run() { // run()方法
+		while (true) {
+			DatagramPacket packet = null; // 声明DatagramPacket对象
+			byte data[] = weather.getBytes(); // 声明字节数组
+			// 将数据打包
+			packet = new DatagramPacket(data, data.length, iaddress, port);
+			System.out.println(new String(data)); // 将广播信息输出
+			try {
+				socket.send(packet); // 发送数据
+				sleep(3000); // 线程休眠
+			} catch (Exception e) {
+				e.printStackTrace(); // 输出异常信息
+			}
+		}
+	}
+	
+	public static void main(String[] args) { // 主方法
+		Weather w = new Weather(); // 创建本类对象
+		w.start(); // 启动线程
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<ul>
+<li>接受广播程序</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.awt.*;
+import java.awt.event.*;
+import java.net.*;
+
+import javax.swing.*;
+
+public class Receive extends JFrame implements Runnable, ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	int port; // 定义int型变量
+	InetAddress group = null; // 声明InetAddress对象
+	MulticastSocket socket = null; // 创建多点广播套接字对象
+	JButton ince = new JButton("开始接收"); // 创建按钮对象
+	JButton stop = new JButton("停止接收");
+	JTextArea inceAr = new JTextArea(10, 10); // 显示接收广播的文本域
+	JTextArea inced = new JTextArea(10, 10);
+	Thread thread; // 创建Thread对象
+	boolean b = false; // 创建boolean型变量
+	
+	public Receive() { // 构造方法
+		super("广播数据报"); // 调用父类方法
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		thread = new Thread(this);
+		ince.addActionListener(this); // 绑定按钮ince的单击事件
+		stop.addActionListener(this); // 绑定按钮stop的单击事件
+		inceAr.setForeground(Color.blue); // 指定文本域中文字颜色
+		JPanel north = new JPanel(); // 创建Jpane对象
+		north.add(ince); // 将按钮添加到面板north上
+		north.add(stop);
+		add(north, BorderLayout.NORTH); // 将north放置在窗体的上部
+		JPanel center = new JPanel(); // 创建面板对象center
+		center.setLayout(new GridLayout(1, 2)); // 设置面板布局
+		center.add(inceAr); // 将文本域添加到面板上
+
+		final JScrollPane scrollPane = new JScrollPane();
+		center.add(scrollPane);
+		scrollPane.setViewportView(inced);
+		add(center, BorderLayout.CENTER); // 设置面板布局
+		validate(); // 刷新
+		port = 9898; // 设置端口号
+		try {
+			group = InetAddress.getByName("224.255.10.0"); // 指定接收地址
+			socket = new MulticastSocket(port); // 绑定多点广播套接字
+			socket.joinGroup(group); // 加入广播组
+		} catch (Exception e) {
+			e.printStackTrace(); // 输出异常信息
+		}
+		setBounds(100, 50, 360, 380); // 设置布局
+		setVisible(true); // 将窗体设置为显示状态
+	}
+	
+	public void run() { // run()方法
+		while (true) {
+			byte data[] = new byte[1024]; // 创建byte数组
+			DatagramPacket packet = null; // 创建DatagramPacket对象
+			// 待接收的数据包
+			packet = new DatagramPacket(data, data.length, group, port);
+			try {
+				socket.receive(packet); // 接收数据包
+				String message = new String(packet.getData(), 0, packet
+						.getLength()); // 获取数据包中内容
+				// 将接收内容显示在文本域中
+				inceAr.setText("正在接收的内容：\n" + message);
+				inced.append(message + "\n"); // 每条信息为一行
+			} catch (Exception e) {
+				e.printStackTrace(); // 输出异常信息
+			}
+			if (b == true) { // 当变量等于true时，退出循环
+				break;
+			}
+		}
+	}
+	
+	public void actionPerformed(ActionEvent e) { // 单击事件
+		if (e.getSource() == ince) { // 单击按钮ince触发的事件
+			ince.setBackground(Color.red); // 设置按钮颜色
+			stop.setBackground(Color.yellow);
+			if (!(thread.isAlive())) { // 如线程不处于“新建状态”
+				thread = new Thread(this); // 实例化Thread对象
+			}
+			thread.start(); // 启动线程
+			b = false; // 设置变量值
+		}
+		if (e.getSource() == stop) { // 单击按钮stop触发的事件
+			ince.setBackground(Color.yellow); // 设置按钮颜色
+			stop.setBackground(Color.red);
+			b = true; // 设置变量值s
+		}
+	}
+	
+	public static void main(String[] args) { // 主方法
+		Receive rec = new Receive(); // 创建本类对象
+		rec.setSize(460, 200); // 设置窗体大小
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h6><ul>
+<li>获取指定端口的主机名，主机地址和本机地址</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.net.*;
+
+public class MyHost {
+	public static void main(String args[]) {
+		InetAddress ip = null;
+		
+		try {
+			ip = InetAddress.getByName("localhost");// 修改为指定的主机名称
+			System.out.println("主机名：" + ip.getHostName());
+			System.out.println("主机IP地址：" + ip.getHostAddress());
+			System.out.println("本机IP地址："
+					+ InetAddress.getLocalHost().getHostAddress());
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>8001端口上等待ServerSocker对象，当接受到一个客户机的连接请求后，建立输出/输出流。通过输出流向客户机发送信息</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+import java.io.*;
+import java.net.*;
+
+/**
+ * @author Administrator
+ */
+public class ComputerServer {
+	public static void main(String[] args) {
+		try {
+			ServerSocket ss = new ServerSocket(8001);
+			while (!ss.isClosed()) {
+				Socket s = ss.accept();
+				InputStream ips = s.getInputStream();
+				OutputStream ops = s.getOutputStream();
+				String str = "欢迎进入程序\n2．编写TCP服务器程序，"
+						+ "实现创建一个在8001端口上等待的ServerSocket"
+						+ "对象，当接收到一个客户机的连接请求后，"
+						+ "程序从与客户机建立了连接的Socket对象中获得输入输出"
+						+ "流。通过输出流向客户机发送信息。";
+				ops.write(str.getBytes());
+				byte[] buf = new byte[1024];
+				int len = 0;
+				if (ips.available() &gt; 0)
+					len = ips.read(buf);
+				System.out.println(new String(buf, 0, len));
+				ips.close();
+				ops.close();
+				s.close();
+			}
+			ss.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">package com.lzw;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.*;
+
+import javax.swing.*;
+
+public class TestClient extends JFrame {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JTextArea textArea;
+	private JTextField portField;
+	private JTextField hostField;
+	
+	/**
+	 * Launch the application
+	 * 
+	 * @param args
+	 */
+	public static void main(String args[]) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TestClient frame = new TestClient();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	/**
+	 * Create the frame
+	 */
+	public TestClient() {
+		super();
+		setBounds(100, 100, 500, 212);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		final JPanel panel = new JPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		getContentPane().add(panel, BorderLayout.NORTH);
+		
+		final JLabel label = new JLabel();
+		label.setText("连接主机：");
+		panel.add(label);
+		
+		hostField = new JTextField();
+		hostField.setText("localhost");
+		panel.add(hostField);
+		
+		final JLabel label_1 = new JLabel();
+		label_1.setText("端口：");
+		panel.add(label_1);
+		
+		portField = new JTextField();
+		portField.setText("8001");
+		panel.add(portField);
+		
+		final JButton button = new JButton();
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent e) {
+				final String hostName = hostField.getText();
+				String portNum = portField.getText();
+				final int port = Integer.parseInt(portNum);
+				new Thread() {
+					public void run() {
+						try {
+							final InetAddress host = InetAddress.getByName(hostName);
+							Socket socket = new Socket(host, port);
+							final InputStream is = socket.getInputStream();
+							InputStreamReader reader=new InputStreamReader(is);
+							int data = 0;
+							while ((data=reader.read()) != -1) {
+								textArea.append((char)data+"");
+								textArea.revalidate();
+								Thread.sleep(100);
+							}
+						} catch (Exception e1) {
+							textArea.append(e1.toString());
+							e1.printStackTrace();
+						}
+					}
+				}.start();
+				
+			}
+		});
+		button.setText("连接");
+		panel.add(button);
+		
+		final JScrollPane scrollPane = new JScrollPane();
+		getContentPane().add(scrollPane, BorderLayout.CENTER);
+		
+		textArea = new JTextArea();
+		textArea.setLineWrap(true);
+		scrollPane.setViewportView(textArea);
+	}
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>聊天室程序</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.*;
+
+import javax.swing.*;
+
+public class TCPClient extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	TextArea taContent = new TextArea();
+	JTextField tfTxt = new JTextField(20);
+	
+	JButton send = new JButton("发送");
+	JButton connect = new JButton("连接");
+	JButton clear = new JButton("清空");
+	
+	boolean live = false;
+	JPanel p1 = new JPanel();
+	JPanel p2 = new JPanel();
+	
+	Socket s = null;
+	DataOutputStream dos = null;
+	DataInputStream dis = null;
+	
+	boolean bConnected = false;
+	
+	Thread t = new Thread(new RecToServer());
+	
+	public void launchFrame() {
+		
+		taContent.setEditable(false);
+		
+		p2.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
+		p2.add(send);
+		p2.add(connect);
+		p2.add(clear);
+		
+		Container con = this.getContentPane();
+		
+		con.add(taContent, "North");
+		con.add(tfTxt, "Center");
+		con.add(p2, "South");
+		
+		this.setSize(300, 350);
+		this.setLocation(400, 200);
+		this.setTitle("Chat Client");
+		
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		connect.addActionListener(new Connect());
+		send.addActionListener(new SendMsg());
+		clear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				taContent.setText("");
+			}
+		});
+	}
+	
+	public void connectToServer() {
+		try {
+			
+			s = new Socket("127.0.0.1", 8888);
+			dos = new DataOutputStream(s.getOutputStream());
+			dis = new DataInputStream(s.getInputStream());
+			
+			bConnected = true;
+			
+		} catch (BindException e) {
+			System.out.println("找不到指定的服务器");
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void disConnect() {
+		try {
+			if (s != null) {
+				s.close();
+			}
+			
+			if (dos != null) {
+				dos.close();
+			}
+			if (dis != null) {
+				dis.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String args[]) {
+		TCPClient tc = new TCPClient();
+		tc.launchFrame();
+	}
+	
+	private class Connect implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if (e.getActionCommand() == "连接") {
+				
+				connectToServer();
+				try {
+					t.start();
+				} catch (IllegalThreadStateException ex) {
+					
+				}
+				
+				connect.setText("断开连接");
+				
+			} else if (e.getActionCommand() == "断开连接") {
+				disConnect();
+				connect.setText("连接");
+			}
+			
+		}
+	}
+	
+	private class SendMsg implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if (connect.getActionCommand() == "连接") {
+				JOptionPane.showMessageDialog(TCPClient.this,
+						"没有找到指定的服务器", "错误提示", 1);
+			} else {
+				String str = tfTxt.getText();
+				tfTxt.setText("");
+				
+				try {
+					dos.writeUTF(str);
+					dos.flush();
+				} catch (SocketException ex) {
+					System.out.println("没有找到指定的服务器");
+					JOptionPane.showMessageDialog(TCPClient.this,
+							"没有找到指定的服务器", "错误提示", 1);
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+			}
+			
+		}
+	}
+	
+	private class RecToServer implements Runnable {
+		public void run() {
+			try {
+				while (bConnected) {
+					String str = dis.readUTF();
+					// System.out.println(str);
+					
+					taContent.append(str + "\n");
+				}
+			} catch (SocketException e) {
+				System.out.println("服务器已关闭");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">// 服务器端程序
+import java.awt.*;
+import java.io.*;
+import java.net.*;
+import java.util.*;
+import java.util.List;
+
+import javax.swing.*;
+
+public class TCPServer extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private ServerSocket ss = null;
+	private boolean bStart = false;
+	
+	private JTextArea taContent = new JTextArea();
+	
+	private int index = 0;
+	
+	List&lt;Client&gt; clients = new ArrayList&lt;Client&gt;();
+	
+	public void launchFrame() {
+//		Container con = this.getContentPane();
+		taContent.setEditable(false);
+		
+		taContent.setBackground(Color.DARK_GRAY);
+		taContent.setForeground(Color.YELLOW);
+		this.add(taContent);
+		this.setSize(300, 350);
+		this.setLocation(400, 200);
+		this.setTitle("TCP Server");
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tcpMonitor();
+	}
+	
+	public void tcpMonitor() {
+		try {
+			ss = new ServerSocket(8888);
+			bStart = true;
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+		try {
+			while (bStart) {
+				index++;
+				Socket s = ss.accept();
+				Client c = new Client(s);
+				clients.add(c);
+				
+				taContent.append(s.getInetAddress().getHostAddress()
+						+ " connected " + index + " clients\n");
+				new Thread(c).start();
+				
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				ss.close();
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	public static void main(String args[]) {
+		TCPServer ts = new TCPServer();
+		ts.launchFrame();
+	}
+	
+	private class Client implements Runnable {
+		DataInputStream dis = null;
+		DataOutputStream dos = null;
+		
+		Socket s = null;
+		boolean bStart = false;
+		
+		Client(Socket s) {
+			this.s = s;
+			try {
+				dis = new DataInputStream(s.getInputStream());
+				dos = new DataOutputStream(s.getOutputStream());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			bStart = true;
+		}
+		
+		public void sendToEveryClient(String str) {
+			try {
+				dos.writeUTF(str);
+				dos.flush();
+				
+			} catch (IOException e) {
+				index--;
+				clients.remove(this);
+				taContent.append(s.getInetAddress().getHostAddress()
+						+ " exited " + index + " clients\n");
+				System.out.println("对方退出了！我从List里面去掉了！");
+			}
+		}
+		
+		public void run() {
+			try {
+				while (bStart) {
+					String str = dis.readUTF();
+					System.out.println(str);
+					for (int i = 0; i &lt; clients.size(); i++) {
+						Client c = clients.get(i);
+						c.sendToEveryClient(str);
+					}
+				}
+			} catch (EOFException e) {
+				clients.remove(this);
+				taContent.append(s.getInetAddress().getHostAddress()
+						+ " exited " + clients.size() + " clients\n");
+				System.out.println("client closed");
+			} catch (SocketException e) {
+				System.out.println("client closed");
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if (s != null)
+						s.close();
+					if (dis != null)
+						dis.close();
+					if (dos != null)
+						dos.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
+	
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/02/19/java-kuo-zhan-lei-3-wang-luo-tong-xin/">http://xinxinliang.github.io/2021/02/19/java-kuo-zhan-lei-3-wang-luo-tong-xin/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">编程语言</span>
+                                </a>
+                            
+                                <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                                    <span class="chip bg-color">Java扩展类</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/02/19/java-kuo-zhan-lei-4-shu-ju-ku-cao-zuo/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-eyp68r.jpg" class="responsive-img" alt="Java扩展类4：数据库操作">
+                        
+                        <span class="card-title">Java扩展类4：数据库操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                        <span class="chip bg-color">Java扩展类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/19/java-kuo-zhan-lei-2-duo-xian-cheng/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-e7z5vk.jpg" class="responsive-img" alt="Java扩展类2：多线程">
+                        
+                        <span class="card-title">Java扩展类2：多线程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                        <span class="chip bg-color">Java扩展类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">119.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
