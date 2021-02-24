@@ -1,0 +1,3711 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="《从零开始学Python网络爬虫》, blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>《从零开始学Python网络爬虫》 | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-g8p9j3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">《从零开始学Python网络爬虫》</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/">
+                                <span class="chip bg-color">电子书</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%BA%90%E7%A0%81%E7%89%88/">
+                                <span class="chip bg-color">源码版</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python%E7%88%AC%E8%99%AB/" class="post-category">
+                                python爬虫
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-24
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-02-24
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    10.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    62 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>主要是一些爬虫的案例，笔记少理论，主要通过代码来学习，目前还是比较新的。内容也比较全面，就自己了解的没有讲到ip代理，多线程，识别验证码等。</p>
+</blockquote>
+<h2 id="第三章：requests、BeautifulSoup"><a href="#第三章：requests、BeautifulSoup" class="headerlink" title="第三章：requests、BeautifulSoup"></a>第三章：requests、BeautifulSoup</h2><h4 id="1-requests库"><a href="#1-requests库" class="headerlink" title="1.requests库"></a>1.requests库</h4><ul>
+<li>简单使用get()</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+res = requests.get('https://bj.xiaozhu.com/')
+print(res)      #输出&lt;Response [200]&gt;，代表成功
+print(res.text)         #页面源码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>添加<strong>请求头</strong>，标识浏览器</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+res = requests.get('https://bj.xiaozhu.com/',headers = headers)
+print(res)      #输出&lt;Response [200]&gt;，代表成功
+print(res.text)         #页面源码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>Request的异常</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>异常类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ConnectionError</td>
+<td>网络问题</td>
+</tr>
+<tr>
+<td>HTTPError</td>
+<td>请求返回了不成功的状态码</td>
+</tr>
+<tr>
+<td>Timeout</td>
+<td>请求超时</td>
+</tr>
+<tr>
+<td>TooManyRedirects</td>
+<td>请求超过了组大的重定向次数</td>
+</tr>
+</tbody></table>
+<ul>
+<li>处理异常try</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+res = requests.get('https://bj.xiaozhu.com/',headers = headers)
+try:
+    print(res.text)
+except ConnectionError:
+    print("拒绝连接")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-BeautifulSoup库"><a href="#2-BeautifulSoup库" class="headerlink" title="2.BeautifulSoup库"></a>2.BeautifulSoup库</h4><blockquote>
+<p>用于解析，提取信息</p>
+</blockquote>
+<ul>
+<li>简单使用</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+from bs4 import BeautifulSoup
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+res = requests.get('https://bj.xiaozhu.com/',headers = headers)
+soup = BeautifulSoup(res.text,'html.parser')        #对结果进行解析
+print(soup.prettify())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>解析类型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>解析器</th>
+<th>方法</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>python标准库</td>
+<td>BeautifulSoup(res.text,’html.parser’)</td>
+<td>速度始终</td>
+</tr>
+<tr>
+<td>lxml HTML解析器（官方推荐）</td>
+<td>BeautifulSoup(res.text,’lxml’)</td>
+<td>速度快，需要C语言库</td>
+</tr>
+</tbody></table>
+<ul>
+<li>元素定位</li>
+</ul>
+<ol>
+<li>find_all()方法</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">#查找div标签，class='item'
+soup.find_all('div',"item")     
+soup.find_all('div',attrs={"class":"item"})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>find():返回标签，是一个集合</li>
+<li>select()方法</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">#括号内容可以再浏览器中赋值得到
+soup.select(div.item &gt; a &gt; h1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210220193034.png"></p>
+<ul>
+<li>输出价格(不成功，可能没定位到元素)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+from bs4 import BeautifulSoup
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+res = requests.get('https://bj.xiaozhu.com/',headers = headers)
+soup = BeautifulSoup(res.text,'html.parser')        #对结果进行解析
+price = soup.select('#page_list &gt; ul &gt; li:nth-child(15) &gt; div.result_btm_con.lodgeunitname &gt; div:nth-child(1) &gt; span &gt; i')
+print(price)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>我知道自己以前入坑的感受了，我先在做也没成功，一脸懵，输出空列表，似曾相识的感觉。我本来不打算用BeautifulSoup的，看到这个select()方法可以直接那样复制，我还以为我错该BeautifulSoup的，以为自己之前初学没学好，看来还是不适合我。</p>
+</blockquote>
+<ul>
+<li>我擦，这个验证码第一次见，点击与最大正方体相同颜色的物体。（爬虫不易呀）</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210220202239.png"></p>
+<ul>
+<li>然后我用lxml解析、提取价格信息，在Pycharm上面失败了，说缺少etree</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">ImportError: DLL load failed while importing etree:<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>搜了一下，安装指定镜像源没有用、降低lxml库版本没有用，那么再就是可能python版本过高，电脑上面的是3.9</li>
+<li>然后我去jupyterlab上面试一下，结果成功了，上面的pyhton是3.8的，感觉处处是坑，<strong>Beautiful果然对于我来说是坑</strong>。就用xpath语法吧。</li>
+</ul>
+<h4 id="3-爬取小猪短租网"><a href="#3-爬取小猪短租网" class="headerlink" title="3.爬取小猪短租网"></a>3.爬取小猪短租网</h4><blockquote>
+<p>这个跑不了</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">from bs4 import BeautifulSoup
+import requests
+import time
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+def judgment_sex(class_name):
+  if class_name == ['member_ico1']:
+      return '女'
+  else:
+      return  '男'
+
+def get_links(url):
+    wb_data = requests.get(url,headers=headers)
+    soup = BeautifulSoup(wb_data.text,'lxml')
+    links = soup.select('#page_list &gt; ul &gt; li &gt; a')
+    for link in links:
+        href = link.get("href")
+        get_info(href)
+
+def get_info(url):
+    wb_data = requests.get(url,headers=headers)
+    soup = BeautifulSoup(wb_data.text,'lxml')
+    tittles = soup.select('div.pho_info &gt; h4')
+    addresses = soup.select('span.pr5')
+    prices = soup.select('#pricePart &gt; div.day_l &gt; span')
+    imgs = soup.select('#floatRightBox &gt; div.js_box.clearfix &gt; div.member_pic &gt; a &gt; img')
+    names = soup.select('#floatRightBox &gt; div.js_box.clearfix &gt; div.w_240 &gt; h6 &gt; a')
+    sexs = soup.select('#floatRightBox &gt; div.js_box.clearfix &gt; div.member_pic &gt; div')
+    for tittle, address, price, img, name, sex in zip(tittles,addresses,prices,imgs,names,sexs):
+        data = {
+            'tittle':tittle.get_text().strip(),
+            'address':address.get_text().strip(),
+            'price':price.get_text(),
+            'img':img.get("src"),
+            'name':name.get_text(),
+            'sex':judgment_sex(sex.get("class"))
+        }
+        print(data)
+
+if __name__ == '__main__':
+    urls = ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(number) for number in range(1,14)]
+    for single_url in urls:
+        get_links(single_url)
+        time.sleep(2)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-酷狗top500"><a href="#4-酷狗top500" class="headerlink" title="4. 酷狗top500"></a>4. 酷狗top500</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">import requests
+from bs4 import BeautifulSoup
+import time
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+}
+
+def get_info(url):
+    wb_data = requests.get(url,headers=headers)
+    soup = BeautifulSoup(wb_data.text,'lxml')
+    ranks = soup.select('span.pc_temp_num')
+    titles = soup.select('div.pc_temp_songlist &gt; ul &gt; li &gt; a')
+    times = soup.select('span.pc_temp_tips_r &gt; span')
+    for rank,title,time in zip(ranks,titles,times):
+        data = {
+            'rank':rank.get_text().strip(),
+            'singer':title.get_text().split('-')[0],
+            'song':title.get_text().split('-')[0],
+            'time':time.get_text().strip()
+        }
+        print(data)
+
+if __name__ == '__main__':
+    urls = ['http://www.kugou.com/yy/rank/home/{}-8888.html'.format(str(i)) for i in range(1,24)]
+    for url in urls:
+        get_info(url)
+        time.sleep(1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221001036.png"></p>
+<h4 id="5-meizi网"><a href="#5-meizi网" class="headerlink" title="5.meizi网"></a>5.meizi网</h4><blockquote>
+<p>这个虽然也不能跑，但是我来实战一下，这个好爬</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+from bs4 import BeautifulSoup
+from urllib.request import urlretrieve
+dowmload_links = []
+path = 'C://Users/LP/Desktop/photo/'
+url = 'http://www.mzitu.com/'
+res = requests.get(url)
+soup = BeautifulSoup(res.text,'lxml')
+imgs = soup.select('li &gt; a &gt; img')
+for img in imgs:
+    print(img.get('data-original'))
+    dowmload_links.append(img.get('data-original'))
+for item in dowmload_links:
+    urlretrieve(item,path+item[-10:])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-实战"><a href="#6-实战" class="headerlink" title="6.实战"></a>6.实战</h4><blockquote>
+<p>这个mztu实战还是单独拿出来写篇博客。</p>
+</blockquote>
+<ol>
+<li><strong>观察页面</strong></li>
+</ol>
+<ul>
+<li>每个页面都有一些封面图片，而且页面是规律的递增。</li>
+<li>也就是爬取每个页面封面&lt;a&gt;标签的属性，然后进入每个a的属性链接，爬取页面的图片</li>
+</ul>
+<ol start="2">
+<li><strong>获取页面单个图片封面的a标签href属性</strong></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+from lxml import etree
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+}
+
+res = requests.get("https://www.mzitu.com/",headers = headers)
+demo = etree.HTML(res.text)
+element = demo.xpath('//*[@id="pins"]/li[1]/a/@href')
+print(element)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221003631.png"></p>
+<blockquote>
+<p>把<code>li[1]</code>改为<code>li</code>就获取了所有详细页面的地址</p>
+</blockquote>
+<ul>
+<li>如果get的地址超过了，就会返回403。可以一次判断有多少个页面</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">url = "https://www.mzitu.com/228815/82"
+import requests
+
+res = requests.get(url)
+print(res.status_code)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li><strong>防盗链接</strong></li>
+</ol>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221012330.png"></p>
+<ul>
+<li>把我惊得一慌，我怎么说这网站没什么防盗机制，现在来了。想到自己之前用阿里云对象存储OSS，上面提供防盗链接服务，要是这样存的，估计突破不了。</li>
+<li>参考博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/girliswater/p/11152942.html">https://www.cnblogs.com/girliswater/p/11152942.html</a></li>
+<li>我带着一点希望还是去搜了搜，难道别人写的例子爬取不到真正的图片吗？结果看到了篇博客，请求头里面再加入一条信息就可以了（意料之外）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
+            "Referer": "https://www.mzitu.com/xinggan/"
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li><strong>单页面爬取单张图片测试</strong>成功</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+from lxml import etree
+
+headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
+            "Referer": "https://www.mzitu.com/xinggan/"
+}
+
+res = requests.get("https://www.mzitu.com/228815/2",headers = headers)
+element = etree.HTML(res.text)
+image_url = element.xpath("/html/body/div[2]/div[1]/div[3]/p/a/img/@src")
+print(image_url)
+
+res = requests.get("https://imgpc.iimzt.com/2020/04/24b02.jpg",headers = headers)
+print(res.status_code)
+
+f = open("/home/test.jpg",'wb+')
+f.write(res.content)#二进制
+f.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="第四章：正则表达式"><a href="#第四章：正则表达式" class="headerlink" title="第四章：正则表达式"></a>第四章：正则表达式</h2><h4 id="1-正则表达式常用符号"><a href="#1-正则表达式常用符号" class="headerlink" title="1.正则表达式常用符号"></a>1.正则表达式常用符号</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221091014.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221091247.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221091257.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221091313.png"></p>
+<h4 id="2-re模块及其方法"><a href="#2-re模块及其方法" class="headerlink" title="2.re模块及其方法"></a>2.re模块及其方法</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221091433.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221091448.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221091504.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221091524.png"></p>
+<h4 id="3-《斗破苍穹》全文小说"><a href="#3-《斗破苍穹》全文小说" class="headerlink" title="3.《斗破苍穹》全文小说"></a>3.《斗破苍穹》全文小说</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+import re
+import time
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+}
+
+f = open('C:/Users/LP/Desktop/doupo.txt','a+')
+
+def get_info(url):
+    res = requests.get(url,headers=headers)
+    if res.status_code == 200:
+        contents = re.findall('&lt;p&gt;(.*?)&lt;/p&gt;',res.content.decode('utf-8'),re.S)
+        for content in contents:
+            f.write(content+'\n')
+    else:
+        pass
+
+if __name__ == '__main__':
+    urls = ['http://www.doupoxs.com/doupocangqiong/{}.html'.format(str(i)) for i in range(2,1665)]
+    for url in urls:
+        get_info(url)
+        time.sleep(1)
+    f.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-糗事百科网段子"><a href="#4-糗事百科网段子" class="headerlink" title="4.糗事百科网段子"></a>4.糗事百科网段子</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+import re
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+info_lists = []
+
+def judgment_sex(class_name):
+  if class_name == 'womenIcon':
+      return '女'
+  else:
+      return  '男'
+
+def get_info(url):
+    res = requests.get(url)
+    ids = re.findall('&lt;h2&gt;(.*?)&lt;/h2&gt;',res.text,re.S)
+    levels = re.findall('&lt;div class="articleGender \D+Icon"&gt;(.*?)&lt;/div&gt;',res.text,re.S)
+    sexs = re.findall('&lt;div class="articleGender (.*?)"&gt;',res.text,re.S)
+    contents = re.findall('&lt;div class="content"&gt;.*?&lt;span&gt;(.*?)&lt;/span&gt;',res.text,re.S)
+    laughs = re.findall('&lt;span class="stats-vote"&gt;&lt;i class="number"&gt;(\d+)&lt;/i&gt;',res.text,re.S)
+    comments = re.findall('&lt;i class="number"&gt;(\d+)&lt;/i&gt; 评论',res.text,re.S)
+    for id,level,sex,content,laugh,comment in zip(ids,levels,sexs,contents,laughs,comments):
+        info = {
+            'id':id,
+            'level':level,
+            'sex':judgment_sex(sex),
+            'content':content,
+            'laugh':laugh,
+            'comment':comment
+        }
+        info_lists.append(info)
+
+if __name__ == '__main__':
+    urls = ['http://www.qiushibaike.com/text/page/{}/'.format(str(i)) for i in range(1,36)]
+    for url in urls:
+        get_info(url)
+    for info_list in info_lists:
+        # f = open('C:/Users/Administrator//Desktop/qiushi.text','a+')
+        # try:
+        #     f.write(info_list['id']+'\n')
+        #     f.write(info_list['level'] + '\n')
+        #     f.write(info_list['sex'] + '\n')
+        #     f.write(info_list['content'] + '\n')
+        #     f.write(info_list['laugh'] + '\n')
+        #     f.write(info_list['comment'] + '\n\n')
+        #     f.close()
+        # except UnicodeEncodeError:
+        #     pass
+        print(info_list)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第五章-：Lxml库与Xpath语法"><a href="#第五章-：Lxml库与Xpath语法" class="headerlink" title="第五章 ：Lxml库与Xpath语法"></a>第五章 ：Lxml库与Xpath语法</h2><blockquote>
+<p>xml，bs4，re性能比较（xml最优）</p>
+</blockquote>
+<h4 id="1-简单使用"><a href="#1-简单使用" class="headerlink" title="1.简单使用"></a>1.简单使用</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221091904.png"></p>
+<h4 id="2-节点选取"><a href="#2-节点选取" class="headerlink" title="2.节点选取"></a>2.节点选取</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221092217.png"></p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nodename</td>
+<td>选取此节点的所有子节点</td>
+</tr>
+<tr>
+<td>/</td>
+<td>从当前节点选取直接子节点</td>
+</tr>
+<tr>
+<td>//</td>
+<td>从当前节点选取子孙节点</td>
+</tr>
+<tr>
+<td>.</td>
+<td>选取当前节点</td>
+</tr>
+<tr>
+<td>..</td>
+<td>选取当前节点的父节点</td>
+</tr>
+<tr>
+<td>@</td>
+<td>选取属性</td>
+</tr>
+<tr>
+<td>*</td>
+<td>通配符，选择所有元素节点与元素名</td>
+</tr>
+<tr>
+<td>@*</td>
+<td>选取所有属性</td>
+</tr>
+<tr>
+<td>[@attrib]</td>
+<td>选取具有给定属性的所有元素</td>
+</tr>
+<tr>
+<td>[@attrib=’value’]</td>
+<td>选取给定属性具有给定值的所有元素</td>
+</tr>
+<tr>
+<td>[tag]</td>
+<td>选取所有具有指定元素的直接子节点</td>
+</tr>
+<tr>
+<td>[tag=’text’]</td>
+<td>选取所有具有指定元素并且文本内容是text节点</td>
+</tr>
+</tbody></table>
+<ul>
+<li>获取文本</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">result=html.xpath('//li[@class="item-1"]/a/text()') #获取a节点下的内容<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="3-性能对比"><a href="#3-性能对比" class="headerlink" title="3.性能对比"></a>3.性能对比</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+import re
+from bs4 import BeautifulSoup
+from lxml import etree
+import time
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+urls = ['http://www.qiushibaike.com/text/page/{}/'.format(str(i)) for i in range(1,36)]
+
+def re_scraper(url):
+    res = requests.get(url,headers=headers)
+    ids = re.findall('&lt;h2&gt;(.*?)&lt;/h2&gt;',res.text,re.S)
+    contents = re.findall('&lt;div class="content"&gt;.*?&lt;span&gt;(.*?)&lt;/span&gt;',res.text,re.S)
+    laughs = re.findall('&lt;span class="stats-vote"&gt;&lt;i class="number"&gt;(\d+)&lt;/i&gt;',res.text,re.S)
+    comments = re.findall('&lt;i class="number"&gt;(\d+)&lt;/i&gt; 评论',res.text,re.S)
+    for id,content,laugh,comment in zip(ids,contents,laughs,comments):
+        info = {
+            'id':id,
+            'content':content,
+            'laugh':laugh,
+            'comment':comment
+        }
+        return info
+
+def bs_scraper(url):
+    res = requests.get(url, headers=headers)
+    soup = BeautifulSoup(res.text,'lxml')
+    ids = soup.select('a &gt; h2')
+    contents = soup.select('div &gt; span')
+    laughs = soup.select('span.stats-vote &gt; i')
+    comments = soup.select('i.number')
+    for id,content,laugh,comment in zip(ids,contents,laughs,comments):
+        info = {
+            'id':id.get_text(),
+            'content':content.get_text(),
+            'laugh':laugh.get_text(),
+            'comment':comment.get_text()
+        }
+        return info
+
+def lxml_scraper(url):
+    res = requests.get(url, headers=headers)
+    selector = etree.HTML(res.text)
+    url_infos = selector.xpath('//div[@class="article block untagged mb15"]')
+    try:
+        for url_info in url_infos:
+            id = url_info.xpath('div[1]/a[2]/h2/text()')[0]
+            content = url_info.xpath('a[1]/div/span/text()')[0]
+            laugh = url_info.xpath('div[2]/span[1]/i/text()')[0]
+            comment = url_info.xpath('div[2]/span[2]/a/i/text()')[0]
+            info = {
+                'id':id,
+                'content':content,
+                'laugh':laugh,
+                'comment':comment
+            }
+            return info
+    except IndexError:
+        pass
+
+if __name__ == '__main__':
+    for name,scraper in [('Regular expressions',re_scraper),('BeautifulSoup',bs_scraper),('Lxml',lxml_scraper)]:
+        start = time.time()
+        for url in urls:
+            scraper(url)
+        end = time.time()
+        print(name,end-start)
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-豆瓣网top250"><a href="#4-豆瓣网top250" class="headerlink" title="4.豆瓣网top250"></a>4.豆瓣网top250</h4><pre class="line-numbers language-none"><code class="language-none">from lxml import etree
+import requests
+import csv
+
+fp = open('C://Users/LP/Desktop/doubanbook.csv','wt',newline='',encoding='utf-8')
+writer = csv.writer(fp)
+writer.writerow(('name', 'url',  'author', 'publisher', 'date', 'price', 'rate', 'comment'))
+
+urls = ['https://book.douban.com/top250?start={}'.format(str(i)) for i in range(0,250,25)]
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+}
+
+for url in urls:
+    html = requests.get(url,headers=headers)
+    selector = etree.HTML(html.text)
+    infos = selector.xpath('//tr[@class="item"]')
+    for info in infos:
+        name = info.xpath('td/div/a/@title')[0]
+        url = info.xpath('td/div/a/@href')[0]
+        book_infos = info.xpath('td/p/text()')[0]
+        author = book_infos.split('/')[0]
+        publisher = book_infos.split('/')[-3]
+        date = book_infos.split('/')[-2]
+        price = book_infos.split('/')[-1]
+        rate = info.xpath('td/div/span[2]/text()')[0]
+        comments = info.xpath('td/p/span/text()')
+        comment = comments[0] if len(comments) != 0 else "空"
+        writer.writerow((name,url,author,publisher,date,price,rate,comment))
+
+fp.close()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-起点中文网小说信息"><a href="#5-起点中文网小说信息" class="headerlink" title="5.起点中文网小说信息"></a>5.起点中文网小说信息</h4><pre class="line-numbers language-none"><code class="language-none">import xlwt
+import requests
+from lxml import etree
+import time
+
+all_info_list = []
+
+def get_info(url):
+    html = requests.get(url)
+    selector = etree.HTML(html.text)
+    infos = selector.xpath('//ul[@class="all-img-list cf"]/li')
+    for info in infos:
+        title = info.xpath('div[2]/h4/a/text()')[0]
+        author = info.xpath('div[2]/p[1]/a[1]/text()')[0]
+        style_1 = info.xpath('div[2]/p[1]/a[2]/text()')[0]
+        style_2 = info.xpath('div[2]/p[1]/a[3]/text()')[0]
+        style = style_1+'·'+style_2
+        complete = info.xpath('div[2]/p[1]/span/text()')[0]
+        introduce = info.xpath('div[2]/p[2]/text()')[0].strip()
+        word = info.xpath('div[2]/p[3]/span/text()')[0].strip('万字')
+        info_list = [title,author,style,complete,introduce,word]
+        all_info_list.append(info_list)
+    time.sleep(1)
+
+if __name__ == '__main__':
+    urls = ['http://a.qidian.com/?page={}'.format(str(i)) for i in range(1,101)]
+    for url in urls:
+        get_info(url)
+    header = ['title','author','style','complete','introduce','word']
+    book = xlwt.Workbook(encoding='utf-8')
+    sheet = book.add_sheet('Sheet1')
+    for h in range(len(header)):
+        sheet.write(0, h, header[h])
+    i = 1
+    for list in all_info_list:
+        j = 0
+        for data in list:
+            sheet.write(i, j, data)
+            j += 1
+        i += 1
+    book.save('xiaoshuo.xls')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第六章：使用API"><a href="#第六章：使用API" class="headerlink" title="第六章：使用API"></a>第六章：使用API</h2><h4 id="1-API"><a href="#1-API" class="headerlink" title="1.API"></a>1.API</h4><ul>
+<li>就是前端向后端请求的接口，前后端分离后端要写数据接口</li>
+<li>这就是get的时候可以携带参数，类型为字典。</li>
+<li>上面一句理解错了，就是像数据接口地址发送get请求，只是这个接口地址没有显示在HTML文档中</li>
+</ul>
+<h4 id="2-解析JSON数据"><a href="#2-解析JSON数据" class="headerlink" title="2.解析JSON数据"></a>2.解析JSON数据</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221094151.png"></p>
+<h4 id="3-斯必克网图片"><a href="#3-斯必克网图片" class="headerlink" title="3.斯必克网图片"></a>3.斯必克网图片</h4><pre class="line-numbers language-none"><code class="language-none">from bs4 import BeautifulSoup
+import requests
+import json
+
+headers ={
+    'accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+url_path = 'https://www.pexels.com/search/'
+word= input('请输入你要下载的图片：')
+url_tra ='http://howtospeak.org:443/api/e2c?user_key=dfcacb6404295f9ed9e430f67b641a8e &amp;notrans=0&amp;text=' + word
+english_data = requests.get(url_tra)
+js_data = json.loads(english_data.text)
+content = js_data['english']
+url = url_path + content + '/'
+wb_data = requests.get(url,headers=headers)
+soup = BeautifulSoup(wb_data.text,'lxml')
+imgs = soup.select('article &gt; a &gt; img')
+list = []
+for img in imgs:
+    photo = img.get('src')
+    list.append(photo)
+
+path = 'C://Users/LP/Desktop/photo/'
+
+for item in list:
+        data = requests.get(item,headers=headers)
+        fp = open(path+item.split('?')[0][-10:],'wb')
+        fp.write(data.content)
+        fp.close()
+        # print(item)
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-爬取糗事百科网用户地址信息"><a href="#4-爬取糗事百科网用户地址信息" class="headerlink" title="4.爬取糗事百科网用户地址信息"></a>4.爬取糗事百科网用户地址信息</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+from lxml import etree
+import csv
+import json
+
+# address = '上海'
+# par = {'address': address, 'key': 'cb649a25c1f81c1451adbeca73623251'}
+# base = 'http://restapi.amap.com/v3/geocode/geo'
+# response = requests.get(base, par)
+# print(response.text)
+
+fp = open('C://Users/LP/Desktop/map.csv','wt',newline='',encoding='utf-8')
+writer = csv.writer(fp)
+writer.writerow(('address','longitude','latitude'))
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+def get_user_url(url):
+    url_part = 'http://www.qiushibaike.com'
+    res = requests.get(url,headers=headers)
+    selector = etree.HTML(res.text)
+    url_infos = selector.xpath('//div[@class="article block untagged mb15"]')
+    for url_info in url_infos:
+        user_part_urls = url_info.xpath('div[1]/a[1]/@href')
+        if len(user_part_urls) == 1:
+            user_part_url = user_part_urls[0]
+            get_user_address(url_part + user_part_url)
+        else:
+            pass
+
+def get_user_address(url):
+    res = requests.get(url, headers=headers)
+    selector = etree.HTML(res.text)
+    if selector.xpath('//div[2]/div[3]/div[2]/ul/li[4]/text()'):
+        address = selector.xpath('//div[2]/div[3]/div[2]/ul/li[4]/text()')
+        get_geo(address[0].split(' · ')[0])
+    else:
+        pass
+
+def get_geo(address):
+    par = {'address': address, 'key': 'cb649a25c1f81c1451adbeca73623251'}
+    api = 'http://restapi.amap.com/v3/geocode/geo'
+    res = requests.get(api, par)
+    json_data = json.loads(res.text)
+    try:
+        geo = json_data['geocodes'][0]['location']
+        longitude = geo.split(',')[0]
+        latitude = geo.split(',')[1]
+        writer.writerow((address,longitude,latitude))
+    except IndexError:
+        pass
+
+if __name__ == '__main__':
+    urls = ['http://www.qiushibaike.com/text/page/{}/'.format(str(i)) for i in range(1, 36)]
+    for url in urls:
+        get_user_url(url)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第七章-数据库存储"><a href="#第七章-数据库存储" class="headerlink" title="第七章:数据库存储"></a>第七章:数据库存储</h2><blockquote>
+<p>爬取的数据存储到数据库，自己之前做过，这里之后在看吧</p>
+</blockquote>
+<h4 id="1-豆瓣音乐tp250"><a href="#1-豆瓣音乐tp250" class="headerlink" title="1.豆瓣音乐tp250"></a>1.豆瓣音乐tp250</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+from lxml import etree
+import re
+import pymongo
+import time
+
+client = pymongo.MongoClient('localhost', 27017)
+mydb = client['mydb']
+musictop = mydb['musictop']
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+}
+
+def get_url_music(url):
+    html = requests.get(url,headers=headers)
+    selector = etree.HTML(html.text)
+    music_hrefs = selector.xpath('//a[@class="nbg"]/@href')
+    for music_href in music_hrefs:
+        get_music_info(music_href)
+
+def get_music_info(url):
+    html = requests.get(url,headers=headers)
+    selector = etree.HTML(html.text)
+    name = selector.xpath('//*[@id="wrapper"]/h1/span/text()')[0]
+    # author = selector.xpath('//*[@id="info"]/span[1]/span/a/text()')
+    author = re.findall('表演者:.*?&gt;(.*?)&lt;/a&gt;',html.text,re.S)[0]
+    styles = re.findall('&lt;span class="pl"&gt;流派:&lt;/span&gt;&amp;nbsp;(.*?)&lt;br /&gt;',html.text,re.S)
+    if len(styles) == 0:
+        style = '未知'
+    else:
+        style = styles[0].strip()
+    time = re.findall('发行时间:&lt;/span&gt;&amp;nbsp;(.*?)&lt;br /&gt;',html.text,re.S)[0].strip()
+    publishers = re.findall('出版者:.*?&gt;(.*?)&lt;/a&gt;',html.text,re.S)
+    if len(publishers) == 0:
+        publisher = '未知'
+    else:
+        publisher = publishers[0].strip()
+    score = selector.xpath('//*[@id="interest_sectl"]/div/div[2]/strong/text()')[0]
+    print(name,author,style,time,publisher,score)
+    info = {
+        'name':name,
+        'author':author,
+        'style':style,
+        'time':time,
+        'publisher':publisher,
+        'score':score
+    }
+    musictop.insert_one(info)
+
+if __name__ == '__main__':
+    urls = ['https://music.douban.com/top250?start={}'.format(str(i)) for i in range(0,250,25)]
+    for url in urls:
+        get_url_music(url)
+        time.sleep(2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-豆瓣电影tp250"><a href="#2-豆瓣电影tp250" class="headerlink" title="2.豆瓣电影tp250"></a>2.豆瓣电影tp250</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+from lxml import etree
+import re
+import pymysql
+import time
+
+conn = pymysql.connect(host='localhost', user='root', passwd='123456', db='mydb', port=3306, charset='utf8')
+cursor = conn.cursor()
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+}
+
+def get_movie_url(url):
+    html = requests.get(url,headers=headers)
+    selector = etree.HTML(html.text)
+    movie_hrefs = selector.xpath('//div[@class="hd"]/a/@href')
+    for movie_href in movie_hrefs:
+        get_movie_info(movie_href)
+
+def get_movie_info(url):
+    html = requests.get(url,headers=headers)
+    selector = etree.HTML(html.text)
+    try:
+        name = selector.xpath('//*[@id="content"]/h1/span[1]/text()')[0]
+        director = selector.xpath('//*[@id="info"]/span[1]/span[2]/a/text()')[0]
+        actors = selector.xpath('//*[@id="info"]/span[3]/span[2]')[0]
+        actor = actors.xpath('string(.)')
+        style = re.findall('&lt;span property="v:genre"&gt;(.*?)&lt;/span&gt;',html.text,re.S)[0]
+        country = re.findall('&lt;span class="pl"&gt;制片国家/地区:&lt;/span&gt; (.*?)&lt;br/&gt;',html.text,re.S)[0]
+        release_time = re.findall('上映日期:&lt;/span&gt;.*?&gt;(.*?)&lt;/span&gt;',html.text,re.S)[0]
+        time = re.findall('片长:&lt;/span&gt;.*?&gt;(.*?)&lt;/span&gt;',html.text,re.S)[0]
+        score = selector.xpath('//*[@id="interest_sectl"]/div[1]/div[2]/strong/text()')[0]
+        cursor.execute(
+            "insert into doubanmovie (name,director,actor,style,country,release_time,time,score) values(%s,%s,%s,%s,%s,%s,%s,%s)",
+            (str(name), str(director), str(actor), str(style), str(country), str(release_time), str(time), str(score)))
+
+    except IndexError:
+        pass
+
+if __name__ == '__main__':
+    urls = ['https://movie.douban.com/top250?start={}'.format(str(i)) for i in range(0, 250, 25)]
+    for url in urls:
+        get_movie_url(url)
+        time.sleep(2)
+    conn.commit()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第八章：多进程爬虫"><a href="#第八章：多进程爬虫" class="headerlink" title="第八章：多进程爬虫"></a>第八章：多进程爬虫</h2><blockquote>
+<p>书上直接将讲例子了，这里进阶使用。scrapy框架就有写好的多线程功能，可以直接学框架。</p>
+<p>爬虫难在反爬机制，像登录、验证码、IP封锁等。还有动态网站</p>
+</blockquote>
+<h4 id="1-性能对比"><a href="#1-性能对比" class="headerlink" title="1.性能对比"></a>1.性能对比</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+import re
+import time
+from multiprocessing import Pool
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+}
+
+def re_scraper(url):
+    res = requests.get(url,headers=headers)
+    ids = re.findall('&lt;h2&gt;(.*?)&lt;/h2&gt;',res.text,re.S)
+    contents = re.findall('&lt;div class="content"&gt;.*?&lt;span&gt;(.*?)&lt;/span&gt;',res.text,re.S)
+    laughs = re.findall('&lt;span class="stats-vote"&gt;&lt;i class="number"&gt;(\d+)&lt;/i&gt;',res.text,re.S)
+    comments = re.findall('&lt;i class="number"&gt;(\d+)&lt;/i&gt; 评论',res.text,re.S)
+    for id,content,laugh,comment in zip(ids,contents,laughs,comments):
+        info = {
+            'id':id,
+            'content':content,
+            'laugh':laugh,
+            'comment':comment
+        }
+        # return info
+        print(info)
+
+if __name__ == '__main__':
+    urls = ['http://www.qiushibaike.com/text/page/{}/'.format(str(i)) for i in range(1, 36)]
+    # start_1 = time.time()
+    # for url in urls:
+    #     re_scraper(url)
+    # end_1 = time.time()
+    # print('串行爬虫',end_1-start_1)
+    # start_2 = time.time()
+    # pool = Pool(processes=2)
+    # pool.map(re_scraper, urls)
+    # end_2 =time.time()
+    # print('两个进程',end_2-start_2)
+    # start_3 = time.time()
+    pool = Pool(processes=2)
+    pool.map(re_scraper, urls)
+    # end_3 =time.time()
+    # print('四个进程',end_3-start_3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-爬取简书热评文章"><a href="#2-爬取简书热评文章" class="headerlink" title="2.爬取简书热评文章"></a>2.爬取简书热评文章</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+from lxml import etree
+import pymongo
+from multiprocessing import Pool
+
+client = pymongo.MongoClient('localhost', 27017)
+mydb = client['mydb']
+jianshu_shouye = mydb['jianshu_shouye']
+
+def get_jianshu_info(url):
+    html = requests.get(url)
+    selector = etree.HTML(html.text)
+    infos = selector.xpath('//ul[@class="note-list"]/li')
+    for info in infos:
+        try:
+            author = info.xpath('div/div[1]/div/a/text()')[0]
+            time = info.xpath('div/div[1]/div/span/@data-shared-at')[0]
+            title = info.xpath('div/a/text()')[0]
+            content = info.xpath('div/p/text()')[0].strip()
+            view = info.xpath('div/div[2]/a[1]/text()')[1].strip()
+            comment = info.xpath('div/div[2]/a[2]/text()')[1].strip()
+            like = info.xpath('div/div[2]/span[1]/text()')[0].strip()
+            rewards = info.xpath('div/div[2]/span[2]/text()')
+            if len(rewards) == 0:
+                reward = '无'
+            else:
+                reward = rewards[0].strip()
+            data = {
+                'author':author,
+                'time':time,
+                'title':title,
+                'content':content,
+                'view':view,
+                'comment':comment,
+                'like':like,
+                'reward':reward
+            }
+            jianshu_shouye.insert_one(data)
+        except IndexError:
+            pass
+
+if __name__ == '__main__':
+    urls = ['http://www.jianshu.com/c/bDHhpK?order_by=commented_at&amp;page={}'.format(str(i)) for i in range(1,10001)]
+    pool = Pool(processes=4)
+    pool.map(get_jianshu_info, urls)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-爬取转转二手网商品信息"><a href="#3-爬取转转二手网商品信息" class="headerlink" title="3.爬取转转二手网商品信息"></a>3.爬取转转二手网商品信息</h4><p>channel_extract.py</p>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+from lxml import etree
+
+start_url = 'http://cs.58.com/sale.shtml'
+url_host = 'http://cs.58.com'
+
+def get_channel_urls(url):
+    html = requests.get(url)
+    selector = etree.HTML(html.text)
+    infos = selector.xpath('//div[@class="lbsear"]/div/ul/li')
+
+    for info in infos:
+        class_urls = info.xpath('ul/li/b/a/@href')
+        for class_url in class_urls:
+            print(url_host + class_url)
+
+get_channel_urls(start_url)
+
+channel_list = '''
+    http://cs.58.com/shouji/
+    http://cs.58.com/tongxunyw/
+    http://cs.58.com/danche/
+    http://cs.58.com/fzixingche/
+    http://cs.58.com/diandongche/
+    http://cs.58.com/sanlunche/
+    http://cs.58.com/peijianzhuangbei/
+    http://cs.58.com/diannao/
+    http://cs.58.com/bijiben/
+    http://cs.58.com/pbdn/
+    http://cs.58.com/diannaopeijian/
+    http://cs.58.com/zhoubianshebei/
+    http://cs.58.com/shuma/
+    http://cs.58.com/shumaxiangji/
+    http://cs.58.com/mpsanmpsi/
+    http://cs.58.com/youxiji/
+    http://cs.58.com/jiadian/
+    http://cs.58.com/dianshiji/
+    http://cs.58.com/ershoukongtiao/
+    http://cs.58.com/xiyiji/
+    http://cs.58.com/bingxiang/
+    http://cs.58.com/binggui/
+    http://cs.58.com/chuang/
+    http://cs.58.com/ershoujiaju/
+    http://cs.58.com/bangongshebei/
+    http://cs.58.com/diannaohaocai/
+    http://cs.58.com/bangongjiaju/
+    http://cs.58.com/ershoushebei/
+    http://cs.58.com/yingyou/
+    http://cs.58.com/yingeryongpin/
+    http://cs.58.com/muyingweiyang/
+    http://cs.58.com/muyingtongchuang/
+    http://cs.58.com/yunfuyongpin/
+    http://cs.58.com/fushi/
+    http://cs.58.com/nanzhuang/
+    http://cs.58.com/fsxiemao/
+    http://cs.58.com/xiangbao/
+    http://cs.58.com/meirong/
+    http://cs.58.com/yishu/
+    http://cs.58.com/shufahuihua/
+    http://cs.58.com/zhubaoshipin/
+    http://cs.58.com/yuqi/
+    http://cs.58.com/tushu/
+    http://cs.58.com/tushubook/
+    http://cs.58.com/wenti/
+    http://cs.58.com/yundongfushi/
+    http://cs.58.com/jianshenqixie/
+    http://cs.58.com/huju/
+    http://cs.58.com/qiulei/
+    http://cs.58.com/yueqi/
+    http://cs.58.com/chengren/
+    http://cs.58.com/nvyongpin/
+    http://cs.58.com/qinglvqingqu/
+    http://cs.58.com/qingquneiyi/
+    http://cs.58.com/chengren/
+    http://cs.58.com/xiaoyuan/
+    http://cs.58.com/ershouqiugou/
+    http://cs.58.com/tiaozao/
+'''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>counts.py</p>
+<pre class="line-numbers language-none"><code class="language-none">import sys
+sys.path.append("..")
+import time
+from page_spider import tongcheng
+
+while True:
+    print(tongcheng.find().count())
+    time.sleep(5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>main.py</p>
+<pre class="line-numbers language-none"><code class="language-none">import sys
+sys.path.append("..")
+from multiprocessing import Pool
+from channel_extract import channel_list
+from page_spider import get_links
+from page_spider import get_info
+from page_spider import tongcheng_url
+from page_spider import tongcheng_info
+
+# def get_all_links_from(channel):
+#     for num in range(1,101):
+#         get_links(channel,num)
+#
+# if __name__ == '__main__':
+#     pool = Pool(processes=4)
+#     pool.map(get_all_links_from,channel_list.split())
+
+db_urls = [item['url'] for item in tongcheng_url.find()]
+db_infos = [item['url'] for item in tongcheng_info.find()]
+x = set(db_urls)
+y = set(db_infos)
+rest_urls = x - y
+
+if __name__ == '__main__':
+    pool = Pool(processes=4)
+    pool.map(get_info,rest_urls)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>page_spider.py</p>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+from lxml import etree
+import time
+import pymongo
+
+client = pymongo.MongoClient('localhost', 27017)
+mydb = client['mydb']
+tongcheng_url = mydb['tongcheng_url']
+tongcheng_info = mydb['tongcheng_info']
+
+headers = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+    'Connection':'keep-alive'
+}
+
+def get_links(channel,pages):
+    list_view = '{}pn{}/'.format(channel,str(pages))
+    try:
+        html = requests.get(list_view,headers=headers)
+        time.sleep(2)
+        selector = etree.HTML(html.text)
+        if selector.xpath('//tr'):
+            infos = selector.xpath('//tr')
+            for info in infos:
+                if info.xpath('td[2]/a/@href'):
+                    url = info.xpath('td[2]/a/@href')[0]
+                    tongcheng_url.insert_one({'url':url})
+                else:
+                    pass
+        else:
+            pass
+    except requests.exceptions.ConnectionError:
+        pass
+
+def get_info(url):
+    html = requests.get(url,headers=headers)
+    selector = etree.HTML(html.text)
+    try:
+        title = selector.xpath('//h1/text()')[0]
+        if selector.xpath('//span[@class="price_now"]/i/text()'):
+            price = selector.xpath('//span[@class="price_now"]/i/text()')[0]
+        else:
+            price = "无"
+        if selector.xpath('//div[@class="palce_li"]/span/i/text()'):
+            area = selector.xpath('//div[@class="palce_li"]/span/i/text()')[0]
+        else:
+            area = "无"
+        view = selector.xpath('//p/span[1]/text()')[0]
+        if selector.xpath('//p/span[2]/text()'):
+            want = selector.xpath('//p/span[2]/text()')[0]
+        else:
+            want = "无"
+        info = {
+            'tittle':title,
+            'price':price,
+            'area':area,
+            'view':view,
+            'want':want,
+            'url':url
+        }
+        tongcheng_info.insert_one(info)
+    except IndexError:
+        pass<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第九章：异步加载"><a href="#第九章：异步加载" class="headerlink" title="第九章：异步加载"></a>第九章：异步加载</h2><blockquote>
+<p>就是网站请求部分数据，你向下滑需要看其他的内容时，在发送请求。使用AJAX技术</p>
+</blockquote>
+<h4 id="1-提取动态加载有用信息"><a href="#1-提取动态加载有用信息" class="headerlink" title="1.提取动态加载有用信息"></a>1.提取动态加载有用信息</h4><ul>
+<li>这个解决办法就是抓包，提取有用的信息，然后构造url</li>
+<li><strong>这本书还最有用的在这里</strong>，一般加载的有用信息在XHR中，我试了一下快手页面，是有用的信息，不知道有没有规律。</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221095916.png"></p>
+<h4 id="2-爬取简书网用户动态信息"><a href="#2-爬取简书网用户动态信息" class="headerlink" title="2.爬取简书网用户动态信息"></a>2.爬取简书网用户动态信息</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+from lxml import etree
+import pymongo
+
+client = pymongo.MongoClient('localhost', 27017)
+mydb = client['mydb']
+timeline = mydb['timeline']
+
+def get_time_info(url,page):
+    user_id = url.split('/')
+    user_id = user_id[4]
+    if url.find('page='):
+        page = page+1
+    html = requests.get(url)
+    selector = etree.HTML(html.text)
+    infos = selector.xpath('//ul[@class="note-list"]/li')
+    for info in infos:
+        dd = info.xpath('div/div/div/span/@data-datetime')[0]
+        type = info.xpath('div/div/div/span/@data-type')[0]
+        timeline.insert_one({'date':dd,'type':type})
+
+    id_infos = selector.xpath('//ul[@class="note-list"]/li/@id')
+    if len(infos) &gt; 1:
+        feed_id = id_infos[-1]
+        max_id = feed_id.split('-')[1]
+        next_url = 'http://www.jianshu.com/users/%s/timeline?max_id=%s&amp;page=%s' % (user_id, max_id, page)
+        get_time_info(next_url, page)
+
+if __name__ == '__main__':
+    get_time_info('http://www.jianshu.com/users/9104ebf5e177/timeline',1)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-爬取简书网七日热门信息"><a href="#3-爬取简书网七日热门信息" class="headerlink" title="3.爬取简书网七日热门信息"></a>3.爬取简书网七日热门信息</h4><pre class="line-numbers language-none"><code class="language-none">from lxml import etree
+import requests
+import pymongo
+import re
+import json
+from multiprocessing import Pool
+
+client = pymongo.MongoClient('localhost', 27017)
+mydb = client['mydb']
+sevenday = mydb['sevenday']
+
+header = {
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+}
+
+def get_url(url):
+    html = requests.get(url,headers=header)
+    selector = etree.HTML(html.text)
+    infos = selector.xpath('//ul[@class="note-list"]/li')
+    for info in infos:
+        article_url_part = info.xpath('div/a/@href')[0]
+        get_info(article_url_part)
+
+def get_info(url):
+    article_url = 'http://www.jianshu.com/' + url
+    html = requests.get(article_url,headers=header)
+    selector = etree.HTML(html.text)
+    author = selector.xpath('//span[@class="name"]/a/text()')[0]
+    article = selector.xpath('//h1[@class="title"]/text()')[0]
+    date = selector.xpath('//span[@class="publish-time"]/text()')[0]
+    word = selector.xpath('//span[@class="wordage"]/text()')[0]
+    view = re.findall('"views_count":(.*?),',html.text,re.S)[0]
+    comment = re.findall('"comments_count":(.*?),',html.text,re.S)[0]
+    like = re.findall('"likes_count":(.*?),',html.text,re.S)[0]
+    id = re.findall('{"id":(.*?),',html.text,re.S)[0]
+    gain_url = 'http://www.jianshu.com/notes/{}/rewards?count=20'.format(id)
+    wb_data = requests.get(gain_url,headers=header)
+    json_data = json.loads(wb_data.text)
+    gain = json_data['rewards_count']
+
+    include_list = []
+    include_urls = ['http://www.jianshu.com/notes/{}/included_collections?page={}'.format(id,str(i)) for i in range(1,10)]
+    for include_url in include_urls:
+        html = requests.get(include_url,headers=header)
+        json_data = json.loads(html.text)
+        includes = json_data['collections']
+        if len(includes) == 0:
+            pass
+        else:
+            for include in includes:
+                include_title = include['title']
+                include_list.append(include_title)
+    info ={
+        'author':author,
+        'article':article,
+        'date':date,
+        'word':word,
+        'view':view,
+        'comment':comment,
+        'like':like,
+        'gain':gain,
+        'include':include_list
+    }
+    sevenday.insert_one(info)
+
+if __name__ == '__main__':
+    urls = ['http://www.jianshu.com/trending/weekly?page={}'.format(str(i)) for i in range(0, 11)]
+    pool = Pool(processes=4)
+    pool.map(get_url,urls)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第十章：表单交互与模拟登录"><a href="#第十章：表单交互与模拟登录" class="headerlink" title="第十章：表单交互与模拟登录"></a>第十章：表单交互与模拟登录</h2><blockquote>
+<p>发送post请求，并且填入数据，就可以获取登录后的信息，这个叫模拟登录吧。有的网站使用cookie登录，复制cookie，包含到请求头里面，发送get请求就可以获取登录信息。之前做过案例，登录爬取简阅读书网的书籍信息。</p>
+</blockquote>
+<h4 id="1-POST方法"><a href="#1-POST方法" class="headerlink" title="1.POST方法"></a>1.POST方法</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221101308.png"></p>
+<ul>
+<li><p>data里面的内容通过查看表单源码获取</p>
+</li>
+<li><p>你登陆后查看发送的POST请求，data数据就在Form Data中</p>
+</li>
+</ul>
+<h4 id="2-Cookie模拟登录"><a href="#2-Cookie模拟登录" class="headerlink" title="2.Cookie模拟登录"></a>2.Cookie模拟登录</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221101533.png"></p>
+<ul>
+<li>就是使用cookie的网站，你登录后既可以获取cookie保存在本地，有一定的有效期。在有效期内发送get请求，把cookie信息包含在headers中就可以了</li>
+</ul>
+<h4 id="3-爬取拉钩网招聘信息"><a href="#3-爬取拉钩网招聘信息" class="headerlink" title="3.爬取拉钩网招聘信息"></a>3.爬取拉钩网招聘信息</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+import json
+import time
+import pymongo
+
+client = pymongo.MongoClient('localhost', 27017)
+mydb = client['mydb']
+lagou = mydb['lagou']
+
+headers = {
+    'Cookie':'LGUID=20170318090857-76585811-0b77-11e7-94fa-5254005c3644; user_trace_token=20170318090856-17f9ec1cafce47be9f9d2448700ed0fd; index_location_city=%E5%85%A8%E5%9B%BD; PRE_UTM=m_cf_cpt_baidu_pc; PRE_HOST=bzclk.baidu.com; PRE_SITE=http%3A%2F%2Fbzclk.baidu.com%2Fadrc.php%3Ft%3D06KL00c00fATEwT0VZ9m0FNkUsaFl8Fm000000fS_W300000Txxy_Y.THL0oUhY1x60UWdBmy-bIfK15yw-rynvuWRknj0srj0kmWn0IHYLrHn4rDD4rHc1njnvwDRswR7DPH7jrH-Kwj6LnYNKwfK95gTqFhdWpyfqnWbzP1DsPWn3nBusThqbpyfqnHm0uHdCIZwsT1CEQLILIz4_myIEIi4WUvYEUZ0EpZwVUaqWUvdVUv38pZwVUjqdIAdxTvqdThP-5ydxmvuxmLKYgvF9pywdgLKW0APzm1Y1Pjb4Pf%26tpl%3Dtpl_10085_14394_1%26l%3D1051868676%26attach%3Dlocation%253D%2526linkName%253D%2525E6%2525A0%252587%2525E9%2525A2%252598%2526linkText%253D%2525E3%252580%252590%2525E6%25258B%252589%2525E5%25258B%2525BE%2525E7%2525BD%252591%2525E3%252580%252591%2525E5%2525AE%252598%2525E7%2525BD%252591-%2525E4%2525B8%252593%2525E6%2525B3%2525A8%2525E4%2525BA%252592%2525E8%252581%252594%2525E7%2525BD%252591%2525E8%252581%25258C%2525E4%2525B8%25259A%2525E6%25259C%2525BA%2526xp%253Did%28%252522m7daa8b69%252522%29%25252FDIV%25255B1%25255D%25252FDIV%25255B1%25255D%25252FDIV%25255B1%25255D%25252FDIV%25255B1%25255D%25252FH2%25255B1%25255D%25252FA%25255B1%25255D%2526linkType%253D%2526checksum%253D147%26ie%3Dutf-8%26f%3D3%26tn%3Dbaidu%26wd%3D%25E6%258B%2589%25E5%258B%25BE%25E7%25BD%2591%26rqlang%3Dcn%26inputT%3D12561%26prefixsug%3Dla%26rsp%3D0; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2Flp%2Fhtml%2Fcommon.html%3Futm_source%3Dm_cf_cpt_baidu_pc; JSESSIONID=CE495F5C1F395D6F4006D80F2A90FC67; TG-TRACK-CODE=search_code; _ga=GA1.2.275771300.1489799334; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1491051633,1491096143,1491266190,1491266200; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1491267140; LGSID=20170404083631-bf5bd389-18ce-11e7-8780-525400f775ce; LGRID=20170404085221-f61cc81b-18d0-11e7-9831-5254005c3644; SEARCH_ID=6a4b1b203e8145d0a8bc130480c2d962',
+    'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+    'Connection':'keep-alive'
+}
+
+def get_page(url,params):
+    html = requests.post(url, data=params, headers=headers)
+    json_data = json.loads(html.text)
+    total_Count = json_data['content']['positionResult']['totalCount']
+    page_number = int(total_Count/15) if int(total_Count/15)&lt;30 else 30
+    get_info(url,page_number)
+
+def get_info(url,page):
+    for pn in range(1,page+1):
+        params = {
+            'first': 'true',
+            'pn': str(pn),
+            'kd': 'Python'
+        }
+        try:
+            html = requests.post(url,data=params,headers=headers)
+            json_data = json.loads(html.text)
+            results = json_data['content']['positionResult']['result']
+            for result in results:
+                infos = {
+                    'businessZones':result['businessZones'],
+                    'city':result['city'],
+                    'companyFullName':result['companyFullName'],
+                    'companyLabelList':result['companyLabelList'],
+                    'companySize':result['companySize'],
+                    'district':result['district'],
+                    'education':result['education'],
+                    'explain':result['explain'],
+                    'financeStage':result['financeStage'],
+                    'firstType':result['firstType'],
+                    'formatCreateTime':result['formatCreateTime'],
+                    'gradeDescription':result['gradeDescription'],
+                    'imState':result['imState'],
+                    'industryField':result['industryField'],
+                    'jobNature':result['jobNature'],
+                    'positionAdvantage':result['positionAdvantage'],
+                    'salary':result['salary'],
+                    'secondType':result['secondType'],
+                    'workYear':result['workYear']
+                }
+                lagou.insert_one(infos)
+                time.sleep(2)
+        except requests.exceptions.ConnectionError:
+            pass
+
+if __name__ == '__main__':
+    url = 'https://www.lagou.com/jobs/positionAjax.json'
+    params = {
+        'first': 'true',
+        'pn': '1',
+        'kd': 'Python'
+    }
+    get_page(url,params)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>cookie登录</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+# url = 'https://www.douban.com/accounts/login'
+# params = {
+#     'source':'index_nav',
+#     'form_email':'xxxxx',
+#     'form_password':'xxxx'
+# }
+# html = requests.post(url,params)
+# print(html.text)
+url = 'https://www.douban.com/'
+headers = {
+    'Cookie':'xxxxxxxxxxxxxx'
+}
+html = requests.get(url,headers=headers)
+print(html.text)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>jieba词库</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import jieba.analyse
+path = 'C:/Users/LP/Desktop/doupo.txt'
+fp = open(path,'r')
+content = fp.read()
+try:
+    jieba.analyse.set_stop_words('H:\最近用（笔记本）\python\中文停用词表.txt')
+    tags = jieba.analyse.extract_tags(content, topK=50, withWeight=True)
+    for item in tags:
+        print(item[0]+'\t'+str(int(item[1]*1000)))
+finally:
+    fp.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">import jieba.analyse
+path = 'C:/Users/LP/Desktop/weibo.txt'
+fp = open(path,'r',encoding='utf-8')
+content = fp.read()
+try:
+    jieba.analyse.set_stop_words('H:\最近用（笔记本）\python\中文停用词表.txt')
+    tags = jieba.analyse.extract_tags(content, topK=100, withWeight=True)
+    for item in tags:
+        print(item[0]+'\t'+str(int(item[1]*1000)))
+finally:
+    fp.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-爬取新浪微博好友圈信息"><a href="#4-爬取新浪微博好友圈信息" class="headerlink" title="4.爬取新浪微博好友圈信息"></a>4.爬取新浪微博好友圈信息</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+import json
+
+headers = {
+    'Cookie':'_T_WM=96cb9ea775b44e6b748bad0632f08acf; ALF=1495261239; SCF=Ao2eEoFhjA5KbdNGqJHI9wEAM9KNrdONmtRBf3Azk4hY6cCXAOtoHK9p0qyo0s52_K7c7o2uOMLHjyOZxQyCfGY.; SUB=_2A251_CMeDeRhGeNM41oV-S_MzDSIHXVXH01WrDV6PUJbktANLVTfkW0YD5snD7uLxDFvKP-bEw7LXp6MdA..; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WWYIHB5wH.nYVf7IYKTS.SD5JpX5o2p5NHD95QfeonRSh.pehMRWs4DqcjrK.yhi--Xi-zRi-isi--Ni-2ci-iFi--fiKLsiKy8i--ci-2Ei-2c; SUHB=0h1JEFS6Kw-9oj; SSOLoginState=1492669262; H5_INDEX=0_friend; H5_INDEX_TITLE=%E5%A5%BD%E5%8F%8B%E5%9C%88%20; M_WEIBOCN_PARAMS=luicode%3D20000174%26uicode%3D20000174',
+    'User_Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+}
+
+f = open('C:/Users/LP/Desktop/weibo.txt','a+',encoding='utf-8')
+
+def get_info(url,page):
+    html = requests.get(url,headers=headers)
+    json_data = json.loads(html.text)
+    card_groups = json_data[0]['card_group']
+    for card_group in card_groups:
+        f.write(card_group['mblog']['text'].split(' ')[0]+'\n')
+
+    next_cursor = json_data[0]['next_cursor']
+
+    if page&lt;50:
+        next_url = 'https://m.weibo.cn/index/friends?format=cards&amp;next_cursor='+str(next_cursor)+'&amp;page=1'
+        page = page + 1
+        get_info(next_url,page)
+    else:
+        pass
+        f.close()
+
+if __name__ == '__main__':
+    url = 'https://m.weibo.cn/index/friends?format=cards'
+    get_info(url,1)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第十一章：selenium模拟浏览器"><a href="#第十一章：selenium模拟浏览器" class="headerlink" title="第十一章：selenium模拟浏览器"></a>第十一章：selenium模拟浏览器</h2><blockquote>
+<p>有时候通过逆向技术构造出来爬虫比较困难。想要用Python获取异步加载返回的数据，可以使用Selenium模拟浏览器</p>
+</blockquote>
+<h4 id="1-selenium与PhantomJS"><a href="#1-selenium与PhantomJS" class="headerlink" title="1.selenium与PhantomJS"></a>1.selenium与PhantomJS</h4><ul>
+<li>PhantomJS是一种无界面的浏览器，使用要把PhantomJS.exe复制到python目录下</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">form selenium import webdriver
+driver = webdriver.PhantomJS()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="2-模拟浏览器操作"><a href="#2-模拟浏览器操作" class="headerlink" title="2.模拟浏览器操作"></a>2.模拟浏览器操作</h4><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221104201.png"></p>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210221104211.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">from selenium import webdriver
+driver = webdriver.PhantomJS()
+driver.get('https://www.douban.com/')
+driver.implicitly_wait(10)
+driver.find_element_by_id('form_email').clear()
+driver.find_element_by_id('form_email').send_keys('15116137454')
+driver.find_element_by_id('form_password').clear()
+driver.find_element_by_id('form_password').send_keys('Woxiao123')
+driver.find_element_by_class_name('bn-submit').click()
+print(driver.page_source)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-爬取简书"><a href="#3-爬取简书" class="headerlink" title="3.爬取简书"></a>3.爬取简书</h4><pre class="line-numbers language-none"><code class="language-none">from selenium import webdriver
+url = 'http://www.jianshu.com/p/c9bae3e9e252'
+def get_info(url):
+    include_title =[]
+    driver = webdriver.PhantomJS()
+    driver.get(url)
+    driver.implicitly_wait(20)
+    author = driver.find_element_by_xpath('//span[@class="name"]/a').text
+    date = driver.find_element_by_xpath('//span[@class="publish-time"]').text
+    word = driver.find_element_by_xpath('//span[@class="wordage"]').text
+    view = driver.find_element_by_xpath('//span[@class="views-count"]').text
+    comment = driver.find_element_by_xpath('//span[@class="comments-count"]').text
+    like = driver.find_element_by_xpath('//span[@class="likes-count"]').text
+    included_names = driver.find_elements_by_xpath('//div[@class="include-collection"]/a/div')
+    for i in included_names:
+        include_title.append(i.text)
+    print(author,date,word,view,comment,like,include_title)
+get_info(url)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-爬取qq空间好友说说"><a href="#4-爬取qq空间好友说说" class="headerlink" title="4.爬取qq空间好友说说"></a>4.爬取qq空间好友说说</h4><pre class="line-numbers language-none"><code class="language-none">from selenium import webdriver
+import time
+import csv
+import pymongo
+
+client = pymongo.MongoClient('localhost', 27017)
+mydb = client['mydb']
+qq_shuo = mydb['qq_shuo']
+
+driver = webdriver.PhantomJS()
+driver.maximize_window()
+
+def get_info(qq):
+    driver.get('http://user.qzone.qq.com/{}/311'.format(qq))
+    driver.implicitly_wait(10)
+    try:
+        driver.find_element_by_id('login_div')
+        a = True
+    except:
+        a = False
+    if a == True:
+        driver.switch_to.frame('login_frame')
+        driver.find_element_by_id('switcher_plogin').click()
+        driver.find_element_by_id('u').clear()
+        driver.find_element_by_id('u').send_keys('账号')
+        driver.find_element_by_id('p').clear()
+        driver.find_element_by_id('p').send_keys('密码')
+        driver.find_element_by_id('login_button').click()
+        time.sleep(3)
+    driver.implicitly_wait(3)
+    try:
+        driver.find_element_by_id('QM_OwnerInfo_Icon')
+        b = True
+    except:
+        b = False
+    if b == True:
+        driver.switch_to.frame('app_canvas_frame')
+        contents = driver.find_elements_by_css_selector('.content')
+        times = driver.find_elements_by_css_selector('.c_tx.c_tx3.goDetail')
+        for content, tim in zip(contents, times):
+            data = {
+                'time': tim.text,
+                'content': content.text
+            }
+            qq_shuo.insert_one(data)
+
+if __name__ == '__main__':
+    qq_lists = []
+    fp = open('C:/Users/LP/Desktop/QQmail.csv')
+    reader = csv.DictReader(fp)
+    for row in reader:
+        qq_lists.append(row['电子邮件'].split('@')[0])
+    fp.close()
+    for item in qq_lists:
+        get_info(item)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-爬取淘宝商品信息"><a href="#5-爬取淘宝商品信息" class="headerlink" title="5.爬取淘宝商品信息"></a>5.爬取淘宝商品信息</h4><pre class="line-numbers language-none"><code class="language-none">from selenium import webdriver
+from lxml import etree
+import time
+import pymongo
+
+client = pymongo.MongoClient('localhost', 27017)
+mydb = client['mydb']
+taobao = mydb['taobao']
+
+driver = webdriver.PhantomJS()
+driver.maximize_window()
+
+def get_info(url,page):
+    page = page + 1
+    driver.get(url)
+    driver.implicitly_wait(10)
+    selector = etree.HTML(driver.page_source)
+    infos = selector.xpath('//div[@class="item J_MouserOnverReq  "]')
+    for info in infos:
+        data = info.xpath('div/div/a')[0]
+        goods = data.xpath('string(.)').strip()
+        price = info.xpath('div/div/div/strong/text()')[0]
+        sell = info.xpath('div/div/div[@class="deal-cnt"]/text()')[0]
+        shop = info.xpath('div[2]/div[3]/div[1]/a/span[2]/text()')[0]
+        address = info.xpath('div[2]/div[3]/div[2]/text()')[0]
+        commodity = {
+            'good':goods,
+            'price':price,
+            'sell':sell,
+            'shop':shop,
+            'address':address
+        }
+        taobao.insert_one(commodity)
+
+    if page &lt;= 50:
+        NextPage(url,page)
+    else:
+        pass
+
+def NextPage(url,page):
+    driver.get(url)
+    driver.implicitly_wait(10)
+    driver.find_element_by_xpath('//a[@trace="srp_bottom_pagedown"]').click()
+    time.sleep(4)
+    driver.get(driver.current_url)
+    driver.implicitly_wait(10)
+    get_info(driver.current_url,page)
+
+if __name__ == '__main__':
+    page = 1
+    url = 'https://www.taobao.com/'
+    driver.get(url)
+    driver.implicitly_wait(10)
+    driver.find_element_by_id('q').clear()
+    driver.find_element_by_id('q').send_keys('男士短袖')
+    driver.find_element_by_class_name('btn-search').click()
+    get_info(driver.current_url,page)
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第十二章：scrapy爬虫框架"><a href="#第十二章：scrapy爬虫框架" class="headerlink" title="第十二章：scrapy爬虫框架"></a>第十二章：scrapy爬虫框架</h2><h4 id="1-scrapy使用"><a href="#1-scrapy使用" class="headerlink" title="1.scrapy使用"></a>1.scrapy使用</h4><ul>
+<li>创建项目</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">scrapy startporject xioazhu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2-文件介绍"><a href="#2-文件介绍" class="headerlink" title="2.文件介绍"></a>2.文件介绍</h4><ol>
+<li>scrapy.cfg为项目的配置文件</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none"># Automatically created by: scrapy startproject
+#
+# For more information about the [deploy] section see:
+# https://scrapyd.readthedocs.org/en/latest/deploy.html
+
+[settings]
+default = xiaozhu.settings
+
+[deploy]
+#url = http://localhost:6800/
+project = xiaozhu
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>定义项目名称等配置</p>
+</blockquote>
+<ol start="2">
+<li>items.py</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# http://doc.scrapy.org/en/latest/topics/items.html
+
+
+
+from scrapy.item import Item,Field
+
+class XiaozhuItem(Item):
+    title= Field()
+    address = Field()
+    price = Field()
+    lease_type = Field()
+    suggestion = Field()
+    bed = Field()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>定义爬虫抓取的信息</p>
+</blockquote>
+<ol start="3">
+<li>pipelines.py</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
+
+class XiaozhuPipeline(object):
+    def process_item(self, item, spider):
+        fp = open('C:/Users/LP/Desktop/xiaozhu.txt','a+')
+        fp.write(item['title']+'\n')
+        fp.write(item['address']+'\n')
+        fp.write(item['price'] + '\n')
+        fp.write(item['lease_type'] + '\n')
+        fp.write(item['suggestion'] + '\n')
+        fp.write(item['bed'] + '\n')
+        return item
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>爬虫数据的清洗和入库等</p>
+</blockquote>
+<ol start="4">
+<li>settings.py</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Scrapy settings for xiaozhu project
+#
+# For simplicity, this file contains only settings considered important or
+# commonly used. You can find more settings consulting the documentation:
+#
+#     http://doc.scrapy.org/en/latest/topics/settings.html
+#     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+
+BOT_NAME = 'xiaozhu'
+
+SPIDER_MODULES = ['xiaozhu.spiders']
+NEWSPIDER_MODULE = 'xiaozhu.spiders'
+
+ITEM_PIPELINES = {'xiaozhu.pipelines.XiaozhuPipeline':300}
+
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = 'xiaozhu (+http://www.yourdomain.com)'
+
+# Obey robots.txt rules
+ROBOTSTXT_OBEY = True
+
+# Configure maximum concurrent requests performed by Scrapy (default: 16)
+#CONCURRENT_REQUESTS = 32
+
+# Configure a delay for requests for the same website (default: 0)
+# See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
+# See also autothrottle settings and docs
+#DOWNLOAD_DELAY = 3
+# The download delay setting will honor only one of:
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16
+#CONCURRENT_REQUESTS_PER_IP = 16
+
+# Disable cookies (enabled by default)
+#COOKIES_ENABLED = False
+
+# Disable Telnet Console (enabled by default)
+#TELNETCONSOLE_ENABLED = False
+
+# Override the default request headers:
+#DEFAULT_REQUEST_HEADERS = {
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
+#}
+
+# Enable or disable spider middlewares
+# See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+#SPIDER_MIDDLEWARES = {
+#    'xiaozhu.middlewares.XiaozhuSpiderMiddleware': 543,
+#}
+
+# Enable or disable downloader middlewares
+# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
+#    'xiaozhu.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
+
+# Enable or disable extensions
+# See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
+#EXTENSIONS = {
+#    'scrapy.extensions.telnet.TelnetConsole': None,
+#}
+
+# Configure item pipelines
+# See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+#ITEM_PIPELINES = {
+#    'xiaozhu.pipelines.XiaozhuPipeline': 300,
+#}
+
+# Enable and configure the AutoThrottle extension (disabled by default)
+# See http://doc.scrapy.org/en/latest/topics/autothrottle.html
+#AUTOTHROTTLE_ENABLED = True
+# The initial download delay
+#AUTOTHROTTLE_START_DELAY = 5
+# The maximum download delay to be set in case of high latencies
+#AUTOTHROTTLE_MAX_DELAY = 60
+# The average number of requests Scrapy should be sending in parallel to
+# each remote server
+#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
+# Enable showing throttling stats for every response received:
+#AUTOTHROTTLE_DEBUG = False
+
+# Enable and configure HTTP caching (disabled by default)
+# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
+#HTTPCACHE_ENABLED = True
+#HTTPCACHE_EXPIRATION_SECS = 0
+#HTTPCACHE_DIR = 'httpcache'
+#HTTPCACHE_IGNORE_HTTP_CODES = []
+#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>对爬虫项目的设置</p>
+</blockquote>
+<ol start="5">
+<li>xiaozhuspider.py</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from scrapy.spiders import CrawlSpider
+from scrapy.selector import Selector
+from xiaozhu.items import XiaozhuItem
+
+class xiaozhu(CrawlSpider):
+    name = 'xiaozhu'
+    start_urls = ['http://bj.xiaozhu.com/fangzi/6937392816.html']
+
+    def parse(self, response):
+        item = XiaozhuItem()
+        selector = Selector(response)
+        title = selector.xpath('//h4/em/text()').extract()[0]
+        address = selector.xpath('//p/span[@class="pr5"]/text()').extract()[0].strip()
+        price = selector.xpath('//*[@id="pricePart"]/div[1]/span/text()').extract()[0]
+        lease_type = selector.xpath('//*[@id="introduce"]/li[1]/h6/text()').extract()[0]
+        suggestion = selector.xpath('//*[@id="introduce"]/li[2]/h6/text()').extract()[0]
+        bed = selector.xpath('//*[@id="introduce"]/li[3]/h6/text()').extract()[0]
+
+        item['title'] = title
+        item['address'] = address
+        item['price'] = price
+        item['lease_type'] = lease_type
+        item['suggestion'] = suggestion
+        item['bed'] = bed
+
+        yield item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>用户自己编写的，用于爬虫代码的编写</p>
+</blockquote>
+<h4 id="3-爬取简书网热门信息"><a href="#3-爬取简书网热门信息" class="headerlink" title="3.爬取简书网热门信息"></a>3.爬取简书网热门信息</h4><ul>
+<li>scrapy startproject zhuanti</li>
+<li>items.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# http://doc.scrapy.org/en/latest/topics/items.html
+
+from scrapy.item import Item,Field
+
+class ZhuantiItem(Item):
+    name = Field()
+    content = Field()
+    article = Field()
+    fans = Field()
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>zhuantispider.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import scrapy
+from scrapy.spiders import CrawlSpider
+from scrapy.selector import Selector
+from scrapy.http import Request
+from zhuanti.items import ZhuantiItem
+
+class zhuanti(CrawlSpider):
+    name = 'zhuanti'
+    start_urls = ['http://www.jianshu.com/recommendations/collections?page=1&amp;order_by=hot']
+
+    def parse(self, response):
+        item = ZhuantiItem()
+        selector = Selector(response)
+        infos = selector.xpath('//div[@class="col-xs-8"]')
+        for info in infos:
+            try:
+                name = info.xpath('div/h4/a/text()').extract()[0]
+                content = info.xpath('div/p/text()').extract()[0]
+                article = info.xpath('div/div/a/text()').extract()[0]
+                fans = info.xpath('div/div/text()').extract()[0]
+
+                item['name'] = name
+                item['content'] = content
+                item['article'] = article
+                item['fans'] = fans
+
+                yield item
+            except IndexError:
+                pass
+
+        urls = ['http://www.jianshu.com/recommendations/collections?page={}&amp;order_by=hot'.format(str(i)) for i in range(2,39)]
+        for url in urls:
+            yield Request(url,callback=self.parse)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>setting.py</li>
+</ul>
+<blockquote>
+<p>使用自带的Feed exports存储</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Scrapy settings for zhuanti project
+#
+# For simplicity, this file contains only settings considered important or
+# commonly used. You can find more settings consulting the documentation:
+#
+#     http://doc.scrapy.org/en/latest/topics/settings.html
+#     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+
+BOT_NAME = 'zhuanti'
+
+SPIDER_MODULES = ['zhuanti.spiders']
+NEWSPIDER_MODULE = 'zhuanti.spiders'
+
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = 'zhuanti (+http://www.yourdomain.com)'
+
+# Obey robots.txt rules
+ROBOTSTXT_OBEY = True
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+DOWNLOAD_DELAY=0.5
+FEED_URI = 'file:C:/Users/LP/Desktop/zhuanti.csv'
+FEED_FORMAT = 'csv'
+# Configure maximum concurrent requests performed by Scrapy (default: 16)
+#CONCURRENT_REQUESTS = 32
+
+# Configure a delay for requests for the same website (default: 0)
+# See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
+# See also autothrottle settings and docs
+#DOWNLOAD_DELAY = 3
+# The download delay setting will honor only one of:
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16
+#CONCURRENT_REQUESTS_PER_IP = 16
+
+# Disable cookies (enabled by default)
+#COOKIES_ENABLED = False
+
+# Disable Telnet Console (enabled by default)
+#TELNETCONSOLE_ENABLED = False
+
+# Override the default request headers:
+#DEFAULT_REQUEST_HEADERS = {
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
+#}
+
+# Enable or disable spider middlewares
+# See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+#SPIDER_MIDDLEWARES = {
+#    'zhuanti.middlewares.ZhuantiSpiderMiddleware': 543,
+#}
+
+# Enable or disable downloader middlewares
+# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
+#    'zhuanti.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
+
+# Enable or disable extensions
+# See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
+#EXTENSIONS = {
+#    'scrapy.extensions.telnet.TelnetConsole': None,
+#}
+
+# Configure item pipelines
+# See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+#ITEM_PIPELINES = {
+#    'zhuanti.pipelines.ZhuantiPipeline': 300,
+#}
+
+# Enable and configure the AutoThrottle extension (disabled by default)
+# See http://doc.scrapy.org/en/latest/topics/autothrottle.html
+#AUTOTHROTTLE_ENABLED = True
+# The initial download delay
+#AUTOTHROTTLE_START_DELAY = 5
+# The maximum download delay to be set in case of high latencies
+#AUTOTHROTTLE_MAX_DELAY = 60
+# The average number of requests Scrapy should be sending in parallel to
+# each remote server
+#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
+# Enable showing throttling stats for every response received:
+#AUTOTHROTTLE_DEBUG = False
+
+# Enable and configure HTTP caching (disabled by default)
+# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
+#HTTPCACHE_ENABLED = True
+#HTTPCACHE_EXPIRATION_SECS = 0
+#HTTPCACHE_DIR = 'httpcache'
+#HTTPCACHE_IGNORE_HTTP_CODES = []
+#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>main.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">from scrapy import cmdline
+cmdline.execute("scrapy crawl zhuanti".split())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="4-爬取知乎网Python精华话题"><a href="#4-爬取知乎网Python精华话题" class="headerlink" title="4.爬取知乎网Python精华话题."></a>4.爬取知乎网Python精华话题.</h4><ul>
+<li>items.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# http://doc.scrapy.org/en/latest/topics/items.html
+
+
+from scrapy.item import Item,Field
+
+class TiebaItem(Item):
+    question = Field()
+    favour = Field()
+    user = Field()
+    user_info = Field()
+    content = Field()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>tiebaspider.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import scrapy
+from scrapy.spiders import CrawlSpider
+from scrapy.selector import Selector
+from scrapy.http import Request
+from tieba.items import TiebaItem
+
+class tieba(CrawlSpider):
+    name = 'tieba'
+    start_urls = ['https://www.zhihu.com/topic/19552832/top-answers?page=1']
+
+    def parse(self, response):
+        item = TiebaItem()
+        selector = Selector(response)
+        infos = selector.xpath('//div[@class="zu-top-feed-list"]/div')
+        for info in infos:
+            try:
+                question = info.xpath('div/div/h2/a/text()').extract()[0].strip()
+                favour = info.xpath('div/div/div[1]/div[1]/a/text()').extract()[0]
+                user = info.xpath('div/div/div[1]/div[3]/span/span[1]/a/text()').extract()[0]
+                user_info = info.xpath('div/div/div[1]/div[3]/span/span[2]/text()').extract()[0].strip()
+                content = info.xpath('div/div/div[1]/div[5]/div/text()').extract()[0].strip()
+
+                item['question'] = question
+                item['favour'] = favour
+                item['user'] = user
+                item['user_info'] = user_info
+                item['content'] = content
+
+                yield item
+            except IndexError:
+                pass
+
+        urls = ['https://www.zhihu.com/topic/19552832/top-answers?page={}'.format(str(i)) for i in range(2,50)]
+        for url in urls:
+            yield Request(url,callback=self.parse)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>pipelines.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
+
+
+import pymongo
+class TiebaPipeline(object):
+    def __init__(self):
+        client = pymongo.MongoClient('localhost', 27017)
+        test = client['test']
+        tieba = test['tieba']
+        self.post = tieba
+
+    def process_item(self, item, spider):
+        info = dict(item)
+        self.post.insert(info)
+        return item
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>setting.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
+
+
+import pymongo
+class TiebaPipeline(object):
+    def __init__(self):
+        client = pymongo.MongoClient('localhost', 27017)
+        test = client['test']
+        tieba = test['tieba']
+        self.post = tieba
+
+    def process_item(self, item, spider):
+        info = dict(item)
+        self.post.insert(info)
+        return item
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>main.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
+
+
+import pymongo
+class TiebaPipeline(object):
+    def __init__(self):
+        client = pymongo.MongoClient('localhost', 27017)
+        test = client['test']
+        tieba = test['tieba']
+        self.post = tieba
+
+    def process_item(self, item, spider):
+        info = dict(item)
+        self.post.insert(info)
+        return item
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-爬取简书网专题收录文章"><a href="#5-爬取简书网专题收录文章" class="headerlink" title="5.爬取简书网专题收录文章"></a>5.爬取简书网专题收录文章</h4><ul>
+<li>items.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# http://doc.scrapy.org/en/latest/topics/items.html
+
+
+from scrapy.item import Item,Field
+
+class JianshuitItem(Item):
+    user = Field()
+    time = Field()
+    title = Field()
+    view = Field()
+    comment = Field()
+    like = Field()
+    gain = Field()
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>jianshuspider.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# http://doc.scrapy.org/en/latest/topics/items.html
+
+
+from scrapy.item import Item,Field
+
+class JianshuitItem(Item):
+    user = Field()
+    time = Field()
+    title = Field()
+    view = Field()
+    comment = Field()
+    like = Field()
+    gain = Field()
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>piplines.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
+import pymysql
+class JianshuitPipeline(object):
+    def __init__(self):
+        conn = pymysql.connect(host='localhost', user='root', passwd='123456', db='mydb', port=3306, charset='utf8')
+        cursor = conn.cursor()
+        self.post = cursor
+    def process_item(self, item, spider):
+        cursor = self.post
+        cursor.execute("use mydb")
+        sql = "insert into jianshu1 (user,time,title,view,comment,lik,gain) values(%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(item['user'],item['time'],item['title'],item['view'],item['comment'],item['like'],item['gain']))
+        cursor.connection.commit()
+        return item
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>setting.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Scrapy settings for jianshuit project
+#
+# For simplicity, this file contains only settings considered important or
+# commonly used. You can find more settings consulting the documentation:
+#
+#     http://doc.scrapy.org/en/latest/topics/settings.html
+#     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+
+BOT_NAME = 'jianshuit'
+
+SPIDER_MODULES = ['jianshuit.spiders']
+NEWSPIDER_MODULE = 'jianshuit.spiders'
+
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = 'jianshuit (+http://www.yourdomain.com)'
+
+# Obey robots.txt rules
+ITEM_PIPELINES = {'jianshuit.pipelines.JianshuitPipeline':300}
+ROBOTSTXT_OBEY = True
+DOWNLOAD_DELAY=0.5
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+
+# Configure maximum concurrent requests performed by Scrapy (default: 16)
+#CONCURRENT_REQUESTS = 32
+
+# Configure a delay for requests for the same website (default: 0)
+# See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
+# See also autothrottle settings and docs
+#DOWNLOAD_DELAY = 3
+# The download delay setting will honor only one of:
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16
+#CONCURRENT_REQUESTS_PER_IP = 16
+
+# Disable cookies (enabled by default)
+#COOKIES_ENABLED = False
+
+# Disable Telnet Console (enabled by default)
+#TELNETCONSOLE_ENABLED = False
+
+# Override the default request headers:
+#DEFAULT_REQUEST_HEADERS = {
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
+#}
+
+# Enable or disable spider middlewares
+# See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+#SPIDER_MIDDLEWARES = {
+#    'jianshuit.middlewares.JianshuitSpiderMiddleware': 543,
+#}
+
+# Enable or disable downloader middlewares
+# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
+#    'jianshuit.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
+
+# Enable or disable extensions
+# See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
+#EXTENSIONS = {
+#    'scrapy.extensions.telnet.TelnetConsole': None,
+#}
+
+# Configure item pipelines
+# See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+#ITEM_PIPELINES = {
+#    'jianshuit.pipelines.JianshuitPipeline': 300,
+#}
+
+# Enable and configure the AutoThrottle extension (disabled by default)
+# See http://doc.scrapy.org/en/latest/topics/autothrottle.html
+#AUTOTHROTTLE_ENABLED = True
+# The initial download delay
+#AUTOTHROTTLE_START_DELAY = 5
+# The maximum download delay to be set in case of high latencies
+#AUTOTHROTTLE_MAX_DELAY = 60
+# The average number of requests Scrapy should be sending in parallel to
+# each remote server
+#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
+# Enable showing throttling stats for every response received:
+#AUTOTHROTTLE_DEBUG = False
+
+# Enable and configure HTTP caching (disabled by default)
+# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
+#HTTPCACHE_ENABLED = True
+#HTTPCACHE_EXPIRATION_SECS = 0
+#HTTPCACHE_DIR = 'httpcache'
+#HTTPCACHE_IGNORE_HTTP_CODES = []
+#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>main.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">from scrapy import cmdline
+cmdline.execute("scrapy crawl jianshu".split())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="6-爬取简书网推荐信息"><a href="#6-爬取简书网推荐信息" class="headerlink" title="6.爬取简书网推荐信息"></a>6.爬取简书网推荐信息</h4><ul>
+<li>items.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# http://doc.scrapy.org/en/latest/topics/items.html
+
+from scrapy.item import Item,Field
+
+class AuthorItem(Item):
+    author_url = Field()
+    author_name = Field()
+    new_article = Field()
+    style = Field()
+    focus = Field()
+    fans = Field()
+    article_num = Field()
+    write_num = Field()
+    like = Field()
+    pass
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>authorspider.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">from scrapy.spiders import CrawlSpider
+from scrapy.selector import Selector
+from scrapy.http import Request
+from author.items import AuthorItem
+
+class author(CrawlSpider):
+    name = 'author'
+    start_urls = ['http://www.jianshu.com/recommendations/users?page=1']
+
+    def parse(self, response):
+        base_url = 'http://www.jianshu.com/u/'
+        selector = Selector(response)
+        infos = selector.xpath('//div[@class="col-xs-8"]')
+        for info in infos:
+            author_url = base_url + info.xpath('div/h4/a/@href').extract()[0].split('/')[-1]
+            author_name = info.xpath('div/h4/a/text()').extract()[0]
+            article = info.xpath('div/div[@class="recent-update"]')[0]
+            new_article = article.xpath('string(.)').extract()[0].strip('\n').replace(' ','').replace('\n','')
+            yield Request(author_url,meta={'author_url':author_url,'author_name':author_name,'new_article':new_article},callback=self.parse_item)
+
+        urls = ['http://www.jianshu.com/recommendations/users?page={}'.format(str(i)) for i in range(2,10)]
+        for url in urls:
+            yield Request(url,callback=self.parse)
+
+    def parse_item(self,response):
+        item = AuthorItem()
+        item['author_url'] = response.meta['author_url']
+        item['author_name'] = response.meta['author_name']
+        item['new_article'] = response.meta['new_article']
+
+        try:
+            selector = Selector(response)
+            if selector.xpath('//span[@class="author-tag"]'):
+                style = '签约作者'
+            else:
+                style = '普通作者'
+            focus = selector.xpath('//div[@class="info"]/ul/li[1]/div/a/p/text()').extract()[0]
+            fans = selector.xpath('//div[@class="info"]/ul/li[2]/div/a/p/text()').extract()[0]
+            article_num = selector.xpath('//div[@class="info"]/ul/li[3]/div/a/p/text()').extract()[0]
+            write_num = selector.xpath('//div[@class="info"]/ul/li[4]/div/p/text()').extract()[0]
+            like = selector.xpath('//div[@class="info"]/ul/li[5]/div/p/text()').extract()[0]
+
+            item['style'] = style
+            item['focus'] = focus
+            item['fans'] = fans
+            item['article_num'] = article_num
+            item['write_num'] = write_num
+            item['like'] = like
+            yield item
+        except IndexError:
+            pass<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>piplines.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
+
+import pymongo
+
+class AuthorPipeline(object):
+    def __init__(self):
+        client = pymongo.MongoClient('localhost', 27017)
+        test = client['test']
+        author = test['author']
+        self.post = author
+    def process_item(self, item, spider):
+        info = dict(item)
+        self.post.insert(info)
+        return item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>setting.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+# Scrapy settings for author project
+#
+# For simplicity, this file contains only settings considered important or
+# commonly used. You can find more settings consulting the documentation:
+#
+#     http://doc.scrapy.org/en/latest/topics/settings.html
+#     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+
+BOT_NAME = 'author'
+
+SPIDER_MODULES = ['author.spiders']
+NEWSPIDER_MODULE = 'author.spiders'
+
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = 'author (+http://www.yourdomain.com)'
+
+# Obey robots.txt rules
+ITEM_PIPELINES = {'author.pipelines.AuthorPipeline':300}
+ROBOTSTXT_OBEY = False
+DOWNLOAD_DELAY=0.5
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+
+# Configure maximum concurrent requests performed by Scrapy (default: 16)
+#CONCURRENT_REQUESTS = 32
+
+# Configure a delay for requests for the same website (default: 0)
+# See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
+# See also autothrottle settings and docs
+#DOWNLOAD_DELAY = 3
+# The download delay setting will honor only one of:
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16
+#CONCURRENT_REQUESTS_PER_IP = 16
+
+# Disable cookies (enabled by default)
+#COOKIES_ENABLED = False
+
+# Disable Telnet Console (enabled by default)
+#TELNETCONSOLE_ENABLED = False
+
+# Override the default request headers:
+#DEFAULT_REQUEST_HEADERS = {
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
+#}
+
+# Enable or disable spider middlewares
+# See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+#SPIDER_MIDDLEWARES = {
+#    'author.middlewares.AuthorSpiderMiddleware': 543,
+#}
+
+# Enable or disable downloader middlewares
+# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
+#    'author.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
+
+# Enable or disable extensions
+# See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
+#EXTENSIONS = {
+#    'scrapy.extensions.telnet.TelnetConsole': None,
+#}
+
+# Configure item pipelines
+# See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+#ITEM_PIPELINES = {
+#    'author.pipelines.AuthorPipeline': 300,
+#}
+
+# Enable and configure the AutoThrottle extension (disabled by default)
+# See http://doc.scrapy.org/en/latest/topics/autothrottle.html
+#AUTOTHROTTLE_ENABLED = True
+# The initial download delay
+#AUTOTHROTTLE_START_DELAY = 5
+# The maximum download delay to be set in case of high latencies
+#AUTOTHROTTLE_MAX_DELAY = 60
+# The average number of requests Scrapy should be sending in parallel to
+# each remote server
+#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
+# Enable showing throttling stats for every response received:
+#AUTOTHROTTLE_DEBUG = False
+
+# Enable and configure HTTP caching (disabled by default)
+# See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
+#HTTPCACHE_ENABLED = True
+#HTTPCACHE_EXPIRATION_SECS = 0
+#HTTPCACHE_DIR = 'httpcache'
+#HTTPCACHE_IGNORE_HTTP_CODES = []
+#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>main.py</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">from scrapy import cmdline
+cmdline.execute("scrapy crawl author".split())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/02/24/cong-ling-kai-shi-xue-python-wang-luo-pa-chong/">http://xinxinliang.github.io/2021/02/24/cong-ling-kai-shi-xue-python-wang-luo-pa-chong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/">
+                                    <span class="chip bg-color">电子书</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%BA%90%E7%A0%81%E7%89%88/">
+                                    <span class="chip bg-color">源码版</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/02/24/python-django-web-dian-xing-mo-kuai-kai-fa-shi-zhan-shang/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-g8zz57.png" class="responsive-img" alt="《Python Django Web典型模块开发实战》（上）">
+                        
+                        <span class="card-title">《Python Django Web典型模块开发实战》（上）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/">
+                        <span class="chip bg-color">电子书</span>
+                    </a>
+                    
+                    <a href="/tags/Django/">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">
+                        <span class="chip bg-color">前后端分离</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/19/java-kuo-zhan-lei-5-awt-hui-tu-he-yin-pin-bo-fang-da-yin-ji-zhu/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-g8logq.jpg" class="responsive-img" alt="Java扩展类5：AWT绘图和音频播放、打印技术">
+                        
+                        <span class="card-title">Java扩展类5：AWT绘图和音频播放、打印技术</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
+                    </a>
+                    
+                    <a href="/tags/Java%E6%89%A9%E5%B1%95%E7%B1%BB/">
+                        <span class="chip bg-color">Java扩展类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">152.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

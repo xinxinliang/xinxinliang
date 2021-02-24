@@ -1,0 +1,3238 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="《Python Django Web典型模块开发实战》(下), blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>《Python Django Web典型模块开发实战》(下) | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-gj5e6q.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">《Python Django Web典型模块开发实战》(下)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/">
+                                <span class="chip bg-color">电子书</span>
+                            </a>
+                        
+                            <a href="/tags/Django/">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">
+                                <span class="chip bg-color">前后端分离</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                后端框架
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-24
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-02-24
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    37 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="第八章-实现频率限制"><a href="#第八章-实现频率限制" class="headerlink" title="第八章 实现频率限制"></a>第八章 实现频率限制</h2><blockquote>
+<p>作为一篇博客，后面的内容显示不出来，太长了，分为两篇。好吧，是里面使用srcipt标签没有使用转义字符</p>
+</blockquote>
+<h4 id="1-建立演示频率限制功能的项目"><a href="#1-建立演示频率限制功能的项目" class="headerlink" title="1.建立演示频率限制功能的项目"></a>1.建立演示频率限制功能的项目</h4><ol>
+<li>新建demo8，创建app01</li>
+<li>templates下创建index.html</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h4&gt;小说章节内容页、视频播放页、博客访问页、网页广告页……&lt;/h4&gt;
+&lt;h4&gt;本网页代表了所有浏览量高能带来收益的网页。&lt;/h4&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>解决跨域问题</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install djangorestframework markdown django-filter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app01.apps.App01Config',
+    'rest_framework'
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>数据更新</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py makemigrations
+python manage.py migrate
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>views.py编写视图</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
+from rest_framework.views import APIView
+# Create your views here.
+class IndexView(APIView):
+    """
+    演示视图
+    """
+    def get(self,request):
+        return render(request,'index.html')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="6">
+<li>配置路由</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
+from django.urls import path
+from app01.views import IndexView
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('index/',IndexView.as_view(),name='index'),
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-网页客户端向服务端提交了多少信息"><a href="#2-网页客户端向服务端提交了多少信息" class="headerlink" title="2.网页客户端向服务端提交了多少信息"></a>2.网页客户端向服务端提交了多少信息</h4><ol>
+<li>修改views.py的IndexView类</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">class IndexView(APIView):
+    """
+    演示视图
+    """
+    def get(self,request):
+        j=0
+        for i in request.META:
+            print(i,":",request.META[i])
+            j+=1
+        print("共",j,"条信息")
+        return render(request,'index.html')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-频率限制功能开发"><a href="#3-频率限制功能开发" class="headerlink" title="3.频率限制功能开发"></a>3.频率限制功能开发</h4><ol>
+<li>setting中添加频率限制的配置代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '2/day',
+        'user': '1000/day'
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>改造views的IndexView，引入频率限制模块</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.throttling import AnonRateThrottle
+# Create your views here.
+class IndexView(APIView):
+    """
+    演示视图
+    """
+    throttle_classes = (AnonRateThrottle,)
+    def get(self,request):
+        return Response('本网页代表了所有浏览量高能带来收益的网页。')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第九章-关于跨域问题的解决办法"><a href="#第九章-关于跨域问题的解决办法" class="headerlink" title="第九章 关于跨域问题的解决办法"></a>第九章 关于跨域问题的解决办法</h2><h4 id="1-什么是跨域"><a href="#1-什么是跨域" class="headerlink" title="1.什么是跨域"></a>1.什么是跨域</h4><ol>
+<li>新建demo9，创建app01</li>
+<li>model</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.db import models
+from datetime import datetime
+# Create your models here.
+class Book(models.Model):
+    """
+    书籍
+    """
+    title=models.CharField(max_length=32,verbose_name='书名')
+    author=models.CharField(max_length=10,verbose_name='作者名')
+    add_time = models.DateTimeField(default=datetime.now, verbose_name='添加时间')
+    class Meta:
+        verbose_name='书籍表'
+        verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.title
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>数据更新</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py makemigrations
+python manage.py migrate
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>安装依赖</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install djangorestframework markdown django-filter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="5">
+<li>注册</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app01.apps.App01Config',
+    'rest_framework'
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="6">
+<li>views.py中编写视图</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
+from .models import Book
+from .serializers import BookSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.renderers import JSONRenderer,BrowsableAPIRenderer
+# Create your views here.
+class BookView(APIView):
+    """
+    书籍列表
+    """
+    renderer_classes = [JSONRenderer]  # 渲染器
+    def get(self,request):
+        book_list = Book.objects.all()
+        re = BookSerializer(book_list, many=True)
+        return Response(re.data)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="7">
+<li>配置路由</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
+from django.urls import path
+from app01.views import BookView
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('book/',BookView.as_view(),name='book'),
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="8">
+<li>创建vue项目test</li>
+<li>安装跨域模块</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cnpm install axios -save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="10">
+<li>App.vue</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template&gt;
+  &lt;div id="app"&gt;
+    &lt;img src="./assets/logo.png"&gt;
+    &lt;router-view/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import axios from 'axios'
+export default {
+  name: 'App',
+  data(){
+    return{
+      msg:''
+    }
+  },
+  methods:{
+    getData(){
+      axios({
+        url:'http://127.0.0.1:8000/book/'
+      }).then(res=&gt;{
+        console.log(res)
+      })
+    }
+  },
+  mounted(){
+    this.getData()
+  }
+}
+&lt;/script&gt;
+&lt;style&gt;
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+&lt;/style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>浏览器同源策略，是浏览器最核心，也是最基本的安全功能</p>
+</blockquote>
+<h4 id="2-解决跨域问题的几种思路"><a href="#2-解决跨域问题的几种思路" class="headerlink" title="2.解决跨域问题的几种思路"></a>2.解决跨域问题的几种思路</h4><h6 id="通过jsonp跨域"><a href="#通过jsonp跨域" class="headerlink" title="通过jsonp跨域"></a>通过jsonp跨域</h6><blockquote>
+<p>原理：&lt;script&gt;标签不受浏览器同源策略。比如在线引用jquery</p>
+</blockquote>
+ <pre class="line-numbers language-none"><code class="language-none">&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol>
+<li>原生写法实现</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="2">
+<li>jQuery ajax实现</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">$.ajax({
+    url: 'http://www.domain2.com:8080/login',
+    type: 'get',
+    dataType: 'jsonp',  // 请求方式为jsonp
+    jsonpCallback: "onBack",    // 自定义回调函数名
+    data: {}
+});
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>Vue.js实现</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">this.$http.jsonp('http://www.domain2.com:8080/login', {
+    params: {},
+    jsonp: 'onBack'
+}).then((res) =&gt; {
+    console.log(res); 
+})
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>jsonp有个很大的局限性，就是只能实现get请求</p>
+</blockquote>
+<h6 id="document-comain-iframe跨域"><a href="#document-comain-iframe跨域" class="headerlink" title="document.comain+iframe跨域"></a>document.comain+iframe跨域</h6><ol>
+<li>父窗口<a target="_blank" rel="noopener" href="http://www.domain.com/a.html">www.domain.com/a.html</a></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;iframe id="iframe" src="http://child.domain.com/b.html"&gt;&lt;/iframe&gt;
+&lt;script&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>子窗口<a target="_blank" rel="noopener" href="http://www.domain.com/b.html">www.domain.com/b.html</a></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="CORS-跨域资源共享"><a href="#CORS-跨域资源共享" class="headerlink" title="CORS(跨域资源共享)"></a>CORS(跨域资源共享)</h6><h6 id="Nginx代理跨域"><a href="#Nginx代理跨域" class="headerlink" title="Nginx代理跨域"></a>Nginx代理跨域</h6><ul>
+<li>加入配置代码</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">location /{
+	add_header Access-Control-Allow-Origin *;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-前端项目解决跨域问题"><a href="#3-前端项目解决跨域问题" class="headerlink" title="3.前端项目解决跨域问题"></a>3.前端项目解决跨域问题</h4><ol>
+<li>打开demo9_2/config/index.js ,然后在proxyTable中添加代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">'/api': { //替换代理地址名称
+        target: 'http://127.0.0.1:8000/', //代理地址
+       changeOrigin: true, //可否跨域
+       pathRewrite: {
+       '^/api': '' //重写接口，去掉/api
+        }
+      }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>安装axios</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cnpm install axios -save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>App.vue 向后端请求数据的代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template&gt;
+  &lt;div id="app"&gt;
+    &lt;img src="./assets/logo.png"&gt;
+    &lt;router-view/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+//引入axios模块
+import axios from 'axios'
+export default {
+  name: 'App',
+  data(){
+    return{
+      msg:''
+    }
+  },
+  methods:{
+//向后端项目请求数据方法
+    getData(){
+      axios({
+        url:'api/book/'
+      }).then(res=&gt;{
+        console.log(res)
+      })
+    }
+  },
+  mounted(){
+    this.getData()
+  }
+}
+&lt;/script&gt;
+&lt;style&gt;
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+&lt;/style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-在后端项目中解决跨域问题"><a href="#4-在后端项目中解决跨域问题" class="headerlink" title="4.在后端项目中解决跨域问题"></a>4.在后端项目中解决跨域问题</h4><blockquote>
+<p>在Django中使用CORS解决跨域问题非常方便</p>
+</blockquote>
+<ol>
+<li>新建一个前端项目demo9_2,以及后端项目demo9</li>
+<li>安装跨域模块</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install django-cors-headers<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>注册</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app01.apps.App01Config',
+    'rest_framework',
+    'corsheaders'
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>增加中间件</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # 放到中间件顶部
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>增加配置项</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">CORS_ORIGIN_ALLOW_ALL = True<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="6">
+<li>前端项目安装axios模块</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cnpm install axios -save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="7">
+<li>App.vue向后端请求数据代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template&gt;
+  &lt;div id="app"&gt;
+	&lt;!--……--&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+//引入axios模块
+import axios from 'axios'
+export default {
+  name: 'App',
+  data(){
+    return{
+      msg:''
+    }
+  },
+  methods:{
+//向后端发送数据请求
+    getData(){
+      axios({
+        url:'http://127.0.0.1:8000/book/’
+      }).then(res=&gt;{
+        console.log(res)
+      })
+    }
+  },
+  mounted(){
+    this.getData()
+  }
+}
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第十章：用Django实现支付功能"><a href="#第十章：用Django实现支付功能" class="headerlink" title="第十章：用Django实现支付功能"></a>第十章：用Django实现支付功能</h2><h4 id="1-支付宝的业务模式"><a href="#1-支付宝的业务模式" class="headerlink" title="1.支付宝的业务模式"></a>1.支付宝的业务模式</h4><ol>
+<li><p>登录蚂蚁金服的开放平台：<a target="_blank" rel="noopener" href="https://open.alipay.com/platform/home.htm%EF%BC%8C%E5%B9%B6%E4%B8%94%E7%99%BB%E5%BD%95">https://open.alipay.com/platform/home.htm，并且登录</a></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20200912160541.png"></p>
+</li>
+<li><p>进入管理界面，网页&amp;移动应用，找到支付接入</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20200912161639.png"></p>
+<h4 id="2-Django实现支付宝的对接"><a href="#2-Django实现支付宝的对接" class="headerlink" title="2.Django实现支付宝的对接"></a>2.Django实现支付宝的对接</h4><ol>
+<li>新建demo10，创建app01</li>
+<li>app01/model</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.db import models
+from django.contrib.auth.models import AbstractUser
+from datetime import datetime
+# Create your models here.
+class UserProfile(AbstractUser):
+    """
+    用户
+    """
+    name = models.CharField(max_length=30, null=True, blank=True, verbose_name="姓名")
+    mobile = models.CharField(null=True, blank=True, max_length=11, verbose_name="电话")
+    class Meta:
+        verbose_name = "用户"
+        verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.username
+class Good(models.Model):
+    """
+    商品表
+    """
+    name=models.CharField(max_length=30,verbose_name='商品名称')
+    price=models.FloatField(default=0,verbose_name='商品价格',help_text='单位：元')
+    add_time = models.DateTimeField(default=datetime.now, verbose_name='添加时间')
+    class Meta:
+        verbose_name='商品表'
+        verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.name
+class ShoppingCart(models.Model):
+    """
+    购物车
+    """
+    user = models.ForeignKey(UserProfile,on_delete=models.CASCADE,verbose_name="用户")
+    good = models.ForeignKey(Good,on_delete=models.CASCADE, verbose_name="商品")
+    nums = models.IntegerField(default=0, verbose_name="购买数量")
+    add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
+    class Meta:
+        verbose_name = '购物车'
+        verbose_name_plural = verbose_name
+    def __str__(self):
+        return "%s(%d)".format(self.good.name, self.nums)
+class OrderInfo(models.Model):
+    """
+    订单
+    """
+    ORDER_STATUS = (
+        ("TRADE_SUCCESS", "成功"),
+        ("TRADE_CLOSED", "超时关闭"),
+        ("WAIT_BUYER_PAY", "交易创建"),
+        ("TRADE_FINISHED", "交易结束"),
+        ("paying", "待支付"),
+    )
+    user = models.ForeignKey(UserProfile,on_delete=models.CASCADE,verbose_name="用户")
+    order_sn = models.CharField(max_length=30, null=True, blank=True, unique=True, verbose_name="订单号")
+    trade_no = models.CharField(max_length=100, unique=True, null=True, blank=True, verbose_name="交易号")
+    pay_status = models.CharField(choices=ORDER_STATUS, default="paying", max_length=30, verbose_name="订单状态")
+    post_script = models.CharField(max_length=200, verbose_name="订单留言")
+    order_mount = models.FloatField(default=0.0, verbose_name="订单金额")
+    pay_time = models.DateTimeField(null=True, blank=True, verbose_name="支付时间")
+    # 用户信息
+    address = models.CharField(max_length=100, default="", verbose_name="收货地址")
+    signer_name = models.CharField(max_length=20, default="", verbose_name="签收人")
+    singer_mobile = models.CharField(max_length=11, verbose_name="联系电话")
+    add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
+    class Meta:
+        verbose_name = "订单"
+        verbose_name_plural = verbose_name
+    def __str__(self):
+        return str(self.order_sn)
+class OrderGoods(models.Model):
+    """
+    订单的商品详情
+    """
+    order = models.ForeignKey(OrderInfo,on_delete=models.CASCADE, verbose_name="订单信息", related_name="goods")
+    goods = models.ForeignKey(Good,on_delete=models.CASCADE,verbose_name="商品")
+    goods_num = models.IntegerField(default=0, verbose_name="商品数量")
+    add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
+    class Meta:
+        verbose_name = "订单商品"
+        verbose_name_plural = verbose_name
+    def __str__(self):
+        return str(self.order.order_sn)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>setting中添加代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">AUTH_USER_MODEL='app01.UserProfile'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>执行数据更新命令</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py makemigrations
+python manage.py migrate
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="3-开发注册登录功能"><a href="#3-开发注册登录功能" class="headerlink" title="3.开发注册登录功能"></a>3.开发注册登录功能</h4><p>1.在app01/views.py中添加相关视图代码</p>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render,redirect,HttpResponse
+from django.views.generic.base import View
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth import authenticate, login, logout
+from .utils.mixin_utils import LoginRequiredMixin
+from .models import UserProfile
+# Create your views here.
+class RegisterView(View):
+    """
+    注册视图
+    """
+    def get(self, request):
+        return render(request, 'register.html')
+    def post(self,request):
+        user=request.POST.get('username')
+        pwd=request.POST.get('pwd')
+        print(user,pwd)
+        if user and pwd:
+            had_reg=UserProfile.objects.filter(username=user)
+            if had_reg:
+                return HttpResponse('用户名已被注册')
+            else:
+                new_user=UserProfile()
+                new_user.username=user
+                new_user.password=make_password(pwd)
+                new_user.save()
+                return redirect('/login/')
+        else:
+            return HttpResponse('未收到注册数据')
+class LoginView(View):
+    """
+    登录视图
+    """
+    def get(self,request):
+        return render(request,'login.html')
+    def post(self,request):
+        user_name = request.POST.get('username', '')
+        password = request.POST.get('pwd', '')
+        if user_name and password:
+            user = authenticate(username=user_name, password=password)
+            if user:
+                login(request, user)
+                return redirect('/shop/')
+        return HttpResponse('有错误')
+class ShopView(LoginRequiredMixin,View):
+    """
+    购物视图
+    """
+    def get(self,request):
+        return render(request,'shop.html')
+    def post(self,request):
+        return HttpResponse('200')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>在app01下新建utils目录，在下面创建mixin_utils.py,用于验证用户是否登录</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+class LoginRequiredMixin(object):
+    @method_decorator(login_required(login_url='/login/'))
+    def dispatch(self, request, *args, **kwargs):
+        return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>增加路由代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
+from django.urls import path
+from app01.views import RegisterView,LoginView,ShopView
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('register/',RegisterView.as_view(),name='register'),
+    path('login/',LoginView.as_view(),name='login'),
+    path('shop/',ShopView.as_view(),name='shop'),
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>在templates目录下新建3个HTML文件</li>
+</ol>
+<ul>
+<li>login.html</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+登录
+&lt;form action="/login/" method="post"&gt;
+    &lt;div&gt;
+        用户名：
+        &lt;input name="username" type="text"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        密码：
+        &lt;input name="pwd" type="text"&gt;
+    &lt;/div&gt;
+    {% csrf_token %}
+    &lt;div&gt;
+        &lt;input type="submit" value="提交"&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>register.html</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+注册
+&lt;form action="/register/" method="post"&gt;
+    &lt;div&gt;
+        用户名：
+        &lt;input name="username" type="text"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        密码：
+        &lt;input name="pwd" type="text"&gt;
+    &lt;/div&gt;
+    {% csrf_token %}
+    &lt;div&gt;
+        &lt;input type="submit" value="提交"&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>shop.html</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+购物
+&lt;/body&gt;
+&lt;/html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-Django开发支付宝的支付功能"><a href="#4-Django开发支付宝的支付功能" class="headerlink" title="4.Django开发支付宝的支付功能"></a>4.Django开发支付宝的支付功能</h4><ol>
+<li>在demo目录下新建static/img,并将商品目录导入到目录下</li>
+<li>setting中添加配置静态目录的代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>改造shop.html</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+{#    引入静态文件#}
+    {% load staticfiles %}
+    &lt;style&gt;
+        .good{
+            width: 200px;
+            margin: 0 auto;
+            background-color: bisque;
+        }
+        .good img{
+            width: 200px;
+            height: 200px;
+        }
+        .num{
+            width: 100px;
+        }
+        .btn{
+            width: 100px;
+            height: 30px;
+            margin-left: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="good"&gt;
+    &lt;img src="{% static '/img/01.png' %}"&gt;
+    &lt;div &gt;用户名：{{ user.username }} &lt;/div&gt;
+    &lt;div&gt;商品名：你的背包&lt;/div&gt;
+    &lt;form action="/shop/" method="post"&gt;
+        {% csrf_token %}
+        &lt;div&gt;
+            数量：
+&lt;input class="num" type="number" name="num"&gt;个
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;input class="btn" type="submit" value="立即付款购买"&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>views.py</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">class ShopView(LoginRequiredMixin,View):
+    """
+    购物视图
+    """
+    def get(self,request):
+        return render(request,'shop.html',{'user':request.user})
+    def post(self,request):
+        return HttpResponse('200')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>安装签名时所需的加密模块</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install pycryptodome<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="6">
+<li>app01/utils目录下新建alipay.py</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from datetime import datetime
+#导入加密相关的模块
+from Crypto.PublicKey import RSA
+from Crypto.Signature import PKCS1_v1_5
+from Crypto.Hash import SHA256
+from base64 import b64encode, b64decode
+#导入网络请求相关的模块
+from urllib.parse import quote_plus
+from urllib.parse import urlparse, parse_qs
+from urllib.request import urlopen
+from base64 import decodebytes, encodebytes
+#导入json模块
+import json
+class AliPay(object):
+    """
+    支付宝支付接口
+    """
+    def __init__(self, appid, app_notify_url, app_private_key_path,
+                 alipay_public_key_path, return_url, debug=False):
+        self.appid = appid
+        self.app_notify_url = app_notify_url
+        self.app_private_key_path = app_private_key_path
+        self.app_private_key = None
+        self.return_url = return_url
+        with open(self.app_private_key_path) as fp:
+            self.app_private_key = RSA.importKey(fp.read())
+        self.alipay_public_key_path = alipay_public_key_path
+        with open(self.alipay_public_key_path) as fp:
+            self.alipay_public_key = RSA.import_key(fp.read())
+        if debug is True:
+            self.__gateway = "https://openapi.alipaydev.com/gateway.do"
+        else:
+            self.__gateway = "https://openapi.alipay.com/gateway.do"
+    def direct_pay(self, subject, out_trade_no, total_amount, return_url=None, **kwargs):
+        biz_content = {
+            "subject": subject,
+            "out_trade_no": out_trade_no,
+            "total_amount": total_amount,
+            "product_code": "FAST_INSTANT_TRADE_PAY",
+            # "qr_pay_mode":4
+        }
+        biz_content.update(kwargs)
+        data = self.build_body("alipay.trade.page.pay", biz_content, self.return_url)
+        return self.sign_data(data)
+    def build_body(self, method, biz_content, return_url=None):
+        data = {
+            "app_id": self.appid,
+            "method": method,
+            "charset": "utf-8",
+            "sign_type": "RSA2",
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "version": "1.0",
+            "biz_content": biz_content
+        }
+        if return_url is not None:
+            data["notify_url"] = self.app_notify_url
+            data["return_url"] = self.return_url
+        return data
+    def sign_data(self, data):
+        data.pop("sign", None)
+        # 排序后的字符串
+        unsigned_items = self.ordered_data(data)
+        unsigned_string = "&amp;".join("{0}={1}".format(k, v) for k, v in unsigned_items)
+        sign = self.sign(unsigned_string.encode("utf-8"))
+        # ordered_items = self.ordered_data(data)
+        quoted_string = "&amp;".join("{0}={1}".format(k, quote_plus(v)) for k, v in unsigned_items)
+        # 获得最终的订单信息字符串
+        signed_string = quoted_string + "&amp;sign=" + quote_plus(sign)
+        return signed_string
+    def ordered_data(self, data):
+        complex_keys = []
+        for key, value in data.items():
+            if isinstance(value, dict):
+                complex_keys.append(key)
+        # 将字典类型的数据dump出来
+        for key in complex_keys:
+            data[key] = json.dumps(data[key], separators=(',', ':'))
+        return sorted([(k, v) for k, v in data.items()])
+    def sign(self, unsigned_string):
+        # 开始计算签名
+        key = self.app_private_key
+        signer = PKCS1_v1_5.new(key)
+        signature = signer.sign(SHA256.new(unsigned_string))
+        # base64 编码，转换为unicode表示并移除回车
+        sign = encodebytes(signature).decode("utf8").replace("\n", "")
+        return sign
+    def _verify(self, raw_content, signature):
+        # 开始计算签名
+        key = self.alipay_public_key
+        signer = PKCS1_v1_5.new(key)
+        digest = SHA256.new()
+        digest.update(raw_content.encode("utf8"))
+        if signer.verify(digest, decodebytes(signature.encode("utf8"))):
+            return True
+        return False
+    def verify(self, data, signature):
+        if "sign_type" in data:
+            sign_type = data.pop("sign_type")
+        # 排序后的字符串
+        unsigned_items = self.ordered_data(data)
+        message = "&amp;".join(u"{}={}".format(k, v) for k, v in unsigned_items)
+        return self._verify(message, signature)
+if __name__ == "__main__":
+    return_url = 'http://127.0.0.1:8000/?total_amount=100.00&amp;timestamp=2017-08-15+23%3A53%3A34&amp;sign=e9E9UE0AxR84NK8TP1CicX6aZL8VQj68ylugWGHnM79zA7BKTIuxxkf%2FvhdDYz4XOLzNf9pTJxTDt8tTAAx%2FfUAJln4WAeZbacf1Gp4IzodcqU%2FsIc4z93xlfIZ7OLBoWW0kpKQ8AdOxrWBMXZck%2F1cffy4Ya2dWOYM6Pcdpd94CLNRPlH6kFsMCJCbhqvyJTflxdpVQ9kpH%2B%2Fhpqrqvm678vLwM%2B29LgqsLq0lojFWLe5ZGS1iFBdKiQI6wZiisBff%2BdAKT9Wcao3XeBUGigzUmVyEoVIcWJBH0Q8KTwz6IRC0S74FtfDWTafplUHlL%2Fnf6j%2FQd1y6Wcr2A5Kl6BQ%3D%3D&amp;trade_no=2017081521001004340200204115&amp;sign_type=RSA2&amp;auth_app_id=2016080600180695&amp;charset=utf-8&amp;seller_id=2088102170208070&amp;method=alipay.trade.page.pay.return&amp;app_id=2016080600180695&amp;out_trade_no=20170202185&amp;version=1.0'
+    o = urlparse(return_url)
+    query = parse_qs(o.query)
+    processed_query = {}
+    ali_sign = query.pop("sign")[0]
+    alipay = AliPay(
+        appid="2016091400509946",
+        app_notify_url="http://127.0.0.1:8000/shop/",
+        app_private_key_path="../key/private_2048.txt",
+        alipay_public_key_path="../key/alipay_key.txt",  # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
+        debug=True,  # 默认False,
+        return_url="http://127.0.0.1:8000/shop/"
+    )
+    for key, value in query.items():
+        processed_query[key] = value[0]
+    print (alipay.verify(processed_query, ali_sign))
+    url = alipay.direct_pay(
+        subject="测试订单2",
+        out_trade_no="20190316sss",
+        total_amount=100,
+        return_url="http://127.0.0.1:8000/alipay/return/"
+    )
+    re_url = "https://openapi.alipaydev.com/gateway.do?{data}".format(data=url)
+    print(re_url)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="7">
+<li>setting中追加代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">#支付宝相关配置
+private_key_path = os.path.join(BASE_DIR, 'app01/key/private_2048.txt')
+ali_pub_key_path = os.path.join(BASE_DIR, 'app01/key/alipay_key.txt')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol start="8">
+<li>views.py中，对ShopView的post方法进行改造，加入支付功能</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from .utils.alipay import AliPay
+from demo10.settings import private_key_path,ali_pub_key_path
+class ShopView(LoginRequiredMixin,View):
+    """
+    购物视图
+    """
+    def get(self,request):
+        return render(request,'shop.html',{'user':request.user})
+    def post(self,request):
+        alipay = AliPay(
+            appid="2016091400509946",
+            app_notify_url="http://127.0.0.1:8000/shop/",
+            app_private_key_path=private_key_path,
+            alipay_public_key_path=ali_pub_key_path,  # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
+            debug=True,  # 默认False,
+            return_url="http://127.0.0.1:8000/shop/"
+        )
+        url = alipay.direct_pay(
+            #根据前端进来的数据，确定subject（商品名称），生成不重复的交易号out_trade_no,
+            # 根据商品和数量算出总价total_amount
+            subject="你的背包",
+            out_trade_no="20190316sss1",
+            total_amount=100,
+            return_url="http://127.0.0.1:8000/alipay/return/"
+        )
+        re_url = "https://openapi.alipaydev.com/gateway.do?{data}".format(data=url)
+        print(re_url)
+        return redirect(re_url)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第十一章-Redis缓存"><a href="#第十一章-Redis缓存" class="headerlink" title="第十一章 Redis缓存"></a>第十一章 Redis缓存</h2><h4 id="1-演示Django缓存机制项目"><a href="#1-演示Django缓存机制项目" class="headerlink" title="1.演示Django缓存机制项目"></a>1.演示Django缓存机制项目</h4><ol>
+<li>新建demo11，创建app01</li>
+<li>model</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.db import models
+# Create your models here.
+class Books(models.Model):
+    """
+    图书表
+    """
+    title=models.CharField(max_length=64,verbose_name='书名')
+    pv=models.IntegerField(default=0,verbose_name='浏览量')
+    class Meta:
+        verbose_name='图书表'
+        verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.title
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>数据更新</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py makemigrations
+python manage.py migrate
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>templates目录下新建文件booklist.html</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+{% for t in list %}
+    &lt;div&gt;
+    &lt;a href="/book/{{ t.id }}/"&gt;
+        书名：《{{ t.title }}》
+        &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        浏览量：{{ t.pv }}
+    &lt;/div&gt;
+{% endfor %}
+&lt;/body&gt;
+&lt;/html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>book.html</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+       书名：《{{ t.title }}》
+    &lt;/div&gt;
+    &lt;div&gt;
+        浏览量：{{ t.pv }}
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>app01/views.py</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
+from django.views.generic.base import View
+from .models import Books
+# Create your views here.
+class BookListView(View):
+    """
+    获取图书列表
+    """
+    def get(self,request):
+        list=Books.objects.all()
+        return render(request,'booklist.html',{'list':list})
+class GetBookView(View):
+    """
+    获取单个图书
+    """
+    def get(self,request,id):
+        book=Books.objects.filter(id=id).first()
+        print(book.pv)
+        book.pv+=1
+        book.save()
+        return render(request,'book.html',{'t':book})
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="6">
+<li>配置路由代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
+from django.urls import path
+from app01.views import BookListView,GetBookView
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('booklist/',BookListView.as_view(),name='booklist'),
+    path('book/&lt;id&gt;/',GetBookView.as_view(),name='book')
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-Django开发缓存功能"><a href="#2-Django开发缓存功能" class="headerlink" title="2.Django开发缓存功能"></a>2.Django开发缓存功能</h4><ol>
+<li>views.py中对GetBookView进行改写</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
+class GetBookView(View):
+    """
+    获取单个图书
+    """
+    @method_decorator(cache_page(3))
+    def get(self,request,id):
+        book=Books.objects.filter(id=id).first()
+        print(book.pv)
+        book.pv+=1
+        book.save()
+        return render(request,'book.html',{'t':book})
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-各种缓存配置"><a href="#3-各种缓存配置" class="headerlink" title="3.各种缓存配置"></a>3.各种缓存配置</h4><ol>
+<li>开发调试setting.py中的文件配置</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">CACHES = {
+ 'default': {
+  'BACKEND': 'django.core.cache.backends.dummy.DummyCache',  # 缓存后台使用的引擎
+  'TIMEOUT': 300,            # 缓存超时时间（默认300秒，None表示永不过期，0表示立即过期）
+  'OPTIONS':{
+   'MAX_ENTRIES': 300,          # 最大缓存记录的数量（默认300）
+   'CULL_FREQUENCY': 3,          # 缓存到达最大个数之后，剔除缓存个数的比例，即：		1/CULL_FREQUENCY（默认3）
+  },
+ }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>内容缓存</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">CACHES = {
+ 'default': {
+  'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',  # 指定缓存使用的引擎
+  'LOCATION': 'unique-snowflake',         # 写在内存中的变量的唯一值 
+  'TIMEOUT':300,             # 缓存超时时间(默认为300秒,None表示永不过期)
+  'OPTIONS':{
+   'MAX_ENTRIES': 300,           # 最大缓存记录的数量（默认300）
+   'CULL_FREQUENCY': 3,          # 缓存到达最大个数之后，剔除缓存个数的比例，即：1/CULL_FREQUENCY（默认3）
+  }  
+ }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>文件缓存</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">CACHES = {
+ 'default': {
+  'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache', #指定缓存使用的引擎
+  'LOCATION': '/var/tmp/django_cache',        #指定缓存的路径
+  'TIMEOUT':300,              #缓存超时时间(默认为300秒,None表示永不过期)
+  'OPTIONS':{
+   'MAX_ENTRIES': 300,            # 最大缓存记录的数量（默认300）
+   'CULL_FREQUENCY': 3,           # 缓存到达最大个数之后，剔除缓存个数的比例，即：1/CULL_FREQUENCY（默认3）
+  }
+ }   
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>数据库缓存</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">CACHES = {
+ 'default': {
+  'BACKEND': 'django.core.cache.backends.db.DatabaseCache',  # 指定缓存使用的引擎
+  'LOCATION': 'cache_table',          # 数据库表    
+  'OPTIONS':{
+   'MAX_ENTRIES': 300,           # 最大缓存记录的数量（默认300）
+   'CULL_FREQUENCY': 3,          # 缓存到达最大个数之后，剔除缓存个数的比例，即：1/CULL_FREQUENCY（默认3）
+  }  
+ }   
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>创建缓存的数据库表使用语句</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py createcachetable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="5">
+<li>Mencache缓存</li>
+</ol>
+<blockquote>
+<p>Mencache是Django原生支持的缓存系统。需要下载其支持库Pyhton-memcache或pylibmc</p>
+</blockquote>
+<ul>
+<li>setting.py中的文件配置</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">CACHES = {
+ 'default': {
+  'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache', # 指定缓存使用的引擎
+  'LOCATION': '222.169.10.100:11211',         # 指定Memcache缓存服务器的IP地址和端口
+  'OPTIONS':{
+   'MAX_ENTRIES': 300,            # 最大缓存记录的数量（默认300）
+   'CULL_FREQUENCY': 3,           # 缓存到达最大个数之后，剔除缓存个数的比例，即：1/CULL_FREQUENCY（默认3）
+  }
+ }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>LOCATION也可以配置成如下</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">'LOCATION': 'unix:/tmp/memcached.sock',   # 指定局域网内的主机名加socket套接字为Memcache缓存服务器
+'LOCATION': [         # 指定一台或多台其他主机ip地址加端口为Memcache缓存服务器
+ '222.169.10.100:11211',
+ '222.169.10.101:11211',
+ '222.169.10.102:11211',
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>Memcache缓存（使用pylibmc模块），setting.py配置如下</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">CACHES = {
+  'default': {
+   'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',  # 指定缓存使用的引擎
+   'LOCATION':'192.168.10.100:11211',         # 指定本机的11211端口为Memcache缓存服务器
+   'OPTIONS':{
+    'MAX_ENTRIES': 300,            # 最大缓存记录的数量（默认300）
+    'CULL_FREQUENCY': 3,           # 缓存到达最大个数之后，剔除缓存个数的比例，即：1/CULL_FREQUENCY（默认3）
+   },  
+  }
+ }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>LOCATION也可以配置成如下</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">'LOCATION': '/tmp/memcached.sock',  # 指定某个路径为缓存目录
+'LOCATION': [       # 分布式缓存,在多台服务器上运行Memcached进程,程序会把多台服务器当作一个单独的缓存,而不会在每台服务器上复制缓存值
+ '192.168.10.100:11211',
+ '192.168.10.101:11211',
+ '192.168.10.102:11211',
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-drf实现缓存机制"><a href="#4-drf实现缓存机制" class="headerlink" title="4.drf实现缓存机制"></a>4.drf实现缓存机制</h4><h6 id="演示drf实现缓存机制的项目"><a href="#演示drf实现缓存机制的项目" class="headerlink" title="演示drf实现缓存机制的项目"></a>演示drf实现缓存机制的项目</h6><ol>
+<li>新建demo11_drf,创建app01</li>
+<li>安装依赖</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install djangorestframework markdown django-filter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>注册</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'users.apps.UsersConfig',
+    'rest_framework'
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>model</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.db import models
+# Create your models here.
+class Goods(models.Model):
+    """
+    商品表
+    """
+    title=models.CharField(max_length=64,verbose_name='商品名')
+    pv=models.IntegerField(default=0,verbose_name='浏览量')
+    class Meta:
+        verbose_name='商品表'
+        verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.title
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>更新数据</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py makemigrations
+python manage.py migrate
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="6">
+<li>app01下新建序列化文件serializers.py</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from rest_framework import serializers
+from .models import Goods
+class GoodsModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Goods
+        fields="__all__"
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="drf开发缓存机制"><a href="#drf开发缓存机制" class="headerlink" title="drf开发缓存机制"></a>drf开发缓存机制</h6><ol>
+<li>安装依赖</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install drf-extensions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="2">
+<li>views.py中，在不加入缓存机制的情况下，查看商品列表的逻辑</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
+from .models import Goods
+from .serializers import GoodsModelSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework_extensions.cache.mixins import CacheResponseMixin
+# Create your views here.
+class GetGoodListView(APIView):
+    """
+    获取商品列表
+    """
+    def get(self,request):
+        good_list=Goods.objects.all()
+        re=GoodsModelSerializer(good_list,many=True)
+        return Response(re.data)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>配置路由</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
+from django.urls import path
+from app01.views import GetGoodListView
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('goodlist/',GetGoodListView.as_view(),name='goodlist')
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>在setting.py中的配置</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none"># DRF扩展
+REST_FRAMEWORK_EXTENSIONS = {
+    # 缓存时间
+    'DEFAULT_CACHE_RESPONSE_TIMEOUT': 6
+    # 缓存存储
+    'DEFAULT_USE_CACHE': 'default',
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>views.py中给GetGoodListView添加缓存机制</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
+from .models import Goods
+from .serializers import GoodsModelSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework_extensions.cache.mixins import CacheResponseMixin
+# Create your views here.
+class GetGoodListView(CacheResponseMixin,APIView):
+    """
+    获取商品列表
+    """
+    def get(self,request):
+        good_list=Goods.objects.all()
+        re=GoodsModelSerializer(good_list,many=True)
+        return Response(re.data)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="6">
+<li>添加缓存机制的另一种写法</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
+from .models import Goods
+from .serializers import GoodsModelSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework_extensions.cache.mixins import CacheResponseMixin
+from rest_framework_extensions.cache.decorators import cache_response
+# Create your views here.	
+class GetGoodListView(APIView):
+    """
+    获取商品列表
+    """
+    @cache_response()
+    def get(self,request):
+        good_list=Goods.objects.all()
+        re=GoodsModelSerializer(good_list,many=True)
+        return Response(re.data)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="7">
+<li>cache_response装饰器可以接受到两个参数</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">@cache_response(timeout=60*60, cache='default')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="5-缓存配置使用Redis"><a href="#5-缓存配置使用Redis" class="headerlink" title="5.缓存配置使用Redis"></a>5.缓存配置使用Redis</h4><ol>
+<li>确保redis的server运行</li>
+<li>安装依赖</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install django-redis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>setting中添加配置代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none"># 配置redis缓存
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        # 如果redis server设置了密码，则写成 "LOCATION": "密码@redis://127.0.0.1:6379",
+        "LOCATION": "redis://127.0.0.1:6379",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第十二章：前后端分离项目上线部署到云服务器"><a href="#第十二章：前后端分离项目上线部署到云服务器" class="headerlink" title="第十二章：前后端分离项目上线部署到云服务器"></a>第十二章：前后端分离项目上线部署到云服务器</h2><h4 id="1-准备前后端分离项目"><a href="#1-准备前后端分离项目" class="headerlink" title="1.准备前后端分离项目"></a>1.准备前后端分离项目</h4><ol>
+<li>新建demo12a，创建app01</li>
+<li>安装依赖</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install djangorestframework markdown django-filter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>注册</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'users.apps.UsersConfig',
+    'rest_framework'
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>新建vue项目demo12b</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cnpm install -global vue-cli
+vue init webpack demo12b
+cd demo12b
+cnpm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>安装axios</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cnpm install axios -save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="6">
+<li>App.vue修改为</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template&gt;
+  &lt;div id="app"&gt;
+    &lt;div class="t"&gt;{{title}}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import Axios from 'axios';
+export default {
+  name: 'App',
+    data () {
+    return {
+      title:'สืาณ'
+    }
+  },
+  methods: {
+    GetData(){
+      const host='http://127.0.0.1:8000'
+      var api=host+'/getgoodlist/';
+      Axios.get(api)
+      .then(function (response) {
+          console.log(response)   
+      })
+      .catch(function (error) {
+      console.log(error);
+      });
+    }
+  },
+  mounted() {
+    // this.GetData()
+  }
+}
+&lt;/script&gt;
+&lt;style&gt;
+.t{
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  line-height: 100px;
+  text-align: center;
+}
+&lt;/style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-对前后端分离项目进行改造"><a href="#2-对前后端分离项目进行改造" class="headerlink" title="2.对前后端分离项目进行改造"></a>2.对前后端分离项目进行改造</h4><ol>
+<li>下载和安装Mysql</li>
+<li>新建Mysql数据库12a</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">show databases;
+create database 12a default character set utf8 collate utf8_general_ci;
+show databases;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>demo12a连接Mysql数据库，setting配置</li>
+</ol>
+<blockquote>
+<p>注释掉原来的DATABASES</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '12a',
+        'USER':'root',
+        'PASSWORD':'mysql密码',
+        'HOST':'127.0.0.1',
+        "OPTIONS":{"init_command":"SET default_storage_engine=INNODB;"}#第三方登录功能必须加上
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>安装pymysql</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install PyMYSQL<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="5">
+<li>在demo12a/demo12a/init.py添加代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">import pymysql
+pymysql.install_as_MySQLdb()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="6">
+<li>新建一个good项目来作为验证使用</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py startapp goods<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="7">
+<li>整理demo12项目目录</li>
+</ol>
+<ul>
+<li>新建apps目录，将app01和good导入在apps下</li>
+<li>新建extra_apps目录，用来存放第三方应用文件</li>
+<li>新建static目录，用来存放静态文件</li>
+<li>新建medai目录，用来存放媒体文件</li>
+</ul>
+<ol start="8">
+<li>在setting中追加</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">STATIC_ROOT=os.path.join(BASE_DIR,'static')
+STATICFILES_DIR=[os.path.join(BASE_DIR,'static'),]
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="9">
+<li>setting中插入路径配置代码</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">...
+import os
+
+BASE_DIR
+...
+# 插入的代码
+import sys
+sys.path.insert(0,BASE_DIR)
+sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
+sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="10">
+<li>apps/goods/models.py内新建一个图文的数据类</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from datetime import datetime
+# Create your models here.
+class TuWen(models.Model):
+    """
+    图文表
+    """
+    image = models.ImageField(max_length=200, upload_to='images/',verbose_name='图片')
+    title=models.CharField(max_length=200,blank=True,null=True,verbose_name='文本')
+    add_time = models.DateTimeField(default=datetime.now, verbose_name='添加时间')
+    class Meta:
+        verbose_name = "图文信息"
+        verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.title
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="11">
+<li>安装处理图像的依赖包</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install Pillow<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="12">
+<li>执行数据更新命令,创建超级用户</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser
+Username: root
+邮箱:
+Password:
+Password (again):
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="13">
+<li>apps/good/admin.py中加入注册信息</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
+from .models import TuWen
+# Register your models here.
+admin.site.register(TuWen)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="14">
+<li>apps/app01目录下新建序列化文件serializer.py</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from rest_framework import serializers
+from .models import TuWen
+class TuWenModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TuWen
+        fields="__all__"
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="15">
+<li>apps/app01/views.py中编写获取图文列表的视图类</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
+from .models import TuWen #引入图文表
+from .serializers import TuWenModelSerializer#引入图文表的序列化类
+#引入drf的功能组件
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.renderers import JSONRenderer
+# Create your views here.
+class GetTuWenView(APIView):
+    """
+    获取图文列表
+    """
+    renderer_classes = [JSONRenderer]  # 渲染器
+    def get(self,request):
+        t_list=TuWen.objects.all()
+        re=TuWenModelSerializer(t_list,many=True)
+        return Response(re.data)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="16">
+<li>配置路由</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">from django.contrib import admin
+from django.urls import path
+#配置媒体文件路径
+from django.views.static import serve
+from demo12a.settings import MEDIA_ROOT
+#获取图文信息的视图类
+from app01.views import GetTuWenView
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('media/&lt;path:path&gt;',serve,{'document_root':MEDIA_ROOT}),
+    path('getdata/',GetTuWenView.as_view())
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="17">
+<li>安装跨域模块</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip install django-cors-headers
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app01.apps.App01Config',
+    'rest_framework',
+    'corsheaders'
+]
+
+
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # 放到中间件顶部
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ORIGIN_ALLOW_ALL = True<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>18.. 修改App.vue,使其可以访问后端API</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template&gt;
+  &lt;div id="app"&gt;
+    &lt;div class="t"&gt;{{title}}&lt;/div&gt;
+    &lt;div v-for="(item,index) in twdata" :key="index"&gt;
+      &lt;div&gt;{{item.title}}&lt;/div&gt;
+      &lt;img :src="item.image" alt=""&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import Axios from 'axios';
+export default {
+  name: 'App',
+    data () {
+    return {
+      title:'สืาณ',
+      twdata:[]
+    }
+  },
+  methods: {
+    GetData(){
+      var that=this
+      const host='http://127.0.0.1:8000'
+      var api=host+'/getdata/';
+      Axios.get(api)
+      .then(function (response) {
+          // console.log(response.data)
+          for(var i=0;i&lt;response.data.length;i++){
+            response.data[i].image=host+response.data[i].image
+          }
+          // console.log(response.data)
+          that.twdata=response.data
+      })
+      .catch(function (error) {
+      console.log(error);
+      });
+    }
+  },
+  mounted() {
+    this.GetData()
+  }
+}
+&lt;/script&gt;
+&lt;style&gt;
+.t{
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  line-height: 100px;
+  text-align: center;
+}
+img{
+  width: 200px;
+  height: 200px;
+}
+&lt;/style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-云服务器上的准备"><a href="#3-云服务器上的准备" class="headerlink" title="3.云服务器上的准备"></a>3.云服务器上的准备</h4><ol>
+<li>购买并且登录云服务器</li>
+<li>服务器上安装mysql</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">apt-get install mysql-server
+y
+apt-get install mysql-client
+apt-get install libmysqlclient-dev
+y
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>登录mysql执行</li>
+</ol>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">show databases;
+use mysql;
+update user set authentication_string=PASSWORD("与本地数据库密码一致") where user='root';
+update user set plugin="mysql_native_password";
+flush privileges;
+quit;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>重启mysql服务</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">/etc/init.d/mysql restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>使用修改后的密码登录mysql，然后退出</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">mysql -u root -p
+//输入设置的密码+回车
+quit;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-压缩项目"><a href="#4-压缩项目" class="headerlink" title="4.压缩项目"></a>4.压缩项目</h4><ol>
+<li>在demo12a/setting.py中配置</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">DEBUG = False
+ALLOWED_HOSTS = ["公网IP"]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>将项目所有依赖库到处为文本文件</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">pip freeze &gt;requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>将demo12a压缩为一个zip包</li>
+<li>将demo12b目录下的node_modules目录删除，然后将demo12b压缩为一个zip包</li>
+<li>用FileZilla把压缩包传到服务器/home目录下</li>
+</ol>
+<h4 id="5-远程同步数据库"><a href="#5-远程同步数据库" class="headerlink" title="5.远程同步数据库"></a>5.远程同步数据库</h4><ol>
+<li>修改mysql配置文件，注释掉绑定本地的IP语句</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">vim /etc/mysql/mysql.conf.d/mysqld.cnf
+# 英文输入环境下，按I建，进入插入模式
+# 通过上下左右移动光标，注释掉 bind-address = 127.0.0.1
+# 英文输入环境下，按Esc建，输入:wq保存并且退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>设置远程密码（和服务器登录密码不是相同的）</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">mysql -u root -p
+#输入密码（不显示），登录mysql
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
+flush privileges;
+quit;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>关闭远程访问权限略</li>
+</ol>
+<h4 id="6-正式开始部署"><a href="#6-正式开始部署" class="headerlink" title="6.正式开始部署"></a>6.正式开始部署</h4><ol>
+<li>安装node、npm、cnpm</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">apt install nodejs
+apt-get install npm
+node -v
+npm -v
+npm install cnpm -g --registry=HTTPS://registry.npm.taobao.org;
+cnpm -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>解压demo12b.zip文件</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd /home
+ls
+apt install unzip
+unzip demo12b.zip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>安装demo12b的依赖包</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd demo12b
+cnpm install demo12b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>将路由模式改为history模式</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">vim src/router/index.js
+#加入mode: 'history'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>修改地址</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">vim src/App.vue 
+# 将host的地址修改为公网ip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="6">
+<li>打包</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">npm run build<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="7">
+<li>安装nginx</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">apt-get install nginx
+y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="8">
+<li>删除default</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">#防止错误，先把default文件删除
+cd /etc/nginx/sites-acailable/
+rm default
+ls
+cd /etc/nginx/sites-enabled
+rm default
+ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="9">
+<li>新建配置文件如下</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd /etc/nginx/sites-available/
+vim demo12.conf
+
+i #进入编写状态
+
+# 内容如下
+server {
+        listen       80;
+        server_name  公网IP;
+
+        location / {
+        root /home/demo12b/dist;
+        index index.html;
+        }
+    }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="10">
+<li>建立软链接</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd /etc/nginx
+ln -s /tec/nginx/sites-available/demo12.conf /etc/nginx/sites-enabled/demo12.conf
+ls sites-enabled/
+nginx -t    #查看Nginx运行情况
+service nginx restart    #重启nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7-部署后端项目"><a href="#7-部署后端项目" class="headerlink" title="7.部署后端项目"></a>7.部署后端项目</h4><ol>
+<li>解压demo12a.zip</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd /home
+unzip demo12a.zip
+ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>安装虚拟环境如下</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">#安装虚拟环境
+apt-get install python3-venv
+y
+#在当前目录下，创建一个python3.6的虚拟环境，取名为env36
+python3 -m venv env36
+. env36/bin/activate
+#进入虚拟环境
+#退出虚拟环境 deactivate
+cd demo12a
+pip3 install -r requirements.txt
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>运行测试</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py runserver 0.0.0.0:8000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>Ctrl+C退出运行状态</p>
+</blockquote>
+<ol start="4">
+<li>安装uwsgi到系统环境下</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">#退出虚拟环境
+deactivate
+cd ..
+apt install python3-pip
+y
+pip3 install uwsgi
+#使用uwsgi启动项目
+uwsgi --chdir /home/demo12a --home /home/env36 --http :8000 --module demo12a.wsgi
+#/home/demo12a 代表项目路径
+#/home/env36 代表虚拟环境路径
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>配置uwsgi</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd /home
+mkdir demo12_uwsgi #创建一个目录，专门存放uwsgi的相关文件
+cd demo12_uwsgi/
+vim demo12.ini #创建一个ini文件
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>内容如下</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">[uwsgi]
+#项目目录
+chdir= /home/demo12a
+#wsgi目录
+module = demo12a.wsgi:application
+#虚拟环境
+home = /home/env36
+master = true
+processes = 1
+socket= 0.0.0.0:9000
+vacuum= true
+#后台运行uwsgi
+daemonize=yes
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="5">
+<li>执行通过ini启动项目命令</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">uwsgi --ini /home/demo12_uwsgi/demo12.ini<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="6">
+<li>执行是否启动了多线程命令</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">ps -aux | grep uwsgi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="7">
+<li>修改nginx配置文件</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">server{
+  listen 8000;
+  server_name 114.115.163.50;
+  charset utf-8;
+  client_max_body_size 75M;
+  location /static {
+    alias /home/demo12a/static;
+  }
+  location /media {
+    alias /home/demo12a/media;
+  }
+  location / {
+    uwsgi_pass 127.0.0.1:9000;
+    include /etc/nginx/uwsgi_params;
+  }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="8">
+<li>重启nginx服务</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">service nginx restart  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="9">
+<li>为了显示后台管理界面的样式，还需要收集静态文件</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">cd /home
+. env36/bin/activate
+cd chaoyuecun
+python manage.py collectstatic<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>mysql8</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">update user set authentication_string="1767x" where user='root';<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/02/24/python-django-web-dian-xing-mo-kuai-kai-fa-shi-zhan-xia/">http://xinxinliang.github.io/2021/02/24/python-django-web-dian-xing-mo-kuai-kai-fa-shi-zhan-xia/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/">
+                                    <span class="chip bg-color">电子书</span>
+                                </a>
+                            
+                                <a href="/tags/Django/">
+                                    <span class="chip bg-color">Django</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">
+                                    <span class="chip bg-color">前后端分离</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/02/24/python-django-web-dian-xing-mo-kuai-kai-fa-shi-zhan-xia/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-gj5e6q.jpg" class="responsive-img" alt="《Python Django Web典型模块开发实战》(下)">
+                        
+                        <span class="card-title">《Python Django Web典型模块开发实战》(下)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/">
+                        <span class="chip bg-color">电子书</span>
+                    </a>
+                    
+                    <a href="/tags/Django/">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">
+                        <span class="chip bg-color">前后端分离</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/24/python-django-web-dian-xing-mo-kuai-kai-fa-shi-zhan-shang/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-g8zz57.png" class="responsive-img" alt="《Python Django Web典型模块开发实战》（上）">
+                        
+                        <span class="card-title">《Python Django Web典型模块开发实战》（上）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/">
+                        <span class="chip bg-color">电子书</span>
+                    </a>
+                    
+                    <a href="/tags/Django/">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">
+                        <span class="chip bg-color">前后端分离</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">152.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

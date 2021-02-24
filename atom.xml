@@ -6,7 +6,7 @@
   <link href="http://xinxinliang.github.io/atom.xml" rel="self"/>
   
   <link href="http://xinxinliang.github.io/"/>
-  <updated>2021-02-19T02:24:17.873Z</updated>
+  <updated>2021-02-24T12:07:08.977Z</updated>
   <id>http://xinxinliang.github.io/</id>
   
   <author>
@@ -15,6 +15,95 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《Python Django Web典型模块开发实战》(下)</title>
+    <link href="http://xinxinliang.github.io/2021/02/24/python-django-web-dian-xing-mo-kuai-kai-fa-shi-zhan-xia/"/>
+    <id>http://xinxinliang.github.io/2021/02/24/python-django-web-dian-xing-mo-kuai-kai-fa-shi-zhan-xia/</id>
+    <published>2021-02-24T11:57:00.000Z</published>
+    <updated>2021-02-24T12:07:08.977Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;第八章-实现频率限制&quot;&gt;&lt;a href=&quot;#第八章-实现频率限制&quot; class=&quot;headerlink&quot; title=&quot;第八章 实现频率限制&quot;&gt;&lt;/a&gt;第八章</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="电子书" scheme="http://xinxinliang.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+    <category term="Django" scheme="http://xinxinliang.github.io/tags/Django/"/>
+    
+    <category term="前后端分离" scheme="http://xinxinliang.github.io/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Python Django Web典型模块开发实战》（上）</title>
+    <link href="http://xinxinliang.github.io/2021/02/24/python-django-web-dian-xing-mo-kuai-kai-fa-shi-zhan-shang/"/>
+    <id>http://xinxinliang.github.io/2021/02/24/python-django-web-dian-xing-mo-kuai-kai-fa-shi-zhan-shang/</id>
+    <published>2021-02-24T11:51:00.000Z</published>
+    <updated>2021-02-24T12:09:48.526Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;这本书对我的帮助很大，我通过这本书实现了&lt;strong&gt;前后端分析项目&lt;/strong&gt;，&lt;strong&gt;邮件注册登录&lt;/strong&gt;，&lt;strong&gt;网站部署&lt;/strong&gt;等自己在网上学不到的东西，很有用的进阶Django教程，这本书是自己</summary>
+        
+      
+    
+    
+    
+    <category term="后端框架" scheme="http://xinxinliang.github.io/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="电子书" scheme="http://xinxinliang.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+    <category term="Django" scheme="http://xinxinliang.github.io/tags/Django/"/>
+    
+    <category term="前后端分离" scheme="http://xinxinliang.github.io/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《从零开始学Python网络爬虫》</title>
+    <link href="http://xinxinliang.github.io/2021/02/24/cong-ling-kai-shi-xue-python-wang-luo-pa-chong/"/>
+    <id>http://xinxinliang.github.io/2021/02/24/cong-ling-kai-shi-xue-python-wang-luo-pa-chong/</id>
+    <published>2021-02-24T03:22:00.000Z</published>
+    <updated>2021-02-24T03:24:11.763Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;主要是一些爬虫的案例，笔记少理论，主要通过代码来学习，目前还是比较新的。内容也比较全面，就自己了解的没有讲到ip代理，多线程，识别验证码等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="python爬虫" scheme="http://xinxinliang.github.io/categories/python%E7%88%AC%E8%99%AB/"/>
+    
+    
+    <category term="电子书" scheme="http://xinxinliang.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+    <category term="源码版" scheme="http://xinxinliang.github.io/tags/%E6%BA%90%E7%A0%81%E7%89%88/"/>
+    
+  </entry>
   
   <entry>
     <title>Java扩展类5：AWT绘图和音频播放、打印技术</title>
@@ -475,88 +564,6 @@
     
     
     <category term="饥荒" scheme="http://xinxinliang.github.io/tags/%E9%A5%A5%E8%8D%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>饥荒mod制作教程</title>
-    <link href="http://xinxinliang.github.io/2021/02/13/ji-huang-mod-zhi-zuo-jiao-cheng/"/>
-    <id>http://xinxinliang.github.io/2021/02/13/ji-huang-mod-zhi-zuo-jiao-cheng/</id>
-    <published>2021-02-13T03:12:00.000Z</published>
-    <updated>2021-02-13T03:16:30.703Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;自己之前想要做mod和修改一下搭建一个自己玩法的服务器，但是后来觉得不好搞就放弃了，这里记录一下自己的学习笔记，我看别人的mod没有看明白，也没有官方API啥的，就放弃了。所以自己还没有写成自己的mod，没有发布过。&lt;/p&gt;
-&lt;/blockquot</summary>
-        
-      
-    
-    
-    
-    <category term="游戏" scheme="http://xinxinliang.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-    <category term="饥荒" scheme="http://xinxinliang.github.io/tags/%E9%A5%A5%E8%8D%92/"/>
-    
-    <category term="mod" scheme="http://xinxinliang.github.io/tags/mod/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习日记2021.1.25~2.12</title>
-    <link href="http://xinxinliang.github.io/2021/02/13/xue-xi-ri-ji-2021.1.25-2.12/"/>
-    <id>http://xinxinliang.github.io/2021/02/13/xue-xi-ri-ji-2021.1.25-2.12/</id>
-    <published>2021-02-13T03:10:00.000Z</published>
-    <updated>2021-02-13T03:16:30.623Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;2021-1-25&quot;&gt;&lt;a href=&quot;#2021-1-25&quot; class=&quot;headerlink&quot; title=&quot;2021.1.25&quot;&gt;&lt;/a&gt;2021.1.25&lt;/h2&gt;&lt;h4 id=&quot;hexo&quot;&gt;&lt;a href=&quot;#hexo&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="日记" scheme="http://xinxinliang.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="学习日志" scheme="http://xinxinliang.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正则表达式re</title>
-    <link href="http://xinxinliang.github.io/2021/02/12/zheng-ze-biao-da-shi-re/"/>
-    <id>http://xinxinliang.github.io/2021/02/12/zheng-ze-biao-da-shi-re/</id>
-    <published>2021-02-12T14:24:00.000Z</published>
-    <updated>2021-02-12T14:25:01.815Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;很多地方都会出现正则表达式，自己好几次想要总结一下，但是不知道怎么写才好，收集了一些，有些零散不知道怎么总结才最好而且全面。看到之前写的这篇博客，觉得很好还有例子，就是都是截图，本来像好好整理一下，自己打上去，还是算了吧！以后再说，这样也挺好的，就</summary>
-        
-      
-    
-    
-    
-    <category term="语法" scheme="http://xinxinliang.github.io/categories/%E8%AF%AD%E6%B3%95/"/>
-    
-    
-    <category term="py库" scheme="http://xinxinliang.github.io/tags/py%E5%BA%93/"/>
-    
-    <category term="正则表达式" scheme="http://xinxinliang.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
