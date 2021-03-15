@@ -1276,26 +1276,215 @@ pip3 install
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/02/12/django-xue-xi-liu-biao-dan-he-session/">
+                        <a href="/2021/02/12/django-xue-xi-wu-views-he-url/">
                             <div class="card-image">
                                 
-                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0p7pmm.jpg" class="responsive-img" alt="Django学习(六)：表单和session">
+                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5wqq28.jpg" class="responsive-img" alt="Django学习(五)：views和url">
                                 
-                                <span class="card-title">Django学习(六)：表单和session</span>
+                                <span class="card-title">Django学习(五)：views和url</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
                                     
-参考地址：https://code.ziqiangxuetang.com/django/django-forms.html
+参考博客：https://code.ziqiangxuetang.com/django/django-url-name.html
 
-表单GET请求
-index.html
+1. 定义视图函数view.py
+HttpResponse
 
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&
+from django.http impor
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/django/"><span class="chip bg-color">django</span></a>
+                            
+                            <a href="/tags/python/"><span class="chip bg-color">python</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>12</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2021/02/12/django-xue-xi-si-model-he-admin/">
+                            <div class="card-image">
+                                
+                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dqz69.png" class="responsive-img" alt="Django学习(四)：model和admin">
+                                
+                                <span class="card-title">Django学习(四)：model和admin</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    修改models.pyfrom django.db import models
+ 
+class Person(models.Model):
+    name = models.CharField(max_length=30)
+    age
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/django/"><span class="chip bg-color">django</span></a>
+                            
+                            <a href="/tags/python/"><span class="chip bg-color">python</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>12</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/">
+                            <div class="card-image">
+                                
+                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dg2d7.jpg" class="responsive-img" alt="Django学习(三)：模板系统">
+                                
+                                <span class="card-title">Django学习(三)：模板系统</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    
+便于修改html中的内容
+
+1. 插入变量def index(request):
+    string1 = "插入的模板变量"
+    return render(request,'home.html',{'test':string1}
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/django/"><span class="chip bg-color">django</span></a>
+                            
+                            <a href="/tags/python/"><span class="chip bg-color">python</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>12</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2021/02/12/django-wen-ti-jie-jue-xiang-mu-bu-shu-hou-tai-guan-li-ye-mian-yang-shi-shi-xiao/">
+                            <div class="card-image">
+                                
+                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-13l733.jpg" class="responsive-img" alt="Django问题解决：项目部署后台管理页面样式失效">
+                                
+                                <span class="card-title">Django问题解决：项目部署后台管理页面样式失效</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    一、打开django项目中的settings.py文件
+我的django工程名字是demo12a,在/home目录下
+修改STATIC_URL = ‘/static/‘成STATIC_URL = ‘/home/demo12a/static/
                                 
                             </div>
                             <div class="publish-info">
@@ -1417,215 +1606,26 @@ ALLOWED_HOSTS = ["62
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/02/12/django-xue-xi-wu-views-he-url/">
+                        <a href="/2021/02/12/django-xue-xi-liu-biao-dan-he-session/">
                             <div class="card-image">
                                 
-                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5wqq28.jpg" class="responsive-img" alt="Django学习(五)：views和url">
+                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0p7pmm.jpg" class="responsive-img" alt="Django学习(六)：表单和session">
                                 
-                                <span class="card-title">Django学习(五)：views和url</span>
+                                <span class="card-title">Django学习(六)：表单和session</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
                                     
-参考博客：https://code.ziqiangxuetang.com/django/django-url-name.html
+参考地址：https://code.ziqiangxuetang.com/django/django-forms.html
 
-1. 定义视图函数view.py
-HttpResponse
+表单GET请求
+index.html
 
-from django.http impor
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/django/"><span class="chip bg-color">django</span></a>
-                            
-                            <a href="/tags/python/"><span class="chip bg-color">python</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>12</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/">
-                            <div class="card-image">
-                                
-                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dg2d7.jpg" class="responsive-img" alt="Django学习(三)：模板系统">
-                                
-                                <span class="card-title">Django学习(三)：模板系统</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    
-便于修改html中的内容
-
-1. 插入变量def index(request):
-    string1 = "插入的模板变量"
-    return render(request,'home.html',{'test':string1}
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/django/"><span class="chip bg-color">django</span></a>
-                            
-                            <a href="/tags/python/"><span class="chip bg-color">python</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>12</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2021/02/12/django-xue-xi-si-model-he-admin/">
-                            <div class="card-image">
-                                
-                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dqz69.png" class="responsive-img" alt="Django学习(四)：model和admin">
-                                
-                                <span class="card-title">Django学习(四)：model和admin</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    修改models.pyfrom django.db import models
- 
-class Person(models.Model):
-    name = models.CharField(max_length=30)
-    age
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/django/"><span class="chip bg-color">django</span></a>
-                            
-                            <a href="/tags/python/"><span class="chip bg-color">python</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>12</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2021/02/12/django-wen-ti-jie-jue-xiang-mu-bu-shu-hou-tai-guan-li-ye-mian-yang-shi-shi-xiao/">
-                            <div class="card-image">
-                                
-                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-13l733.jpg" class="responsive-img" alt="Django问题解决：项目部署后台管理页面样式失效">
-                                
-                                <span class="card-title">Django问题解决：项目部署后台管理页面样式失效</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    一、打开django项目中的settings.py文件
-我的django工程名字是demo12a,在/home目录下
-修改STATIC_URL = ‘/static/‘成STATIC_URL = ‘/home/demo12a/static/
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&
                                 
                             </div>
                             <div class="publish-info">
