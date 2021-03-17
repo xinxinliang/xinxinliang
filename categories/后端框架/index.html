@@ -455,11 +455,11 @@
                 </a>
                 
                 
-                <a href="/categories/%E6%97%A5%E8%AE%B0/" title="日记: 3">
+                <a href="/categories/%E6%97%B6%E5%85%89/" title="时光: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #85C1E9;">日记
-                        <span class="tag-length">3</span>
+                            style="background-color: #85C1E9;">时光
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -473,10 +473,28 @@
                 </a>
                 
                 
+                <a href="/categories/%E6%97%A5%E8%AE%B0/" title="日记: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9E79F;">日记
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/web/" title="web: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #E8F8F5;">web
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/Linux/" title="Linux: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9E79F;">Linux
+                            style="background-color: #E8F8F5;">Linux
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -496,24 +514,6 @@
                              chip-default "
                             style="background-color: #D7BDE2;">爬虫
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/web/" title="web: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">web
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E6%97%B6%E5%85%89/" title="时光: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #FFF;">时光
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -700,22 +700,20 @@ pip3 install
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/02/12/django-xue-xi-si-model-he-admin/">
+                    <a href="/2021/02/12/django-wen-ti-jie-jue-xiang-mu-bu-shu-hou-tai-guan-li-ye-mian-yang-shi-shi-xiao/">
                         <div class="card-image tag-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dqz69.png" class="responsive-img" alt="Django学习(四)：model和admin">
+                            <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-13l733.jpg" class="responsive-img" alt="Django问题解决：项目部署后台管理页面样式失效">
                             
-                            <span class="card-title">Django学习(四)：model和admin</span>
+                            <span class="card-title">Django问题解决：项目部署后台管理页面样式失效</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                修改models.pyfrom django.db import models
- 
-class Person(models.Model):
-    name = models.CharField(max_length=30)
-    age
+                                一、打开django项目中的settings.py文件
+我的django工程名字是demo12a,在/home目录下
+修改STATIC_URL = ‘/static/‘成STATIC_URL = ‘/home/demo12a/static/
                             
                         </div>
                         <div class="publish-info">
@@ -753,20 +751,22 @@ class Person(models.Model):
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/02/12/django-wen-ti-jie-jue-xiang-mu-bu-shu-hou-tai-guan-li-ye-mian-yang-shi-shi-xiao/">
+                    <a href="/2021/02/12/django-xue-xi-si-model-he-admin/">
                         <div class="card-image tag-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-13l733.jpg" class="responsive-img" alt="Django问题解决：项目部署后台管理页面样式失效">
+                            <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dqz69.png" class="responsive-img" alt="Django学习(四)：model和admin">
                             
-                            <span class="card-title">Django问题解决：项目部署后台管理页面样式失效</span>
+                            <span class="card-title">Django学习(四)：model和admin</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一、打开django项目中的settings.py文件
-我的django工程名字是demo12a,在/home目录下
-修改STATIC_URL = ‘/static/‘成STATIC_URL = ‘/home/demo12a/static/
+                                修改models.pyfrom django.db import models
+ 
+class Person(models.Model):
+    name = models.CharField(max_length=30)
+    age
                             
                         </div>
                         <div class="publish-info">
