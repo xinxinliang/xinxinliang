@@ -140,36 +140,6 @@
   </entry>
   
   <entry>
-    <title>HTML语法总结</title>
-    <link href="http://xinxinliang.github.io/2021/03/17/html-yu-fa-zong-jie/"/>
-    <id>http://xinxinliang.github.io/2021/03/17/html-yu-fa-zong-jie/</id>
-    <published>2021-03-17T10:10:00.000Z</published>
-    <updated>2021-03-17T15:05:25.439Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;相关内容还是看一些教程网站吧！像w3school，菜鸟教程等。这里只是对之前的笔记做的一个总结，学习相关的知识还是要多练习，多运用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;一、HTML5-概述&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="web" scheme="http://xinxinliang.github.io/categories/web/"/>
-    
-    
-    <category term="记录" scheme="http://xinxinliang.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-    <category term="HTML" scheme="http://xinxinliang.github.io/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
     <title>快手视频爬虫笔记(完)</title>
     <link href="http://xinxinliang.github.io/2021/03/16/kuai-shou-shi-pin-pa-chong-bi-ji-wan/"/>
     <id>http://xinxinliang.github.io/2021/03/16/kuai-shou-shi-pin-pa-chong-bi-ji-wan/</id>
@@ -586,6 +556,38 @@
         
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;旧电脑上面安装ubuntu桌面版，可以当作服务器用，外网可以访问，是通过路由器设置的，并且设置为了DMZ主机。安装了nps，与笔记本电脑上的npc连接，实现外网使用远程桌面访问。安装jupoyterlab，网页版vscode，docker，next</summary>
+        
+      
+    
+    
+    
+    <category term="Ubuntu" scheme="http://xinxinliang.github.io/categories/Ubuntu/"/>
+    
+    
+    <category term="记录" scheme="http://xinxinliang.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="操作日志" scheme="http://xinxinliang.github.io/tags/%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97/"/>
+    
+    <category term="linux" scheme="http://xinxinliang.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ununtu 桌面版操作日志</title>
+    <link href="http://xinxinliang.github.io/2021/03/02/ununtu-zhuo-mian-ban-cao-zuo-ri-zhi/"/>
+    <id>http://xinxinliang.github.io/2021/03/02/ununtu-zhuo-mian-ban-cao-zuo-ri-zhi/</id>
+    <published>2021-03-02T04:54:00.000Z</published>
+    <updated>2021-03-02T09:00:52.657Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;这是第一次ubuntu操作日志，做得还不是很成熟，学习意义不大，第二次的操作日志就很完整全面了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;安装ssh服务&quot;&gt;&lt;a href=&quot;#安装ssh服务&quot; class=&quot;headerlink&quot;</summary>
         
       
     
