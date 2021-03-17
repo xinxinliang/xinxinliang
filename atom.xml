@@ -6,7 +6,7 @@
   <link href="http://xinxinliang.github.io/atom.xml" rel="self"/>
   
   <link href="http://xinxinliang.github.io/"/>
-  <updated>2021-03-17T11:55:23.645Z</updated>
+  <updated>2021-03-17T10:43:05.361Z</updated>
   <id>http://xinxinliang.github.io/</id>
   
   <author>
@@ -15,36 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>华清远见实训（第一天）</title>
-    <link href="http://xinxinliang.github.io/2021/03/17/hua-qing-yuan-jian-shi-xun/"/>
-    <id>http://xinxinliang.github.io/2021/03/17/hua-qing-yuan-jian-shi-xun/</id>
-    <published>2021-03-17T11:55:00.000Z</published>
-    <updated>2021-03-17T11:55:23.645Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;甚是想念大三上学期学单片机的日子，虽然室友觉得很难，没学进去，但是我还是觉得很有意思的。之前学了51单片机，跟着正点原子学stm32，理解很更改代码完成了课程要求的任务。自己动手将avr单片mega16板子零件什么的焊接再一起，并且用这个使用串口通</summary>
-        
-      
-    
-    
-    
-    <category term="时光" scheme="http://xinxinliang.github.io/categories/%E6%97%B6%E5%85%89/"/>
-    
-    
-    <category term="华清远见" scheme="http://xinxinliang.github.io/tags/%E5%8D%8E%E6%B8%85%E8%BF%9C%E8%A7%81/"/>
-    
-    <category term="课程" scheme="http://xinxinliang.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-    <category term="记忆" scheme="http://xinxinliang.github.io/tags/%E8%AE%B0%E5%BF%86/"/>
-    
-  </entry>
   
   <entry>
     <title>picGo+github/gitee 图床</title>
@@ -586,6 +556,38 @@
         
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;旧电脑上面安装ubuntu桌面版，可以当作服务器用，外网可以访问，是通过路由器设置的，并且设置为了DMZ主机。安装了nps，与笔记本电脑上的npc连接，实现外网使用远程桌面访问。安装jupoyterlab，网页版vscode，docker，next</summary>
+        
+      
+    
+    
+    
+    <category term="Ubuntu" scheme="http://xinxinliang.github.io/categories/Ubuntu/"/>
+    
+    
+    <category term="记录" scheme="http://xinxinliang.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="操作日志" scheme="http://xinxinliang.github.io/tags/%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97/"/>
+    
+    <category term="linux" scheme="http://xinxinliang.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ununtu 桌面版操作日志</title>
+    <link href="http://xinxinliang.github.io/2021/03/02/ununtu-zhuo-mian-ban-cao-zuo-ri-zhi/"/>
+    <id>http://xinxinliang.github.io/2021/03/02/ununtu-zhuo-mian-ban-cao-zuo-ri-zhi/</id>
+    <published>2021-03-02T04:54:00.000Z</published>
+    <updated>2021-03-02T09:00:52.657Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;这是第一次ubuntu操作日志，做得还不是很成熟，学习意义不大，第二次的操作日志就很完整全面了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;安装ssh服务&quot;&gt;&lt;a href=&quot;#安装ssh服务&quot; class=&quot;headerlink&quot;</summary>
         
       
     
