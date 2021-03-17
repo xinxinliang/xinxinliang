@@ -1,0 +1,3168 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="快手视频爬虫笔记(完), blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>快手视频爬虫笔记(完) | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-q6m1ol.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">快手视频爬虫笔记(完)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                                <span class="chip bg-color">记录</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BF%AB%E6%89%8B/">
+                                <span class="chip bg-color">快手</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                爬虫
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-16
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-03-16
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    49 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>现在输入id可以爬取所有视频，现在封装一下，用到Django项目中，将爬取到的数据存到数据库中。id不好搞，还要自己取请求。之前在一个收费的短视频信息统计网站，看到过用户排名的，现在不知道那个网站了。还是自己爬取自己关注页面的视频吧。</p>
+</blockquote>
+<h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><ol>
+<li><p>创建django工程，名字ksDjango,python3.9，django最新版的3.1.7。</p>
+</li>
+<li><p>运行报错，setting.py添加</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">import os<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>修改中文和时区</li>
+<li>创建超级用户和数据迁移</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<ul>
+<li>账号</li>
+<li>密码</li>
+</ul>
+</blockquote>
+<ol start="5">
+<li>创建app,添加到setting</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">python manage.py startapp app01<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="6">
+<li>创建模板系统</li>
+</ol>
+<h2 id="二、数据库分析"><a href="#二、数据库分析" class="headerlink" title="二、数据库分析"></a>二、数据库分析</h2><h4 id="个人关注请求的信息"><a href="#个人关注请求的信息" class="headerlink" title="个人关注请求的信息"></a>个人关注请求的信息</h4><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>快手id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>living</td>
+<td>是否再直播</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>头像jpg</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>性别 F代表女</td>
+</tr>
+<tr>
+<td>description</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>count/fan</td>
+<td>粉丝数</td>
+</tr>
+<tr>
+<td>follow</td>
+<td>关注数</td>
+</tr>
+<tr>
+<td>photo</td>
+<td>作品数</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-none"><code class="language-none">{
+  "allFollows": {
+    "list": [
+      {
+        "id": "Nx277777",
+        "name": "南希阿-",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/08/17/09/BMjAyMDA4MTcwOTM2MDNfMjQ0NzAyMDZfMV9oZDM4Nl8xODU=_s.jpg",
+        "sex": "F",
+        "description": "谢谢你在世界的角落里找到我",
+        "counts": {
+          "fan": "125.5w",
+          "follow": "442",
+          "photo": "64",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "Lyj125207",
+        "name": "刘雅婧",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/12/03/13/BMjAyMDEyMDMxMzAwNTBfMjE2NDkwODA3MF8xX2hkNDczXzIxNQ==_s.jpg",
+        "sex": "F",
+        "description": "快手唯一账号，无其他小号，谨防上当受骗❗️❗️❗️刷到可@我\n💫婧婧情侣同款👔👗在小店\n✨👔V：LYJfuture520",
+        "counts": {
+          "fan": "120.9w",
+          "follow": "4",
+          "photo": "27",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "jmx20010118",
+        "name": "江淼侠",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/01/30/20/BMjAyMDAxMzAyMDEyMDZfMTU0NTAwNjRfMV9oZDMwMF85MTE=_s.jpg",
+        "sex": "F",
+        "description": "",
+        "counts": {
+          "fan": "16.3w",
+          "follow": "314",
+          "photo": "170",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "tuziya555",
+        "name": "朱容君-兔子牙",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2019/07/05/01/BMjAxOTA3MDUwMTMyMjZfMTA4NzI5ODA2MV8xX2hkMTcyXzg5Ng==_s.jpg",
+        "sex": "F",
+        "description": "2020最后一场奇幻梦境来袭\n全新单曲《月光森林》已上线！",
+        "counts": {
+          "fan": "1016.8w",
+          "follow": "10",
+          "photo": "333",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "xxx777xxx777",
+        "name": "猫熊不吃鱼",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/11/11/15/BMjAyMDExMTExNTE3MzdfMTA5OTUyNjI3Ml8yX2hkNzE4XzUxNw==_s.jpg",
+        "sex": "F",
+        "description": "感谢陪伴❤\n寄/合🛰️jiayou277x\n🐧游戏唠嗑群856837771",
+        "counts": {
+          "fan": "34w",
+          "follow": "87",
+          "photo": "68",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "Qazx999123",
+        "name": "凌小乖🍓、",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/09/30/02/BMjAyMDA5MzAwMjUzMDVfNzc1MzM2MjdfMV9oZDg2Ml8xODY=_s.jpg",
+        "sex": "F",
+        "description": "企鹅：3356115517\n￼V：W222224466\n没心没肺的我。￼\n感谢官方。￼￼￼￼",
+        "counts": {
+          "fan": "264.7w",
+          "follow": "245",
+          "photo": "348",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "Zyq200202",
+        "name": "张 雅 倩",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2019/06/21/15/BMjAxOTA2MjExNTQ2MzNfNTI5OTk3Nl8xX2hkNDkwXzQzNw==_s.jpg",
+        "sex": "F",
+        "description": "he zuo：zyqdd10086",
+        "counts": {
+          "fan": "116.4w",
+          "follow": "22",
+          "photo": "287",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "xiaolaohu520",
+        "name": "小老虎ljy",
+        "living": true,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/12/28/02/BMjAyMDEyMjgwMjAwMzNfMjI4MTI2MTI0XzFfaGQ1MzRfOTA1_s.jpg",
+        "sex": "F",
+        "description": "🍑：小老虎的首尔小店\n关注我 我们就是好朋友啦\n逆袭V:liujiayue019\n\n私人：liujiayue02",
+        "counts": {
+          "fan": "145.4w",
+          "follow": "72",
+          "photo": "342",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "DY151202",
+        "name": "豆芽",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/08/11/18/BMjAyMDA4MTExODE1MjRfMTk2MjU1MzI1XzJfaGQ4MDVfMTg3_s.jpg",
+        "sex": "F",
+        "description": "粉丝加qq163656",
+        "counts": {
+          "fan": "267.4w",
+          "follow": "13",
+          "photo": "262",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "Fanqyes_",
+        "name": "番茄0v0",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/12/01/17/BMjAyMDEyMDExNzU1NDZfMTU1MzkwNTc0NF8yX2hkNDk2XzU3OA==_s.jpg",
+        "sex": "F",
+        "description": "商务v：fanqyes\n谢谢你长得这么好看还关注我~🍅",
+        "counts": {
+          "fan": "133.1w",
+          "follow": "91",
+          "photo": "172",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "3xj67knx29nad92",
+        "name": "春夏",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/07/24/23/BMjAyMDA3MjQyMzMzNDVfMjAyNzg0MzIyNV8xX2hkMTVfOQ==_s.jpg",
+        "sex": "F",
+        "description": "仅此一个账号，没有小号，也不会借钱，大家不要上当！                                                        商务合作+hezuo7007",
+        "counts": {
+          "fan": "292.6w",
+          "follow": "3",
+          "photo": "105",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "yaobutian1009",
+        "name": "遥不甜",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2020/07/29/20/BMjAyMDA3MjkyMDI1MzVfMzYxODYwOTc0XzFfaGQ1NjBfNTM4_s.jpg",
+        "sex": "F",
+        "description": "爱官方爱快手么么哒\n🐷⚡️🐒：Nice002412\n👧🏾🔜👧🏻：Nice002413\n🈴️：Trust001009\n谢谢大家的喜欢 加倍努力",
+        "counts": {
+          "fan": "40.5w",
+          "follow": "85",
+          "photo": "80",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      },
+      {
+        "id": "3x77ck36j5ut66k",
+        "name": "津困了",
+        "living": false,
+        "avatar": "https://tx2.a.yximgs.com/uhead/AB/2021/02/06/00/BMjAyMTAyMDYwMDM3MjJfOTY1MjAxNTYyXzFfaGQzNV8yNzE=_s.jpg",
+        "sex": "F",
+        "description": "平平无奇干饭小达人",
+        "counts": {
+          "fan": "10.8w",
+          "follow": "51",
+          "photo": "30",
+          "__typename": "CountInfo"
+        },
+        "__typename": "User"
+      }
+    ],
+    "pcursor": "no_more",
+    "__typename": "AllFollowsResult"
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>分析</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>这是名字的id，不是用户主页id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>名字</td>
+</tr>
+<tr>
+<td>liveing</td>
+<td>是否在直播，bool类型</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>头像jpg</td>
+</tr>
+<tr>
+<td>description</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>性别 F代表女的</td>
+</tr>
+<tr>
+<td>fan</td>
+<td>粉丝数</td>
+</tr>
+<tr>
+<td>follow</td>
+<td>关注数</td>
+</tr>
+<tr>
+<td>photo</td>
+<td>作品数</td>
+</tr>
+</tbody></table>
+<h4 id="用户主页全部视频信息"><a href="#用户主页全部视频信息" class="headerlink" title="用户主页全部视频信息"></a>用户主页全部视频信息</h4><blockquote>
+<p>有一个发现，分析<a target="_blank" rel="noopener" href="https://live.kuaishou.com/profile/3xcidpetejrcagy%E4%BC%9A%E4%B8%B2%E5%BE%88%E5%A4%9A%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%8A%8A%E5%89%8D%E7%BC%80live%E6%94%B9%E4%B8%BAvedio%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%88%91%E4%B9%8B%E5%89%8D%E7%9A%84%E5%88%86%E6%9E%90%E4%BA%86%E3%80%82%E5%86%8D%E5%AF%B9%E6%AF%94%E4%B8%80%E4%B8%8B%EF%BC%8C%E5%89%8D%E9%9D%A2%E7%9A%84live%E7%9A%84%E8%AF%B7%E6%B1%82%E6%88%90%E5%8A%9F%E7%8E%87%E5%BE%88%E5%A4%A7%EF%BC%8C%E5%9B%A0%E8%AF%A5%E8%A6%81%E5%8A%A0%E4%BB%80%E4%B9%88%E4%BF%A1%E6%81%AF%E6%89%8D%E5%8F%AF%E4%BB%A5%E3%80%82">https://live.kuaishou.com/profile/3xcidpetejrcagy会串很多数据，如果把前缀live改为vedio，就是我之前的分析了。再对比一下，前面的live的请求成功率很大，因该要加什么信息才可以。</a></p>
+<p>你从你关注的人页面点击进去的用户，前缀未live的id不一样：<a target="_blank" rel="noopener" href="https://live.kuaishou.com/profile/Nx277777%E3%80%82%E6%9E%9C%E7%84%B6%EF%BC%8C%E8%BF%99%E4%B8%AAid%E5%92%8C%E4%B8%8A%E9%9D%A2%E8%AF%B7%E6%B1%82%E9%87%8C%E7%9A%84id%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84%E3%80%82">https://live.kuaishou.com/profile/Nx277777。果然，这个id和上面请求里的id是一样的。</a></p>
+<p>还发现了，自己爬到视频少了几个，原来是少图片。要单独爬取。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>那么这个获取id的方案就否认了</p>
+</blockquote>
+<h4 id="重新组件方案"><a href="#重新组件方案" class="headerlink" title="重新组件方案"></a>重新组件方案</h4><h6 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h6><ul>
+<li>获取id号的前缀要是：<a target="_blank" rel="noopener" href="https://video.kuaishou.com/">https://video.kuaishou.com/</a></li>
+</ul>
+<h6 id="探索"><a href="#探索" class="headerlink" title="探索"></a>探索</h6><ol>
+<li>我进入热门视频界面：<a target="_blank" rel="noopener" href="https://video.kuaishou.com/brilliant%EF%BC%8C%E6%9F%A5%E7%9C%8B%E5%8F%91%E9%80%81%E7%9A%84post%E8%AF%B7%E6%B1%82">https://video.kuaishou.com/brilliant，查看发送的post请求</a></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">{
+  "brilliantTypeData": {
+    "result": 1,
+    "llsid": "2000234899384899265",
+    "expTag": null,
+    "serverExpTag": null,
+    "pcursor": "1",
+    "feeds": [
+      {
+        "type": 1,
+        "author": {
+          "id": "3xheksckyfxp3ik",
+          "name": "_高赫Regina",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2019/04/20/19/BMjAxOTA0MjAxOTE3MzRfMTIwMDc0MDUwNl8xX2hkODI2Xzk1Mw==_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xwyk65uzikgzd6",
+          "duration": 7707,
+          "caption": "复杂的是人~ #短裙",
+          "likeCount": "6.4w",
+          "realLikeCount": 63875,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/20/20/BMjAyMTAyMjAyMDQ3MDhfMTIwMDc0MDUwNl80NDcxODY3MDU5NV8xXzM=_B2a1f6f6a44db7905b5809186b98529b9.jpg?tag=1-1613997461-xpcwebbrilliant-0-kupqjumpez-c3753393fca666a7&amp;clientCacheKey=3xwyk65uzikgzd6.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/20/20/BMjAyMTAyMjAyMDQ3MDhfMTIwMDc0MDUwNl80NDcxODY3MDU5NV8xXzM=_b_B863a5f54b47a2328d0ac66eac1338e82.mp4?tag=1-1613997461-xpcwebbrilliant-0-puunauyhol-463a2de29dfe3f3b&amp;clientCacheKey=3xwyk65uzikgzd6_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1613825250340,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/20/20/BMjAyMTAyMjAyMDQ3MDhfMTIwMDc0MDUwNl80NDcxODY3MDU5NV8xXzM=_animatedV5_Bf79e17019c767cc9251f48b1efbf4467.webp?tag=1-1613997461-xpcwebbrilliant-0-spnm8ex8hl-7d81fcb6e2dbea5b&amp;clientCacheKey=3xwyk65uzikgzd6_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5616224648985959,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xc6nvaae6vygi9",
+          "name": "七七",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2021/02/10/10/BMjAyMTAyMTAxMDE3MDlfMzEyMTQyNDYwXzFfaGQxMDhfNjM=_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3x7zbcjahfbvkw9",
+          "duration": 7316,
+          "caption": "小时候偷吃螺蛳粉，被我妈发现在厕所罚站 笑死 我比厕所还臭\n #洛丽塔 #洛丽塔转圈圈",
+          "likeCount": "2.8w",
+          "realLikeCount": 28076,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/07/09/BMjAyMTAyMDcwOTA3NDNfMzEyMTQyNDYwXzQzNzMxMDY0ODU2XzFfMw==_B67527a6c7a3e9ecce25f7395365e381d.jpg?tag=1-1613997461-xpcwebbrilliant-0-mtunbcfir5-e6c38bc7615c5141&amp;clientCacheKey=3x7zbcjahfbvkw9.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/07/09/BMjAyMTAyMDcwOTA3NDNfMzEyMTQyNDYwXzQzNzMxMDY0ODU2XzFfMw==_b_Bd529fae757dcd61765dda0e7eb14d514.mp4?tag=1-1613997461-xpcwebbrilliant-0-d3pj3ygscw-1c504e42c6a99406&amp;clientCacheKey=3x7zbcjahfbvkw9_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1612660091920,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/07/09/BMjAyMTAyMDcwOTA3NDNfMzEyMTQyNDYwXzQzNzMxMDY0ODU2XzFfMw==_animatedV5_B928bcaa734e7e9ebfcd4ee58486fd67e.webp?tag=1-1613997461-xpcwebbrilliant-0-zo06ylwsds-66527d67d8eb6e43&amp;clientCacheKey=3x7zbcjahfbvkw9_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xurj5t9h8q9yj9",
+          "name": "别凶小苏wo",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/05/22/21/BMjAyMDA1MjIyMTE0MjFfMTAzODIxMTI4MF8xX2hkOTQyXzMwNA==_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xb89zg3dgmm6z4",
+          "duration": 11716,
+          "caption": "好无聊啊啊啊啊 #苹果原相机",
+          "likeCount": "34w",
+          "realLikeCount": 339687,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/06/14/BMjAyMTAyMDYxNDM5NDdfMTAzODIxMTI4MF80MzY4NTkyOTQ0MV8xXzM=_B24aaf5e34822fc9f9c8f340847fa476c.jpg?tag=1-1613997461-xpcwebbrilliant-0-crdxgfc0lx-e872112c90b3f3a6&amp;clientCacheKey=3xb89zg3dgmm6z4.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/06/14/BMjAyMTAyMDYxNDM5NDdfMTAzODIxMTI4MF80MzY4NTkyOTQ0MV8xXzM=_b_Be8c020ed9455073972ca5536164c56d4.mp4?tag=1-1613997461-xpcwebbrilliant-0-p6vxglnkqg-af5f09b0d54a0768&amp;clientCacheKey=3xb89zg3dgmm6z4_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1612593637860,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/06/14/BMjAyMTAyMDYxNDM5NDdfMTAzODIxMTI4MF80MzY4NTkyOTQ0MV8xXzM=_animatedV5_B46a613c097d19432cf85e7bdf9337c37.webp?tag=1-1613997461-xpcwebbrilliant-0-oiuj1inbl1-e1fa4091268a7089&amp;clientCacheKey=3xb89zg3dgmm6z4_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xmnmq7fve56it9",
+          "name": "姜峰真的苟～",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/01/22/08/BMjAyMDAxMjIwODIxMjVfMTg2MDI3NDJfMV9oZDM3MF80NzA=_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xdsb6yepbuyr7s",
+          "duration": 113600,
+          "caption": "#搞笑 笑的我劈叉",
+          "likeCount": "96w",
+          "realLikeCount": 960159,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/07/11/BMjAyMTAyMDcxMTA3MTNfMTg2MDI3NDJfNDM3MzYzOTYzNzNfMV8z_B352dc9e6d3885e33ed9f26fcefe3b851.jpg?tag=1-1613997461-xpcwebbrilliant-0-qrn9iv6izd-84276954a757c574&amp;clientCacheKey=3xdsb6yepbuyr7s.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/07/11/BMjAyMTAyMDcxMTA3MTNfMTg2MDI3NDJfNDM3MzYzOTYzNzNfMV8z_b_B56ad50a55c96a28dc1fdc4eb798e52a3.mp4?tag=1-1613997461-xpcwebbrilliant-0-ylbqnslpmx-924bd5831a7c2930&amp;clientCacheKey=3xdsb6yepbuyr7s_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1612667375792,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/07/11/BMjAyMTAyMDcxMTA3MTNfMTg2MDI3NDJfNDM3MzYzOTYzNzNfMV8z_animatedV5_B84b63151e3019d7ff073b2289e28853b.webp?tag=1-1613997461-xpcwebbrilliant-0-cewfsldtmy-be64e977125b7121&amp;clientCacheKey=3xdsb6yepbuyr7s_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5613207547169812,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xj7gkyhvbvqgrw",
+          "name": "凡熙大厨师.",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2021/01/11/22/BMjAyMTAxMTEyMjI1MDdfMTY2OTE3MTUyMV8xX2hkMzQ0Xzg1OA==_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xuzzqcs5py468a",
+          "duration": 91750,
+          "caption": "这个方法好用，以后多用这个，今晚上我应该会直播🤨",
+          "likeCount": "11.8w",
+          "realLikeCount": 118366,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/21/18/BMjAyMTAyMjExODAxMDlfMTY2OTE3MTUyMV80NDc2ODkyMDkzOF8xXzM=_B8227273b0790af0a425667114724ada4.jpg?tag=1-1613997461-xpcwebbrilliant-0-bc6mkfs7qa-82c496ccc8d247ff&amp;clientCacheKey=3xuzzqcs5py468a.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/21/18/BMjAyMTAyMjExODAxMDlfMTY2OTE3MTUyMV80NDc2ODkyMDkzOF8xXzM=_b_B6810c5f072e991816a58179b42d66ce3.mp4?tag=1-1613997461-xpcwebbrilliant-0-l2cslk73n5-b0c62df3a0eb574f&amp;clientCacheKey=3xuzzqcs5py468a_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1613901784447,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/21/18/BMjAyMTAyMjExODAxMDlfMTY2OTE3MTUyMV80NDc2ODkyMDkzOF8xXzM=_animatedV5_B79defd7a675a2975c116171d3a61903c.webp?tag=1-1613997461-xpcwebbrilliant-0-pfi0yh9q9p-e8ab4c96f6a51c5b&amp;clientCacheKey=3xuzzqcs5py468a_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 1.7527777777777778,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xna4t8k6xr833u",
+          "name": "小屯最乖啦🐬",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2021/01/11/13/BMjAyMTAxMTExMzQzMDVfNzI5MTg3NV8xX2hkMTc5Xzk4NQ==_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xsc7sinrrj6pqq",
+          "duration": 23766,
+          "caption": "已经好几个星期没发视频了  不难看出来   我是一个沉默寡言  内向腼腆  成熟稳重的女孩子吧 #作品推广 #快手舞蹈",
+          "likeCount": "23.4w",
+          "realLikeCount": 234369,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/01/04/19/BMjAyMTAxMDQxOTA0NDlfNzI5MTg3NV80MTg4NDI2MDA4N18xXzM=_Bfaca9c8d8ad29d5a0981ccd4cc61215a.jpg?tag=1-1613997461-xpcwebbrilliant-0-4hffq0dqsp-4149c54159ad62a5&amp;clientCacheKey=3xsc7sinrrj6pqq.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/01/04/19/BMjAyMTAxMDQxOTA0NDlfNzI5MTg3NV80MTg4NDI2MDA4N18xXzM=_b_B695326b927aecf9012057cb63c5e8420.mp4?tag=1-1613997461-xpcwebbrilliant-0-fxgg3kkbcw-3ec726bb99473d00&amp;clientCacheKey=3xsc7sinrrj6pqq_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1609758353132,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/01/04/19/BMjAyMTAxMDQxOTA0NDlfNzI5MTg3NV80MTg4NDI2MDA4N18xXzM=_animatedV5_B36eb304483aa4761a07a24afd6e522cd.webp?tag=1-1613997461-xpcwebbrilliant-0-ff6p4s7odj-a98426fe33159e59&amp;clientCacheKey=3xsc7sinrrj6pqq_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xxft2g7bzk8rfy",
+          "name": "薇薇 去哪了",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/09/16/02/BMjAyMDA5MTYwMjExMzNfMzU2NjI3NzAyXzFfaGQ5MDRfMjc2_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xzrdtk6u6dub4i",
+          "duration": 25983,
+          "caption": "不知道大家发现没有，冬天真的比夏天冷很多",
+          "likeCount": "23.8w",
+          "realLikeCount": 237912,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/01/17/BMjAyMTAyMDExNzQ4MzdfMzU2NjI3NzAyXzQzMzg2MjcwMTM0XzFfMw==_B7cf285d9e21454589752dcbf23d607c1.jpg?tag=1-1613997461-xpcwebbrilliant-0-dgmcbii6uj-42be68f4da4a70ba&amp;clientCacheKey=3xzrdtk6u6dub4i.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/01/17/BMjAyMTAyMDExNzQ4MzdfMzU2NjI3NzAyXzQzMzg2MjcwMTM0XzFfMw==_b_B382d7efb2ea61178aeaf735f41843538.mp4?tag=1-1613997461-xpcwebbrilliant-0-n769du3h9d-2800ad2010e0602f&amp;clientCacheKey=3xzrdtk6u6dub4i_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1612172956636,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/01/17/BMjAyMTAyMDExNzQ4MzdfMzU2NjI3NzAyXzQzMzg2MjcwMTM0XzFfMw==_animatedV5_B1f98e85cc801c79cbfaa5d72d56b5a6d.webp?tag=1-1613997461-xpcwebbrilliant-0-f6ktdvxlcp-b9c2e7a1e66d0825&amp;clientCacheKey=3xzrdtk6u6dub4i_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xpi7jssxt7b37q",
+          "name": "龙小七",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/06/11/16/BMjAyMDA2MTExNjMwMDFfNDc5MjU2ODZfMl9oZDcyMV83OTk=_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xee4xkmnnv58rc",
+          "duration": 131568,
+          "caption": "划到这儿，就停下吧，我在人间捡故事，你在故事里看人生，看到最后麻了吗？@许小诺(O3xnv26kxb923t3c) @孙天✨(O3xxc5dv9tzrzdm2) @沈齐「DHZ」(O3x8jgajmdvvmx29) #快手小剧场 #拥抱美好吉祥年",
+          "likeCount": "528.7w",
+          "realLikeCount": 5287081,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/01/19/BMjAyMTAyMDExOTAwMTlfNDc5MjU2ODZfNDMzODkyNjM5NDhfMV8z_Bd19e6c1f814dfb6a98a25b3718ac710c.jpg?tag=1-1613997461-xpcwebbrilliant-0-ombpsddqlu-042cb14cf708299c&amp;clientCacheKey=3xee4xkmnnv58rc.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/01/19/BMjAyMTAyMDExOTAwMTlfNDc5MjU2ODZfNDMzODkyNjM5NDhfMV8z_b_Bed6db4dbbfa32f5954f537254c3dd928.mp4?tag=1-1613997461-xpcwebbrilliant-0-0cmyanly3y-8cf4d4a385362631&amp;clientCacheKey=3xee4xkmnnv58rc_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1612177336297,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/01/19/BMjAyMTAyMDExOTAwMTlfNDc5MjU2ODZfNDMzODkyNjM5NDhfMV8z_animatedV5_Bb05b129d64ff9dbb9e9ada1e9deeee9e.webp?tag=1-1613997461-xpcwebbrilliant-0-dn3wa2olc9-a6f141afcc792f64&amp;clientCacheKey=3xee4xkmnnv58rc_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xahe2pg7j3xh7k",
+          "name": "小程同学是我啦",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2021/01/02/17/BMjAyMTAxMDIxNzE4NTRfNzQ0NTQ2ODM1XzFfaGQ3MzhfNjU=_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3x8vfpfpgfrjdv6",
+          "duration": 15185,
+          "caption": "又到年底了  一年又快结束了",
+          "likeCount": "55.9w",
+          "realLikeCount": 558678,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2020/11/27/14/BMjAyMDExMjcxNDQ5NThfNzQ0NTQ2ODM1XzM5ODU2OTAwMzkyXzFfMw==_Bf701060ee4eb4817ec6b3e4c54d90bad.jpg?tag=1-1613997461-xpcwebbrilliant-0-wf1ueacbbo-c5dec8908e7cfc2c&amp;clientCacheKey=3x8vfpfpgfrjdv6.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2020/11/27/14/BMjAyMDExMjcxNDQ5NThfNzQ0NTQ2ODM1XzM5ODU2OTAwMzkyXzFfMw==_b_B665818f71716b8b78f87db6251eff802.mp4?tag=1-1613997461-xpcwebbrilliant-0-kkixrztxfs-a9f3cdeed5270e0a&amp;clientCacheKey=3x8vfpfpgfrjdv6_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1606459822036,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2020/11/27/14/BMjAyMDExMjcxNDQ5NThfNzQ0NTQ2ODM1XzM5ODU2OTAwMzkyXzFfMw==_animatedV5_B003f3b7840676e0e69459d597c86a1a5.webp?tag=1-1613997461-xpcwebbrilliant-0-4sgowsl3w3-6d96176d4a4423f0&amp;clientCacheKey=3x8vfpfpgfrjdv6_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 1.125,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xeanjpn9i59ziu",
+          "name": "_冠成 👶",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2021/01/19/15/BMjAyMTAxMTkxNTI3MjlfMzI5ODg2NjE4XzFfaGQzOTNfODYw_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3x4xskzyrm6quac",
+          "duration": 63900,
+          "caption": "老师你咋这么像山水哥呢",
+          "likeCount": "29.2w",
+          "realLikeCount": 291609,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/01/31/19/BMjAyMTAxMzExOTA4MzdfMzI5ODg2NjE4XzQzMzMxNDY4ODc2XzFfMw==_ev4_B13b2a43da5d31fe46dbaa66ada9a2f66.jpg?tag=1-1613997461-xpcwebbrilliant-0-ineillpzle-3d60b82e77ac46e3&amp;clientCacheKey=3x4xskzyrm6quac_ev4.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/01/31/19/BMjAyMTAxMzExOTA4MzdfMzI5ODg2NjE4XzQzMzMxNDY4ODc2XzFfMw==_b_B7fdbadb1bdb68e6ffd450d2939b96132.mp4?tag=1-1613997461-xpcwebbrilliant-0-mhsgr07aeg-11e5a03b298c3c0c&amp;clientCacheKey=3x4xskzyrm6quac_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1612091374821,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/01/31/19/BMjAyMTAxMzExOTA4MzdfMzI5ODg2NjE4XzQzMzMxNDY4ODc2XzFfMw==_animatedV5_Bd68e6960fbfb539a5e9b4d68d2525c6b.webp?tag=1-1613997461-xpcwebbrilliant-0-j34iyiz8o1-e6b1fbc2dd0ed088&amp;clientCacheKey=3x4xskzyrm6quac_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3x5dkxwfyr5bkqk",
+          "name": "糯米佳佳QvQ",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2018/08/07/22/BMjAxODA4MDcyMjQ1MjBfMTA1NTAyMTEwOV8yX2hkNTI5XzQ5Nw==_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3x7y43m3vai9kf6",
+          "duration": 19150,
+          "caption": "别让世俗淹没生活的浪漫和热情",
+          "likeCount": "6.7w",
+          "realLikeCount": 67128,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/01/24/20/BMjAyMTAxMjQyMDIwMTVfMTA1NTAyMTEwOV80MjkyOTk5OTQ3OF8yXzM=_Be077ed2cdcc28d614ad2f97de978565d.jpg?tag=1-1613997461-xpcwebbrilliant-0-8jfbg2bzpa-ff7da333e5b81abb&amp;clientCacheKey=3x7y43m3vai9kf6.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/01/24/20/BMjAyMTAxMjQyMDIwMTVfMTA1NTAyMTEwOV80MjkyOTk5OTQ3OF8yXzM=_b_B86ce13ecbd5a133c84d32555c9ab0758.mp4?tag=1-1613997461-xpcwebbrilliant-0-o1mwlybsrf-723fc4f7cf9f49b5&amp;clientCacheKey=3x7y43m3vai9kf6_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1611490866044,
+          "expTag": "1_a/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/01/24/20/BMjAyMTAxMjQyMDIwMTVfMTA1NTAyMTEwOV80MjkyOTk5OTQ3OF8yXzM=_animatedV5_B3c429d49cf3ba0f91488d61f62e459a9.webp?tag=1-1613997461-xpcwebbrilliant-0-6evrwqyrzs-c09260dc522181d3&amp;clientCacheKey=3x7y43m3vai9kf6_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 1.7777777777777777,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xj574qy9x5isbq",
+          "name": "彭十六ELF！",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2021/01/21/21/BMjAyMTAxMjEyMTA1NDlfOTI0NzMxNjQxXzFfaGQzMzlfNDkx_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3x75jexv9jpwmhw",
+          "duration": 6666,
+          "caption": "老肩巨滑？ #苹果原相机 #挑战苹果前置摄像头",
+          "likeCount": "17.7w",
+          "realLikeCount": 176580,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/01/25/16/BMjAyMTAxMjUxNjI1NDdfOTI0NzMxNjQxXzQyOTcyMDc3ODkzXzFfMw==_B6262bea6473bc6cd5bd612797f86391d.jpg?tag=1-1613997461-xpcwebbrilliant-0-6seqi5cztv-2074ff9489ca2d3c&amp;clientCacheKey=3x75jexv9jpwmhw.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/01/25/16/BMjAyMTAxMjUxNjI1NDdfOTI0NzMxNjQxXzQyOTcyMDc3ODkzXzFfMw==_b_B691850e5728c9d7339962c1a5fee6c1d.mp4?tag=1-1613997461-xpcwebbrilliant-0-vr1yrtj2pl-c062c726c913474b&amp;clientCacheKey=3x75jexv9jpwmhw_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1611563175784,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/01/25/16/BMjAyMTAxMjUxNjI1NDdfOTI0NzMxNjQxXzQyOTcyMDc3ODkzXzFfMw==_animatedV5_Baf1284089a6bf900ea7d35cde0397050.webp?tag=1-1613997461-xpcwebbrilliant-0-h3pemzo9z6-3432267b505b4926&amp;clientCacheKey=3x75jexv9jpwmhw_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xymtk2vvejz936",
+          "name": "cf宁小糖（国度第一瞬）",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2018/02/08/10/BMjAxODAyMDgxMDE5NDdfNDMxOTIyMjNfMV9oZDEyMV8xOQ==_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3x2x4gbi46ejtsw",
+          "duration": 39666,
+          "caption": "还有谁喜欢我打对伤啊， 双击关注吧，年也过完了，准备直播啦，嘿嘿嘿。",
+          "likeCount": "3w",
+          "realLikeCount": 30360,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/13/20/BMjAyMTAyMTMyMDM1MjdfNDMxOTIyMjNfNDQyNTc2NDk4MzhfMV8z_Bcb896183567ae5fff0128b38127e6d52.jpg?tag=1-1613997461-xpcwebbrilliant-0-sxb1pcjsqm-54c5c815b30e2401&amp;clientCacheKey=3x2x4gbi46ejtsw.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/13/20/BMjAyMTAyMTMyMDM1MjdfNDMxOTIyMjNfNDQyNTc2NDk4MzhfMV8z_b_B4bde7d1cb941a41fec10646d59d41179.mp4?tag=1-1613997461-xpcwebbrilliant-0-zvwja1rzww-4efab3a68a446389&amp;clientCacheKey=3x2x4gbi46ejtsw_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1613219799258,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/13/20/BMjAyMTAyMTMyMDM1MjdfNDMxOTIyMjNfNDQyNTc2NDk4MzhfMV8z_animatedV5_B4415401b0f89f94c7f383e7615b1e73e.webp?tag=1-1613997461-xpcwebbrilliant-0-tuvo7mp8n4-ebd664b0266242cd&amp;clientCacheKey=3x2x4gbi46ejtsw_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 1.3333333333333333,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xhus7qqpp6c2jc",
+          "name": "疯狂飞行创始人",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2021/02/18/23/BMjAyMTAyMTgyMzEzMDZfMTQxMTQ5MzQyMl8xX2hkMjQxXzg4Mg==_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3x8swdud89g9z22",
+          "duration": 24600,
+          "caption": "你们体验过这种跳楼的感觉吗？",
+          "likeCount": "46w",
+          "realLikeCount": 460288,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/19/18/BMjAyMTAyMTkxODUxMDNfMTQxMTQ5MzQyMl80NDY0NzE0NDk4MV8wXzM=_B7d23d6aad4ef7731cf441b6a6598c8f5.jpg?tag=1-1613997461-xpcwebbrilliant-0-vrppx3kuhb-c3357cecfae97794&amp;clientCacheKey=3x8swdud89g9z22.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/19/18/BMjAyMTAyMTkxODUxMDNfMTQxMTQ5MzQyMl80NDY0NzE0NDk4MV8wXzM=_b_Bae399fa772909e1da6c770a4c1719df2.mp4?tag=1-1613997461-xpcwebbrilliant-0-6ca4qzkrkd-8efd0c7659361fcc&amp;clientCacheKey=3x8swdud89g9z22_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1613732026493,
+          "expTag": "1_u/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/19/18/BMjAyMTAyMTkxODUxMDNfMTQxMTQ5MzQyMl80NDY0NzE0NDk4MV8wXzM=_animatedV5_Ba6a6a9ecc1fb7089d076ce176140b034.webp?tag=1-1613997461-xpcwebbrilliant-0-zxmlhm9ohn-b15229e8f67e09bf&amp;clientCacheKey=3x8swdud89g9z22_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3x3zp8zapnwzb8g",
+          "name": "红雨老师（多肉）",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/01/20/18/BMjAyMDAxMjAxODQ5MTRfMzg0OF8yX2hkNzkzXzMzNQ==_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xbmr3tu26cbw5u",
+          "duration": 106633,
+          "caption": "万万没想到啊，出来度假还能看到不怕死的商家！ #海鲜美食 #吃海鲜我们是认真的",
+          "likeCount": "53.2w",
+          "realLikeCount": 531791,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/14/15/BMjAyMTAyMTQxNTI5MjJfMzg0OF80NDMwNzYzNTQxM18xXzM=_Bb796057970571bac1fee20eadb8b38eb.jpg?tag=1-1613997461-xpcwebbrilliant-0-jcnalynuvw-19c83b88e47d01f1&amp;clientCacheKey=3xbmr3tu26cbw5u.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/14/15/BMjAyMTAyMTQxNTI5MjJfMzg0OF80NDMwNzYzNTQxM18xXzM=_b_B785326c10f494daa2019948e63f82d44.mp4?tag=1-1613997461-xpcwebbrilliant-0-vxeg9yjdcb-0913c81f00d6e591&amp;clientCacheKey=3xbmr3tu26cbw5u_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1613287941093,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/14/15/BMjAyMTAyMTQxNTI5MjJfMzg0OF80NDMwNzYzNTQxM18xXzM=_animatedV5_Bc9d6315c4fcbb29d0ca048217265e04a.webp?tag=1-1613997461-xpcwebbrilliant-0-csbbz1pycm-202f7b1b8c0bd617&amp;clientCacheKey=3xbmr3tu26cbw5u_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xup65y7upzzzb6",
+          "name": "小蝶…💕",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/11/11/19/BMjAyMDExMTExOTE2NDJfNDI3NTc4NDBfMV9oZDY4Ml8yMzM=_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3x623y45px2mf82",
+          "duration": 19600,
+          "caption": "听说打出“我在”就会暴露你现在的位置，不信你试试",
+          "likeCount": "2w",
+          "realLikeCount": 20393,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/17/20/BMjAyMTAyMTcyMDM3MzdfNDI3NTc4NDBfNDQ1MzAwNzc3MTBfMV8z_B4a1d1019ba548d769751eb715196850b.jpg?tag=1-1613997461-xpcwebbrilliant-0-oclzgolvw9-1ef98db61094a577&amp;clientCacheKey=3x623y45px2mf82.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/17/20/BMjAyMTAyMTcyMDM3MzdfNDI3NTc4NDBfNDQ1MzAwNzc3MTBfMV8z_b_B89cb585eb05e1ebe45afc33cc0da6c51.mp4?tag=1-1613997461-xpcwebbrilliant-0-cidppzoa7q-be31599e12758b57&amp;clientCacheKey=3x623y45px2mf82_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1613565511337,
+          "expTag": "1_i/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/17/20/BMjAyMTAyMTcyMDM3MzdfNDI3NTc4NDBfNDQ1MzAwNzc3MTBfMV8z_animatedV5_B354e19e4a5bfabdedad37ae4b84b7c4a.webp?tag=1-1613997461-xpcwebbrilliant-0-gyr1svyxqz-5b4290855c83e6eb&amp;clientCacheKey=3x623y45px2mf82_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xit3ydpnmignma",
+          "name": "迷人的雕吒天",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2021/01/13/02/BMjAyMTAxMTMwMjA3NTRfMTg4NTQxMzE0MV8yX2hkNTIxXzE2_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xqi8anudhsihhk",
+          "duration": 151760,
+          "caption": "真父愁者😂#搞笑 #沙雕",
+          "likeCount": "5.8w",
+          "realLikeCount": 58348,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/01/29/16/BMjAyMTAxMjkxNjIwNTlfMTg4NTQxMzE0MV80MzIwMTQ2NTg1MV8wXzM=_B77e6da07d28beceddc52606cf8aaf2bb.jpg?tag=1-1613997461-xpcwebbrilliant-0-hm76ayahdm-4a4168afd32b3ed2&amp;clientCacheKey=3xqi8anudhsihhk.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/01/29/16/BMjAyMTAxMjkxNjIwNTlfMTg4NTQxMzE0MV80MzIwMTQ2NTg1MV8wXzM=_b_B6dab85c289eff0c0c8c6320d335399cb.mp4?tag=1-1613997461-xpcwebbrilliant-0-neaq67oc6i-a0f077215617fb99&amp;clientCacheKey=3xqi8anudhsihhk_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1611908767035,
+          "expTag": "1_a/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/01/29/16/BMjAyMTAxMjkxNjIwNTlfMTg4NTQxMzE0MV80MzIwMTQ2NTg1MV8wXzM=_animatedV5_B8e4a2c015519a18a61e6f849f4a3de97.webp?tag=1-1613997461-xpcwebbrilliant-0-3pmx8ftbl0-ed611398cc198fad&amp;clientCacheKey=3xqi8anudhsihhk_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3x7wvqmji7hy924",
+          "name": "世纪威锋波哥",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2021/01/04/19/BMjAyMTAxMDQxOTU0MThfMTgyNjQ2NzYwMl8yX2hkODM1XzE2MQ==_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xjhb2t3bdq9psk",
+          "duration": 162847,
+          "caption": "国产千元机的做工怎么样呢？拆开看看就知道了",
+          "likeCount": "11.7w",
+          "realLikeCount": 117496,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/01/23/11/BMjAyMTAxMjMxMTQzMTVfMTgyNjQ2NzYwMl80MjgzNjQ5OTA4NF8wXzM=_Bd94dcba2397150953c27fa7cca67893b.jpg?tag=1-1613997461-xpcwebbrilliant-0-ffe5gua9rs-6d431b607ad8e648&amp;clientCacheKey=3xjhb2t3bdq9psk.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/01/23/11/BMjAyMTAxMjMxMTQzMTVfMTgyNjQ2NzYwMl80MjgzNjQ5OTA4NF8wXzM=_b_B4f63a0175ea31a5afcd41a4cfa1ac07e.mp4?tag=1-1613997461-xpcwebbrilliant-0-r7lkuiwlmn-eb8058cb4418ee97&amp;clientCacheKey=3xjhb2t3bdq9psk_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1611373742003,
+          "expTag": "1_u/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/01/23/11/BMjAyMTAxMjMxMTQzMTVfMTgyNjQ2NzYwMl80MjgzNjQ5OTA4NF8wXzM=_animatedV5_B66f63d4587a08f8a4299e643c6a27e07.webp?tag=1-1613997461-xpcwebbrilliant-0-ujbczxplol-cad331187fee5eb6&amp;clientCacheKey=3xjhb2t3bdq9psk_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xxi6n9kjgzzmbg",
+          "name": "大鲜汽车讲堂",
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/11/17/16/BMjAyMDExMTcxNjM0NThfMTk1MTI3NDhfMl9oZDk1Nl83NzM=_s.jpg",
+          "following": false,
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "photo": {
+          "id": "3xwgvhj3qhpsew4",
+          "duration": 239960,
+          "caption": "开台500W的车跑dd是一种什么体验？",
+          "likeCount": "42.1w",
+          "realLikeCount": 420597,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2021/02/08/18/BMjAyMTAyMDgxODE1MzdfMTk1MTI3NDhfNDM4MjQ0NDM3MjVfMF8z_Bc1b7751a870463cb0d98f14f50f13fc1.jpg?tag=1-1613997461-xpcwebbrilliant-0-0hsxnvifam-16407d4231b423cf&amp;clientCacheKey=3xwgvhj3qhpsew4.jpg&amp;di=7abc93c3&amp;bp=14944",
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2021/02/08/18/BMjAyMTAyMDgxODE1MzdfMTk1MTI3NDhfNDM4MjQ0NDM3MjVfMF8z_b_Bf98279af85e506a65fa48e70ea51d6f0.mp4?tag=1-1613997461-xpcwebbrilliant-0-n6zaqmzql3-6b5e60442d002f05&amp;clientCacheKey=3xwgvhj3qhpsew4_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14944",
+          "coverUrls": null,
+          "timestamp": 1612781551824,
+          "expTag": "1_v/2000234899384899265_xpcwebbrilliantxxrecommend0",
+          "animatedCoverUrl": "https://tx2.a.yximgs.com/upic/2021/02/08/18/BMjAyMTAyMDgxODE1MzdfMTk1MTI3NDhfNDM4MjQ0NDM3MjVfMF8z_animatedV5_Bbc52b1bb8a61a95200afd0dccf07f1cb.webp?tag=1-1613997461-xpcwebbrilliant-0-ocdv98lnnc-2ec8356bddc72b45&amp;clientCacheKey=3xwgvhj3qhpsew4_animatedV5.webp&amp;di=7abc93c3&amp;bp=14944",
+          "distance": null,
+          "videoRatio": 0.5625,
+          "liked": false,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "llsid": "2000234899384899265",
+        "status": 1,
+        "currentPcursor": null,
+        "__typename": "Feed"
+      }
+    ],
+    "webPageArea": "brilliantxxrecommend",
+    "__typename": "PhotoResult"
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这里买呢就是自己想要的信息，通过这样<strong>随机爬取作者id</strong>，然后爬取主页视频。</li>
+</ul>
+<h6 id="提取的有用信息"><a href="#提取的有用信息" class="headerlink" title="提取的有用信息"></a>提取的有用信息</h6><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>author/id</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>author/name</td>
+<td>用户名</td>
+</tr>
+</tbody></table>
+<h4 id="分析用户视频提取信息"><a href="#分析用户视频提取信息" class="headerlink" title="分析用户视频提取信息"></a>分析用户视频提取信息</h4><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-none"><code class="language-none">{
+  "visionProfilePhotoList": {
+    "result": 1,
+    "llsid": "2000256734844994626",
+    "webPageArea": "profilexxnull",
+    "feeds": [
+      {
+        "type": 1,
+        "author": {
+          "id": "3xcidpetejrcagy",
+          "name": "南希阿-",
+          "following": true,
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/08/17/09/BMjAyMDA4MTcwOTM2MDNfMjQ0NzAyMDZfMV9oZDM4Nl8xODU=_s.jpg",
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "tags": null,
+        "photo": {
+          "id": "3xznaztz2hmqnv4",
+          "duration": 14482,
+          "caption": "不可能！我老了保暖为主！！！今天重阳节你们登高了没？",
+          "likeCount": "1.1w",
+          "realLikeCount": 10710,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2018/10/17/10/BMjAxODEwMTcxMDI3MzBfMjQ0NzAyMDZfODUwMDM2MTYzM18xXzM=_B6e7a2e48cf7ee359ebd8fc7bbf115eaf.jpg?tag=1-1613998095-xpcwebprofile-0-kbaucwskgv-4075b091ce642d3d&amp;clientCacheKey=3xznaztz2hmqnv4.jpg&amp;di=7abc93c3&amp;bp=14734",
+          "coverUrls": null,
+          "photoUrls": [
+            {
+              "cdn": "txmov2.a.yximgs.com",
+              "url": "https://txmov2.a.yximgs.com/upic/2018/10/17/10/BMjAxODEwMTcxMDI3MzBfMjQ0NzAyMDZfODUwMDM2MTYzM18xXzM=_b_Bb87fb67e8dbab2d4dea98c47c08adbff.mp4?tag=1-1613998095-xpcwebprofile-0-akd9pjnnqm-8cfb824979ffce75&amp;clientCacheKey=3xznaztz2hmqnv4_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            },
+            {
+              "cdn": "jsmov2.a.yximgs.com",
+              "url": "https://jsmov2.a.yximgs.com/upic/2018/10/17/10/BMjAxODEwMTcxMDI3MzBfMjQ0NzAyMDZfODUwMDM2MTYzM18xXzM=_b_Bb87fb67e8dbab2d4dea98c47c08adbff.mp4?tag=1-1613998095-xpcwebprofile-1-hxmtiyeub6-bdca48da9f4cf346&amp;clientCacheKey=3xznaztz2hmqnv4_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            }
+          ],
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2018/10/17/10/BMjAxODEwMTcxMDI3MzBfMjQ0NzAyMDZfODUwMDM2MTYzM18xXzM=_b_Bb87fb67e8dbab2d4dea98c47c08adbff.mp4?tag=1-1613998095-xpcwebprofile-0-akd9pjnnqm-8cfb824979ffce75&amp;clientCacheKey=3xznaztz2hmqnv4_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+          "liked": false,
+          "timestamp": 1539743251960,
+          "expTag": "1_i/2000256734844994626_xpcwebprofilexxnull0",
+          "animatedCoverUrl": null,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "currentPcursor": "1.53974325196E12",
+        "llsid": "2000256734844994626",
+        "status": 1,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xcidpetejrcagy",
+          "name": "南希阿-",
+          "following": true,
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/08/17/09/BMjAyMDA4MTcwOTM2MDNfMjQ0NzAyMDZfMV9oZDM4Nl8xODU=_s.jpg",
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "tags": null,
+        "photo": {
+          "id": "3x8k5i65i332hgq",
+          "duration": 11533,
+          "caption": "偶遇",
+          "likeCount": "3.3w",
+          "realLikeCount": 32792,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2018/07/11/15/BMjAxODA3MTExNTE2MjRfMjQ0NzAyMDZfNzA3NDM3NzI0Ml8xXzM=_B1b42535de42798a8e6b5c47e40f38af6.jpg?tag=1-1613998095-xpcwebprofile-0-oj77tkkblc-b2f35f85f91d61f7&amp;clientCacheKey=3x8k5i65i332hgq.jpg&amp;di=7abc93c3&amp;bp=14734",
+          "coverUrls": null,
+          "photoUrls": [
+            {
+              "cdn": "txmov2.a.yximgs.com",
+              "url": "https://txmov2.a.yximgs.com/upic/2018/07/11/15/BMjAxODA3MTExNTE2MjRfMjQ0NzAyMDZfNzA3NDM3NzI0Ml8xXzM=_b_B2cd50f240d72fa129d380833397523af.mp4?tag=1-1613998095-xpcwebprofile-0-xhan4qzdbq-5d8abd450e4be1b7&amp;clientCacheKey=3x8k5i65i332hgq_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            },
+            {
+              "cdn": "jsmov2.a.yximgs.com",
+              "url": "https://jsmov2.a.yximgs.com/upic/2018/07/11/15/BMjAxODA3MTExNTE2MjRfMjQ0NzAyMDZfNzA3NDM3NzI0Ml8xXzM=_b_B2cd50f240d72fa129d380833397523af.mp4?tag=1-1613998095-xpcwebprofile-1-m98bnfzxlj-44fe58e72876535b&amp;clientCacheKey=3x8k5i65i332hgq_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            }
+          ],
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2018/07/11/15/BMjAxODA3MTExNTE2MjRfMjQ0NzAyMDZfNzA3NDM3NzI0Ml8xXzM=_b_B2cd50f240d72fa129d380833397523af.mp4?tag=1-1613998095-xpcwebprofile-0-xhan4qzdbq-5d8abd450e4be1b7&amp;clientCacheKey=3x8k5i65i332hgq_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+          "liked": false,
+          "timestamp": 1531293391756,
+          "expTag": "1_i/2000256734844994626_xpcwebprofilexxnull0",
+          "animatedCoverUrl": null,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "currentPcursor": "1.53974325196E12",
+        "llsid": "2000256734844994626",
+        "status": 1,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xcidpetejrcagy",
+          "name": "南希阿-",
+          "following": true,
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/08/17/09/BMjAyMDA4MTcwOTM2MDNfMjQ0NzAyMDZfMV9oZDM4Nl8xODU=_s.jpg",
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "tags": null,
+        "photo": {
+          "id": "3xczbk9mta36gdm",
+          "duration": 8650,
+          "caption": "可你不会遇见第二个我…",
+          "likeCount": "6348",
+          "realLikeCount": 6348,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2017/10/28/20/BMjAxNzEwMjgyMDU5MzFfMjQ0NzAyMDZfMzY5MDYxNTU3MV8xXzM=.jpg?tag=1-1613998095-xpcwebprofile-0-3pkaf87ci4-5376f79e85ca8bc7&amp;clientCacheKey=3xczbk9mta36gdm.jpg&amp;di=7abc93c3&amp;bp=14734",
+          "coverUrls": null,
+          "photoUrls": [
+            {
+              "cdn": "txmov2.a.yximgs.com",
+              "url": "https://txmov2.a.yximgs.com/upic/2017/10/28/20/BMjAxNzEwMjgyMDU5MzFfMjQ0NzAyMDZfMzY5MDYxNTU3MV8xXzM=_b.mp4?tag=1-1613998095-xpcwebprofile-0-hlrj8ivx2y-d9a46b270819b12c&amp;clientCacheKey=3xczbk9mta36gdm_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            },
+            {
+              "cdn": "jsmov2.a.yximgs.com",
+              "url": "https://jsmov2.a.yximgs.com/upic/2017/10/28/20/BMjAxNzEwMjgyMDU5MzFfMjQ0NzAyMDZfMzY5MDYxNTU3MV8xXzM=_b.mp4?tag=1-1613998095-xpcwebprofile-1-yxhzrjrsdm-2d17a6566ff1e611&amp;clientCacheKey=3xczbk9mta36gdm_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            }
+          ],
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2017/10/28/20/BMjAxNzEwMjgyMDU5MzFfMjQ0NzAyMDZfMzY5MDYxNTU3MV8xXzM=_b.mp4?tag=1-1613998095-xpcwebprofile-0-hlrj8ivx2y-d9a46b270819b12c&amp;clientCacheKey=3xczbk9mta36gdm_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+          "liked": false,
+          "timestamp": 1509195574366,
+          "expTag": "1_i/2000256734844994626_xpcwebprofilexxnull0",
+          "animatedCoverUrl": null,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "currentPcursor": "1.53974325196E12",
+        "llsid": "2000256734844994626",
+        "status": 1,
+        "__typename": "Feed"
+      },
+      {
+        "type": 1,
+        "author": {
+          "id": "3xcidpetejrcagy",
+          "name": "南希阿-",
+          "following": true,
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/08/17/09/BMjAyMDA4MTcwOTM2MDNfMjQ0NzAyMDZfMV9oZDM4Nl8xODU=_s.jpg",
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "tags": null,
+        "photo": {
+          "id": "3xbpzk4kqddaqva",
+          "duration": 3750,
+          "caption": "嘻嘻嘻嘻",
+          "likeCount": "2196",
+          "realLikeCount": 2196,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2017/07/21/21/BMjAxNzA3MjEyMTU3MjdfMjQ0NzAyMDZfMjcxMDQ4Mjc4Nl8yXzM=.jpg?tag=1-1613998095-xpcwebprofile-0-zhxxmlksxm-e485a6409fb41242&amp;clientCacheKey=3xbpzk4kqddaqva.jpg&amp;di=7abc93c3&amp;bp=14734",
+          "coverUrls": null,
+          "photoUrls": [
+            {
+              "cdn": "txmov2.a.yximgs.com",
+              "url": "https://txmov2.a.yximgs.com/upic/2017/07/21/21/BMjAxNzA3MjEyMTU3MjdfMjQ0NzAyMDZfMjcxMDQ4Mjc4Nl8yXzM=_b.mp4?tag=1-1613998095-xpcwebprofile-0-smw1xzfoke-e24b502d35292ef6&amp;clientCacheKey=3xbpzk4kqddaqva_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            },
+            {
+              "cdn": "jsmov2.a.yximgs.com",
+              "url": "https://jsmov2.a.yximgs.com/upic/2017/07/21/21/BMjAxNzA3MjEyMTU3MjdfMjQ0NzAyMDZfMjcxMDQ4Mjc4Nl8yXzM=_b.mp4?tag=1-1613998095-xpcwebprofile-1-8kgyzpf6zd-cbd11ec3758ebc5a&amp;clientCacheKey=3xbpzk4kqddaqva_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            }
+          ],
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2017/07/21/21/BMjAxNzA3MjEyMTU3MjdfMjQ0NzAyMDZfMjcxMDQ4Mjc4Nl8yXzM=_b.mp4?tag=1-1613998095-xpcwebprofile-0-smw1xzfoke-e24b502d35292ef6&amp;clientCacheKey=3xbpzk4kqddaqva_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+          "liked": false,
+          "timestamp": 1500645448669,
+          "expTag": "1_a/2000256734844994626_xpcwebprofilexxnull0",
+          "animatedCoverUrl": null,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "currentPcursor": "1.53974325196E12",
+        "llsid": "2000256734844994626",
+        "status": 1,
+        "__typename": "Feed"
+      }
+    ],
+    "hostName": null,
+    "pcursor": "no_more",
+    "__typename": "VisionProfilePhotoList"
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h4 id="video用户主页个人信息"><a href="#video用户主页个人信息" class="headerlink" title="video用户主页个人信息"></a>video用户主页个人信息</h4><blockquote>
+<p>这是刷新的第一个psot请求，包含了用户个人信息，可以这样获取。快手id号不在这里</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">{
+  "visionProfile": {
+    "result": 1,
+    "hostName": "webservice-bjxy-rs9288.idcyz.hb1.kwaidc.com",
+    "userProfile": {
+      "ownerCount": {
+        "fan": "125.5w",
+        "photo": null,
+        "follow": 442,
+        "photo_public": 64,
+        "__typename": "VisionUserProfileOwnerCount"
+      },
+      "profile": {
+        "gender": "F",
+        "user_name": "南希阿-",
+        "user_id": "3xcidpetejrcagy",
+        "headurl": "https://tx2.a.yximgs.com/uhead/AB/2020/08/17/09/BMjAyMDA4MTcwOTM2MDNfMjQ0NzAyMDZfMV9oZDM4Nl8xODU=_s.jpg",
+        "user_text": "谢谢你在世界的角落里找到我",
+        "user_profile_bg_url": "//s2-10623.kwimgs.com/kos/nlav10623/vision_images/profile_background.5bc08b1bf4fba1f4.svg",
+        "__typename": "VisionUserProfileUser"
+      },
+      "isFollowing": true,
+      "__typename": "VisionUserProfile"
+    },
+    "__typename": "VisionProfileResult"
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、数据库创建"><a href="#三、数据库创建" class="headerlink" title="三、数据库创建"></a>三、数据库创建</h2><blockquote>
+<p>django创建的数据库会默认创建id</p>
+<p>设置主键，主数据库的设置主键的字段，可以访问从数据库</p>
+</blockquote>
+<h4 id="1-用户id与name：UserTitle"><a href="#1-用户id与name：UserTitle" class="headerlink" title="1.用户id与name：UserTitle"></a>1.用户id与name：UserTitle</h4><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>userID</td>
+<td>唯一（从表：UserDetail）</td>
+</tr>
+<tr>
+<td>userName</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>dataTime</td>
+<td>创建时间</td>
+</tr>
+</tbody></table>
+<h4 id="2-详细用户信息：UserDetail"><a href="#2-详细用户信息：UserDetail" class="headerlink" title="2.详细用户信息：UserDetail"></a>2.详细用户信息：UserDetail</h4><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>主页id</td>
+<td>“user_id”: “3xcidpetejrcagy”,</td>
+</tr>
+<tr>
+<td>用户名</td>
+<td>“user_name”: “南希阿-“,</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>“gender”: “F”,性别</td>
+</tr>
+<tr>
+<td>fanCount</td>
+<td>fan,粉丝数</td>
+</tr>
+<tr>
+<td>photoCount（先不创建，一般没有）</td>
+<td>相片书</td>
+</tr>
+<tr>
+<td>followCount</td>
+<td>follow，关注数</td>
+</tr>
+<tr>
+<td>photo_public作品数</td>
+<td>“photo_public”: 64,</td>
+</tr>
+<tr>
+<td></td>
+<td>“headurl”:头像地址</td>
+</tr>
+<tr>
+<td>描述</td>
+<td>“user_text”: “谢谢</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>createTime</td>
+<td>创建时间</td>
+</tr>
+</tbody></table>
+<h4 id="3-详细视频"><a href="#3-详细视频" class="headerlink" title="3.详细视频"></a>3.详细视频</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>photo/id</td>
+<td></td>
+</tr>
+<tr>
+<td>photo/jpgURL</td>
+<td></td>
+</tr>
+<tr>
+<td>MP4/id</td>
+<td></td>
+</tr>
+<tr>
+<td>MP4/URL</td>
+<td></td>
+</tr>
+<tr>
+<td>caption</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>likeCount</td>
+<td>视频点赞</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-none"><code class="language-none">{
+        "type": 1,
+        "author": {
+          "id": "3xcidpetejrcagy",
+          "name": "南希阿-",
+          "following": true,
+          "headerUrl": "https://tx2.a.yximgs.com/uhead/AB/2020/08/17/09/BMjAyMDA4MTcwOTM2MDNfMjQ0NzAyMDZfMV9oZDM4Nl8xODU=_s.jpg",
+          "headerUrls": null,
+          "__typename": "Author"
+        },
+        "tags": null,
+        "photo": {
+          "id": "3xznaztz2hmqnv4",
+          "duration": 14482,
+          "caption": "不可能！我老了保暖为主！！！今天重阳节你们登高了没？",
+          "likeCount": "1.1w",
+          "realLikeCount": 10710,
+          "coverUrl": "https://tx2.a.yximgs.com/upic/2018/10/17/10/BMjAxODEwMTcxMDI3MzBfMjQ0NzAyMDZfODUwMDM2MTYzM18xXzM=_B6e7a2e48cf7ee359ebd8fc7bbf115eaf.jpg?tag=1-1613998095-xpcwebprofile-0-kbaucwskgv-4075b091ce642d3d&amp;clientCacheKey=3xznaztz2hmqnv4.jpg&amp;di=7abc93c3&amp;bp=14734",
+          "coverUrls": null,
+          "photoUrls": [
+            {
+              "cdn": "txmov2.a.yximgs.com",
+              "url": "https://txmov2.a.yximgs.com/upic/2018/10/17/10/BMjAxODEwMTcxMDI3MzBfMjQ0NzAyMDZfODUwMDM2MTYzM18xXzM=_b_Bb87fb67e8dbab2d4dea98c47c08adbff.mp4?tag=1-1613998095-xpcwebprofile-0-akd9pjnnqm-8cfb824979ffce75&amp;clientCacheKey=3xznaztz2hmqnv4_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            },
+            {
+              "cdn": "jsmov2.a.yximgs.com",
+              "url": "https://jsmov2.a.yximgs.com/upic/2018/10/17/10/BMjAxODEwMTcxMDI3MzBfMjQ0NzAyMDZfODUwMDM2MTYzM18xXzM=_b_Bb87fb67e8dbab2d4dea98c47c08adbff.mp4?tag=1-1613998095-xpcwebprofile-1-hxmtiyeub6-bdca48da9f4cf346&amp;clientCacheKey=3xznaztz2hmqnv4_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+              "__typename": "Url"
+            }
+          ],
+          "photoUrl": "https://txmov2.a.yximgs.com/upic/2018/10/17/10/BMjAxODEwMTcxMDI3MzBfMjQ0NzAyMDZfODUwMDM2MTYzM18xXzM=_b_Bb87fb67e8dbab2d4dea98c47c08adbff.mp4?tag=1-1613998095-xpcwebprofile-0-akd9pjnnqm-8cfb824979ffce75&amp;clientCacheKey=3xznaztz2hmqnv4_b.mp4&amp;tt=b&amp;di=7abc93c3&amp;bp=14734",
+          "liked": false,
+          "timestamp": 1539743251960,
+          "expTag": "1_i/2000256734844994626_xpcwebprofilexxnull0",
+          "animatedCoverUrl": null,
+          "__typename": "PhotoEntity"
+        },
+        "canAddComment": 0,
+        "currentPcursor": "1.53974325196E12",
+        "llsid": "2000256734844994626",
+        "status": 1,
+        "__typename": "Feed"
+      },<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="三、编写代码"><a href="#三、编写代码" class="headerlink" title="三、编写代码"></a>三、编写代码</h2><h4 id="编写获取用户简略信息的逻辑"><a href="#编写获取用户简略信息的逻辑" class="headerlink" title="编写获取用户简略信息的逻辑"></a>编写获取用户简略信息的逻辑</h4><h6 id="dajngo逻辑"><a href="#dajngo逻辑" class="headerlink" title="dajngo逻辑"></a>dajngo逻辑</h6><blockquote>
+<p>将爬好的数据，以填表单形式发送给django，添加到数据库。</p>
+</blockquote>
+<ol>
+<li>创建model</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">class UserTitle(models.Model):
+    userID = models.CharField(max_length=256,unique=True,verbose_name="用户id")
+    userName = models.CharField(max_length=256,verbose_name="用户名")
+    createTime = models.DateTimeField(default=datetime.now,verbose_name="创建时间")
+
+    def __str__(self):
+        return self.userName
+
+    class Mate:
+        verbose_name = verbose_name_plural = "用户ID和名字"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>使用bootstrap3.7的css，样式必须包含再&lt;div class=”container”&gt;内，导入成功。</li>
+<li>制作表单视图</li>
+</ol>
+<blockquote>
+<p>我擦，在一个小地方入坑了，我把表单的id当成了要获取的信息，其实是name属性。没注意这个地方，没想过问题会出现在这个地方。想了action属性，request.POST,还有路由。最后看到这个表单的时候，看到标签里的id属性，我想这不是选择用的属性吗，再以看没有name属性。</p>
+</blockquote>
+<blockquote>
+<p>晚上，我想了想，使用表单提交数据到数据库，可以避免使用SQL语句。</p>
+</blockquote>
+<ul>
+<li>表单测试成功</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;h4&gt;表单{{ TestID }}&lt;/h4&gt;
+
+
+    &lt;form method="post" action="/test/"&gt;
+    {% csrf_token %}
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleInputEmail1"&gt;用户ID&lt;/label&gt;
+    &lt;input  class="form-control" name="formUserID" placeholder="id"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="exampleInputPassword1"&gt;用户名&lt;/label&gt;
+    &lt;input  class="form-control" name="formUserName" placeholder="name"&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>把数据存到数据库，存入是要判断库中是否在提交的数据，如果又会报错。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">from django.shortcuts import render
+from .models import UserTitle
+
+def index(request):
+    data = {"formUserID":"testID","formUserName":"testName","message":"没有提示"}
+    if request.method == 'POST':
+        print("---------------------------------------")
+        data["formUserID"]=request.POST.get('formUserID')
+        data["formUserName"] = request.POST.get('formUserName')
+        if not UserTitle.objects.filter(userID=data["formUserID"]):
+            UserTitle.objects.create(userID=data["formUserID"],userName=data["formUserName"])
+            data["message"] = "用户存如数据库成功"
+        else:
+            data["message"] = "当前用户已存在数据库中"
+
+
+    return render(request,"pages/index.html",data)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="四、用户id爬虫代码"><a href="#四、用户id爬虫代码" class="headerlink" title="四、用户id爬虫代码"></a>四、用户id爬虫代码</h2><p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210223134211.png"></p>
+<ul>
+<li>在我的关注界面可以提取到一波数据</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+import json
+import os
+# 爬取个人主页关注用户的id和naame
+URL = "https://video.kuaishou.com/graphql"
+
+headers = {
+    "accept":"*/*",
+    "Content-Length":"&lt;calculated when request is sent&gt;",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "content-type": "application/json",
+    "Cookie": r'kpf=PC_WEB; kpn=KUAISHOU_VISION; clientid=3; did=web_ec874916e390b9741609686125a0452e; didv=1613879531823; client_key=65890b29; ktrace-context=1|MS43NjQ1ODM2OTgyODY2OTgyLjMzNjU0MzIxLjE2MTQwNTc3NzE1MDIuNDM1MzM=|MS43NjQ1ODM2OTgyODY2OTgyLjc1NTMzNTI2LjE2MTQwNTc3NzE1MDIuNDM1MzQ=|0|graphql-server|webservice|false|NA; userId=427400950; kuaishou.server.web_st=ChZrdWFpc2hvdS5zZXJ2ZXIud2ViLnN0EqABlmb5z4vLdBghMKDxTE4uqvLCMpV44LpjtfSQruKPXU-tuIWu8VGU2B7rPjgAsfnhD1zEIOxob1iEn_dFIG5SwKF5prhUdUQ-sS5VGcPvWJ8qzdTEO7hgrEWu_HPVcPgjS7Sgup81QvMe6_ue61yqvnqU3SnQcSX8_lHOldFShRsRugnzHmE1Vdgy6MdMWLEmg1e3okoSxNpxAXzvDGLC0hoSg3ZkWJHNsQvvc8vsvUksYr6BIiAuG7oUhZTq4L9bhEEe110Eu62JZW2K1jmXBT577QfpXCgFMAE; kuaishou.server.web_ph=72e592f5096373be8dda7749b8f4a53e5aba',
+    "Host": "video.kuaishou.com",
+    "Origin": "https://video.kuaishou.com",
+    "Referer": "https://video.kuaishou.com/profile/3xsms2z7ft9fmhg",
+    "User-Agent": "PostmanRuntime/7.26.8"
+}
+
+payload = {"operationName":"visionProfileUserList","variables":{"ftype":1},"query":"query visionProfileUserList($pcursor: String, $ftype: Int) {\n  visionProfileUserList(pcursor: $pcursor, ftype: $ftype) {\n    result\n    fols {\n      user_name\n      headurl\n      user_text\n      isFollowing\n      user_id\n      __typename\n    }\n    hostName\n    pcursor\n    __typename\n  }\n}\n"}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">def get_data():
+    
+    res = requests.post(URL, headers=headers, json=payload)
+    res.encoding="utf-8"
+    m_json = res.json()  #字典格式
+    
+    fols_list = m_json["data"]["visionProfileUserList"]["fols"]
+    
+    pcursor = m_json["data"]["visionProfileUserList"]["pcursor"]
+    payload["variables"]["pcursor"]=pcursor
+    
+    for fols in fols_list:
+        userID = fols["user_id"]
+        userName = fols["user_name"]
+        print("userID:%s-------userName:%s"%(userID,userName))
+    if pcursor=="no_more":
+        return 0
+
+if __name__=='__main__':
+    while(1):
+        temp = get_data()
+        if temp == 0:
+            break
+    print("---------------------当前用户地址完成-------------------")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>可以爬取所有关注人的ID和Name</p>
+</li>
+<li><p>不能用发送请求的方式直接存到数据库，需要写代token，还是要在内部写代码。</p>
+</li>
+<li><p>成功添加了一些，但是通过视图触发的，看来django有的地方没有学明白</p>
+</li>
+</ul>
+<h2 id="五、乱序总结"><a href="#五、乱序总结" class="headerlink" title="五、乱序总结"></a>五、乱序总结</h2><blockquote>
+<p>这里主要是把自己再写爬虫代码时候，再jupyterlab上面的代码做一个总结。到目前为止（2021.3.16），已经写好的四个类，分别完成相应的爬取，是成功的。这里主要简单的做一下记录，可能与上面有重复，封装好的类代码再ksDjango工程中。</p>
+</blockquote>
+<h4 id="ksID"><a href="#ksID" class="headerlink" title="ksID"></a>ksID</h4><pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+#请求mp4地址
+import requests
+import json
+URL = "https://live.kuaishou.com/m_graphql"
+headers = {
+    "accept":"*/*",
+    "Content-Length":"&lt;calculated when request is sent&gt;",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "content-type": "application/json",
+    "Cookie": r'clientid=3; did=web_ec874916e390b9741609686125a0452e; didv=1613879531823; client_key=65890b29; kpn=GAME_ZONE; userId=427400950; kuaishou.live.bfb1s=7206d814e5c089a58c910ed8bf52ace5; userId=427400950; kuaishou.live.web_st=ChRrdWFpc2hvdS5saXZlLndlYi5zdBKgAYm9VZdJaOIjsJDqPoO-yLNw4ZuZul234nekkYMdMsNjIq-i5skiOlVnLhFSPv5PTbrQ45yitiFEkQMGUCDxpsbRcsDpHI0CDZfflQeD9Z14cuQ8x2YJORv-1Pz8JM4-_qmBhAxjVHJ8OSs4kMHRKpCvZja6UUYbXLunFhKT5fyhx1HViPCmuVjBcsSxZEtEpvponSa3DjtkZU2KQ3M9pUoaEm-zwBmcbUA4lm5ejQnh9kVjySIgjJsh3xaj6ckXgLNLF3iPjKs6sC7d1lWqH0SZbWeHTREoBTAB; kuaishou.live.web_ph=ed6156f0bc66780438d593dfc3b3f8fa6f63',
+    "Host": "live.kuaishou.com",
+    "Origin": "https://live.kuaishou.com",
+    "Referer": "https://live.kuaishou.com/profile/LY7452065",
+    "User-Agent": "PostmanRuntime/7.26.8"
+}
+payload = {"operationName":"publicFeedsQuery","variables":{"principalId":"JTYYA13-","pcursor":"1.602058185281E12","count":24},"query":"query publicFeedsQuery($principalId: String, $pcursor: String, $count: Int) {\n  publicFeeds(principalId: $principalId, pcursor: $pcursor, count: $count) {\n    pcursor\n    live {\n      user {\n        id\n        avatar\n        name\n        __typename\n      }\n      watchingCount\n      poster\n      coverUrl\n      caption\n      id\n      playUrls {\n        quality\n        url\n        __typename\n      }\n      quality\n      gameInfo {\n        category\n        name\n        pubgSurvival\n        type\n        kingHero\n        __typename\n      }\n      hasRedPack\n      liveGuess\n      expTag\n      __typename\n    }\n    list {\n      id\n      thumbnailUrl\n      poster\n      workType\n      type\n      useVideoPlayer\n      imgUrls\n      imgSizes\n      magicFace\n      musicName\n      caption\n      location\n      liked\n      onlyFollowerCanComment\n      relativeHeight\n      timestamp\n      width\n      height\n      counts {\n        displayView\n        displayLike\n        displayComment\n        __typename\n      }\n      user {\n        id\n        eid\n        name\n        avatar\n        __typename\n      }\n      expTag\n      isSpherical\n      __typename\n    }\n    __typename\n  }\n}\n"}        <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">def get_data():
+    res = requests.post(URL, headers=headers, json=payload)
+    res.encoding="utf-8"
+    m_json = res.json()  #字典格式   
+    print(m_json)
+
+get_data()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210316142456.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">def get_data():
+    res = requests.post(URL, headers=headers, json=payload)
+    res.encoding="utf-8"
+    m_json = res.json()  #字典格式
+    status = m_jsonson["data"]["visionProfilePhotoList"]["result"]
+    feeds_list = m_json["data"]["visionProfilePhotoList"]["feeds"]
+    pcursor = m_json["data"]["visionProfilePhotoList"]["pcursor"]
+    #第一次返回的pcursor值添加到  payload ,观察结果是否不一样
+    #确实不一样，选个作品少的 多运行几次
+    payload["variables"]["pcursor"]=pcursor
+    
+    print(pcursor)
+    print("---------------------------------------------------------------------------------------------------------------")
+    for mp4_dict in feeds_list:
+        mp4_url = mp4_dict["photo"]["photoUrl"]
+        caption = mp4_dict["photo"]["caption"]
+        print(caption)
+        #print(mp4_url)
+#第一次
+get_data()
+#第二次
+get_data()
+get_data()
+get_data()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="kuaishou"><a href="#kuaishou" class="headerlink" title="kuaishou"></a>kuaishou</h4><pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+#请求mp4地址
+import requests
+import json
+import os
+URL = "https://video.kuaishou.com/graphql"
+
+headers = {
+    "accept":"*/*",
+    "Content-Length":"&lt;calculated when request is sent&gt;",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "content-type": "application/json",
+    "Cookie": r'kpf=PC_WEB; kpn=KUAISHOU_VISION; clientid=3; did=web_d37f50afed8ef1a623554f109df9a6d7; client_key=65890b29; userId=1297533855; kuaishou.server.web_st=ChZrdWFpc2hvdS5zZXJ2ZXIud2ViLnN0EqABWJCSboNFaY05jQVekJIsYsazOBv3CwBFLOGTNWrZ4K7ITJMFqQ66A-IT3l7pMCP6w70iP7bU8dmitpRSfhHV2Tr4kyX0Pb6BjuRWz_nEpwMsvTNDooPoEboKnDZ2nSXZtW3gpKvCCezOoS3tFOyURZTaHt-GhtsnOUXRl_CfmIfp6Y1l7nEom8l1x6PJjUg9FooszHgJqIxigYfarOzTmhoSWXnZQFypWC8Fi7687FtZGgfDIiC4Pvu-LV02AKfQGWo_VGfUEcpMvcsNYTRPKOVc88Gd3SgFMAE; kuaishou.server.web_ph=9ef48347a0bb59b0abc7c977227df998333d',
+    "Host": "video.kuaishou.com",
+    "Origin": "https://video.kuaishou.com",
+    "Referer": "https://video.kuaishou.com/profile/3xcidpetejrcagy",
+    "User-Agent": "PostmanRuntime/7.26.8"
+}
+
+payload = {"operationName":"visionProfilePhotoList","variables":{"userId":"3xcidpetejrcagy","pcursor":"","page":"profile"},"query":"query visionProfilePhotoList($pcursor: String, $userId: String, $page: String, $webPageArea: String) {\n  visionProfilePhotoList(pcursor: $pcursor, userId: $userId, page: $page, webPageArea: $webPageArea) {\n    result\n    llsid\n    webPageArea\n    feeds {\n      type\n      author {\n        id\n        name\n        following\n        headerUrl\n        headerUrls {\n          cdn\n          url\n          __typename\n        }\n        __typename\n      }\n      tags {\n        type\n        name\n        __typename\n      }\n      photo {\n        id\n        duration\n        caption\n        likeCount\n        realLikeCount\n        coverUrl\n        coverUrls {\n          cdn\n          url\n          __typename\n        }\n        photoUrls {\n          cdn\n          url\n          __typename\n        }\n        photoUrl\n        liked\n        timestamp\n        expTag\n        animatedCoverUrl\n        __typename\n      }\n      canAddComment\n      currentPcursor\n      llsid\n      status\n      __typename\n    }\n    hostName\n    pcursor\n    __typename\n  }\n}\n"}
+MP4URL = []
+MP4ID = []
+otherData = {}
+# CAPTION = []
+def get_data():
+
+    res = requests.post(URL, headers=headers, json=payload)
+    res.encoding="utf-8"
+    m_json = res.json()  #字典格式
+    print(m_json["data"]["visionProfilePhotoList"]["result"])
+    feeds_list = m_json["data"]["visionProfilePhotoList"]["feeds"]
+    pcursor = m_json["data"]["visionProfilePhotoList"]["pcursor"]
+    
+    
+    
+    payload["variables"]["pcursor"]=pcursor
+    for mp4_dict in feeds_list:
+        mp4_url = mp4_dict["photo"]["photoUrl"]
+        MP4URL.append(mp4_url)
+        
+        mp4_id = mp4_dict["photo"]["id"]
+        MP4ID.append(mp4_id)
+        
+#         caption= mp4_dict["photo"]["caption"]
+#         CAPTION.append(caption)
+        otherData["author"] = mp4_dict["author"]["name"]
+        
+        #print(mp4_url)
+    print(pcursor)
+    if pcursor=="no_more":
+        return 0
+    print("-----------------------------")
+            
+    
+def download_mp4():
+    result = dict(zip(MP4ID,MP4URL))
+    if not os.path.exists("/home/data/%s"%(otherData["author"])):
+        os.mkdir("/home/data/%s"%(otherData["author"]))
+        
+    i = 1000
+    j = 0
+    for key,value in result.items():
+        i += 1
+        res2 = requests.get(value)
+        key = str(i)+"+++"+key
+        path = "/home/data/%s/%s.mp4"%(otherData["author"],key)
+        f = open(path,"wb")
+        f.write(res2.content)
+        f.close()
+        
+        j += 1
+
+    
+
+        
+if __name__=='__main__':
+    userList = ["3xcidpetejrcagy","3xsmpz9kqmb3s3m"]
+    for userId in userList:
+        payload["variables"]["userId"] = userId
+        while(1):
+            temp = get_data()
+            if temp == 0:
+                break
+        print("---------------------当前用户地址完成-------------------")
+        download_mp4()
+        print("---------------------当前用户下载完成-------------------")
+        payload["variables"]["pcursor"]=""<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*-
+
+#请求mp4地址
+import requests
+import json
+URL = "https://video.kuaishou.com/graphql"
+headers = {
+    "accept":"*/*",
+    "Content-Length":"&lt;calculated when request is sent&gt;",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "content-type": "application/json",
+    "Cookie": r'kpf=PC_WEB; kpn=KUAISHOU_VISION; clientid=3; did=web_d37f50afed8ef1a623554f109df9a6d7; client_key=65890b29; userId=1297533855; kuaishou.server.web_st=ChZrdWFpc2hvdS5zZXJ2ZXIud2ViLnN0EqABTbo8kSTQdBc91_GRAgCcDPaRd4vx6Fz2cWg-X4byWR5WlQicc6nagsAQCJ5EQZgHnlwAKivsUXLo3I1p-SXzJOVbfXC7fHscj6E1yl_YnbQAbgByi3OHcGfwtm6WpcMwuAIyrpWJeInFbPAh4Uu-x5cQ2Pwc_Efkk2HrCTuAM41f5LHbx7c6VHEukPoBLoTGG3VvSiXMDWcqSlPq3456cxoSKS0sDuL1vMmNDXbwL4KX-qDmIiDLuigJ6hmnreIat4SiItSkDZHarPH9z9w__aM1gz9qVCgFMAE; kuaishou.server.web_ph=e49a0f9ff2290ef5ee2ccfc5990427ade875',
+    "Host": "video.kuaishou.com",
+    "Origin": "https://video.kuaishou.com",
+    "Referer": "https://video.kuaishou.com/profile/3xcidpetejrcagy",
+    "User-Agent": "PostmanRuntime/7.26.8"
+}
+payload = {"operationName":"visionProfilePhotoList","variables":{"userId":"3xcidpetejrcagy","pcursor":"","page":"profile"},"query":"query visionProfilePhotoList($pcursor: String, $userId: String, $page: String, $webPageArea: String) {\n  visionProfilePhotoList(pcursor: $pcursor, userId: $userId, page: $page, webPageArea: $webPageArea) {\n    result\n    llsid\n    webPageArea\n    feeds {\n      type\n      author {\n        id\n        name\n        following\n        headerUrl\n        headerUrls {\n          cdn\n          url\n          __typename\n        }\n        __typename\n      }\n      tags {\n        type\n        name\n        __typename\n      }\n      photo {\n        id\n        duration\n        caption\n        likeCount\n        realLikeCount\n        coverUrl\n        coverUrls {\n          cdn\n          url\n          __typename\n        }\n        photoUrls {\n          cdn\n          url\n          __typename\n        }\n        photoUrl\n        liked\n        timestamp\n        expTag\n        animatedCoverUrl\n        __typename\n      }\n      canAddComment\n      currentPcursor\n      llsid\n      status\n      __typename\n    }\n    hostName\n    pcursor\n    __typename\n  }\n}\n"}
+
+def get_data():
+    res = requests.post(URL, headers=headers, json=payload)
+    res.encoding="utf-8"
+    m_json = res.json()  #字典格式
+    status = m_json["data"]["visionProfilePhotoList"]["result"]
+    feeds_list = m_json["data"]["visionProfilePhotoList"]["feeds"]
+    pcursor = m_json["data"]["visionProfilePhotoList"]["pcursor"]
+    #第一次返回的pcursor值添加到  payload ,观察结果是否不一样
+    #确实不一样，选个作品少的 多运行几次
+    payload["variables"]["pcursor"]=pcursor
+    
+    print(pcursor)
+    print("---------------------------------------------------------------------------------------------------------------")
+    for mp4_dict in feeds_list:
+        mp4_url = mp4_dict["photo"]["photoUrl"]
+        caption = mp4_dict["photo"]["caption"]
+        print(caption)
+        #print(mp4_url)
+#第一次
+get_data()
+#第二次
+get_data()
+get_data()
+get_data()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210316142630.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">
+#登录
+import requests
+
+URL = "https://id.kuaishou.com/pass/kuaishou/login/passToken?sid=kuaishou.server.web"
+headers = {
+    "User-Agent":"PostmanRuntime/7.26.8",
+    "Connection":"keep-alive",
+    "Referer":"https://video.kuaishou.com/profile/3xcidpetejrcagy",
+    "Cookie":r'clientid=3; did=web_d37f50afed8ef1a623554f109df9a6d7; client_key=65890b29; infra_kuaishou_oauth_state=e180905e1fbbddcc1be1b604802af970_{"sid":"kuaishou.live.web","callback":"","appId":"ks_live_qq","htmlJump":"https://live.kuaishou.com/thirdPart/qq/?callback=https%3A%2F%2Fvideo.kuaishou.com%2FthirdPart%2Fqq%2F&amp;followUrl=https://video.kuaishou.com/thirdPart/qq/","htmlJumpCallback":"","issueTime":1613883170}; userId=1297533855; userId=1297533855; passToken=ChNwYXNzcG9ydC5wYXNzLXRva2VuEpAB5c7daDCmfLJGUB6LQLgljXamVWAyIlVjCS-sNwqTRev4mfC7ClrmeLZb_rYe43GB_gAMkXVlil_zsdaSyVrCatOl1on2mnLE6lZU82SIqWD79YtdIWPINFyX_fAkgjDCF-wiIj4IYmH6-WtPxYsRVxYxanvgeaT-hidyo1P64s5r1gto11M922-s9MN8LGXUGhKg_o5KaBBN5LxbmRWQRwGOczwiIDuQz_USHjJc3GJ__awgbeUigA2uhCy_EjgckcVg24kvKAUwAQ',
+    "Host":"id.kuaishou.com",
+    "ORigin":"https://video.kuaishou.com"
+}
+params = {
+    "sid":"kuaishou.server.web"
+}
+
+res = requests.post(URL,data=params,headers = headers)
+print(res.text)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210316142646.png"></p>
+<h4 id="remen"><a href="#remen" class="headerlink" title="remen"></a>remen</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+import json
+import os
+# 爬取个人主页关注用户的id和naame
+URL = "https://video.kuaishou.com/graphql"
+
+headers = {
+    "accept":"*/*",
+    "Content-Length":"&lt;calculated when request is sent&gt;",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "content-type": "application/json",
+    "Cookie": r'kpf=PC_WEB; kpn=KUAISHOU_VISION; clientid=3;Max-Age=86400; did=web_ec874916e390b9741609686125a0452e; didv=1613879531823; client_key=65890b29; ktrace-context=1|MS43NjQ1ODM2OTgyODY2OTgyLjc1MjgyMjUyLjE2MTU0NDI5NDQ0MzYuMTU2OTE=|MS43NjQ1ODM2OTgyODY2OTgyLjIxMjcxODY4LjE2MTU0NDI5NDQ0MzYuMTU2OTI=|0|graphql-server|webservice|false|NA; userId=427400950; kuaishou.server.web_st=ChZrdWFpc2hvdS5zZXJ2ZXIud2ViLnN0EqABUkHhV7V4kZgEsKH5ujlHNWEHV_KRDoBGhvSztjMMB54VfcpY6EJgzK_b3ZYFhM0obMSTVBDc7Csb-KuDKQpR8sobH5ozd82kEMIV5eb3S0QSJBxAemnSYimqR5IskD_IGA06cph50uA_oH2OftW2tSpaBuXl3vyYhFv6aS_24d8z0n9WILEo5JcTI0QpDdmDoRnXxHc_x7JHIR3s1pBlBhoSzFZBnBL4suA5hQVn0dPKLsMxIiDp66EsPPenAZG6MBgmJkQL2mrCKEDn1OPcTisxS6wffSgFMAE; kuaishou.server.web_ph=cb43dea88ab3a4c31dd231f2dc9cc29b8680',
+    "Host": "video.kuaishou.com",
+    "Origin": "https://video.kuaishou.com",
+    "Referer": "https://video.kuaishou.com/brilliant",  # 这里要更改
+    "User-Agent": "PostmanRuntime/7.26.8"
+}
+
+payload = {"operationName":"brilliantTypeDataQuery","variables":{"hotChannelId":"00","page":"brilliant","pcursor":"1"},"query":"fragment feedContent on Feed {\n  type\n  author {\n    id\n    name\n    headerUrl\n    following\n    headerUrls {\n      url\n      __typename\n    }\n    __typename\n  }\n  photo {\n    id\n    duration\n    caption\n    likeCount\n    realLikeCount\n    coverUrl\n    photoUrl\n    coverUrls {\n      url\n      __typename\n    }\n    timestamp\n    expTag\n    animatedCoverUrl\n    distance\n    videoRatio\n    liked\n    stereoType\n    __typename\n  }\n  canAddComment\n  llsid\n  status\n  currentPcursor\n  __typename\n}\n\nfragment photoResult on PhotoResult {\n  result\n  llsid\n  expTag\n  serverExpTag\n  pcursor\n  feeds {\n    ...feedContent\n    __typename\n  }\n  webPageArea\n  __typename\n}\n\nquery brilliantTypeDataQuery($pcursor: String, $hotChannelId: String, $page: String, $webPageArea: String) {\n  brilliantTypeData(pcursor: $pcursor, hotChannelId: $hotChannelId, page: $page, webPageArea: $webPageArea) {\n    ...photoResult\n    __typename\n  }\n}\n"}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">def get_data2():
+    res = requests.post(URL, headers=headers, json=payload)
+    res.encoding="utf-8"
+    m_json = res.json()  #字典格式
+    
+    #----------筛选信息------------#
+    feeds_list = m_json["data"]["brilliantTypeData"]["feeds"]
+    
+    for feeds in feeds_list:
+        Userid = feeds["author"]["id"]
+        Username = feeds["author"]["name"]
+        print("%s-----------%s"%(Userid,Username))
+        
+    # print(m_json)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">if __name__ == "__main__":
+    for i in range(10):
+        get_data2()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210316142755.png"></p>
+<h4 id="userID"><a href="#userID" class="headerlink" title="userID"></a>userID</h4><pre class="line-numbers language-none"><code class="language-none">import requests
+import json
+import os
+# 爬取个人主页关注用户的id和naame
+URL = "https://video.kuaishou.com/graphql"
+
+headers = {
+    "accept":"*/*",
+    "Content-Length":"&lt;calculated when request is sent&gt;",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "content-type": "application/json",
+    "Cookie": r'kpf=PC_WEB; kpn=KUAISHOU_VISION; clientid=3; did=web_ec874916e390b9741609686125a0452e; didv=1613879531823; client_key=65890b29; ktrace-context=1|MS43NjQ1ODM2OTgyODY2OTgyLjc1MjgyMjUyLjE2MTU0NDI5NDQ0MzYuMTU2OTE=|MS43NjQ1ODM2OTgyODY2OTgyLjIxMjcxODY4LjE2MTU0NDI5NDQ0MzYuMTU2OTI=|0|graphql-server|webservice|false|NA; userId=427400950; kuaishou.server.web_st=ChZrdWFpc2hvdS5zZXJ2ZXIud2ViLnN0EqABUkHhV7V4kZgEsKH5ujlHNWEHV_KRDoBGhvSztjMMB54VfcpY6EJgzK_b3ZYFhM0obMSTVBDc7Csb-KuDKQpR8sobH5ozd82kEMIV5eb3S0QSJBxAemnSYimqR5IskD_IGA06cph50uA_oH2OftW2tSpaBuXl3vyYhFv6aS_24d8z0n9WILEo5JcTI0QpDdmDoRnXxHc_x7JHIR3s1pBlBhoSzFZBnBL4suA5hQVn0dPKLsMxIiDp66EsPPenAZG6MBgmJkQL2mrCKEDn1OPcTisxS6wffSgFMAE; kuaishou.server.web_ph=cb43dea88ab3a4c31dd231f2dc9cc29b8680',
+    "Host": "video.kuaishou.com",
+    "Origin": "https://video.kuaishou.com",
+    "Referer": "https://video.kuaishou.com/profile/3xsms2z7ft9fmhg",   # 用户主页地址
+    "User-Agent": "PostmanRuntime/7.26.8"
+}
+
+payload = {"operationName":"visionProfileUserList","variables":{"ftype":1},"query":"query visionProfileUserList($pcursor: String, $ftype: Int) {\n  visionProfileUserList(pcursor: $pcursor, ftype: $ftype) {\n    result\n    fols {\n      user_name\n      headurl\n      user_text\n      isFollowing\n      user_id\n      __typename\n    }\n    hostName\n    pcursor\n    __typename\n  }\n}\n"}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">def get_data():
+    
+    res = requests.post(URL, headers=headers, json=payload)
+    res.encoding="utf-8"
+    m_json = res.json()  #字典格式
+    
+    fols_list = m_json["data"]["visionProfileUserList"]["fols"]
+    
+    pcursor = m_json["data"]["visionProfileUserList"]["pcursor"]
+    payload["variables"]["pcursor"]=pcursor
+    
+    for fols in fols_list:
+        userID = fols["user_id"]
+        userName = fols["user_name"]
+        print("userID:%s-------userName:%s"%(userID,userName))
+    if pcursor=="no_more":
+        return 0
+
+if __name__=='__main__':
+    while(1):
+        temp = get_data()
+        if temp == 0:
+            break
+    print("---------------------当前用户地址完成-------------------")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/blog002/raw/master/image01/20210316142835.png"></p>
+<blockquote>
+<p>貌似直接山川到仓库里更好</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/03/16/kuai-shou-shi-pin-pa-chong-bi-ji-wan/">http://xinxinliang.github.io/2021/03/16/kuai-shou-shi-pin-pa-chong-bi-ji-wan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                                    <span class="chip bg-color">记录</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BF%AB%E6%89%8B/">
+                                    <span class="chip bg-color">快手</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/03/17/html-yu-fa-zong-jie/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-r72wxm.jpg" class="responsive-img" alt="HTML语法总结">
+                        
+                        <span class="card-title">HTML语法总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web/" class="post-category">
+                                    web
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                        <span class="chip bg-color">记录</span>
+                    </a>
+                    
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/16/kuai-shou-shi-pin-pa-chong-bi-ji-yi-chu-ji/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-ox2wqm.png" class="responsive-img" alt="快手视频爬虫笔记1：初级">
+                        
+                        <span class="card-title">快手视频爬虫笔记1：初级</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8E%A8%E8%8D%90/">
+                        <span class="chip bg-color">推荐</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BF%AB%E6%89%8B/">
+                        <span class="chip bg-color">快手</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">272.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

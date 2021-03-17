@@ -1,0 +1,2381 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="JS语法总结, blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>JS语法总结 | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-x11rgz.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">JS语法总结</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                                <span class="chip bg-color">记录</span>
+                            </a>
+                        
+                            <a href="/tags/JavaScrip/">
+                                <span class="chip bg-color">JavaScrip</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web/" class="post-category">
+                                web
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-17
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-03-17
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    23 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>相关内容还是看一些教程网站吧！像w3school，菜鸟教程等。这里只是对之前的笔记做的一个总结，学习相关的知识还是要多练习，多运用。</p>
+</blockquote>
+<h2 id="一、JS简介"><a href="#一、JS简介" class="headerlink" title="一、JS简介"></a>一、JS简介</h2><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011105306.png"></p>
+<h6 id="为什么使用JS"><a href="#为什么使用JS" class="headerlink" title="为什么使用JS"></a>为什么使用JS</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011105405.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011105413.png"></p>
+<ul>
+<li>易于使用</li>
+<li>可改善性能</li>
+<li>与浏览器集成</li>
+</ul>
+<h6 id="lt-script-gt-标签"><a href="#lt-script-gt-标签" class="headerlink" title="<script>标签"></a>&lt;script&gt;标签</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011121036.png"></p>
+<ul>
+<li>HTML5中&lt;script&gt;标签的type的属性值默认为text/javascript</li>
+<li>src属性引入外部js代码，使js代码可以共享</li>
+</ul>
+<h6 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h6><h6 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h6><blockquote>
+<ul>
+<li>变量名只能包含字符、数字、下划线或美元符号</li>
+<li>变量名不能以字母打头</li>
+<li>不能将保留字作为变量名</li>
+<li>编程风格是以小写字母打头，第二个字母用下划线或者大写开头</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>argument</th>
+<th>final</th>
+<th>public</th>
+<th>boolean</th>
+<th>finally</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>return</td>
+<td>break</td>
+<td>float</td>
+<td>short</td>
+<td>byte</td>
+</tr>
+<tr>
+<td>for</td>
+<td>static</td>
+<td>case</td>
+<td>function</td>
+<td>super</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>goto</td>
+<td>switch</td>
+<td>char</td>
+<td>if</td>
+</tr>
+<tr>
+<td>synchronized</td>
+<td>class</td>
+<td>implements</td>
+<td>this</td>
+<td>cons</td>
+</tr>
+<tr>
+<td>import</td>
+<td>throw</td>
+<td>continue</td>
+<td>in</td>
+<td>throws</td>
+</tr>
+<tr>
+<td>debugger</td>
+<td>instanceof</td>
+<td>transient</td>
+<td>default</td>
+<td>int</td>
+</tr>
+<tr>
+<td>true</td>
+<td>delete</td>
+<td>interface</td>
+<td>try</td>
+<td>do</td>
+</tr>
+<tr>
+<td>let</td>
+<td>typeof</td>
+<td>double</td>
+<td>long</td>
+<td>var</td>
+</tr>
+<tr>
+<td>else</td>
+<td>native</td>
+<td>void</td>
+<td>enum</td>
+<td>new</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>eval</td>
+<td>null</td>
+<td>while</td>
+<td>export</td>
+</tr>
+<tr>
+<td>package</td>
+<td>with</td>
+<td>extends</td>
+<td>private</td>
+<td>yield</td>
+</tr>
+</tbody></table>
+<h6 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h6><ul>
+<li>if</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">var color = "red";
+if (color == "blue"){
+	color = "red";
+}else{
+	color = "blue";
+}
+color;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>for</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">for(var count = 1;count &lt;= 10;count++){
+	console.log("Iteration number" + count);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>while</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">var color = "blue";
+while (color == "blue"){
+	console.log("Color is still blue.");
+	if(Math.random() &gt; 0.5){
+		color = 'not blue'
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>do</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">var color = "blue";
+do {
+	//some stuff
+}
+while (color != "blue");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h6><pre class="line-numbers language-none"><code class="language-none">function writeParagraph(myString){
+	document.write("&lt;p&gt;" + myString + "&lt;p&gt;");
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h6 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011123122.png"></p>
+<h6 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011123140.png"></p>
+<h6 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011123234.png"></p>
+<h6 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011123406.png"></p>
+<h2 id="二、document打印和出发脚本"><a href="#二、document打印和出发脚本" class="headerlink" title="二、document打印和出发脚本"></a>二、document打印和出发脚本</h2><ul>
+<li>可以打印出任意内容，包括识别HTML标签</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例22-1：第一个JavaScript程序&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;script type="text/javascript"&gt;
+        document.write("&lt;h1&gt;Hello JavaScript!&lt;/h1&gt;");
+    &lt;/script&gt;
+&lt;/body&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>点击事件触发alert框（内部）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例22-2：行内式JS示例&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    这里演示内部JavaScript。
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;span onclick="alert('Hello JavaScript!');" style="cursor: pointer;"&gt;显示问候&lt;/span&gt;
+&lt;/body&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>点击事件触发alert框（外部）</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例22-3：内部式JS示例&lt;/title&gt;
+    &lt;script type="text/JavaScript"&gt;
+        function SayHello() { alert("Hello JavaScript!"); }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    这里演示行内（内联）JavaScript。
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;span onclick="SayHello()" style="cursor: pointer;"&gt;显示问候&lt;/span&gt;
+&lt;/body&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>外部链接引用</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;script type="text/javascript" src="JS/demo22-4.js"&gt;&lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例22-4：外部JS示例&lt;/title&gt;
+    &lt;script type="text/javascript" src="JS/demo22-4.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    这里演示外部链接式JavaScript。&lt;br/&gt;&lt;br/&gt;
+    &lt;span onclick="SayHello()" style="cursor: pointer;"&gt;显示问候&lt;/span&gt;
+&lt;/body&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>出错了</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例22-5：JS操作元素出错&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        var btn = document.getElementById("spanHello");
+        btn.onclick = function () {
+            alert("Hello JavaScript!");
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    JS操作元素出错，原因是加载机制问题。&lt;br/&gt;&lt;br/&gt;
+    &lt;span id="spanHello" style="cursor: pointer;"&gt;显示问候&lt;/span&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>脚本会直接被触发</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例23-1：使用isNaN()判断是否为数值&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        var name = "Daniel";
+        var age = 8;
+        if (isNaN(name)) {
+            alert("不是数字");
+        }
+        if (isNaN(age)) {
+            alert("不是数字");
+        } else {
+            alert("是数字");
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    使用isNaN()判断是否为数值。
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、对象的访问"><a href="#三、对象的访问" class="headerlink" title="三、对象的访问"></a>三、对象的访问</h2><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例24-1：JS对象的访问&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        var person = {
+            name: "Daniel",
+            height: "130cm",
+        };
+        person.weight = "25kg";
+        person.getSlogan = function () {
+            return "Never give up!"
+        }
+        document.write(
+            "Name: " + person.name + "&lt;br/&gt;" +
+            "Height: " + person.height + "&lt;br/&gt;" +
+            "Weight: " + person["weight"] + "&lt;br/&gt;" +
+            "Slogan: " + person.getSlogan()
+        );
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例24-2：创建Date对象&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        //获取当前日期和时间
+        var myDate = new Date();
+        document.write(myDate);
+        ln();
+
+        //获取GTM标准零点过后1533517610185毫秒的时间
+        var myDate = new Date(1533517610185);
+        document.write(myDate);
+        ln();
+
+        //将时间字符串转换为对应的时间对象
+        var myDate = new Date("2010-9-25 13:06");
+        document.write(myDate);
+        ln();
+
+        //将具体的日期、时间参数，构造成Date对象
+        var myDate = new Date(2010, 9, 25, 13, 6);
+        document.write(myDate);
+        ln();
+
+
+        function ln() {
+            document.write("&lt;br/&gt;")
+        };
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例24-3：以“年月日时分钞”的格式显示当前系统日期和时间&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        //获取当前日期和时间
+        var now = new Date();       //获取当前日期和时间对象
+        var y = now.getFullYear();  //获取年份（4位）
+        var M = now.getMonth() + 1; //获取月份，注意 +1
+        var d = now.getDate();      //获取月中的第几天
+        var h = now.getHours();     //获取小时
+        var m = now.getMinutes();   //获取分钟
+        var s = now.getSeconds();   //获取秒数
+        var day = now.getDay();     //获取星期几，注意特殊值0
+        if (m &lt; 10) m = "0" + m;    //若小于10，则前面补"0"成两位 
+        if (d &lt; 10) d = "0" + d;
+        if (h &lt; 10) h = "0" + h;
+        if (m &lt; 10) m = "0" + m;
+        if (s &lt; 10) s = "0" + s;
+        if (day == 0) day = "日";
+        var str = y + "年" + M + "月" + d + "日 " 
+                  + h + ":" + m + ":" + s + " 星期" + day;
+        document.write(str);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">2&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例24-4：数组常用方法示例&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        var student = ["刘子栋", "王杰", "James"];
+        student.push("Jordan"); //使用push()方法追加新元素
+        document.write("数组中的元素： ")
+        //遍历输出全部元素
+        for (i = 0; i &lt; student.length; i++) {
+            document.write(student[i] + "&amp;nbsp;&amp;nbsp;");
+        }
+        document.write("&lt;br/&gt;反序排列后为： ")
+        //反序排列元素
+        student.reverse();
+        for (i = 0; i &lt; student.length; i++) {
+            document.write(student[i] + "&amp;nbsp;&amp;nbsp;");
+        }
+        document.write("&lt;br/&gt;&lt;br/&gt;用逗号(,)连接成字符串： " + student.join(','));
+        document.write("&lt;br/&gt;用加号(+)连接成字符串： " + student.join('+'));
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例25-5：Math对象应用示例&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        var r = 3;
+        var area = Math.PI * r * r;
+        document.write("半径为3的圆面积为：" + area);
+        var areaRounded = Math.round(area * 10) / 10;
+        document.write("&lt;br/&gt;保留1位小数为：" + areaRounded);
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="四、时间与延迟函数"><a href="#四、时间与延迟函数" class="headerlink" title="四、时间与延迟函数"></a>四、时间与延迟函数</h2><p>解码</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例25-1：escapse()和unescapse()示例&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        var url = "www.exam.cn/student/examing.aspx?"
+        +"id=201810411101&amp;name=刘子栋&amp;setName=WEB开发技术"
+        out("原始URL为： " + url);
+        var urlEncode = escape(url);
+        out("编码后为： " + urlEncode);
+        var urlDecode = unescape(urlEncode)
+        out("解码还原后： " + urlDecode)
+
+        function out(str) {
+            document.write(str + "&lt;br/&gt;");
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例25-2：setTimeout()示例&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        function timedMsg() {
+            var t = setTimeout("timeout()", 5000);
+        }
+
+        function timeout() {
+            alert("5 seconds timeout! Let's GO!");
+            location.href = "http://www.baidu.com/";
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;input type="button" value="5秒后跳转" onClick="timedMsg()"&gt;
+    &lt;/form&gt;
+    &lt;p&gt;点击上面的按钮。5 秒后会显示一个消息框。&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例25-2：setTimeOut()示例&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        span#lblSec {
+            font-size: 32px;
+            color: #fb5404;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    &lt;/style&gt;
+    &lt;script type="text/javascript"&gt;
+        var n = 10;
+        var lblSec;
+        window.onload = function () {
+            lblSec = document.getElementById("lblSec");
+            countdown();
+            setInterval("countdown()", 1000);
+        }
+
+        function countdown() {
+            lblSec.innerHTML = n;
+            if (n &lt;= 0)
+                location.href = "http://www.uexam.cn/";
+            else {
+                n--;
+            }
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h3&gt;恭喜你注册成功，
+        &lt;span id="lblSec"&gt;&lt;/span&gt; 后跳转到首页&lt;/h3&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例25-4：动态显示当前系统日期和时间&lt;/title&gt;
+    &lt;script type="text/javascript" src="JS/demo25-4.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    当前时间：
+    &lt;span id="lblDT"&gt;&lt;/span&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">var dt;
+var days = ["天", "一", "二", "三", "四", "五", "六"];
+window.onload = function () {
+    dt = document.getElementById("lblDT");
+    getDT();
+    setInterval("getDT()", 1000);
+}
+
+function getDT() {
+    var now = new Date();       //获取当前日期和时间对象
+    var y = now.getFullYear();  //获取年份（4位）
+    var M = now.getMonth() + 1; //获取月份，注意 +1
+    var d = now.getDate();      //获取月中的第几天
+    var h = now.getHours();     //获取小时
+    var m = now.getMinutes();   //获取分钟
+    var s = now.getSeconds();   //获取秒数
+    var day = now.getDay();     //获取星期几，注意特殊值0
+    if (m &lt; 10) m = "0" + m;    //若小于10，则前面补"0"成两位   
+    if (d &lt; 10) d = "0" + d;
+    if (h &lt; 10) h = "0" + h;
+    if (m &lt; 10) m = "0" + m;
+    if (s &lt; 10) s = "0" + s;
+    var str = y + "年" + M + "月" + d + "日 " +
+        h + ":" + m + ":" + s + " 星期" + days[day];
+    dt.innerHTML = str;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="五、dom节点"><a href="#五、dom节点" class="headerlink" title="五、dom节点"></a>五、dom节点</h2><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;DOM文档树&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;我的标题&lt;/h1&gt;
+    &lt;a href="#"&gt;我的链接&lt;/a&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例26-2：访问DOM节点示例&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id="main"&gt;
+        &lt;h3&gt;我是第一个子节点&lt;/h3&gt;
+        &lt;div&gt;我是第二个子节点&lt;/div&gt;
+        &lt;p&gt;我是最后子节点&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;script type="text/javascript"&gt;
+    //  获取div对象
+    var main = document.getElementById('main');
+    //  获取div子节点集合
+    var mainChildNodes = main.children;
+    document.write("div的子节点个数为：" + mainChildNodes.length);      //获取元素个数
+    document.write("&lt;br&gt;" + mainChildNodes[1].tagName);     //获取第2个元素的标签
+    document.write("&lt;br&gt;" + mainChildNodes[2].innerHTML);   //获取第3个元素的内容
+&lt;/script&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例26-3：修改DOM节点示例&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id="main"&gt;
+        &lt;a href="http://www.cdu.edu.cn/"&gt;我是第一个子节点&lt;/a&gt;
+        &lt;div&gt;我是第二个子节点&lt;/div&gt;
+        &lt;p&gt;我是最后子节点&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例26-4：window对象应用示例（获取浏览器的宽高）&lt;/title&gt;
+    &lt;script tyep="text/javascript"&gt;
+        var w = window.innerWidth || document.body.clientWidth ||
+            document.documentElement.clientWidth;
+        var h = window.innerHeight || document.body.clientHeight ||
+            document.documentElement.clientHeight;
+        document.write("浏览器窗口宽: " + w + "px, 高: " + h + "px");
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例26-5：访问navigator对象示例&lt;/title&gt;
+    &lt;script tyep="text/javascript"&gt;
+        // out("&lt;p&gt;浏览器代号: " + navigator.appCodeName + "&lt;/p&gt;");
+        // out("&lt;p&gt;浏览器名称: " + navigator.appName + "&lt;/p&gt;");
+        // out("&lt;p&gt;浏览器版本: " + navigator.appVersion + "&lt;/p&gt;");
+        // out("&lt;p&gt;启用Cookies: " + navigator.cookieEnabled + "&lt;/p&gt;");
+
+var aWidth = screen.availWidth;
+var aHeight = screen.availHeight;
+var sWidth = screen.width;
+var sHeight = screen.height;
+
+var n=0
+
+out(location.protocol)
+        function out(str) {
+            document.write(str + "&lt;br/&gt;");
+        }
+
+    function reload(){
+        if(n&lt;5){
+        out(n+"……");
+        n=n+1;
+        }else{
+            location.reload();
+        }
+                setTimeout("reload()",1000);
+    }
+
+    function write(){
+        if(n&lt;5){
+        out(n+"……");
+        n=n+1;
+        }else{
+            location.reload();
+        }
+    }
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;input type="button" value="重新加载" onclick="reload()"&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="六、事件"><a href="#六、事件" class="headerlink" title="六、事件"></a>六、事件</h2><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例27-1：事件绑定示例&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;INPUT type="button" value="静态绑定1" onClick="alert('静态1');"&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;INPUT type="button" value="静态绑定2" onClick="popMsg()"&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;INPUT type="button" value="动态绑定1" id="btnDemo1"&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;INPUT type="button" value="动态绑定2" id="btnDemo2"&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+&lt;/body&gt;
+&lt;script type="text/javascript"&gt;
+    function popMsg() {
+        alert("静态绑定事件2");
+    }
+
+    var btn1 = document.getElementById("btnDemo1");
+    btn1.onclick = function () {
+        alert("动态绑定事件，匿名函数形式。")
+    }
+
+    var btn2 = document.getElementById("btnDemo2");
+    btn2.onclick = myHandler;
+    function myHandler() {
+        alert("动态绑定事件，普通函数形式。")
+    }
+&lt;/script&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例27-2：Load事件优化JS代码位置&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        window.onload = init;
+
+        function init() {
+            var btn1 = document.getElementById("btnDemo1");
+            btn1.onclick = function () {
+                alert("动态绑定事件，匿名函数形式。")
+            }
+
+            var btn2 = document.getElementById("btnDemo2");
+            btn2.onclick = myHandler;
+
+            function myHandler() {
+                alert("动态绑定事件，普通函数形式。")
+            }
+        }
+
+        function popMsg() {
+            alert("静态绑定事件2");
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;INPUT type="button" value="静态绑定1" onClick="alert('静态1');"&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;INPUT type="button" value="静态绑定2" onClick="popMsg()"&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;INPUT type="button" value="动态绑定1" id="btnDemo1"&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;INPUT type="button" value="动态绑定2" id="btnDemo2"&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例27-3：BeforeUnLoad事件示例&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        window.onbeforeunload = function () {
+            if (window.event)
+                window.event.returnValue = "确定关闭窗口吗？";
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    UnLoad事件示例，关闭窗口会弹出确认对话框。
+    &lt;br/&gt;
+    &lt;input type="button" onclick="window.close()" oncli value="关闭页面" /&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例27-4：鼠标移到按钮上方改变按钮样式&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        #btnDemo {
+            border: none;
+            font-size: 26px;
+            padding: 5px 10px;
+            border: 2px solid #999;
+        }
+
+        .out {
+            background-color: #eee;
+            font-family: 微软雅黑;
+            color: blue;
+        }
+
+        .over {
+            background-color: #f94306;
+            font-family: 楷体;
+            color: white;
+        }
+    &lt;/style&gt;
+    &lt;script type="text/javascript"&gt;
+        window.onload = init;
+
+        function init() {
+            var btn = document.getElementById("btnDemo");
+            btn.onmouseover = function () {
+                btn.className = "over";
+            }
+            btn.onmouseout = function () {
+                btn.className = "out";
+            }
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;input id="btnDemo" class="out" type="button" value="鼠标移上来，改变样式" /&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例27-5：鼠标移到表格上方时行变色&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        table, td, th {
+            border: 1px solid #999;
+            border-collapse: collapse;
+            /*合并边框*/
+        }
+    &lt;/style&gt;
+
+    &lt;script type="text/javascript"&gt;
+        window.onload = init;
+
+        function init() {
+            var trs = document.getElementById("tbl").getElementsByTagName("tr");
+            var oldBG;
+            for (n in trs) {
+                trs[n].onmouseover = function () {
+                    oldBG = this.style.background; //记录旧颜色
+                    this.style.background = "#ccc"; //显示新颜色
+                }
+                trs[n].onmouseout = function () {
+                    this.style.background = oldBG; //恢复旧颜色
+                }
+            }
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;table id="tbl"&gt;
+        &lt;caption&gt;表格的标题&lt;/caption&gt;
+        &lt;tr&gt;
+            &lt;th&gt;学号&lt;/th&gt;
+            &lt;th&gt;姓名&lt;/th&gt;
+            &lt;th&gt;年龄&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2018106621101&lt;/td&gt;
+            &lt;td&gt;刘子栋&lt;/td&gt;
+            &lt;td&gt;20&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2018106621102&lt;/td&gt;
+            &lt;td&gt;James Harden&lt;/td&gt;
+            &lt;td&gt;21&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例27-6：输入时的键盘事件&lt;/title&gt;
+    &lt;script type="text/javascript" src="JS/demo27-6.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;请按下回车键提交用户名和密码&lt;/p&gt;
+    &lt;div&gt;用户名：
+        &lt;input type="text" id="txtID" onkeydown="idKeyDown()"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;密　码：
+        &lt;input type="password" id="txtPWD" onkeydown="pwdKeyDown()"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="button" value="登  录" onclick="submit()" &lt;/div&gt;
+
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例27-7：表单元素的Focus和Blur事件&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        var txtID, tips;
+        window.onload = init;
+
+        function init() {
+            txtID = document.getElementById("txtID");
+            tips = document.getElementById("tips");
+            txtID.onfocus = Focus;
+            txtID.onblur = Blur;
+        }
+
+        function Focus() {
+            tips.innerHTML = "正在输入用户名……";
+        }
+
+        function Blur() {
+            if (txtID.value != "") {
+                tips.innerHTML = "用户名输入完成";
+            } else {
+                tips.innerHTML = "用户名不能为空";
+            }
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;用户名：&lt;input type="text" id="txtID"&gt;&lt;br/&gt;&lt;/div&gt;
+    &lt;span id="tips"&gt;请输入用户名&lt;/span&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例27-8：Change事件实现下拉列表的联动&lt;/title&gt;
+    &lt;script type="text/javascript" src="JS/demo27-8.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;select id="province" onchange="changeCity()"&gt;
+        &lt;option value="0"&gt;--请选择--&lt;/option&gt;
+        &lt;option value="1"&gt;四川&lt;/option&gt;
+        &lt;option value="2"&gt;浙江&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;select id="city"&gt;
+        &lt;option value="0"&gt;--请选择--&lt;/option&gt;
+    &lt;/select&gt;
+
+
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">var txtID, txtPWD;
+window.onload = function () {
+    txtID = document.getElementById("txtID");
+    txtPWD = document.getElementById("txtPWD");
+}
+
+//用户名文本框上按回车键，跳到密码框
+function idKeyDown() {
+    if (window.event.keyCode == 13) {
+        txtPWD.focus();
+    }
+}
+
+//密码文本框上按回车键，提交
+function pwdKeyDown() {
+    if (window.event.keyCode == 13) {
+        submit();
+    }
+}
+
+function submit() {
+    var id = txtID.value;
+    var pwd = txtPWD.value;
+    if (id == "") {
+        alert("用户名不能为空！")
+        txtID.focus();
+    } else if (pwd == "") {
+        alert("密码不能为空！")
+        txtPWD.focus();
+    } else {
+        alert("开始登录验证……");
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">var city, province;
+window.onload = function () {
+    city = document.getElementById("city");
+    province = document.getElementById("province");
+}
+var cityObject = {
+    SiChuan: ["成都", "绵阳", "德阳"],
+    ZheJiang: ["杭州", "宁波"]
+};
+
+function changeCity() {
+    if (city.children.length &gt; 1) {
+        var length = city.children.length;
+        for (var j = 1; j &lt; length; j++) {
+            city.removeChild(city.children[1]);
+        }
+    }
+    addNode();
+}
+
+function addNode() {
+    if (province.value == 1) {
+        for (var i = 0; i &lt; cityObject.SiChuan.length; i++) {
+            addOption(cityObject.SiChuan[i]);
+        }
+    }
+    if (province.value == 2) {
+        for (var i = 0; i &lt; cityObject.ZheJiang.length; i++) {
+            addOption(cityObject.ZheJiang[i]);
+        }
+    }
+}
+
+function addOption(object) {
+    var option = document.createElement("option");
+    node = document.createTextNode(object);
+    option.appendChild(node);
+    city.appendChild(option);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/03/17/js-yu-fa-zong-jie/">http://xinxinliang.github.io/2021/03/17/js-yu-fa-zong-jie/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                                    <span class="chip bg-color">记录</span>
+                                </a>
+                            
+                                <a href="/tags/JavaScrip/">
+                                    <span class="chip bg-color">JavaScrip</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/03/17/picgo-github-tu-chuang/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-ym921l.jpg" class="responsive-img" alt="picGo+github/gitee 图床">
+                        
+                        <span class="card-title">picGo+github/gitee 图床</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8E%A8%E8%8D%90/">
+                        <span class="chip bg-color">推荐</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%BE%E5%BA%8A/">
+                        <span class="chip bg-color">图床</span>
+                    </a>
+                    
+                    <a href="/tags/picgo/">
+                        <span class="chip bg-color">picgo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/17/css-yu-fa-zong-jie/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-vm9zp8.jpg" class="responsive-img" alt="CSS语法总结">
+                        
+                        <span class="card-title">CSS语法总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web/" class="post-category">
+                                    web
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                        <span class="chip bg-color">记录</span>
+                    </a>
+                    
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">272.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

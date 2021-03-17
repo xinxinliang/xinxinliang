@@ -1,0 +1,4393 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="CSS语法总结, blog">
+    <meta name="description" content="这是我的个人网站，欢迎来访">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>CSS语法总结 | 头号咸鱼</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/7b318e23.js","daovoice")</script>
+    
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="头号咸鱼" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">头号咸鱼</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">头号咸鱼</div>
+        <div class="logo-desc">
+            
+            这是我的个人网站，欢迎来访
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-vm9zp8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">CSS语法总结</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                                <span class="chip bg-color">记录</span>
+                            </a>
+                        
+                            <a href="/tags/CSS/">
+                                <span class="chip bg-color">CSS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web/" class="post-category">
+                                web
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-17
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-03-17
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    16.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    79 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>相关内容还是看一些教程网站吧！像w3school，菜鸟教程等。这里只是对之前的笔记做的一个总结，学习相关的知识还是要多练习，多运用。</p>
+</blockquote>
+<h2 id="一、CSS概述"><a href="#一、CSS概述" class="headerlink" title="一、CSS概述"></a>一、CSS概述</h2><h4 id="css简介"><a href="#css简介" class="headerlink" title="css简介"></a>css简介</h4><blockquote>
+<p>CSS,即“Cascading Style Sheet”（层叠式样式表），是用来控制网页外观的一门技术。</p>
+</blockquote>
+<h4 id="css3"><a href="#css3" class="headerlink" title="css3"></a>css3</h4><blockquote>
+<p>CSS3 是最新版，新增 了 很多 属性 和 方法， 最 典型的 就是 你 可以 直接 为 文字 设置 阴影 和 为 标签 设置 圆角。</p>
+</blockquote>
+<h4 id="CSS注释"><a href="#CSS注释" class="headerlink" title="CSS注释"></a>CSS注释</h4><pre class="line-numbers language-none"><code class="language-none">/*注释内容*/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="CSS的继承特性"><a href="#CSS的继承特性" class="headerlink" title="CSS的继承特性"></a>CSS的继承特性</h4><pre class="line-numbers language-none"><code class="language-none">&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;CSS的继承特性&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;CSS的继承特性&lt;/h1&gt;
+    &lt;p&gt;欢迎学习CSS，这里为您提供丰富的学习内容。&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            在这里，你可以学到：
+            &lt;ul&gt;
+                &lt;li&gt;HTML&lt;/li&gt;
+                &lt;li&gt;
+                    CSS
+                    &lt;ul&gt;
+                        &lt;li&gt;CSS初级&lt;/li&gt;
+                        &lt;li&gt;CSS中级&lt;/li&gt;
+                        &lt;li&gt;CSS高级&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            你还可以学到：
+            &lt;ol&gt;
+                &lt;li&gt;Flash&lt;/li&gt;
+                &lt;li&gt;Dreamweaver&lt;/li&gt;
+                &lt;li&gt;PhotoShop&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;如果您有任何问题，欢迎联系我们&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>例11-1：css的继承特性</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head lang="en"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例11-1：CSS的继承特性 &lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo11-1.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;
+        div中的文字，应该是应用div样式“蓝色”
+        &lt;p class="example" id="example"&gt;div中的子元素p&lt;/p&gt;
+        &lt;span&gt;子元素span
+            &lt;font&gt;及嵌套font&lt;/font&gt;，会怎样？&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+/* demo11-1.css 样式表文件
+设计div标签的文字样式*/
+
+div {
+    color: blue;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<ul>
+<li>例11-2：css的层叠特性</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head lang="en"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例11-2：CSS的层叠特性&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo11-2.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;
+        div中的文字，应该是应用div样式“蓝色，楷体”
+        &lt;p class="size25" id="example"&gt;层叠特性&lt;/p&gt;
+        &lt;span&gt;子元素span
+            &lt;font&gt;及嵌套font&lt;/font&gt;，会怎样？&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+/* demo11-2.css 样式表文件*/
+
+div {
+    color: blue;
+}
+
+p {
+    font-family: "微软雅黑";
+}
+
+span {
+    font-family: 楷体;
+    font-size: 20px;
+}
+
+.size25 {
+    color: red;
+    font-size: 25px;
+}
+
+#example {
+    font-weight: bold;
+    color: #000000
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011103851.png"></p>
+<h2 id="二、CSS引入和选择器"><a href="#二、CSS引入和选择器" class="headerlink" title="二、CSS引入和选择器"></a>二、CSS引入和选择器</h2><h4 id="CSS的三种引入方式"><a href="#CSS的三种引入方式" class="headerlink" title="CSS的三种引入方式"></a>CSS的三种引入方式</h4><h6 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h6><blockquote>
+<p>外部 样式 表 是最 理想 的 CSS 引用 方式， 在 实际 开发 当中， 为了 提升 网 站的 性能 和 维护 性， 一般 都是 使用 外部 样式 表。 所谓 的“ 外部 样式 表”， 就 是把 CSS 代码 和 HTML 代码 单独 放在 不同 文件 中， 然后 在 HTML 文档 中 使用 link 标签 来 引用 CSS 样式 表。</p>
+<p>当 样式 需要 被 应用 到 多个 页面 时， 外部 样式 表 是最 理想 的 选择。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;外部样式&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo.css" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;这里使用外部样式&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>外部样式，在同级目录下创建CSS文件夹，在其下创建demo.cs文件</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">p {
+    font-size: 30px;
+    font-family: 微软雅黑;  
+    color: black;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h6><blockquote>
+<p>内部 样式， 就 是把 HTML 代码 和 CSS 代码 放在 同一个 文件 中。</p>
+<p>其中 CSS 代码 放在&lt; style&gt;&lt;/ style&gt; 标签 对内， 并且&lt; style&gt;&lt;/ style&gt; 标签 对 是 放在 head 标签 对内 的。</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;内部样式&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        p {
+            font-size: 30px;
+            font-family: 微软雅黑;
+            color: black;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;内部样式，所有的&lt;p&gt;标签自动应用。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="内联样式表"><a href="#内联样式表" class="headerlink" title="内联样式表"></a>内联样式表</h6><blockquote>
+<p>再标签的style属性中定义</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">&lt;p style="color:red"&gt;内联样式表&lt;/p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="CSS选择器基础"><a href="#CSS选择器基础" class="headerlink" title="CSS选择器基础"></a>CSS选择器基础</h4><blockquote>
+<p>id和class是HTML元素中两个最基本的公共属性</p>
+</blockquote>
+<h6 id="元素的id属性"><a href="#元素的id属性" class="headerlink" title="元素的id属性"></a>元素的id属性</h6><blockquote>
+<p>id属性被赋予了表示页面元素的唯一身份。如果一个页面出现多个相同id属性取值，CSS选择器无法分辨。</p>
+</blockquote>
+<h6 id="元素的class属性"><a href="#元素的class属性" class="headerlink" title="元素的class属性"></a>元素的class属性</h6><blockquote>
+<p>同一个页面相同元素或者不同元素可以设置相同的class，然后使得相同的class元素具有相同的CSS样式。</p>
+</blockquote>
+<hr>
+<h4 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h4><h6 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h6><blockquote>
+<p>选择相同的元素</p>
+</blockquote>
+<h6 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h6><blockquote>
+<p>为元素设置一个id，然后可以针对该id元素进行CSS样式操作</p>
+<p>id名前必须加上前缀“#”</p>
+</blockquote>
+<h6 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h6><blockquote>
+<p>也称“类选择器”</p>
+<p>class名前必须加上前缀“.”</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;三种基本选择器的应用&lt;/title&gt;
+    &lt;link type="text/css" rel="stylesheet" href="CSS/demo10-1.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1 id="title"&gt;《春》&lt;/h1&gt;
+    &lt;p class="text"&gt; 盼望着，盼望着，东风来了，春天的脚步近了。&lt;/p&gt;
+    &lt;p class="text"&gt; 一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+body {
+    background-color: #eeeeee;
+}
+
+#title {
+    color: green;
+}
+
+.text {
+    color: darkgreen;
+    font-family: 微软雅黑;
+    font-size:20px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="CSS复合选择器"><a href="#CSS复合选择器" class="headerlink" title="CSS复合选择器"></a>CSS复合选择器</h4><h6 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h6><blockquote>
+<p>选中某个或者某类元素下的子元素，然后对子元素设置CSS样式</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010102720.png"></p>
+<h6 id="相邻选择器"><a href="#相邻选择器" class="headerlink" title="相邻选择器"></a>相邻选择器</h6><blockquote>
+<p>选中该元素的下一个兄弟元素，操作对象是该元素的同级元素</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010102858.png"></p>
+<h6 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h6><blockquote>
+<p>同时对几个选择器进行相同的操作</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010103028.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;复合选择器的应用&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;link type="text/css" rel="stylesheet" href="CSS/demo10-2.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;复合选择器的应用&lt;/h1&gt;
+    &lt;p&gt;复合选择器是在基础选择器的基础上，由两个或多个基础选择器组合而成的一种选择器，复合选择器一般有可分为交集选择器、并集选择器和后代选择器。&lt;/p&gt;
+    &lt;ul class="parent"&gt;
+        &lt;li&gt;交集选择器&lt;/li&gt;
+        &lt;li&gt;并集选择器&lt;/li&gt;
+        &lt;li&gt;后代选择器
+            &lt;ul&gt;
+                &lt;li id="myLI"&gt;嵌套列表项目1&lt;/li&gt;
+                &lt;li&gt;嵌套列表项目2&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+h1,
+p {
+    color: #333333;
+    font-family: "微软雅黑";
+}
+
+ul.parent {
+    border: 2px #888 solid;
+}
+
+ul.parent li {
+    padding: 5px 15px;
+    background: #eee;
+}
+
+ul.parent&gt;li {
+    border-bottom: 1px #888 dashed;
+}
+
+#myLI {
+    font-family: 楷体;
+    font-style: italic;
+    background: #fff;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、CSS尺寸和字体"><a href="#三、CSS尺寸和字体" class="headerlink" title="三、CSS尺寸和字体"></a>三、CSS尺寸和字体</h2><h5 id="em字体大小"><a href="#em字体大小" class="headerlink" title="em字体大小"></a>em字体大小</h5><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例12-1：使用em表示字体大小&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo12-1.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    这是body的文字，大小为 12px
+    &lt;div&gt;
+        父div，大小为2em
+        &lt;div&gt;
+            嵌套div，2em
+            &lt;div&gt;
+                第三层div
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+html{
+    font-size: 12px;
+}
+div{
+    font-size: 2em;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="rem字体大小"><a href="#rem字体大小" class="headerlink" title="rem字体大小"></a>rem字体大小</h5><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例12-2：使用rem表示字体大小&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo12-2.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    这是body的文字，大小为 12px
+    &lt;div&gt;
+        父div，大小为2em
+        &lt;div&gt;
+            嵌套div，2em
+            &lt;div&gt;
+                第三层div
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+html{
+    font-size: 12px;
+}
+div{
+    font-size: 2rem;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="宽度和高度"><a href="#宽度和高度" class="headerlink" title="宽度和高度"></a>宽度和高度</h5><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例12-3：CSS的宽度和高度示例&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/demo12-3.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id="main"&gt;
+        这是容器，固定宽度600px、高度400px
+        &lt;div&gt;嵌套DIV，固定宽度200px、高度100px &lt;/div&gt;
+        &lt;p&gt;嵌套p元素，相对宽度50%、高度50%&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+
+
+/* demo12-3.css */
+
+div#main{
+    width: 600px;  /*绝对宽度*/
+    height: 300px;  /*绝对高度*/
+    border: 2px dashed #804000; /*边框，以方便看到容器的大小*/
+}
+
+div {
+    width: 200px;   /*绝对宽度*/
+    height: 100px;  /*绝对高度*/
+    border: 1px solid #666; /*边框，以方便看到容器的大小*/
+}
+
+p {
+    width: 50%;     /*父元素body宽度的50%*/
+    height: 50%;    /*父元素高度的50%*/
+    border: 1px solid #666; /*边框，以方便看到容器的大小*/
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="字体设置显示"><a href="#字体设置显示" class="headerlink" title="字体设置显示"></a>字体设置显示</h5><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例13-1：CSS字体设置示例&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo13-1.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;这是正文文字，大小为1.2rem&lt;/p&gt;
+    &lt;p class="ex1"&gt;Chengdu University&lt;/p&gt;
+    &lt;p class="ex2"&gt;成都大学&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+html{
+    font-size: 10px;    /* 或：62.5% */
+}
+p{
+    font-size: 1.4rem;   /* 段落文字12px */
+}
+p.ex1{
+    font: italic bold 24px/2rem Courier,"Courier New ",Monospace
+}
+p.ex2{
+    font: 1.8rem 微软雅黑,黑体,楷体;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010105100.png"></p>
+<ul>
+<li>font-family</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">font-family:字体1，字体2;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>可以指定多个字体，逗号隔开</p>
+</blockquote>
+<ul>
+<li>font-size</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010105318.png"></p>
+<blockquote>
+<p>采用px单位，pixel（像素）</p>
+</blockquote>
+<ul>
+<li>color</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">color:颜色值；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>颜色值可以使用关键字，RGB值</p>
+</blockquote>
+<ul>
+<li>font-weight字体粗细</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010162058.png"></p>
+<ul>
+<li>字体斜体font-style</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010162140.png"></p>
+<h2 id="四、文本样式"><a href="#四、文本样式" class="headerlink" title="四、文本样式"></a>四、文本样式</h2><h6 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h6><blockquote>
+<p>字体样式注重个体，文本样式注重整体，以CSS命名时，特意使用font前缀和text前缀来区分两类不同性质的属性。</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010164104.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010164723.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010164757.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010164816.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010164853.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010164908.png"></p>
+<h6 id="line-height"><a href="#line-height" class="headerlink" title="line-height"></a>line-height</h6><pre class="line-numbers language-none"><code class="language-none">line-height:像素值；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="letter-spaceing"><a href="#letter-spaceing" class="headerlink" title="letter-spaceing"></a>letter-spaceing</h6><pre class="line-numbers language-none"><code class="language-none">letter-spaceing:像素值<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="word-spaceing"><a href="#word-spaceing" class="headerlink" title="word-spaceing"></a>word-spaceing</h6><pre class="line-numbers language-none"><code class="language-none">word-spaceing：像素值<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h6 id="例14-1：css文本颜色color"><a href="#例14-1：css文本颜色color" class="headerlink" title="例14-1：css文本颜色color"></a>例14-1：css文本颜色color</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-1：CSS文本颜色color&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        div {
+            font-family: 微软雅黑;
+            font-size: 20px;
+            color: red;
+            border: 5px solid;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;文本颜色，边框也会应用&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例14-2：css文本方向direction"><a href="#例14-2：css文本方向direction" class="headerlink" title="例14-2：css文本方向direction"></a>例14-2：css文本方向direction</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-2：CSS文本方向direction&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        div.one {
+            direction: rtl;
+        }
+
+        div.two {
+            direction: ltr;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="one"&gt;rtl, right to left，文字从右往左增长&lt;/div&gt;&lt;br&gt;
+    &lt;div class="two"&gt;ltr，left to right，文字从左向右增长&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例14-3：css文本行高line-height"><a href="#例14-3：css文本行高line-height" class="headerlink" title="例14-3：css文本行高line-height"></a>例14-3：css文本行高line-height</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-3：CSS文本行高line-height&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo14-3.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;这是拥有标准行高的段落。在大多数浏览器中默认行高大约是110% ~ 120%。（注：基数是字体大小，缺省为 16px，即字符框的高度）&lt;/p&gt;
+    &lt;p class="number"&gt;这个段落和行高是 绝对值 26px，与字符高度没有直接关系。可以使用任何绝对单位。&lt;/p&gt;
+    &lt;p class="small"&gt;这个段落和行高是 60%，即占字符高度（16px）的60%，实际行高值为：10px。所以有6px的重合区域。&lt;/p&gt;
+    &lt;p class="middle"&gt;这个段落拥有 1.5倍 行高。行间距为半个字符的高度。这个行高通常是比较适合文字显示的高度。推荐使用。&lt;/p&gt;
+    &lt;p class="big"&gt;这个段落拥有3倍行高。行间距即为2个字符高度。这种行间距较大的情况通常在比较特别的情况下使用。&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+
+
+
+p.number {
+    line-height: 26px;
+}
+
+p.small {
+    line-height: 60%;
+}
+
+p.middle {
+    line-height: 1.5;
+}
+
+p.big {
+    line-height: 300%;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例14-4：css文本字符间距letter-spacing"><a href="#例14-4：css文本字符间距letter-spacing" class="headerlink" title="例14-4：css文本字符间距letter-spacing"></a>例14-4：css文本字符间距letter-spacing</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-4：CSS文本字符间距letter-spacing&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        h2.narrow {
+            letter-spacing: -5px;
+        }
+
+        h2.wide {
+            letter-spacing: 1em;
+        }
+
+        p {
+            letter-spacing: 25px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h2&gt;缺省间距：0em&lt;/h2&gt;
+    &lt;h2 class="narrow"&gt;H1文字，字符间距: -5px&lt;/h2&gt;
+    &lt;h2 class="wide"&gt;字符间距1em&lt;/h2&gt;
+    &lt;p&gt;段落文字，字符间距：25px;&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例14-5：css文本对齐text-align"><a href="#例14-5：css文本对齐text-align" class="headerlink" title="例14-5：css文本对齐text-align"></a>例14-5：css文本对齐text-align</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-5：CSS文本对齐text-align&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        h1,
+        h3 {
+            border: 1px solid #ddd;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3.left {
+            text-align: left;
+        }
+
+        h3.justify {
+            text-align: justify;
+        }
+
+        h3.right {
+            text-align: right;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;标题：居中对齐&lt;/h1&gt;
+    &lt;h3 class="left"&gt;正文1：左对齐。The Foundation of web Front-end Development&lt;/h3&gt;
+    &lt;h3 class="justify"&gt;正文2，分散对齐。The Foundation of web Front-end Development&lt;/h3&gt;
+    &lt;h3 class="right"&gt;落款，右对齐&lt;/h3&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例14-6：css文本修饰text-decoration"><a href="#例14-6：css文本修饰text-decoration" class="headerlink" title="例14-6：css文本修饰text-decoration"></a>例14-6：css文本修饰text-decoration</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-6：CSS文本修饰text-decoration&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        h2 {
+            text-decoration: overline;
+        }
+
+        h3 {
+            text-decoration: line-through;
+        }
+
+        h4 {
+            text-decoration: underline;
+        }
+
+        a.none {
+            text-decoration: none;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;text-decoration示例&lt;/h1&gt;
+    &lt;h2&gt;overline，加上划线&lt;/h2&gt;
+    &lt;h3&gt;line-through，加删除线&lt;/h3&gt;
+    &lt;h4&gt;underline，加下划线&lt;/h4&gt;
+    &lt;div&gt;
+        &lt;a href="#"&gt;正常的超链接，自动加下划线&lt;/a&gt;
+    &lt;/div&gt;&lt;br&gt;
+    &lt;div&gt;
+        &lt;a class="none" href="#"&gt;无下划线的超链接&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例14-7：css文本缩进text-indent"><a href="#例14-7：css文本缩进text-indent" class="headerlink" title="例14-7：css文本缩进text-indent"></a>例14-7：css文本缩进text-indent</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-7：CSS文本缩进text-indent&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        .bigger {
+            font-size: 20px;
+        }
+
+        .smaller {
+            font-size: 14px;
+        }
+
+        p {
+            text-indent: 2em;
+        }
+
+        p.indent50px {
+            text-indent: 50px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;P class="bigger"&gt;缩进2个字符。使用相对单位em，保证无论字体如何调整，都缩进2个字符。&lt;/P&gt;
+    &lt;P class="smaller"&gt;缩进2个字符。使用相对单位em，保证无论字体如何调整，都缩进2个字符。&lt;/P&gt;
+    &lt;p class="indent50px bigger"&gt;这个段落演示缩进绝对值50px，与字体大小无关。&lt;/p&gt;
+    &lt;p class="indent50px smaller"&gt;这个段落演示缩进绝对值50px，与字体大小无关，不会随文字改变而变化。&lt;/p&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例14-8：css文本大小写text-transform"><a href="#例14-8：css文本大小写text-transform" class="headerlink" title="例14-8：css文本大小写text-transform"></a>例14-8：css文本大小写text-transform</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-8：CSS文本大小写text-transform&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        h1 { text-transform: uppercase; }
+        p.uppercase { text-transform: uppercase; }
+        p.lowercase { text-transform: lowercase; }
+        p.capitalize { text-transform: capitalize; }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;An H1 Element&lt;/h1&gt;
+    &lt;p class="uppercase"&gt;This is some text in a paragraph.&lt;/p&gt;
+    &lt;p class="lowercase"&gt;This is some text in a paragraph.&lt;/p&gt;
+    &lt;p class="capitalize"&gt;This is some text in a paragraph.&lt;/p&gt;
+&lt;/body&gt;
+
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例14-9：css文本空白处理white-space"><a href="#例14-9：css文本空白处理white-space" class="headerlink" title="例14-9：css文本空白处理white-space"></a>例14-9：css文本空白处理white-space</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-9：CSS文本空白处理white-space&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        p.pre { white-space: pre; }
+        p.nowrap { white-space: nowrap; }
+        p.prewrap { white-space: pre-wrap; }
+        p.preline { white-space: pre-line; }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p class="pre"&gt;这是一段文字。     几个空格。
+        HTML编辑中换行了。   浏览效果呢？
+    &lt;/p&gt;
+    &lt;p class="nowrap"&gt;这是一段文字。     几个空格。
+        HTML编辑中换行了。   浏览效果呢？
+    &lt;/p&gt;
+    &lt;p class="prewrap"&gt;这是一段文字。     几个空格。
+        HTML编辑中换行了。   浏览效果呢？
+    &lt;/p&gt;
+    &lt;p class="preline"&gt;这是一段文字。     几个空格。
+        HTML编辑中换行了。   浏览效果呢？
+    &lt;/p&gt;
+&lt;/body&gt;
+
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例14-10：css文本单词间距word-spacing"><a href="#例14-10：css文本单词间距word-spacing" class="headerlink" title="例14-10：css文本单词间距word-spacing"></a>例14-10：css文本单词间距word-spacing</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例14-10：CSS文本单词间距word-spacing&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        p.spread {word-spacing: 30px;}
+        p.tight {word-spacing: -0.5em;}
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p class="spread"&gt;一些 文字。This is some text.&lt;/p&gt;
+    &lt;p class="tight"&gt;一些 文字。This is some text.&lt;/p&gt;
+&lt;/body&gt;
+
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="五、边框样式"><a href="#五、边框样式" class="headerlink" title="五、边框样式"></a>五、边框样式</h2><h4 id="边框样式简介"><a href="#边框样式简介" class="headerlink" title="边框样式简介"></a>边框样式简介</h4><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010172834.png"></p>
+<h6 id="border-with"><a href="#border-with" class="headerlink" title="border-with"></a>border-with</h6><pre class="line-numbers language-none"><code class="language-none">border-width:像素值；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="border-with-1"><a href="#border-with-1" class="headerlink" title="border-with"></a>border-with</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010172951.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010173038.png"></p>
+<h6 id="border-color"><a href="#border-color" class="headerlink" title="border-color"></a>border-color</h6><pre class="line-numbers language-none"><code class="language-none">border-color:颜色值<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="局部边框样式"><a href="#局部边框样式" class="headerlink" title="局部边框样式"></a>局部边框样式</h6><ul>
+<li>border-top</li>
+<li>border-bottom</li>
+<li>border-left</li>
+<li>border-right</li>
+</ul>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><h6 id="例18-1：单元格边框border基础"><a href="#例18-1：单元格边框border基础" class="headerlink" title="例18-1：单元格边框border基础"></a>例18-1：单元格边框border基础</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例18-1：单元格边框border基础&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        table {
+            border:1px solid blue;  /*边框 1px、实线、蓝色*/
+            caption-side: bottom; /*将表格标题显示到表格下方*/
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;table border="1"&gt;
+        &lt;caption&gt;表格的标题&lt;/caption&gt;
+        &lt;tr&gt;
+            &lt;th&gt;学号&lt;/th&gt;
+            &lt;th&gt;姓名&lt;/th&gt;
+            &lt;th&gt;年龄&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2018106621101&lt;/td&gt;
+            &lt;td&gt;刘子栋&lt;/td&gt;
+            &lt;td&gt;20&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2018106621102&lt;/td&gt;
+            &lt;td&gt;James Harden&lt;/td&gt;
+            &lt;td&gt;21&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例18-2：1px边框表格制作（边框合并）border-collapse"><a href="#例18-2：1px边框表格制作（边框合并）border-collapse" class="headerlink" title="例18-2：1px边框表格制作（边框合并）border-collapse"></a>例18-2：1px边框表格制作（边框合并）border-collapse</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例18-2：1px边框表格制作（边框合并）border-collapse&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        table{
+            border:1px solid blue;  /*边框 1px、实线、蓝色*/
+            border-collapse:collapse;   /*合并边框*/ 
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;table border="1" cellspacing="10"&gt;
+        &lt;caption&gt;表格的标题&lt;/caption&gt;
+        &lt;tr&gt;
+            &lt;th&gt;学号&lt;/th&gt;
+            &lt;th&gt;姓名&lt;/th&gt;
+            &lt;th&gt;年龄&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2018106621101&lt;/td&gt;
+            &lt;td&gt;刘子栋&lt;/td&gt;
+            &lt;td&gt;20&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2018106621102&lt;/td&gt;
+            &lt;td&gt;James Harden&lt;/td&gt;
+            &lt;td&gt;21&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例18-3：边框间距border-spacing"><a href="#例18-3：边框间距border-spacing" class="headerlink" title="例18-3：边框间距border-spacing"></a>例18-3：边框间距border-spacing</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例18-3：边框间距border-spacing&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        table{
+            border:1px solid blue;  /*边框 1px、实线、蓝色*/
+            border-collapse: separate;   /*合并边框*/ 
+            border-spacing: 10px 20px;  /*水平间距10px， 垂直间距20px*/
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;table border="1" cellspacing="10"&gt;
+        &lt;caption&gt;表格的标题&lt;/caption&gt;
+        &lt;tr&gt;
+            &lt;th&gt;学号&lt;/th&gt;
+            &lt;th&gt;姓名&lt;/th&gt;
+            &lt;th&gt;年龄&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2018106621101&lt;/td&gt;
+            &lt;td&gt;刘子栋&lt;/td&gt;
+            &lt;td&gt;20&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2018106621102&lt;/td&gt;
+            &lt;td&gt;James Harden&lt;/td&gt;
+            &lt;td&gt;21&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="六、背景样式"><a href="#六、背景样式" class="headerlink" title="六、背景样式"></a>六、背景样式</h2><blockquote>
+<p>在CSS中，背景样式主要包括两种：背景颜色和背景样式</p>
+</blockquote>
+<h6 id="背景颜色background-color"><a href="#背景颜色background-color" class="headerlink" title="背景颜色background-color"></a>背景颜色background-color</h6><pre class="line-numbers language-none"><code class="language-none">background-color:颜色值<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>颜色值是一个关键字或者一个16进制的RGB值</p>
+</blockquote>
+<h6 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010192936.png"></p>
+<ul>
+<li>background-image属性</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">background-image:url("图像地址");<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>想要给元素背景图像，就需要设置元素的width和height</p>
+<blockquote>
+<p>控制元素的必选属性，定义了背景图片的来源</p>
+</blockquote>
+<ul>
+<li>background-repeat属性</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010193722.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010193735.png"></p>
+<blockquote>
+<p>定义背景图片的显示方式，例如不平铺、横向平铺和两个方向都平铺。</p>
+</blockquote>
+<ul>
+<li>backfground-position属性</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010193822.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010193858.png"></p>
+<blockquote>
+<p>定义背景图片的位置</p>
+</blockquote>
+<ul>
+<li>background-attachment属性</li>
+</ul>
+<p>属性取值scroll（默认）或者（fixed）</p>
+<blockquote>
+<p>可以设置背景图像是随对象滚动还是固定不动。</p>
+</blockquote>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h4><h6 id="例15-1：背景颜色background-color"><a href="#例15-1：背景颜色background-color" class="headerlink" title="例15-1：背景颜色background-color"></a>例15-1：背景颜色background-color</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例15-1：背景颜色background-color&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        body {
+            background: #eeeeee;
+            /*设置页面的背景颜色为浅灰色*/
+        }
+
+        div {
+            color: white;
+            /*白色文字*/
+            background-color: #90000a;
+            /*使用颜色名作为背景颜色*/
+            padding: 20px;
+            /*内边距20px，背景颜色将填充外围padding区域*/
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;&lt;h1&gt;背景颜色示例&lt;/h1&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例15-2：背景图像background-image"><a href="#例15-2：背景图像background-image" class="headerlink" title="例15-2：背景图像background-image"></a>例15-2：背景图像background-image</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例15-2：背景图像background-image&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        body {
+            background-color: #efefef;	/*设置页面的背景颜色为浅灰色*/
+            background-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/main.gif);	/*设置body背景图像*/
+        }
+        div {
+            color: white;   /*白色文字*/
+            background-color: #90000a;		/*使用颜色名作为背景颜色*/
+            padding: 20px;	/*内边距20px，背景颜色将填充外围padding区域*/
+            background-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/cafe.jpg); /*设置div背景图像*/
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;&lt;h1&gt;背景图像示例&lt;/h1&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例15-3：背景重复background-repeat"><a href="#例15-3：背景重复background-repeat" class="headerlink" title="例15-3：背景重复background-repeat"></a>例15-3：背景重复background-repeat</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例15-3：背景重复background-repeat&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        div {
+            border: 2px solid #666666;
+            padding: 20px;
+            /*内边距20px，背景颜色将填充外围padding区域*/
+        }
+
+        div.norepeat {
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+            /*背景不重复*/
+        }
+
+        div.norepeat1 {
+            background-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/lane.jpg);
+            /*设置背景图像*/
+        }
+
+        div.repeatx {
+            height: 80px;
+            color: white;
+            /*白色文字*/
+            background-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/lane.jpg);
+            /*设置背景图像*/
+            background-repeat: repeat-x;
+        }
+
+        div.norepeat2 {
+            background-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/main.gif);
+            /*背景图像*/
+        }
+
+        div.repeaty {
+            width: 90px;
+            height: 150px;
+            color: brown;
+            /*棕色文字*/
+            background-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/main.gif);
+            /*背景图像*/
+            background-repeat: repeat-y;
+            /*垂直重复*/
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="norepeat norepeat1"&gt;背景不重复&lt;/div&gt;&lt;br&gt;
+    &lt;div class="repeatx"&gt;&lt;h1&gt;水平重复&lt;/h1&gt;&lt;/div&gt;&lt;br&gt;
+    &lt;div class="norepeat norepeat2"&gt;背景不重复&lt;/div&gt;&lt;br&gt;
+    &lt;div class="repeaty"&gt;&lt;h3&gt;垂直重复&lt;/h3&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例15-4：背景定位与关联"><a href="#例15-4：背景定位与关联" class="headerlink" title="例15-4：背景定位与关联"></a>例15-4：背景定位与关联</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例15-4：背景定位与关联&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        body {
+            background-color: #cccccc;  /*背景颜色：灰色*/
+            background-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/fight.jpg);    /*背景图像*/
+            background-repeat: no-repeat;       /*背景不重复*/
+            background-position: center center; /*背景定位于正中央*/
+            background-attachment: fixed;   /*背景固定，不随页面滚动*/
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    &lt;div&gt;&lt;h1&gt;背景定位与关联应用示例&lt;/h1&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例15-5：背景简写属性：background"><a href="#例15-5：背景简写属性：background" class="headerlink" title="例15-5：背景简写属性：background"></a>例15-5：背景简写属性：background</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例15-5：背景简写属性：background&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        body {
+            background: #cccccc url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/fight.jpg) no-repeat center fixed;
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    &lt;div&gt;&lt;h1&gt;背景定位与关联应用示例&lt;/h1&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例15-6：背景大小background-size"><a href="#例15-6：背景大小background-size" class="headerlink" title="例15-6：背景大小background-size"></a>例15-6：背景大小background-size</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例15-6：背景大小background-size&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        body {
+            background-color: #cccccc;  /*背景颜色：灰色*/
+            background-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/fight.jpg);    /*背景图像*/
+            background-repeat: no-repeat;       /*背景不重复*/
+            background-position: center center; /*背景定位于正中央*/
+            background-attachment: fixed;   /*背景固定，不随页面滚动*/
+
+            /*下面4行分别是4种背景大小应用方式，不能同时应用*/
+            background-size: 100px 100px;   /*背景图片缩放到指定宽高*/
+            /*background-size: 50% 50%;   背景图片缩放到容器宽高的一*/
+            /*background-size: cover;   按比例放到填充满容器*/
+            /*background-size: contain;   背景图片缩放到指定宽高*/
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+    &lt;div&gt;&lt;h1&gt;背景定位与关联应用示例&lt;/h1&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="七、超链接样式"><a href="#七、超链接样式" class="headerlink" title="七、超链接样式"></a>七、超链接样式</h2><h4 id="超链接伪类"><a href="#超链接伪类" class="headerlink" title="超链接伪类"></a>超链接伪类</h4><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010222734.png"></p>
+<ul>
+<li>去除下划线</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">text-decoration:none;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="定义超链接伪类"><a href="#定义超链接伪类" class="headerlink" title="定义超链接伪类"></a>定义超链接伪类</h4><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010223138.png"></p>
+<h4 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h4><h6 id="浏览器鼠标样式"><a href="#浏览器鼠标样式" class="headerlink" title="浏览器鼠标样式"></a>浏览器鼠标样式</h6><pre class="line-numbers language-none"><code class="language-none">cursor:属性值；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>属性值有很多，常用的是“default”和“pointer”</p>
+</blockquote>
+<h6 id="自定义鼠标样式"><a href="#自定义鼠标样式" class="headerlink" title="自定义鼠标样式"></a>自定义鼠标样式</h6><pre class="line-numbers language-none"><code class="language-none">cursor:url("地址")，属性值；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h4><h6 id="例16-1：css不同风格的超链接"><a href="#例16-1：css不同风格的超链接" class="headerlink" title="例16-1：css不同风格的超链接"></a>例16-1：css不同风格的超链接</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例16-1：CSS不同风格的超链接&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo16-1.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;br&gt;
+    &lt;div id="menu"&gt;
+        &lt;a class="menu" href="#"&gt;首页&lt;/a&gt;
+        &lt;a class="menu" href="#"&gt;新闻公告&lt;/a&gt;
+        &lt;a class="menu" href="#"&gt;联系我们&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;p&gt;以下是正文……&lt;/p&gt;
+    &lt;a href="http://www.cdu.edu.cn/"&gt;成都大学&lt;/a&gt; | 
+    &lt;a href="http://www.example.com/"&gt;调查问卷&lt;/a&gt; |
+    &lt;a href="mailto:983167735@qq.com"&gt;给我写信&lt;/a&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+/*普通超链接*/
+
+a {
+    text-decoration: none;
+    /*去掉缺省的下划线*/
+    padding: 10px;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: #666666;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: brown;
+    text-decoration: underline;
+}
+
+/*用于菜单的超链接*/
+
+a.menu {
+    font-family: 微软雅黑, 黑体, 楷体;
+    font-size: 16px;
+}
+
+a.menu:link,
+a.menu:visited,
+a.menu:active {
+    color: white;
+    background-color: #90000a;
+}
+
+a.menu:hover {
+    color: yellow;
+    text-decoration: underline;
+    background-color: #336699;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="八、图片和列表和表格样式"><a href="#八、图片和列表和表格样式" class="headerlink" title="八、图片和列表和表格样式"></a>八、图片和列表和表格样式</h2><h4 id="图片大小"><a href="#图片大小" class="headerlink" title="图片大小"></a>图片大小</h4><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010224837.png"></p>
+<h4 id="图片边框border"><a href="#图片边框border" class="headerlink" title="图片边框border"></a>图片边框border</h4><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010224927.png"></p>
+<h4 id="图片水平对齐"><a href="#图片水平对齐" class="headerlink" title="图片水平对齐"></a>图片水平对齐</h4><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010224955.png"></p>
+<h4 id="图片垂直对齐"><a href="#图片垂直对齐" class="headerlink" title="图片垂直对齐"></a>图片垂直对齐</h4><pre class="line-numbers language-none"><code class="language-none">vertical-align:属性值；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010225147.png"></p>
+<h4 id="文字环绕效果float"><a href="#文字环绕效果float" class="headerlink" title="文字环绕效果float"></a>文字环绕效果float</h4><h6 id="float属性"><a href="#float属性" class="headerlink" title="float属性"></a>float属性</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010225308.png"></p>
+<h6 id="定义图片与文字间距"><a href="#定义图片与文字间距" class="headerlink" title="定义图片与文字间距"></a>定义图片与文字间距</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010225425.png"></p>
+<h4 id="列表样式"><a href="#列表样式" class="headerlink" title="列表样式"></a>列表样式</h4><h6 id="CSS中定义列表符号"><a href="#CSS中定义列表符号" class="headerlink" title="CSS中定义列表符号"></a>CSS中定义列表符号</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010225634.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010225647.png"></p>
+<h6 id="自定义列表符号list-style-image"><a href="#自定义列表符号list-style-image" class="headerlink" title="自定义列表符号list-style-image"></a>自定义列表符号list-style-image</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010225811.png"></p>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><h6 id="表格边框合并border-collapse"><a href="#表格边框合并border-collapse" class="headerlink" title="表格边框合并border-collapse"></a>表格边框合并border-collapse</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010230122.png"></p>
+<h6 id="表格边框间距border-spacing"><a href="#表格边框间距border-spacing" class="headerlink" title="表格边框间距border-spacing"></a>表格边框间距border-spacing</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010230315.png"></p>
+<h6 id="表格标题位置caption-side"><a href="#表格标题位置caption-side" class="headerlink" title="表格标题位置caption-side"></a>表格标题位置caption-side</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010230504.png"></p>
+<h4 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h4><h6 id="例17-1：css列表类型list-style-type"><a href="#例17-1：css列表类型list-style-type" class="headerlink" title="例17-1：css列表类型list-style-type"></a>例17-1：css列表类型list-style-type</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例17-1：CSS列表类型list-style-type&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo17-1.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;苹果&lt;/li&gt;
+        &lt;li&gt;梨子&lt;/li&gt;
+        &lt;li&gt;香蕉&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ol&gt;
+        &lt;li&gt;苹果&lt;/li&gt;
+        &lt;li&gt;梨子&lt;/li&gt;
+        &lt;li&gt;香蕉&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;
+
+
+
+ul {
+    list-style-type: circle;
+}
+
+ol {
+    list-style-type: lower-alpha;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例17-2：css图像项目符号list-style-image"><a href="#例17-2：css图像项目符号list-style-image" class="headerlink" title="例17-2：css图像项目符号list-style-image"></a>例17-2：css图像项目符号list-style-image</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例17-2：CSS图像项目符号list-style-image&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        ul {
+            list-style-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/arrow.gif);
+            /*列表项目符号为图像*/
+        }
+        ul.announce{
+            list-style-image: url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/announce.gif);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;苹果&lt;/li&gt;
+        &lt;li&gt;梨子&lt;/li&gt;
+        &lt;li&gt;香蕉&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class="announce"&gt;
+        &lt;li&gt;苹果&lt;/li&gt;
+        &lt;li&gt;梨子&lt;/li&gt;
+        &lt;li&gt;香蕉&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例17-3：css列表符号位置list-style-position"><a href="#例17-3：css列表符号位置list-style-position" class="headerlink" title="例17-3：css列表符号位置list-style-position"></a>例17-3：css列表符号位置list-style-position</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例17-3：CSS列表符号位置list-style-position&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        .inside {
+            list-style-position: inside;
+        }
+
+        .outside {
+            list-style-position: outside;
+        }
+
+        li {
+            border: 1px solid black;
+            margin-bottom: 2px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h3&gt;list-style-position属性的值为inside&lt;/h3&gt;
+    &lt;ul class="inside"&gt;
+        &lt;li&gt;苹果&lt;/li&gt;
+        &lt;li&gt;梨子&lt;/li&gt;
+        &lt;li&gt;香蕉&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h3&gt;list-style-position属性的值为outside&lt;/h3&gt;
+    &lt;ul class="outside"&gt;
+        &lt;li&gt;苹果&lt;/li&gt;
+        &lt;li&gt;梨子&lt;/li&gt;
+        &lt;li&gt;香蕉&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+.inside {
+    list-style-position: inside;
+}
+
+.outside {
+    list-style-position: outside;
+}
+
+li {
+    border: 1px solid black;
+    margin-bottom: 2px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="九、盒子模型"><a href="#九、盒子模型" class="headerlink" title="九、盒子模型"></a>九、盒子模型</h2><h4 id="css盒子模型"><a href="#css盒子模型" class="headerlink" title="css盒子模型"></a>css盒子模型</h4><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010231924.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010231949.png"></p>
+<h5 id="内容区"><a href="#内容区" class="headerlink" title="内容区"></a>内容区</h5><blockquote>
+<p>内容区是CSS盒子模型的中心，呈现盒子模型主要信息内容，内容可以是文本、图片等。</p>
+<p>内容区是必备组成部分</p>
+</blockquote>
+<ul>
+<li>宽度width和高度height是<strong>针对内容区域的大小</strong></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">width:像素值；
+height：像素值；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<blockquote>
+<p>span元素是行内元素，无法设置width和height元素（设置了无效）</p>
+</blockquote>
+<h5 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h5><blockquote>
+<p>内容区和边框之间的部分，又称为“补白”</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010233018.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010233047.png"></p>
+<h5 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h5><blockquote>
+<p>就是四周的框线</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010232925.png"></p>
+<h5 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h5><blockquote>
+<p>两个盒子模型之间的距离</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010233112.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010233128.png"></p>
+<h4 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h4><h6 id="例19-1：盒子模型边框样式示例"><a href="#例19-1：盒子模型边框样式示例" class="headerlink" title="例19-1：盒子模型边框样式示例"></a>例19-1：盒子模型边框样式示例</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-1：盒子模型边框样式示例&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        .div1 {
+            border-style: solid;
+        }
+
+        .div2 {
+            border-style: solid dashed dotted double;
+        }
+
+        .div3 {
+            border-style: solid;
+            border-top-color: red;
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="div1"&gt;设置实现边框&lt;/div&gt;&lt;br/&gt;
+    &lt;div class="div2"&gt;各个边框设置不一样的风格&lt;/div&gt;&lt;br/&gt;
+    &lt;div class="div3"&gt;对边框的某边设置样式&lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例19-2：盒子模型内边距padding示例"><a href="#例19-2：盒子模型内边距padding示例" class="headerlink" title="例19-2：盒子模型内边距padding示例"></a>例19-2：盒子模型内边距padding示例</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-2：盒子模型内边距padding示例&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo19-2.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="div1"&gt;未设置padding&lt;/div&gt;
+    &lt;div class="div2"&gt;设置padding为30px，四个内边距相同&lt;/div&gt;
+    &lt;div class="div3"&gt;四个内边距分别设置不同的值&lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+.div1 {
+    border: solid 2px;
+}
+
+.div2 {
+    border: dashed 2px;
+    padding: 30px;
+}
+
+.div3 {
+    border: solid 2px;
+    padding-top: 15px;
+    padding-right: 2em;
+    padding-bottom: 20px;
+    padding-left: 20%;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例19-3：盒子模型外边距margin示例"><a href="#例19-3：盒子模型外边距margin示例" class="headerlink" title="例19-3：盒子模型外边距margin示例"></a>例19-3：盒子模型外边距margin示例</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-3：盒子模型外边距margin示例&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo19-3.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="div1"&gt;未设置margiin&lt;/div&gt;
+    &lt;div class="div2"&gt;设置margin为30px，四个外边距相同&lt;/div&gt;
+    &lt;div class="div3"&gt;四个内边距分别设置不同的值&lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+
+.div1 {
+    border: solid 2px;
+}
+
+.div2 {
+    border: dashed 2px;
+    padding: 20px;
+    margin: 15px 20px;
+}
+
+.div3 {
+    border: solid 2px;
+    padding: 15px;
+    margin: 30px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例19-4：盒子的大小（仅设置宽高）"><a href="#例19-4：盒子的大小（仅设置宽高）" class="headerlink" title="例19-4：盒子的大小（仅设置宽高）"></a>例19-4：盒子的大小（仅设置宽高）</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-4：盒子的大小（仅设置宽高）&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        .demo {
+            background-color: #eeeeee;
+            width: 200px;
+            height: 120px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="demo"&gt;盒子到底有多大？
+        &lt;br/&gt;仅设置宽（200px）和高（120px）&lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例19-5：盒子的大小（宽高-border-padding-margin）"><a href="#例19-5：盒子的大小（宽高-border-padding-margin）" class="headerlink" title="例19-5：盒子的大小（宽高+border+padding+margin）"></a>例19-5：盒子的大小（宽高+border+padding+margin）</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-5：盒子的大小（宽高+border+padding+margin）&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+    .demo {
+        background-color: #eeeeee;
+        width: 200px;
+        height: 120px;
+        border-width: 5px 10px 15px 20px;
+        border-style: dashed;
+        padding: 10px 15px;
+        margin: 20px 10px;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="demo"&gt;盒子到底有多大？
+        &lt;br/&gt;宽(200px)高(120px) + border + padding + margin&lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例19-6：盒子的大小（border-padding-margin）"><a href="#例19-6：盒子的大小（border-padding-margin）" class="headerlink" title="例19-6：盒子的大小（border+padding+margin）"></a>例19-6：盒子的大小（border+padding+margin）</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-6：盒子的大小（border+padding+margin）&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        .demo {
+            background-color: #eeeeee;
+            border-width: 5px 10px 15px 20px;
+            border-style: dashed;
+            padding: 10px 15px;
+            margin: 20px 10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="demo"&gt;盒子到底有多大？
+        &lt;br/&gt;未设计宽高，仅 border + padding + margin&lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例19-7：行内元素的水平margin"><a href="#例19-7：行内元素的水平margin" class="headerlink" title="例19-7：行内元素的水平margin"></a>例19-7：行内元素的水平margin</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-7：行内元素的水平margin&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        span {
+            font-size: 30px;
+            font-family: 微软雅黑;
+        }
+
+        span.left {
+            margin-right: 50px;
+            background-color: #a9d6ff;
+        }
+
+        span.right {
+            margin-left: 100px;
+            background-color: #eeb0b0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;span class="left"&gt;行内元素（左）&lt;/span&gt;
+    &lt;span class="right"&gt;行内元素（右）&lt;/span&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例19-8：块级元素的垂直margin"><a href="#例19-8：块级元素的垂直margin" class="headerlink" title="例19-8：块级元素的垂直margin"></a>例19-8：块级元素的垂直margin</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-8：块级元素的垂直margin&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        div {
+            font-size: 30px;
+            font-family: 微软雅黑;
+        }
+
+        div.up {
+            margin-bottom: 150px;
+            background-color: #a9d6ff;
+        }
+
+        div.down {
+            margin-top: 50px;
+            background-color: #eeb0b0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="up"&gt;块级元素（上）&lt;br/&gt;&gt;margin-bottom为150px&lt;/div&gt;
+        &lt;div class="down"&gt;块级元素（下）&lt;br/&gt;margin-top为50px &lt;/div&gt;
+        
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例19-9：元素的显示属性display：未设置"><a href="#例19-9：元素的显示属性display：未设置" class="headerlink" title="例19-9：元素的显示属性display：未设置"></a>例19-9：元素的显示属性display：未设置</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-9：元素的显示属性display：未设置&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+       div,span{
+           border: 1px solid;
+           padding: 5px;
+           margin:5px;
+           background-color: #eeeeee;
+
+       }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div&gt;div 1&lt;/div&gt;
+    &lt;div&gt;div 2&lt;/div&gt;
+    &lt;div&gt;div 3&lt;/div&gt;
+    &lt;span&gt;span 1&lt;/span&gt;
+    &lt;span&gt;span 2&lt;/span&gt;
+    &lt;span&gt;span 3&lt;/span&gt;
+    &lt;div&gt;div 4&lt;/div&gt;
+    &lt;span&gt;span 4&lt;/span&gt;
+
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例19-10：元素的显示属性display：设置"><a href="#例19-10：元素的显示属性display：设置" class="headerlink" title="例19-10：元素的显示属性display：设置"></a>例19-10：元素的显示属性display：设置</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例19-10：元素的显示属性display：设置&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        div,
+        span {
+            border: 1px solid;
+            padding: 5px;
+            margin: 5px;
+            background-color: #eeeeee;
+
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div style="display:inline"&gt;div 1&lt;/div&gt;
+    &lt;div style="display:inline-block"&gt;div 2&lt;/div&gt;
+    &lt;div style="display:table"&gt;div 3&lt;/div&gt;
+    &lt;span style="display:block"&gt;span 1&lt;/span&gt;
+    &lt;span style="display:block"&gt;span 2&lt;/span&gt;
+    &lt;span style="display:block"&gt;span 3&lt;/span&gt;
+    &lt;div style="display:none"&gt;div 4&lt;/div&gt;
+    &lt;span style="display:none"&gt;span 4&lt;/span&gt;
+
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="十、布局"><a href="#十、布局" class="headerlink" title="十、布局"></a>十、布局</h2><h4 id="HTML文档流"><a href="#HTML文档流" class="headerlink" title="HTML文档流"></a>HTML文档流</h4><ul>
+<li>正常文档流</li>
+</ul>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010234340.png"></p>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010234435.png"></p>
+<ul>
+<li>脱离正常文档流</li>
+</ul>
+<blockquote>
+<p>用CSS去控制</p>
+</blockquote>
+<h4 id="浮动float"><a href="#浮动float" class="headerlink" title="浮动float"></a>浮动float</h4><blockquote>
+<p>浮动可以让盒子模型排在一排</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010234729.png"></p>
+<h4 id="清除浮动clear"><a href="#清除浮动clear" class="headerlink" title="清除浮动clear"></a>清除浮动clear</h4><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201010234843.png"></p>
+<h4 id="定位布局"><a href="#定位布局" class="headerlink" title="定位布局"></a>定位布局</h4><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011000249.png"></p>
+<h6 id="固定定位fixed"><a href="#固定定位fixed" class="headerlink" title="固定定位fixed"></a>固定定位fixed</h6><blockquote>
+<p>被固定的元素不会随着滚动条的拖动而改变位置。视野中，固定定位的元素的位置不会改变。</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011000458.png"></p>
+<h6 id="相对定位relative"><a href="#相对定位relative" class="headerlink" title="相对定位relative"></a>相对定位relative</h6><blockquote>
+<p>采用相对定位的元素，其位置是相对于它的原始位置计算而来的。</p>
+</blockquote>
+<p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011000931.png"></p>
+<h6 id="绝对定位absolute"><a href="#绝对定位absolute" class="headerlink" title="绝对定位absolute"></a>绝对定位absolute</h6><p><img src="https://gitee.com/liangxinixn/guitar/raw/master/blog01/20201011001035.png"></p>
+<h6 id="CSS静态定位static"><a href="#CSS静态定位static" class="headerlink" title="CSS静态定位static"></a>CSS静态定位static</h6><blockquote>
+<p>如果没有指定元素的position属性值，也就是默认情况小，元素是静态定位。通常不用position：static，使用JS控制时会用到。</p>
+</blockquote>
+<h4 id="示例-6"><a href="#示例-6" class="headerlink" title="示例"></a>示例</h4><h6 id="例21-1：固定宽度布局1000px居中"><a href="#例21-1：固定宽度布局1000px居中" class="headerlink" title="例21-1：固定宽度布局1000px居中"></a>例21-1：固定宽度布局1000px居中</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;1000px固定宽度布局&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/demo21-1.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="head container"&gt;头部&lt;/div&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="left"&gt;左侧内容&lt;/div&gt;
+        &lt;div class="right"&gt;右侧内容&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="clearBoth"&gt;&lt;/div&gt;
+    &lt;div class="foot container"&gt;底部&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+.container {
+    width: 1000px;
+    /*绝对宽度：1000px*/
+    margin: 0 auto;
+    /*非常重要：设置容器自动居中！*/
+}
+
+.head {
+    height: 100px;
+    background: #EAEAEA;
+    margin-bottom: 10px;
+    /*底部外边距，与下面内容留出10px的空白*/
+}
+
+.left {
+    width: 200px;
+    height: 500px;
+    background: #CFCFCF;
+    float: left;
+    /*在父容器中左浮动（靠左对齐），脱离标准流*/
+}
+
+.right {
+    width: 780px;
+    height: 500px;
+    margin-left: 20px;
+    background: #e8f3ff;
+    float: right;
+    /*在父容器中右浮动（靠右对齐），脱离标准流*/
+}
+
+/*.clearBoth很重要，仅用于清除浮动影响，无任何实质内容*/
+
+.clearBoth {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    /*清除浮动影响*/
+}
+
+.foot {
+    height: 100px;
+    background: #cccccc;
+    margin-top: 10px;
+    /*顶部外边距，与上面内容留出10px的空白*/
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例21-2：流式布局示例"><a href="#例21-2：流式布局示例" class="headerlink" title="例21-2：流式布局示例"></a>例21-2：流式布局示例</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例21-2：流式布局示例&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/demo21-2.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="head container"&gt;头部&lt;/div&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="left"&gt;左侧内容&lt;br/&gt;左侧内容&lt;br/&gt;左侧内容&lt;br/&gt;左侧内容&lt;br/&gt;左侧内容&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;流式布局，通常不设置高度，高度会根据宽度变化而自动调整&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;
+        &lt;div class="right"&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;右侧内容&lt;br/&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="clearBoth"&gt;&lt;/div&gt;
+    &lt;div class="foot container"&gt;底部&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+.container {
+    width: 90%;  /*百分比宽度90%，参照物是父容器body*/
+    margin: 0 auto;    /*非常重要：设置容器自动居中！*/
+}
+
+.head {
+    height: 100px;
+    background: #EAEAEA;
+    margin-bottom: 10px;    /*底部外边距，与下面内容留出10px的空白*/
+}
+
+.left {
+    width: 25%;     /*占据父容器25%的宽度，参照物是父容器div*/ 
+    /*height: 500px;  流式布局，通常不设置高度，高度会根据宽度变化而自动调整*/
+    background: #CFCFCF;
+    float: left;    /*在父容器中左浮动（靠左对齐），脱离标准流*/
+}
+
+.right {
+    width: 70%;     /*占据父容器70%的宽度，参照物是父容器div*/ 
+    /*height: 500px;  流式布局，通常不设置高度，高度会根据宽度变化而自动调整*/
+    margin-left: 20px;
+    background: #e8f3ff;
+    float: right;  /*在父容器中右浮动（靠右对齐），脱离标准流*/
+}
+
+/*.clearBoth很重要，仅用于清除浮动影响，无任何实质内容*/
+.clearBoth {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    clear: both;   /*清除浮动影响*/
+}
+
+.foot {
+    height: 100px;
+    background: #cccccc;
+    margin-top: 10px;   /*顶部外边距，与上面内容留出10px的空白*/
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例21-3：弹性布局示例"><a href="#例21-3：弹性布局示例" class="headerlink" title="例21-3：弹性布局示例"></a>例21-3：弹性布局示例</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例21-3：弹性布局示例&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/demo21-3.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="head container"&gt;头部&lt;/div&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="left"&gt;
+            如何设置弹性布局呢？弹性布局的关键是em，即单位采用em。它是根据文本尺寸的计量单位。一般的浏览器默认字体大小为16px，那么1em=16px。
+        &lt;/div&gt;
+        &lt;div class="right"&gt;
+            弹性布局，随着文本内容尺寸的缩放而进行缩放。如果用户扩大了文字，那么包含它的盒子也会同比例增大；如果用户缩小了文字，那么包含它的盒子将会同比例的缩小。也就是说，不管你怎么变化，每一行的内容都不会变化，只有盒子进行变化。
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="clearBoth"&gt;&lt;/div&gt;
+    &lt;div class="foot container"&gt;底部&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+html {
+    font-size: 16px;
+}
+
+.container {
+    width: 62.5rem;  /* 62.5×16=1000px */
+    margin: 0 auto;
+}
+
+.head {
+    width: 62.5rem;
+    height: 6rem;
+    background: #EAEAEA;
+    margin-bottom: 10px;    /*底部外边距，与下面内容留出10px的空白*/
+}
+
+.left {
+    width: 20rem;
+    height: 30rem;
+    float: left;
+    background: #CFCFCF;
+}
+
+.right {
+    width: 40rem;
+    height: 30rem;
+    float: right;
+    background: #e8f3ff;
+}
+/*.clearBoth很重要，仅用于清除浮动影响，无任何实质内容*/
+.clearBoth {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    clear: both;   /*清除浮动影响*/
+}
+.foot {
+    width: 62.5rem;
+    height: 100px;
+    background: #cccccc;
+    margin-top: 10px;   /*顶部外边距，与上面内容留出10px的空白*/
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例21-4：使用a元素设计纵向菜单"><a href="#例21-4：使用a元素设计纵向菜单" class="headerlink" title="例21-4：使用a元素设计纵向菜单"></a>例21-4：使用a元素设计纵向菜单</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例21-4：使用a元素设计纵向菜单&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/demo21-4.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;a href="#"&gt;首页&lt;/a&gt;
+    &lt;a href="#"&gt;新闻&lt;/a&gt;
+    &lt;a href="#"&gt;音乐&lt;/a&gt;
+    &lt;a href="#"&gt;视频&lt;/a&gt;
+    &lt;a href="#"&gt;图片&lt;/a&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+/*链接四种状态相同的样式*/
+a {
+    width: 100px;   /*内容宽度100px*/
+    padding: 5px;   /*四周内边距各5px，会撑大宽度10px*/
+    text-align: center; /*文字居中对齐*/
+    /*通过设置背景图像的方式，给链接添加一个箭头图标，使之更加美观*/
+    background: #efefef  url('https://gitee.com/liangxinixn/guitar/raw/master/blog01/arrsdsow.gif') no-repeat 85px;
+    display: block;     /*以块级元素显示，每个元素独占一行，实现纵向排列*/
+    border-bottom: 2px solid black; /*给元素设置下边框*/
+    text-decoration: none;  /*去除a元素缺省的下划线*/
+    color: black;   /*黑色*/
+}
+/*当鼠标移到链接上方，改换背景图片、文字颜色*/
+a:hover {
+    background: #ccc url('https://gitee.com/liangxinixn/guitar/raw/master/blog01/arrosadw2.gif') no-repeat 85px;
+    color: red;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例21-5：使用li-a元素设计纵向菜单"><a href="#例21-5：使用li-a元素设计纵向菜单" class="headerlink" title="例21-5：使用li+a元素设计纵向菜单"></a>例21-5：使用li+a元素设计纵向菜单</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例21-5：使用li+a元素设计纵向菜单&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/demo21-5.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;ul class="menu"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;新闻&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;音乐&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;视频&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;图片&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+ul.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.menu li{
+    width: 110px;
+}
+
+/*链接四种状态相同的样式*/
+ul.menu li a {
+    width: 100px;   /*内容宽度100px*/
+    padding: 5px;   /*四周内边距各5px，会撑大宽度10px*/
+    text-align: center; /*文字居中对齐*/
+    /*通过设置背景图像的方式，给链接添加一个箭头图标，使之更加美观*/
+    background: #efefef  url('https://gitee.com/liangxinixn/guitar/raw/master/blog01/arrsdsow.gif') no-repeat 85px;
+    display: block;     /*以块级元素显示，每个元素独占一行，实现纵向排列*/
+    border-bottom: 2px solid black; /*给元素设置下边框*/
+    text-decoration: none;  /*去除a元素缺省的下划线*/
+    color: black;   /*黑色*/
+}
+/*当鼠标移到链接上方，改换背景图片、文字颜色*/
+ul.menu li a:hover {
+    background: #ccc url('https://gitee.com/liangxinixn/guitar/raw/master/blog01/arrosadw2.gif') no-repeat 85px;
+    color: red;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例21-6：横竖转换的菜单"><a href="#例21-6：横竖转换的菜单" class="headerlink" title="例21-6：横竖转换的菜单"></a>例21-6：横竖转换的菜单</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例21-6：横竖转换的菜单&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/demo21-6.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;ul class="menu"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;新闻&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;音乐&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;视频&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;图片&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+
+
+
+ul.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 120px;    /* 设置此宽度，将限定菜单项的宽度，浮动的菜单项达到宽度时将自动换行*/
+}
+ul.menu li{
+    width: 110px;
+    float: left;
+}
+
+/*链接四种状态相同的样式*/
+ul.menu li a {
+    width: 100px;   /*内容宽度100px*/
+    padding: 5px;   /*四周内边距各5px，会撑大宽度10px*/
+    text-align: center; /*文字居中对齐*/
+    /*通过设置背景图像的方式，给链接添加一个箭头图标，使之更加美观*/
+    background: #efefef  url('https://gitee.com/liangxinixn/guitar/raw/master/blog01/arrsdsow.gif') no-repeat 85px;
+    display: block;     /*以块级元素显示，每个元素独占一行，实现纵向排列*/
+    border-bottom: 2px solid black; /*给元素设置下边框*/
+    text-decoration: none;  /*去除a元素缺省的下划线*/
+    color: black;   /*黑色*/
+}
+/*当鼠标移到链接上方，改换背景图片、文字颜色*/
+ul.menu li a:hover {
+    background: #ccc url('https://gitee.com/liangxinixn/guitar/raw/master/blog01/arrosadw2.gif') no-repeat 85px;
+    color: red;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例21-7：下拉菜单"><a href="#例21-7：下拉菜单" class="headerlink" title="例21-7：下拉菜单"></a>例21-7：下拉菜单</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例21-7：下拉菜单&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/demo21-7.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id="navi"&gt;
+        &lt;ul id="menu"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;新闻&lt;/a&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;新闻1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;新闻2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;新闻3&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;音乐&lt;/a&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;音乐1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;音乐2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;音乐3&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;视频&lt;/a&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;视频1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;视频2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;视频3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;视频4&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;图片&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div id="container"&gt;
+        这是主内容区
+    &lt;/div&gt;
+    
+    
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+body {
+    margin: 0px;    /*清除页面四周缺省的 8px 的空白*/
+}
+
+div#navi {
+    width: 750px;    /*假设这里固定页面宽度 750px。如果其它宽度，可以调整菜单项的宽度去适应*/
+    margin: 0px auto;    /*div在容器中水平居中，这里让容纳菜单的div在页面中水平居中*/
+}
+
+/*清除两级菜单的内、外边距*/
+#menu, #menu ul {
+    padding: 0px;   /*清除内边距*/
+    margin: 0px;    /*清除外边距*/
+}
+
+/*设置一级菜单。注："&gt;" 表示直接后代，即儿子li元素，但不包括儿子的后代li*/
+#menu&gt;li {
+    float: left;    /*一级菜单项左浮动，实现水平排列*/
+    width: 150px;   /*每个菜单项宽度*/
+}
+
+/*#menu 下的全部后代li，不论是几级嵌套*/
+#menu li {
+    list-style: none;   /*清除两级菜单中的列表项的样式*/
+}
+
+/*设置二级菜单的ul样式*/
+#menu ul {
+    margin-right: 1px;  /*右侧留1px边距，避免左右菜单“连”在一起*/
+    display: none;      /*隐藏。特别重要！二级菜单正常情况下不显示*/
+    position: absolute; /*绝对定位。特别重要：并不是为了偏移，而是为了脱离标准流，否则会把下面的网页内容挤下去，设置后，与内容可以重叠显示*/
+    width: 149px;       /*整体宽度150px，但是右侧有1px内边距，所以实际宽度149px*/
+}
+
+#menu li a {
+    text-decoration: none;  /*去除超链接的下划线*/
+    font-family: 微软雅黑, arial;   /*设置超链接字体*/
+}
+
+/*一级菜单的超链接设置*/
+#menu&gt;li&gt;a {
+    background-color: #ed8;     /*背景颜色*/
+    padding: 8px 20px;  /*上下内边距8px，左右内边距20px*/
+    display: block;     /*以块级元素显示，使宽、高等设置有效*/
+    text-align: center; /*文字在块内水平居中*/
+    font-size: 16px;    /*文字大小*/
+    margin-right: 1px;  /*右侧留1px边距，避免左右菜单“连”在一起*/
+    border-bottom: 5px solid #630;  /*底部设置粗线条，增加美观*/
+}
+
+/*当鼠标移到一级菜单的超边接上方时，超链接的样式*/
+#menu&gt;li&gt;a:hover {
+    background-color: #9cf;         /*背景颜色*/
+    border-bottom: 5px solid #f60;  /*底边框变色*/
+}
+
+/*特别重要：当鼠标移到一级菜单项li上方时，以块级元素的方式显示其子ul——即显示其子菜单！！！*/
+#menu&gt;li:hover ul {
+    display: block; /*当前元素以块级元素显示*/
+}
+
+/*设置二级菜单中的超链接样式*/
+#menu li ul li a {
+    font-size: 14px;    /*文字大小*/
+    padding: 5px 0 5px 20px;    /*上、右、下、左 四个内边距*/
+    display: block;     /*以块级元素显示，使宽、高等设置有效*/
+    color: #FFF;      /*文字颜色*/
+    background: #47a url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/arrosadw2.gif) no-repeat 10px 10px;    /*背景颜色，并设置一个背景图像作为指示“图标”*/
+}
+
+#menu li li a:hover {
+    color: #FF0;
+    background: #369 url(https://gitee.com/liangxinixn/guitar/raw/master/blog01/arrosadw2.gif) no-repeat 9px 7px;
+}
+
+#container {
+    background-color: #eee;
+    width: 750px;
+    margin: 0 auto;
+    height: 600px;
+    clear: both;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="示例-7"><a href="#示例-7" class="headerlink" title="示例"></a>示例</h4><h6 id="例20-1：盒子浮动－准备代码"><a href="#例20-1：盒子浮动－准备代码" class="headerlink" title="例20-1：盒子浮动－准备代码"></a>例20-1：盒子浮动－准备代码</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-1：盒子浮动－准备代码&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-1.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+body {
+    margin: 15px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.container div {
+    margin: 15px;
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-2：盒子浮动－盒子1左浮动"><a href="#例20-2：盒子浮动－盒子1左浮动" class="headerlink" title="例20-2：盒子浮动－盒子1左浮动"></a>例20-2：盒子浮动－盒子1左浮动</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-2：盒子浮动－盒子1左浮动&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-2.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+
+
+body {
+    margin: 15px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.container div {
+    margin: 15px;
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+    float: left;    /*在例20-1的基础上，增加此属性*/
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-3：盒子浮动－盒子1、2左浮动"><a href="#例20-3：盒子浮动－盒子1、2左浮动" class="headerlink" title="例20-3：盒子浮动－盒子1、2左浮动"></a>例20-3：盒子浮动－盒子1、2左浮动</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-3：盒子浮动－盒子1、2左浮动&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-3.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+body {
+    margin: 15px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.container div {
+    margin: 15px;
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+    float: left;    /*在例20-1的基础上，增加此属性*/
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    float: left;    /*在例20-2的基础上，增加此属性*/
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-4：盒子浮动－盒子1、2左浮动，盒子3右浮动"><a href="#例20-4：盒子浮动－盒子1、2左浮动，盒子3右浮动" class="headerlink" title="例20-4：盒子浮动－盒子1、2左浮动，盒子3右浮动"></a>例20-4：盒子浮动－盒子1、2左浮动，盒子3右浮动</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-4：盒子浮动－盒子1、2左浮动，盒子3右浮动&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-4.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+body {
+    margin: 15px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.container div {
+    margin: 15px;
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+    float: left;    /*在例20-1的基础上，增加此属性*/
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    float: left;    /*在例20-2的基础上，增加此属性*/
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+    float: right;   /*在例20-3的基础上，增加此属性*/
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-5：盒子浮动－交换盒子1、3的浮动方向"><a href="#例20-5：盒子浮动－交换盒子1、3的浮动方向" class="headerlink" title="例20-5：盒子浮动－交换盒子1、3的浮动方向"></a>例20-5：盒子浮动－交换盒子1、3的浮动方向</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-5：盒子浮动－交换盒子1、3的浮动方向&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-5.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+body {
+    margin: 15px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.container div {
+    margin: 15px;
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+    float: right;    /*改变浮动方向*/
+}
+
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+    float: left;    /*改变浮动方向*/
+}
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    float: left;    
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-6：清除浮动"><a href="#例20-6：清除浮动" class="headerlink" title="例20-6：清除浮动"></a>例20-6：清除浮动</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-6：清除浮动&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-6.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;br/&gt;实验内容&lt;br/&gt;清除浮动&lt;/div&gt;
+        &lt;p&gt;这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+body {
+    margin: 15px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.container div {
+    margin: 15px;
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+    /* clear:left; */
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+    float: left;    /*左浮动*/
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    float: left;    /*左浮动*/
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+    float: right;   /*右浮动*/
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-7：子元素全部浮动"><a href="#例20-7：子元素全部浮动" class="headerlink" title="例20-7：子元素全部浮动"></a>例20-7：子元素全部浮动</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-7：子元素全部浮动&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-7.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;br/&gt;实验内容&lt;br/&gt;清除浮动&lt;/div&gt;
+        &lt;p&gt;这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+body {
+    margin: 15px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.container div {
+    margin: 15px;
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+    float: left;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+    float: left;    /*左浮动*/
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    float: left;    /*左浮动*/
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+    float: right;   /*右浮动*/
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-8：清除左右浮动"><a href="#例20-8：清除左右浮动" class="headerlink" title="例20-8：清除左右浮动"></a>例20-8：清除左右浮动</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-7：清除左右浮动&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-8.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;br/&gt;实验内容&lt;br/&gt;清除浮动&lt;/div&gt;
+        &lt;p&gt;这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，这里是浮动框外围的文字，……&lt;/p&gt;
+        &lt;div class="clearBoth"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+
+
+
+body {
+    margin: 15px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.container div {
+    margin: 15px;
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+    float: left;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+    float: left;    /*左浮动*/
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    float: left;    /*左浮动*/
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+    float: right;   /*右浮动*/
+}
+
+div.clearBoth{
+    border: none;
+    margin: 0;
+    padding: 0;
+    clear: both;    /*清除左右浮动*/
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-9：盒子定位－准备代码"><a href="#例20-9：盒子定位－准备代码" class="headerlink" title="例20-9：盒子定位－准备代码"></a>例20-9：盒子定位－准备代码</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-9：盒子定位－准备代码&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-9.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里段落文字，本示例演示盒子模型的position定位属性。常用属性值包括：static（默认）、relative（相对定位）、absolute（绝对定位）、fixed（固定定位），……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+
+
+body {
+    margin: 20px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.container div {
+    /* margin: 15px; */
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    /*下面的代码对定位任何效果，原因是：static定位时，定位值无效*/
+    position: static;
+    left: 40px;
+    top: 25px;
+
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-10：盒子定位－静态定位static"><a href="#例20-10：盒子定位－静态定位static" class="headerlink" title="例20-10：盒子定位－静态定位static"></a>例20-10：盒子定位－静态定位static</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-10：盒子定位－静态定位static&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-10.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里段落文字，本示例演示盒子模型的position定位属性。常用属性值包括：static（默认）、relative（相对定位）、absolute（绝对定位）、fixed（固定定位），……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+body {
+    margin: 20px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.container div {
+    /* margin: 15px; */
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    
+    position: relative; /*static定位时，定位值无效；改为 relative，盒子产生位移*/
+    left: 40px;
+    top: 25px;
+
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-11：盒子定位－固定定位fixed"><a href="#例20-11：盒子定位－固定定位fixed" class="headerlink" title="例20-11：盒子定位－固定定位fixed"></a>例20-11：盒子定位－固定定位fixed</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-11：盒子定位－固定定位fixed&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-11.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里段落文字，本示例演示盒子模型的position定位属性。常用属性值包括：static（默认）、relative（相对定位）、absolute（绝对定位）、fixed（固定定位），……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+body {
+    margin: 20px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 30px;
+}
+
+.container div {
+    /* margin: 15px; */
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    
+    position: fixed; /*fixed定位，盒子将脱离标准流，并以浏览器窗口为基准定位*/
+    right: 40px;
+    top: 25px;
+
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-12：盒子定位－绝对定位absolute"><a href="#例20-12：盒子定位－绝对定位absolute" class="headerlink" title="例20-12：盒子定位－绝对定位absolute"></a>例20-12：盒子定位－绝对定位absolute</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-12：盒子定位－绝对定位absolute&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-12.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里段落文字，本示例演示盒子模型的position定位属性。常用属性值包括：static（默认）、relative（相对定位）、absolute（绝对定位）、fixed（固定定位），……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+
+body {
+    margin: 20px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 30px;
+    position: relative;  /*元素本身并不移动，这样做的目的是：作为 .box2 盒子 absolute 定位的参照物*/
+}
+
+.container div {
+    /* margin: 15px; */
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    
+    position: absolute; /*绝对定位下，定位参考物为最近的、定位的父元素，本例中是 div.container 元素*/
+    right: 40px;
+    top: 25px;
+
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例20-13：定位元素的层z-index"><a href="#例20-13：定位元素的层z-index" class="headerlink" title="例20-13：定位元素的层z-index"></a>例20-13：定位元素的层z-index</h6><pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;例20-13：定位元素的层z-index&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="CSS/demo20-13.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="box1"&gt;盒子1&lt;/div&gt;
+        &lt;div class="box2"&gt;盒子2&lt;/div&gt;
+        &lt;div class="box3"&gt;盒子3&lt;/div&gt;
+        &lt;p&gt;这里段落文字，本示例演示盒子模型的position定位属性。常用属性值包括：static（默认）、relative（相对定位）、absolute（绝对定位）、fixed（固定定位），……&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+
+
+&lt;/html&gt;
+
+
+
+
+
+body {
+    margin: 20px;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 30px;
+    position: relative;  /*元素本身并不移动，这样做的目的是：作为 .box2 盒子 absolute 定位的参照物*/
+}
+
+.container div {
+    /* margin: 15px; */
+    border: 1px dashed black;
+}
+
+.container p {
+    border: 1px dashed black;
+    background-color: #f1bade;
+}
+
+.box1 {
+    background-color: #a9d6ff;
+    padding: 10px;
+}
+
+.box2 {
+    background-color: #dddddd;
+    padding: 20px;
+    
+    position: absolute; /*绝对定位下，定位参考物为最近的、定位的父元素，本例中是 div.container 元素*/
+    right: 20px;
+    top: 5px;
+    z-index: 2;     /*增加 此属性，将 盒子2的层移到盒子3的上方面，即遮盖盒子3*/
+
+}
+
+.box3 {
+    background-color: #ffffaa;
+    padding: 30px;
+    position: absolute; /*绝对定位下，定位参考物为最近的、定位的父元素，本例中是 div.container 元素*/
+    right: 50px;
+    top: 35px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lxx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://xinxinliang.github.io/2021/03/17/css-yu-fa-zong-jie/">http://xinxinliang.github.io/2021/03/17/css-yu-fa-zong-jie/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lxx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                                    <span class="chip bg-color">记录</span>
+                                </a>
+                            
+                                <a href="/tags/CSS/">
+                                    <span class="chip bg-color">CSS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220206.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://gitee.com/liangxinixn/guitar/raw/master/image01/20200726220308.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/03/17/js-yu-fa-zong-jie/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-x11rgz.jpg" class="responsive-img" alt="JS语法总结">
+                        
+                        <span class="card-title">JS语法总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web/" class="post-category">
+                                    web
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                        <span class="chip bg-color">记录</span>
+                    </a>
+                    
+                    <a href="/tags/JavaScrip/">
+                        <span class="chip bg-color">JavaScrip</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/17/html-yu-fa-zong-jie/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-r72wxm.jpg" class="responsive-img" alt="HTML语法总结">
+                        
+                        <span class="card-title">HTML语法总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web/" class="post-category">
+                                    web
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                        <span class="chip bg-color">记录</span>
+                    </a>
+                    
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 头号咸鱼<br />'
+            + '文章作者: lxx<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">lxx</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">272.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinxinliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1974733812@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1974733812" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1974733812" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "7b318e23"
+        });
+        daovoice('update');
+    </script>
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
