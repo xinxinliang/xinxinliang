@@ -374,27 +374,32 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/02/12/django-xue-xi-liu-biao-dan-he-session/">
+                    <a href="/2021/02/12/django-xue-xi-er-setting.py/">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-0p7pmm.jpg" class="responsive-img" alt="Django学习(六)：表单和session">
+                            <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-4v7784.jpg" class="responsive-img" alt="Django学习(二)：setting.py">
                             
-                            <span class="card-title">Django学习(六)：表单和session</span>
+                            <span class="card-title">Django学习(二)：setting.py</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-参考地址：https://code.ziqiangxuetang.com/django/django-forms.html
+                                调试与域名DEBUG = True
 
-表单GET请求
-index.html
+ALLOWED_HOSTS = []
 
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&
+设置是否为调试模式，当部署时就改为False
+
+当部署时就填入主机的ip地址
+
+如下：
+
+
+DEBUG = False
+
+ALLOWED_HOSTS = ["62
                             
                         </div>
                         <div class="publish-info">
@@ -432,23 +437,24 @@ index.html
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/02/12/django-xue-xi-si-model-he-admin/">
+                    <a href="/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dqz69.png" class="responsive-img" alt="Django学习(四)：model和admin">
+                            <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dg2d7.jpg" class="responsive-img" alt="Django学习(三)：模板系统">
                             
-                            <span class="card-title">Django学习(四)：model和admin</span>
+                            <span class="card-title">Django学习(三)：模板系统</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                修改models.pyfrom django.db import models
- 
-class Person(models.Model):
-    name = models.CharField(max_length=30)
-    age
+                                
+便于修改html中的内容
+
+1. 插入变量def index(request):
+    string1 = "插入的模板变量"
+    return render(request,'home.html',{'test':string1}
                             
                         </div>
                         <div class="publish-info">

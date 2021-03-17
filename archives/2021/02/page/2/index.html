@@ -1276,79 +1276,6 @@ pip3 install
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/02/12/django-xue-xi-er-setting.py/">
-                            <div class="card-image">
-                                
-                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-4v7784.jpg" class="responsive-img" alt="Django学习(二)：setting.py">
-                                
-                                <span class="card-title">Django学习(二)：setting.py</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    调试与域名DEBUG = True
-
-ALLOWED_HOSTS = []
-
-设置是否为调试模式，当部署时就改为False
-
-当部署时就填入主机的ip地址
-
-如下：
-
-
-DEBUG = False
-
-ALLOWED_HOSTS = ["62
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    后端框架
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/django/"><span class="chip bg-color">django</span></a>
-                            
-                            <a href="/tags/python/"><span class="chip bg-color">python</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>12</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
                         <a href="/2021/02/12/django-xue-xi-wu-views-he-url/">
                             <div class="card-image">
                                 
@@ -1415,23 +1342,22 @@ from django.http impor
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/">
+                        <a href="/2021/02/12/django-xue-xi-si-model-he-admin/">
                             <div class="card-image">
                                 
-                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dg2d7.jpg" class="responsive-img" alt="Django学习(三)：模板系统">
+                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dqz69.png" class="responsive-img" alt="Django学习(四)：model和admin">
                                 
-                                <span class="card-title">Django学习(三)：模板系统</span>
+                                <span class="card-title">Django学习(四)：model和admin</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    
-便于修改html中的内容
-
-1. 插入变量def index(request):
-    string1 = "插入的模板变量"
-    return render(request,'home.html',{'test':string1}
+                                    修改models.pyfrom django.db import models
+ 
+class Person(models.Model):
+    name = models.CharField(max_length=30)
+    age
                                 
                             </div>
                             <div class="publish-info">
@@ -1548,22 +1474,96 @@ index.html
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/02/12/django-xue-xi-si-model-he-admin/">
+                        <a href="/2021/02/12/django-xue-xi-er-setting.py/">
                             <div class="card-image">
                                 
-                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dqz69.png" class="responsive-img" alt="Django学习(四)：model和admin">
+                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-4v7784.jpg" class="responsive-img" alt="Django学习(二)：setting.py">
                                 
-                                <span class="card-title">Django学习(四)：model和admin</span>
+                                <span class="card-title">Django学习(二)：setting.py</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    修改models.pyfrom django.db import models
- 
-class Person(models.Model):
-    name = models.CharField(max_length=30)
-    age
+                                    调试与域名DEBUG = True
+
+ALLOWED_HOSTS = []
+
+设置是否为调试模式，当部署时就改为False
+
+当部署时就填入主机的ip地址
+
+如下：
+
+
+DEBUG = False
+
+ALLOWED_HOSTS = ["62
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-02-12
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    后端框架
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/django/"><span class="chip bg-color">django</span></a>
+                            
+                            <a href="/tags/python/"><span class="chip bg-color">python</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>12</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2021/02/12/django-xue-xi-san-mo-ban-xi-tong/">
+                            <div class="card-image">
+                                
+                                <img src="https://cdn.jsdelivr.net/gh/liangxinxin5102/image2/cartoon01/wallhaven-5dg2d7.jpg" class="responsive-img" alt="Django学习(三)：模板系统">
+                                
+                                <span class="card-title">Django学习(三)：模板系统</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    
+便于修改html中的内容
+
+1. 插入变量def index(request):
+    string1 = "插入的模板变量"
+    return render(request,'home.html',{'test':string1}
                                 
                             </div>
                             <div class="publish-info">
